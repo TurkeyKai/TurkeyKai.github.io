@@ -9,7 +9,7 @@
         /* 网站基础设定 */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-            background-color: #111; /* 深色背景，突出照片 */
+            background-color: #111; /* 深色背景 */
             color: #eee;
             margin: 0;
             padding: 20px;
@@ -20,21 +20,18 @@
             padding: 40px 0;
         }
         
-        /* 你可以在这里修改大标题的样式 */
         h1.main-title { font-size: 2.5em; margin-bottom: 10px; letter-spacing: 2px; }
-        p.subtitle { color: #888; font-size: 1.1em; }
+        p.subtitle { color: #888; font-size: 1.1em; margin-bottom: 30px; }
 
         /* --- 核心：画廊网格布局 --- */
         .gallery-grid {
             display: grid;
-            /* 手机上一列，平板两列，电脑三列 */
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px; /* 格子之间的间距 */
+            gap: 20px;
             max-width: 1200px;
             margin: 0 auto 60px auto;
         }
 
-        /* 每一个照片卡片的样式 */
         .photo-card {
             background: #222;
             border-radius: 12px;
@@ -43,18 +40,15 @@
             transition: transform 0.3s ease;
         }
 
-        /* 鼠标悬停时轻轻浮起 */
         .photo-card:hover { transform: translateY(-5px); }
 
-        /* 图片样式 */
         .photo-card img {
             width: 100%;
-            height: 300px; /* 固定高度，整齐划一 */
-            object-fit: cover; /* 保证图片填满格子不变形 */
+            height: 300px;
+            object-fit: cover;
             display: block;
         }
 
-        /* 标题文字区域 */
         .caption {
             padding: 15px;
             text-align: left;
@@ -71,7 +65,7 @@
             border-radius: 12px;
             text-align: left;
         }
-        /* 调整评论区在深色模式下的颜色 */
+        
         :root {
             --waline-theme-color: #0071e3;
             --waline-bgcolor: #222;
@@ -85,6 +79,9 @@
     <header>
         <h1 class="main-title">TURKEYKAI VISION</h1>
         <p class="subtitle">西藏旅拍 | DJI Pocket 3 | 视觉记录</p>
+
+        <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0q90594QzSr9S62pL50p72?utm_source=generator" width="350" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        
     </header>
 
     <div class="gallery-grid">
@@ -113,20 +110,21 @@
             </div>
         </div>
         
-        </div>
+    </div>
+
     <div class="comments-container">
         <h3 style="color:white; margin-bottom:20px;">留言互动区</h3>
         <div id="waline"></div>
     </div>
 
-
     <script type="module">
         import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
         init({
             el: '#waline',
-            serverURL: '', // 暂时留空，下一步我们来填这个
+            // 👇 这里现在还是空的，如果不填，评论区虽然能看到框，但发不出消息
+            serverURL: '', 
             placeholder: '留下你的想法... (支持匿名)',
-            dark: true, // 开启深色模式适配
+            dark: true, 
         });
     </script>
 
