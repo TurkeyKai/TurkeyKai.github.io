@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurkeyKai's Gallery</title>
+    <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
+    <style>
+        /* 网站基础设定 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+            background-color: #111; /* 深色背景，突出照片 */
+            color: #eee;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header {
+            padding: 40px 0;
+        }
+        
+        /* 你可以在这里修改大标题的样式 */
+        h1.main-title { font-size: 2.5em; margin-bottom: 10px; letter-spacing: 2px; }
+        p.subtitle { color: #888; font-size: 1.1em; }
+
+        /* --- 核心：画廊网格布局 --- */
+        .gallery-grid {
+            display: grid;
+            /* 手机上一列，平板两列，电脑三列 */
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px; /* 格子之间的间距 */
+            max-width: 1200px;
+            margin: 0 auto 60px auto;
+        }
+
+        /* 每一个照片卡片的样式 */
+        .photo-card {
+            background: #222;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        /* 鼠标悬停时轻轻浮起 */
+        .photo-card:hover { transform: translateY(-5px); }
+
+        /* 图片样式 */
+        .photo-card img {
+            width: 100%;
+            height: 300px; /* 固定高度，整齐划一 */
+            object-fit: cover; /* 保证图片填满格子不变形 */
+            display: block;
+        }
+
+        /* 标题文字区域 */
+        .caption {
+            padding: 15px;
+            text-align: left;
+        }
+        .caption h3 { margin: 0 0 5px 0; font-size: 1.2em; color: #fff;}
+        .caption p { margin: 0; font-size: 0.9em; color: #aaa; }
+
+        /* 评论区容器 */
+        .comments-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #222;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: left;
+        }
+        /* 调整评论区在深色模式下的颜色 */
+        :root {
+            --waline-theme-color: #0071e3;
+            --waline-bgcolor: #222;
+            --waline-bgcolor-light: #333;
+            --waline-text-color: #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 class="main-title">TURKEYKAI VISION</h1>
+        <p class="subtitle">西藏旅拍 | DJI Pocket 3 | 视觉记录</p>
+    </header>
+
+    <div class="gallery-grid">
+
+        <div class="photo-card">
+            <img src="image/1.jpg" alt="Game Art 1">
+            <div class="caption">
+                <h3>明日方舟</h3>
+                <p>2TurkeyKai</p>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <img src="image/2.jpg" alt="Game Art 2">
+            <div class="caption">
+                <h3>崩坏·星穹铁道</h3>
+                <p>111508667</p>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <img src="image/3.jpg" alt="Living Photo">
+            <div class="caption">
+                <h3>On My way</h3>
+                <p>LIFEPOINT</p>
+            </div>
+        </div>
+        
+        </div>
+    <div class="comments-container">
+        <h3 style="color:white; margin-bottom:20px;">留言互动区</h3>
+        <div id="waline"></div>
+    </div>
+
+
+    <script type="module">
+        import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
+        init({
+            el: '#waline',
+            serverURL: '', // 暂时留空，下一步我们来填这个
+            placeholder: '留下你的想法... (支持匿名)',
+            dark: true, // 开启深色模式适配
+        });
+    </script>
+
+</body>
+</html>
