@@ -6,71 +6,123 @@
     <title>TurkeyKai's Gallery</title>
     <link rel="stylesheet" href="https://unpkg.com/@waline/client@v2/dist/waline.css" />
     <style>
-        /* 网站基础设定 */
+        /* --- 网站基础设定 (美化版) --- */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
-            background-color: #111; /* 深色背景 */
+            /* 使用更现代的字体栈 */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            /* 背景升级为微妙的深色渐变，更有质感 */
+            background: linear-gradient(135deg, #111111 0%, #1a1a1a 100%);
             color: #eee;
             margin: 0;
-            padding: 20px;
+            padding: 40px 20px; /* 增加整体页面的呼吸感 */
             text-align: center;
+            min-height: 100vh; /* 确保背景铺满全屏 */
         }
 
         header {
-            padding: 40px 0;
+            padding: 60px 0 40px; /* 增加头部空间 */
+            max-width: 800px;
+            margin: 0 auto;
         }
         
-        h1.main-title { font-size: 2.5em; margin-bottom: 10px; letter-spacing: 2px; }
-        p.subtitle { color: #888; font-size: 1.1em; margin-bottom: 30px; }
+        h1.main-title { 
+            font-size: 3em; /* 标题更大气 */
+            margin-bottom: 15px; 
+            letter-spacing: 3px; /* 增加字间距 */
+            font-weight: 700;
+            /* 稍微带点梯度的文字颜色 */
+            background: linear-gradient(to right, #ffffff, #cccccc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        p.subtitle { 
+            color: #999; 
+            font-size: 1.2em; 
+            margin-bottom: 40px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
 
-        /* --- 核心：画廊网格布局 --- */
+        /* --- 本地音乐播放器样式 --- */
+        .audio-player {
+            width: 90%;
+            max-width: 450px;
+            margin: 20px auto 0;
+            outline: none;
+            /* 一个小技巧：通过滤镜让默认的白色播放器变成深色模式，融入背景 */
+            filter: invert(0.92) hue-rotate(180deg) contrast(0.8);
+            opacity: 0.7; /* 默认稍微透明一点，不抢眼 */
+            transition: opacity 0.3s ease;
+        }
+        .audio-player:hover {
+            opacity: 1; /* 鼠标放上去变清晰 */
+        }
+
+        /* --- 核心：画廊网格布局 (增强交互) --- */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            max-width: 1200px;
-            margin: 0 auto 60px auto;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 稍微调整最小宽度 */
+            gap: 30px; /* 增加卡片间距 */
+            max-width: 1100px;
+            margin: 0 auto 80px auto;
+            padding: 0 10px;
         }
 
         .photo-card {
             background: #222;
-            border-radius: 12px;
+            border-radius: 16px; /* 更圆润的边角 */
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* 初始阴影更柔和 */
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); /* 更丝滑的动画曲线 */
+            cursor: pointer; /* 鼠标放上去变成手型 */
         }
 
-        .photo-card:hover { transform: translateY(-5px); }
+        /* 鼠标悬停时的超级美化效果 */
+        .photo-card:hover { 
+            transform: translateY(-10px) scale(1.02); /* 上浮并轻微放大 */
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5); /* 更有深度的阴影 */
+        }
 
         .photo-card img {
             width: 100%;
-            height: 300px;
+            height: 320px; /* 稍微增高图片区域 */
             object-fit: cover;
             display: block;
+            transition: filter 0.4s ease; /* 图片亮度也要有过渡动画 */
+        }
+        
+        /* 鼠标悬停时图片稍微变亮 */
+        .photo-card:hover img {
+            filter: brightness(1.1);
         }
 
         .caption {
-            padding: 15px;
+            padding: 20px; /* 增加文字区域内边距 */
             text-align: left;
+            background: linear-gradient(to bottom, #222, #1f1f1f); /* 文字区域微渐变背景 */
         }
-        .caption h3 { margin: 0 0 5px 0; font-size: 1.2em; color: #fff;}
-        .caption p { margin: 0; font-size: 0.9em; color: #aaa; }
+        .caption h3 { margin: 0 0 8px 0; font-size: 1.3em; color: #fff; letter-spacing: 0.5px;}
+        .caption p { margin: 0; font-size: 0.95em; color: #bbb; }
 
-        /* 评论区容器 */
+        /* 评论区容器美化 */
         .comments-container {
             max-width: 800px;
-            margin: 0 auto;
-            background: #222;
-            padding: 30px;
-            border-radius: 12px;
+            margin: 0 auto 40px;
+            background: #1e1e1e; /* 稍微区分一下背景色 */
+            padding: 40px;
+            border-radius: 20px;
             text-align: left;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         
+        /* Waline 评论区深色主题变量微调 */
         :root {
             --waline-theme-color: #0071e3;
-            --waline-bgcolor: #222;
-            --waline-bgcolor-light: #333;
+            --waline-bgcolor: #1e1e1e;
+            --waline-bgcolor-light: #2a2a2a;
             --waline-text-color: #eee;
+            --waline-border-color: #333;
         }
     </style>
 </head>
@@ -80,7 +132,10 @@
         <h1 class="main-title">TurkeyKai的骊珠洞天</h1>
         <p class="subtitle">焦虑没什么不好的，就像烤肉焦焦的也很好吃</p>
 
-        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=25712166&auto=1&height=66"></iframe>
+        <audio class="audio-player" controls autoplay loop>
+            <source src="music.mp3" type="audio/mpeg">
+            您的浏览器不支持音频播放元素。
+        </audio>
         
     </header>
 
@@ -113,7 +168,7 @@
     </div>
 
     <div class="comments-container">
-        <h3 style="color:white; margin-bottom:20px;">留言互动区</h3>
+        <h3 style="color:white; margin-bottom:25px; font-size: 1.5em;">留言互动区</h3>
         <div id="waline"></div>
     </div>
 
@@ -121,10 +176,10 @@
         import { init } from 'https://unpkg.com/@waline/client@v2/dist/waline.mjs';
         init({
             el: '#waline',
-            // 👇 下一步我们去 LeanCloud 拿到钥匙后，填在这里！
+            // 👇 记得这里将来要填入你的 LeanCloud 服务器地址
             serverURL: '', 
-            placeholder: '留下你的想法... (支持匿名)',
-            dark: true, 
+            placeholder: '欢迎留下你的想法... (支持匿名)',
+            dark: true, // 强制开启深色模式支持
         });
     </script>
 
