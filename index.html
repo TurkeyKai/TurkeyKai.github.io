@@ -1,4 +1,224 @@
-<script>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TurkeyKai的骊珠洞天</title>
+    <style>
+        /* --- 全局设置 --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            /* 纯深色背景打底，让Canvas在上面绘制 */
+            background-color: #050508; 
+            color: #eee;
+            margin: 0;
+            padding: 40px 20px;
+            text-align: center;
+            min-height: 100vh;
+            animation: fadeIn 1.2s ease-out;
+            position: relative;
+            overflow-x: hidden; /* 防止滚动条闪烁 */
+        }
+
+        /* 背景 Canvas 样式 - 核心 */
+        #textBg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1; /* 确保它在最底层 */
+            /* 如果觉得背景太亮喧宾夺主，可以把这个 opacity 调低，比如 0.3 */
+            opacity: 0.5; 
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* 头部样式 */
+        header { padding: 70px 0 50px; max-width: 800px; margin: 0 auto; position: relative; z-index: 2;}
+        
+        h1.main-title { 
+            font-size: 3.5em; margin-bottom: 15px; font-weight: 800; letter-spacing: 2px;
+            background: linear-gradient(to right, #fff, #b3b3b3);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+        }
+        
+        p.subtitle { color: #8e9aaf; font-size: 1.1em; margin-bottom: 40px; font-weight: 300; letter-spacing: 1px; opacity: 0.8; }
+        
+        .audio-player {
+            width: 90%; max-width: 360px; margin: 30px auto 0;
+            filter: invert(100%) contrast(0.8); opacity: 0.7;
+            border-radius: 99px; outline: none; transition: opacity 0.3s ease;
+        }
+        .audio-player:hover { opacity: 1; }
+        
+        /* --- 画廊样式 --- */
+        .gallery-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; max-width: 1200px; margin: 0 auto 80px auto; padding: 0 15px;
+            position: relative; z-index: 2;
+        }
+        /* 卡片样式 - 增加半透明背景和毛玻璃，确保文字背景不影响阅读 */
+        .photo-card {
+            background: rgba(40, 40, 45, 0.6); 
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px; overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+            cursor: pointer; position: relative;
+            backdrop-filter: blur(5px); /* 毛玻璃效果 */
+        }
+        .photo-card:hover { 
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+            border-color: rgba(255, 255, 255, 0.25);
+            background: rgba(60, 60, 65, 0.8);
+            z-index: 10;
+        }
+        .photo-card img {
+            width: 100%; height: 300px; object-fit: cover; display: block;
+            transition: transform 0.6s ease, filter 0.5s ease;
+        }
+        .photo-card:hover img { filter: brightness(1.15); transform: scale(1.05); }
+        
+        .caption {
+            padding: 20px; text-align: left;
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%);
+            position: absolute; bottom: 0; width: 100%; box-sizing: border-box;
+            opacity: 0; transform: translateY(10px); transition: all 0.4s ease;
+        }
+        .photo-card:hover .caption { opacity: 1; transform: translateY(0); }
+        .caption h3 { margin: 0 0 5px 0; font-size: 1.2em; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+        .caption p { margin: 0; font-size: 0.9em; color: #ddd; }
+        
+        /* --- 评论区样式 --- */
+        .comments-section { max-width: 1100px; margin: 0 auto 80px; text-align: left; position: relative; z-index: 2;}
+        
+        .comments-header {
+            background: rgba(40, 40, 45, 0.7);
+            padding: 20px 35px;
+            border-radius: 20px 20px 0 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px); display: flex; align-items: center;
+        }
+        .comments-title { color: #fff; font-size: 1.4em; font-weight: bold; display: flex; align-items: center; }
+        .comments-title::before {
+            content: ''; display: inline-block; width: 6px; height: 24px;
+            background: #00b894; margin-right: 15px; border-radius: 3px;
+        }
+        
+        .comments-body {
+            background: rgba(30, 30, 30, 0.9); /* 评论区背景深一点，保证可读性 */
+            padding: 40px;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* 美化版审核提示框 */
+        .moderation-notice {
+            background: rgba(0, 184, 148, 0.15);
+            border-left: 4px solid #00b894;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-size: 0.95em;
+            line-height: 1.6;
+            color: #e0e0e0;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            backdrop-filter: blur(5px);
+        }
+        .notice-icon { font-size: 1.5em; line-height: 1; }
+        .notice-content strong { color: #fff; display: block; margin-bottom: 5px; font-size: 1.05em; }
+        .notice-content span.en { 
+            display: block; 
+            margin-top: 5px; 
+            font-size: 0.85em; 
+            opacity: 0.7; 
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        /* Cusdis iframe 样式 */
+        #cusdis_thread iframe { color-scheme: dark; width: 100%; min-height: 1000px !important; border: none; }
+    </style>
+</head>
+<body>
+    
+    <canvas id="textBg"></canvas>
+
+    <header>
+        <h1 class="main-title">TurkeyKai的骊珠洞天</h1>
+        <p class="subtitle">焦虑没什么不好的，就像烤肉焦焦的也很好吃</p>
+        
+        <audio class="audio-player" controls autoplay loop>
+            <source src="music.mp3" type="audio/mpeg">
+        </audio>
+    </header>
+
+    <div class="gallery-grid">
+        <div class="photo-card">
+            <img src="image/1.jpg" alt="小学合照">
+            <div class="caption"> <h3>小学时光</h3> <p>无忧无虑的童年</p> </div>
+        </div>
+        <div class="photo-card">
+            <img src="image/2.jpg" alt="初中合照">
+            <div class="caption"> <h3>初中岁月</h3> <p>青春的开始</p> </div>
+        </div>
+        <div class="photo-card">
+            <img src="image/3.jpg" alt="高中合照">
+            <div class="caption"> <h3>高中回忆</h3> <p>最难忘的三年</p> </div>
+        </div>
+        <div class="photo-card">
+            <img src="image/4.jpg" alt="Photo 4">
+            <div class="caption"> <h3>我的爱好</h3> <p>Outdoor</p> </div>
+        </div>
+        <div class="photo-card">
+            <img src="image/5.jpg" alt="Photo 5">
+            <div class="caption"> <h3>旅行记录</h3> <p>On the road</p> </div>
+        </div>
+        <div class="photo-card">
+            <img src="image/6.jpg" alt="Photo 6">
+            <div class="caption"> <h3>生活碎片</h3> <p>Life</p> </div>
+        </div>
+         <div class="photo-card">
+            <img src="image/9.jpg" alt="Photo 9">
+            <div class="caption"> <h3>联系我</h3> <p>WeChat</p> </div>
+        </div>
+    </div>
+
+    <div class="comments-section">
+        <div class="comments-header">
+            <div class="comments-title">评论区 / Comments</div>
+        </div>
+        
+        <div class="comments-body">
+            
+            <div class="moderation-notice">
+                <div class="notice-icon">📝</div>
+                <div class="notice-content">
+                    <strong>温馨提示 / Notice</strong>
+                    评论需经审核后显示（耗时短则数秒，长则数日）。如需加速，欢迎随时联系我催促！
+                    <span class="en">Comments appear after moderation (ranging from seconds to days). Feel free to contact me to expedite the process!</span>
+                </div>
+            </div>
+
+            <div id="cusdis_thread"
+                data-host="https://cusdis.com"
+                data-app-id="9f2f1f8e-31aa-4f57-bef1-2a43c6a50e90"
+                data-page-id="homepage"
+                data-page-url="https://turkeykai.github.io/"
+                data-page-title="TurkeyKai Home"
+                data-theme="dark">
+            </div>
+            <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+        </div>
+    </div>
+
+    <script>
         const canvas = document.getElementById('textBg');
         const ctx = canvas.getContext('2d');
 
@@ -10,6 +230,7 @@
         window.addEventListener('resize', resizeCanvas);
 
         // --- 自定义设置区 (大学生限定版) ---
+        // 这里的词库已经替换为你需要的大学生/留学生常用词
         const words = [
             'DDL', 'Deadline', '赶Due', 'Essay', 'Report', 
             'GPA 4.0', 'Please', '求过', 'Pass', '不挂就行', 
@@ -20,12 +241,15 @@
             '吃什么', 'Hungry', '外卖', '减肥', 
             'Group Work', '队友呢?', 'Rej', 'Offer', 'Intern', 
             '迷茫', 'Lost', '躺平', '卷不动了', 
-            '图书馆', 'Library', 'Open 24h', '又是一天'
+            '图书馆', 'Library', 'Open 24h', '又是一天',
+            'TurkeyKai', '烤肉焦了'
         ];
         
-        // 颜色：淡淡的灰白色，像思绪一样
+        // 颜色：淡淡的灰白色带透明度，像思绪一样飘过
         const textColor = 'rgba(220, 220, 220, 0.35)'; 
+        // 字体大小：稍微小一点，像弹幕
         const fontSize = 13;
+        // 速度：调慢一点，营造无力感 (0.5 - 1 之间调整)
         const speedFactor = 0.6; 
         // --------------------
 
@@ -36,7 +260,7 @@
         }
 
         function draw() {
-            // 背景刷新透明度，决定了拖尾的长度。0.1 拖尾较短，0.05 拖尾较长
+            // 背景刷新透明度。0.1 拖尾较短，0.05 拖尾较长，这里用0.1保持画面相对干净
             ctx.fillStyle = 'rgba(5, 5, 8, 0.1)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
 
@@ -50,12 +274,17 @@
 
                 ctx.fillText(text, x, y);
 
+                // 随机重置到顶部
                 if (y > canvas.height && Math.random() > 0.985) {
                     drops[i] = 0;
                 }
+                // 下落
                 drops[i] += speedFactor;
             }
             requestAnimationFrame(draw);
         }
         draw();
     </script>
+
+</body>
+</html>
