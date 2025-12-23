@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TurkeyKai的骊珠洞天</title>
     <style>
-        /* --- 1. 全局设定 (极光背景) --- */
+        /* --- 1. 全局设定 --- */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background: radial-gradient(circle at top, #302b63, #0f0c29, #000000);
@@ -28,7 +28,6 @@
             margin: 0 auto;
         }
         
-        /* --- 核心：标题样式 --- */
         h1.main-title { 
             font-size: 3.5em; 
             margin-bottom: 15px; 
@@ -49,7 +48,7 @@
             opacity: 0.8;
         }
 
-        /* 🎵 播放器样式 */
+        /* 🎵 播放器 */
         .audio-player {
             width: 90%;
             max-width: 360px;
@@ -62,7 +61,7 @@
         }
         .audio-player:hover { opacity: 1; }
 
-        /* --- 画廊布局 (自适应九宫格) --- */
+        /* --- 画廊布局 --- */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -125,9 +124,8 @@
         .caption h3 { margin: 0 0 5px 0; font-size: 1.2em; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
         .caption p { margin: 0; font-size: 0.9em; color: #ddd; }
 
-        /* --- 留言区 (IMAX 放大版) --- */
+        /* --- 留言区 (IMAX 巨幕版) --- */
         .comments-section {
-            /* 宽度加宽：从900改到了1100，利用屏幕空间 */
             max-width: 1100px; 
             margin: 0 auto 80px;
             text-align: left;
@@ -135,7 +133,7 @@
 
         .comments-header {
             background: rgba(255, 255, 255, 0.1);
-            padding: 20px 35px; /* 头部稍微变大 */
+            padding: 20px 35px;
             border-radius: 20px 20px 0 0; 
             border-bottom: 1px solid rgba(255,255,255,0.1);
             backdrop-filter: blur(10px);
@@ -145,7 +143,7 @@
         
         .comments-title {
             color: #fff;
-            font-size: 1.4em; /* 字体变大 */
+            font-size: 1.4em;
             font-weight: bold;
             display: flex;
             align-items: center;
@@ -164,16 +162,22 @@
         /* 评论内容容器 */
         .comments-body {
             background: rgba(30, 30, 30, 0.85); 
-            padding: 40px; /* 增加内部空间 */
+            padding: 40px; 
             border-radius: 0 0 20px 20px; 
             box-shadow: 0 10px 50px rgba(0,0,0,0.4);
             border: 1px solid rgba(255,255,255,0.05);
-            
-            /* 核心修改：强制最小高度为 600px，确保能显示很多条 */
-            min-height: 600px; 
+            /* 这里不设高度，让它随内容撑开 */
         }
         
-        #cusdis_thread iframe { color-scheme: dark; width: 100%; }
+        /* 核心修改：给 iframe 加了一个超大的最小高度 (1000px)
+           这样它就会默认展开得很长，不会在里面出现滚动条
+        */
+        #cusdis_thread iframe { 
+            color-scheme: dark; 
+            width: 100%; 
+            min-height: 1000px !important; 
+            border: none;
+        }
     </style>
 </head>
 <body>
