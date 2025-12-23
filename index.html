@@ -3,83 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TurkeyKai's Gallery</title>
+    <title>TurkeyKai的骊珠洞天</title>
     <style>
-        /* --- 1. 网站全局设定 (深色极光背景) --- */
+        /* --- 1. 全局设定 (极光背景) --- */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            /* 背景升级：深邃的蓝紫色渐变，更有高级感 */
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            background: radial-gradient(circle at top, #302b63, #0f0c29, #000000);
             color: #eee;
             margin: 0;
             padding: 40px 20px;
             text-align: center;
             min-height: 100vh;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         header {
-            padding: 60px 0 40px;
+            padding: 70px 0 50px;
             max-width: 800px;
             margin: 0 auto;
         }
         
-        /* 标题文字特效 */
+        /* --- 核心：标题样式 --- */
         h1.main-title { 
-            font-size: 3.2em; 
+            font-size: 3.5em; 
             margin-bottom: 15px; 
-            font-weight: 700;
+            font-weight: 800;
             letter-spacing: 2px;
             /* 银色流光渐变文字 */
             background: linear-gradient(to right, #fff, #b3b3b3);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            /* 发光效果 */
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
         }
         
         p.subtitle { 
-            color: #aab; 
+            color: #8e9aaf; 
             font-size: 1.1em; 
             margin-bottom: 40px;
             font-weight: 300;
             letter-spacing: 1px;
+            opacity: 0.8;
         }
 
-        /* --- 2. 🎵 播放器美化 (暗黑模式) --- */
+        /* 🎵 播放器样式 */
         .audio-player {
             width: 90%;
-            max-width: 380px;
-            margin: 20px auto 0;
-            /* 魔法代码：把白色播放器反转为黑色，完美融入背景 */
-            filter: invert(100%); 
-            opacity: 0.85;
-            border-radius: 50px;
+            max-width: 360px;
+            margin: 30px auto 0;
+            filter: invert(100%) contrast(0.8); 
+            opacity: 0.7;
+            border-radius: 99px; 
             outline: none;
+            transition: opacity 0.3s ease;
         }
+        .audio-player:hover { opacity: 1; }
 
-        /* --- 3. 画廊卡片样式 (玻璃质感) --- */
+        /* --- 画廊布局 (自适应九宫格) --- */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            max-width: 1100px;
+            gap: 25px;
+            max-width: 1200px;
             margin: 0 auto 80px auto;
-            padding: 0 10px;
+            padding: 0 15px;
         }
 
         .photo-card {
-            background: rgba(255, 255, 255, 0.05); /* 半透明 */
-            border: 1px solid rgba(255, 255, 255, 0.1); /* 微弱边框 */
+            background: rgba(255, 255, 255, 0.03); 
+            border: 1px solid rgba(255, 255, 255, 0.08); 
             border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
             cursor: pointer;
+            position: relative;
         }
 
-        /* 鼠标悬停特效：上浮 + 发光 */
         .photo-card:hover { 
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.6);
-            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+            border-color: rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.08);
+            z-index: 10;
         }
 
         .photo-card img {
@@ -87,30 +98,49 @@
             height: 300px;
             object-fit: cover;
             display: block;
-            transition: filter 0.4s ease;
+            transition: transform 0.6s ease, filter 0.5s ease;
         }
         
-        .photo-card:hover img { filter: brightness(1.1); }
+        .photo-card:hover img { 
+            filter: brightness(1.15);
+            transform: scale(1.05);
+        }
 
         .caption {
             padding: 20px;
             text-align: left;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.9));
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            box-sizing: border-box;
+            opacity: 0; 
+            transform: translateY(10px);
+            transition: all 0.4s ease;
         }
-        .caption h3 { margin: 0 0 5px 0; font-size: 1.3em; color: #fff; }
-        .caption p { margin: 0; font-size: 0.9em; color: #bbb; }
+        
+        .photo-card:hover .caption {
+            opacity: 1;
+            transform: translateY(0);
+        }
 
-        /* --- 4. 留言区容器 --- */
+        .caption h3 { margin: 0 0 5px 0; font-size: 1.2em; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
+        .caption p { margin: 0; font-size: 0.9em; color: #ddd; }
+
+        /* 留言区 */
         .comments-container {
             max-width: 800px;
             margin: 0 auto 60px;
-            background: rgba(30, 30, 30, 0.6); /* 更加通透的背景 */
-            padding: 40px;
-            border-radius: 20px;
+            background: rgba(20, 20, 20, 0.6); 
+            backdrop-filter: blur(10px);
+            padding: 45px;
+            border-radius: 24px;
             text-align: left;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.4);
-            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: 0 15px 50px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
         }
+        
+        #cusdis_thread iframe { color-scheme: dark; }
     </style>
 </head>
 <body>
@@ -118,55 +148,100 @@
     <header>
         <h1 class="main-title">TurkeyKai的骊珠洞天</h1>
         <p class="subtitle">焦虑没什么不好的，就像烤肉焦焦的也很好吃</p>
-
+        
         <audio class="audio-player" controls autoplay loop>
             <source src="music.mp3" type="audio/mpeg">
         </audio>
     </header>
 
     <div class="gallery-grid">
+        
         <div class="photo-card">
-            <img src="image/1.jpg" alt="Game Art 1">
+            <img src="image/1.jpg" alt="Photo 1">
             <div class="caption">
-                <h3>明日方舟</h3>
-                <p>TurkeyKai</p>
+                <h3>TurkeyKai</h3>
+                <p>U of T</p>
             </div>
         </div>
+
         <div class="photo-card">
-            <img src="image/2.jpg" alt="Game Art 2">
+            <img src="image/2.jpg" alt="Photo 2">
             <div class="caption">
-                <h3>崩坏·星穹铁道</h3>
-                <p>111508667</p>
+                <h3>Campus Life</h3>
+                <p>Toronto</p>
             </div>
         </div>
+
         <div class="photo-card">
-            <img src="image/3.jpg" alt="Living Photo">
+            <img src="image/3.jpg" alt="Photo 3">
             <div class="caption">
-                <h3>On My way</h3>
-                <p>LIFEPOINT</p>
+                <h3>Videography</h3>
+                <p>DJI Pocket 3</p>
             </div>
         </div>
+
+        <div class="photo-card">
+            <img src="image/4.jpg" alt="Photo 4">
+            <div class="caption">
+                <h3>Hobbies</h3>
+                <p>Outdoor</p>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <img src="image/5.jpg" alt="Photo 5">
+            <div class="caption">
+                <h3>Travel</h3>
+                <p>On the road</p>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <img src="image/6.jpg" alt="Photo 6">
+            <div class="caption">
+                <h3>Daily</h3>
+                <p>Life</p>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <img src="image/7.jpg" alt="Photo 7">
+            <div class="caption">
+                <h3>Gallery</h3>
+                <p>07</p>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <img src="image/8.jpg" alt="Photo 8">
+            <div class="caption">
+                <h3>Gallery</h3>
+                <p>08</p>
+            </div>
+        </div>
+
+        <div class="photo-card">
+            <img src="image/9.jpg" alt="Photo 9">
+            <div class="caption">
+                <h3>Contact</h3>
+                <p>WeChat</p>
+            </div>
+        </div>
+
     </div>
 
     <div class="comments-container">
-        <h3 style="color:white; margin-bottom:25px; font-size: 1.5em; border-left: 4px solid #4a90e2; padding-left: 15px;">留言互动</h3>
+        <h3 style="color:white; margin-bottom:30px; font-size: 1.6em; border-left: 5px solid #00b894; padding-left: 15px; letter-spacing: 1px;">留言互动</h3>
         
-        <script src="https://giscus.app/client.js"
-                data-repo="TurkeyKai/TurkeyKai.github.io"
-                data-repo-id="R_kgDOQtXi6w"
-                data-category="General"
-                data-category-id="DIC_kwDOQtXi684C0I_9"
-                data-mapping="pathname"
-                data-strict="0"
-                data-reactions-enabled="1"
-                data-emit-metadata="0"
-                data-input-position="top"
-                data-theme="noborder_dark"
-                data-lang="zh-CN"
-                crossorigin="anonymous"
-                async>
-        </script>
-        
+        <div id="cusdis_thread"
+            data-host="https://cusdis.com"
+            data-app-id="9f2f1f8e-31aa-4f57-bef1-2a43c6a50e90"
+            data-page-id="homepage"
+            data-page-url="https://turkeykai.github.io/"
+            data-page-title="TurkeyKai Home"
+            data-theme="dark">
+        </div>
+        <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
     </div>
 
 </body>
