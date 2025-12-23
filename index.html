@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TurkeyKai的骊珠洞天</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
     <style>
         /* --- 全局设置 --- */
         body {
@@ -47,11 +49,10 @@
         }
         .audio-player:hover { opacity: 1; }
         
-        /* --- 画廊布局核心修改区 --- */
+        /* --- 画廊布局 --- */
         .gallery-grid {
             display: grid; 
-            /* 电脑端：强制 3 列 */
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr); /* 电脑端 3 列 */
             gap: 25px; 
             max-width: 1200px; 
             margin: 0 auto 80px auto; 
@@ -60,11 +61,8 @@
             z-index: 2;
         }
 
-        /* 移动端适配：屏幕小于 768px 时强制 1 列 */
         @media (max-width: 768px) {
-            .gallery-grid {
-                grid-template-columns: 1fr;
-            }
+            .gallery-grid { grid-template-columns: 1fr; } /* 手机端 1 列 */
             h1.main-title { font-size: 2.5em; } 
         }
 
@@ -96,13 +94,14 @@
             background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%);
             position: absolute; bottom: 0; width: 100%; box-sizing: border-box;
             opacity: 0; transform: translateY(10px); transition: all 0.4s ease;
+            pointer-events: none; /* 让点击穿透到图片上，方便触发大图 */
         }
         .photo-card:hover .caption { opacity: 1; transform: translateY(0); }
         .caption h3 { margin: 0 0 5px 0; font-size: 1.2em; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
         .caption p { margin: 0; font-size: 0.9em; color: #ddd; }
         
         /* --- 评论区样式 --- */
-        .comments-section { max-width: 1100px; margin: 0 auto 80px; text-align: left; position: relative; z-index: 2;}
+        .comments-section { max-width: 1100px; margin: 0 auto 60px; text-align: left; position: relative; z-index: 2;}
         .comments-header {
             background: rgba(40, 40, 45, 0.7);
             padding: 20px 35px;
@@ -136,11 +135,57 @@
         .notice-content strong { color: #fff; display: block; margin-bottom: 5px; font-size: 1.05em; }
         .notice-content span.en { display: block; margin-top: 5px; font-size: 0.85em; opacity: 0.7; }
         #cusdis_thread iframe { color-scheme: dark; width: 100%; min-height: 1000px !important; border: none; }
+
+        /* --- 新增：页脚 Footer 样式 --- */
+        footer {
+            position: relative; z-index: 2;
+            padding: 40px 0;
+            color: #888;
+            font-size: 0.9em;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            max-width: 800px; margin: 0 auto;
+        }
+        footer p { margin: 5px 0; }
+        .social-links { margin-top: 15px; }
+        .social-links a {
+            color: #aaa; font-size: 1.5em; margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        .social-links a:hover { color: #00b894; }
+
+        /* --- 新增：大图查看器 (Lightbox) 样式 --- */
+        #lightbox {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: none; justify-content: center; align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(8px);
+            opacity: 0; transition: opacity 0.3s ease;
+        }
+        #lightbox.active { display: flex; opacity: 1; }
+        #lightbox img {
+            max-width: 90%; max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 0 50px rgba(0,0,0,0.8);
+            transform: scale(0.9); transition: transform 0.3s ease;
+        }
+        #lightbox.active img { transform: scale(1); }
+        .lightbox-close {
+            position: absolute; top: 30px; right: 40px;
+            font-size: 40px; color: #fff; cursor: pointer;
+            transition: color 0.3s;
+        }
+        .lightbox-close:hover { color: #00b894; }
     </style>
 </head>
 <body>
     
     <canvas id="textBg"></canvas>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="Full View">
+    </div>
 
     <header>
         <h1 class="main-title">TurkeyKai的骊珠洞天</h1>
@@ -151,52 +196,49 @@
     </header>
 
     <div class="gallery-grid">
-        
-        <div class="photo-card">
+        <div class="photo-card" onclick="openLightbox('image/1.jpg')">
             <img src="image/1.jpg" alt="小学合照">
             <div class="caption"> <h3>小学时光</h3> <p>无忧无虑的童年</p> </div>
         </div>
-        <div class="photo-card">
+        <div class="photo-card" onclick="openLightbox('image/2.jpg')">
             <img src="image/2.jpg" alt="初中合照">
             <div class="caption"> <h3>初中岁月</h3> <p>青春的开始</p> </div>
         </div>
-        <div class="photo-card">
+        <div class="photo-card" onclick="openLightbox('image/3.jpg')">
             <img src="image/3.jpg" alt="高中合照">
-            <div class="caption"> <h3>高中回忆</h3> <p>最难忘的一年</p> </div>
+            <div class="caption"> <h3>高中回忆</h3> <p>最难忘的三年</p> </div>
         </div>
 
-        <div class="photo-card">
+        <div class="photo-card" onclick="openLightbox('https://placehold.co/600x400/222/666?text=Coming+Soon')">
             <img src="https://placehold.co/600x400/222/666?text=Coming+Soon" alt="待上传">
             <div class="caption"> <h3>待上传</h3> <p>To Be Uploaded</p> </div>
         </div>
-        <div class="photo-card">
+        <div class="photo-card" onclick="openLightbox('https://placehold.co/600x400/222/666?text=Coming+Soon')">
             <img src="https://placehold.co/600x400/222/666?text=Coming+Soon" alt="待上传">
             <div class="caption"> <h3>待上传</h3> <p>To Be Uploaded</p> </div>
         </div>
-        <div class="photo-card">
+        <div class="photo-card" onclick="openLightbox('https://placehold.co/600x400/222/666?text=Coming+Soon')">
             <img src="https://placehold.co/600x400/222/666?text=Coming+Soon" alt="待上传">
             <div class="caption"> <h3>待上传</h3> <p>To Be Uploaded</p> </div>
         </div>
-        <div class="photo-card">
+        <div class="photo-card" onclick="openLightbox('https://placehold.co/600x400/222/666?text=Coming+Soon')">
             <img src="https://placehold.co/600x400/222/666?text=Coming+Soon" alt="待上传">
             <div class="caption"> <h3>待上传</h3> <p>To Be Uploaded</p> </div>
         </div>
-        <div class="photo-card">
+        <div class="photo-card" onclick="openLightbox('https://placehold.co/600x400/222/666?text=Coming+Soon')">
             <img src="https://placehold.co/600x400/222/666?text=Coming+Soon" alt="待上传">
             <div class="caption"> <h3>待上传</h3> <p>To Be Uploaded</p> </div>
         </div>
-        <div class="photo-card">
+        <div class="photo-card" onclick="openLightbox('https://placehold.co/600x400/222/666?text=Coming+Soon')">
             <img src="https://placehold.co/600x400/222/666?text=Coming+Soon" alt="待上传">
             <div class="caption"> <h3>待上传</h3> <p>To Be Uploaded</p> </div>
         </div>
-
     </div>
 
     <div class="comments-section">
         <div class="comments-header">
             <div class="comments-title">评论区 / Comments</div>
         </div>
-        
         <div class="comments-body">
             <div class="moderation-notice">
                 <div class="notice-icon">📝</div>
@@ -218,7 +260,18 @@
         </div>
     </div>
 
+    <footer>
+        <p>© 2025 TurkeyKai. All rights reserved.</p>
+        <p>Made with anxiety & caffeine in Toronto.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-weixin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
+
     <script>
+        // --- 1. 背景文字雨脚本 (大学生焦虑版) ---
         const canvas = document.getElementById('textBg');
         const ctx = canvas.getContext('2d');
 
@@ -229,18 +282,16 @@
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
-        // --- 大学生限定版词库 ---
         const words = [
             'DDL', 'Deadline', '赶Due', 'Essay', 'Report', 
             'GPA 4.0', 'Please', '求过', 'Pass', '不挂就行', 
             'Midterm', 'Final', 'Quiz', 'Presentation', 
-            '早八', '起不来', '不想上课', 'Skip Class?', 
+            '早八', '起不来', 'Skip Class?', 
             'Coffee', '冰美式', 'Caffeine', '熬夜', '秃头', 
             'Emo', '破防了', '好累', 'Tired', '想回家', 
             '吃什么', 'Hungry', '外卖', '减肥', 
-            'Group Work', '队友呢?', 'Rej', 'Offer', 'Intern', 
-            '迷茫', 'Lost', '躺平', '卷不动了', 
-            '图书馆', 'Library', 'Open 24h', '又是一天',
+            'Rej', 'Offer', 'Intern', '迷茫', 'Lost', 
+            '躺平', '卷不动了', 'Library', 'Open 24h',
             'TurkeyKai', '烤肉焦了'
         ];
         
@@ -270,6 +321,24 @@
             requestAnimationFrame(draw);
         }
         draw();
+
+        // --- 2. 新增：Lightbox 控制脚本 ---
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+
+        function openLightbox(src) {
+            lightboxImg.src = src;
+            lightbox.classList.add('active');
+            // 禁止页面滚动，防止背景滑动
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            // 恢复页面滚动
+            document.body.style.overflow = 'auto';
+            document.body.style.overflowX = 'hidden'; // 保持水平不滚动
+        }
     </script>
 </body>
 </html>
