@@ -5,23 +5,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TurkeyKai的骊珠洞天</title>
     <style>
-        /* --- 核心样式保持你原有的风格 --- */
+        /* --- 核心样式修改 --- */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: radial-gradient(circle at top, #302b63, #0f0c29, #000000);
+            /* 删除原来的渐变背景，改用纯深色打底，让 Canvas 在上面绘制 */
+            background-color: #050508; 
             color: #eee;
             margin: 0;
             padding: 40px 20px;
             text-align: center;
             min-height: 100vh;
             animation: fadeIn 1.2s ease-out;
+            position: relative; /* 为 canvas 定位做准备 */
+            overflow-x: hidden;
         }
+
+        /* 新增：背景 Canvas 样式 */
+        #textBg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1; /* 确保它在最底层 */
+            opacity: 0.5; /* 调整整体透明度，不要太抢眼 */
+        }
+
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
         
-        header { padding: 70px 0 50px; max-width: 800px; margin: 0 auto; }
+        header { padding: 70px 0 50px; max-width: 800px; margin: 0 auto; position: relative; z-index: 2;}
         
         h1.main-title { 
             font-size: 3.5em; margin-bottom: 15px; font-weight: 800; letter-spacing: 2px;
@@ -43,19 +58,22 @@
         .gallery-grid {
             display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 25px; max-width: 1200px; margin: 0 auto 80px auto; padding: 0 15px;
+            position: relative; z-index: 2;
         }
         .photo-card {
-            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(40, 40, 45, 0.6); /*稍微增加一点不透明度，让卡片更清晰*/
+            border: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 16px; overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.4);
             transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
             cursor: pointer; position: relative;
+            backdrop-filter: blur(5px); /* 增加毛玻璃效果，让背景文字模糊一点 */
         }
         .photo-card:hover { 
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 25px 60px rgba(0,0,0,0.6);
             border-color: rgba(255, 255, 255, 0.25);
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(60, 60, 65, 0.8);
             z-index: 10;
         }
         .photo-card img {
@@ -75,10 +93,11 @@
         .caption p { margin: 0; font-size: 0.9em; color: #ddd; }
         
         /* --- 评论区样式 --- */
-        .comments-section { max-width: 1100px; margin: 0 auto 80px; text-align: left; }
+        .comments-section { max-width: 1100px; margin: 0 auto 80px; text-align: left; position: relative; z-index: 2;}
         
         .comments-header {
-            background: rgba(255, 255, 255, 0.1); padding: 20px 35px;
+            background: rgba(40, 40, 45, 0.7); /* 增加不透明度 */
+            padding: 20px 35px;
             border-radius: 20px 20px 0 0; border-bottom: 1px solid rgba(255,255,255,0.1);
             backdrop-filter: blur(10px); display: flex; align-items: center;
         }
@@ -89,14 +108,15 @@
         }
         
         .comments-body {
-            background: rgba(30, 30, 30, 0.85); padding: 40px;
+            background: rgba(30, 30, 30, 0.9); /* 增加不透明度，保证评论可读性 */
+            padding: 40px;
             border-radius: 0 0 20px 20px;
             box-shadow: 0 10px 50px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* --- 新增：美化版审核提示框 --- */
+        /* 美化版审核提示框 */
         .moderation-notice {
-            background: rgba(0, 184, 148, 0.1); /* 微微的绿色背景，呼应标题的绿色条 */
+            background: rgba(0, 184, 148, 0.15);
             border-left: 4px solid #00b894;
             padding: 20px;
             border-radius: 8px;
@@ -107,6 +127,7 @@
             display: flex;
             align-items: flex-start;
             gap: 15px;
+            backdrop-filter: blur(5px);
         }
         .notice-icon { font-size: 1.5em; line-height: 1; }
         .notice-content strong { color: #fff; display: block; margin-bottom: 5px; font-size: 1.05em; }
@@ -123,6 +144,8 @@
     </style>
 </head>
 <body>
+    
+    <canvas id="textBg"></canvas>
 
     <header>
         <h1 class="main-title">TurkeyKai的骊珠洞天</h1>
@@ -207,6 +230,78 @@
             <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
         </div>
     </div>
+
+    <script>
+        const canvas = document.getElementById('textBg');
+        const ctx = canvas.getContext('2d');
+
+        // 设置画布大小为全屏
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // --- 自定义设置区 ---
+        // 你可以在这里修改你想显示的文字
+        const words = [
+            '焦虑', 'Anxiety', '忧伤', 'Sadness', 'Lost', '迷茫', 
+            'Why', '为什么', 'Alone', '孤独', '思绪', 'Drifting',
+            '。。。', 'Wait', '烤肉焦了', 'TurkeyKai'
+        ];
+        // 文字颜色 (淡淡的蓝紫色)
+        const textColor = '#8a9ebb'; 
+        // 字体大小
+        const fontSize = 14;
+        // 下落速度控制 (越大越快)
+        const speedFactor = 0.9; 
+        // --------------------
+
+        // 计算列数
+        let columns = Math.floor(canvas.width / fontSize);
+        // 记录每列文字当前的 Y 坐标位置，初始都在屏幕上方
+        let drops = [];
+        for (let i = 0; i < columns; i++) {
+            drops[i] = Math.random() * -100; // 随机初始高度，错落感
+        }
+
+        function draw() {
+            // 关键：用半透明黑色覆盖上一帧，形成拖尾效果
+            // 透明度越低(0.05)，拖尾越长；透明度越高(0.2)，拖尾越短
+            ctx.fillStyle = 'rgba(5, 5, 8, 0.08)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            ctx.fillStyle = textColor;
+            ctx.font = fontSize + 'px monospace'; // 使用等宽字体，更有代码感
+
+            // 遍历每一列
+            for (let i = 0; i < drops.length; i++) {
+                // 随机取一个词
+                const text = words[Math.floor(Math.random() * words.length)];
+                // 计算绘制坐标
+                const x = i * fontSize;
+                const y = drops[i] * fontSize;
+
+                // 绘制文字
+                ctx.fillText(text, x, y);
+
+                // 如果文字超出屏幕底部，大概率重置到顶部
+                // Math.random() > 0.985 让不同列重置时间随机，形成错落感
+                if (y > canvas.height && Math.random() > 0.985) {
+                    drops[i] = 0;
+                }
+
+                // 增加 Y 坐标，让文字下落
+                drops[i] += speedFactor;
+            }
+            // 循环调用动画
+            requestAnimationFrame(draw);
+        }
+
+        // 开始动画
+        draw();
+    </script>
 
 </body>
 </html>
