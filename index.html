@@ -34,11 +34,9 @@
             margin-bottom: 15px; 
             font-weight: 800;
             letter-spacing: 2px;
-            /* 银色流光渐变文字 */
             background: linear-gradient(to right, #fff, #b3b3b3);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            /* 发光效果 */
             filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
         }
         
@@ -127,20 +125,54 @@
         .caption h3 { margin: 0 0 5px 0; font-size: 1.2em; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
         .caption p { margin: 0; font-size: 0.9em; color: #ddd; }
 
-        /* 留言区 */
-        .comments-container {
-            max-width: 800px;
+        /* --- 留言区 (微博风格卡片化) --- */
+        .comments-section {
+            max-width: 900px; /* 加宽，更有社区感 */
             margin: 0 auto 60px;
-            background: rgba(20, 20, 20, 0.6); 
-            backdrop-filter: blur(10px);
-            padding: 45px;
-            border-radius: 24px;
             text-align: left;
-            box-shadow: 0 15px 50px rgba(0,0,0,0.5);
-            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* 模拟“评论区”标题栏 */
+        .comments-header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px 25px;
+            border-radius: 16px 16px 0 0; /* 上方圆角 */
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
         }
         
-        #cusdis_thread iframe { color-scheme: dark; }
+        .comments-title {
+            color: #fff;
+            font-size: 1.2em;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        
+        .comments-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 18px;
+            background: #00b894; /* 绿色竖条装饰 */
+            margin-right: 10px;
+            border-radius: 2px;
+        }
+
+        /* 评论内容容器 */
+        .comments-body {
+            background: rgba(30, 30, 30, 0.8); /* 深色底 */
+            padding: 30px;
+            border-radius: 0 0 16px 16px; /* 下方圆角 */
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.05);
+            min-height: 200px;
+        }
+        
+        /* 强制 iframe 内部深色适配 */
+        #cusdis_thread iframe { color-scheme: dark; width: 100%; }
     </style>
 </head>
 <body>
@@ -155,7 +187,6 @@
     </header>
 
     <div class="gallery-grid">
-        
         <div class="photo-card">
             <img src="image/1.jpg" alt="Photo 1">
             <div class="caption">
@@ -163,7 +194,6 @@
                 <p>U of T</p>
             </div>
         </div>
-
         <div class="photo-card">
             <img src="image/2.jpg" alt="Photo 2">
             <div class="caption">
@@ -171,7 +201,6 @@
                 <p>Toronto</p>
             </div>
         </div>
-
         <div class="photo-card">
             <img src="image/3.jpg" alt="Photo 3">
             <div class="caption">
@@ -179,7 +208,6 @@
                 <p>DJI Pocket 3</p>
             </div>
         </div>
-
         <div class="photo-card">
             <img src="image/4.jpg" alt="Photo 4">
             <div class="caption">
@@ -187,7 +215,6 @@
                 <p>Outdoor</p>
             </div>
         </div>
-
         <div class="photo-card">
             <img src="image/5.jpg" alt="Photo 5">
             <div class="caption">
@@ -195,54 +222,5 @@
                 <p>On the road</p>
             </div>
         </div>
-
         <div class="photo-card">
             <img src="image/6.jpg" alt="Photo 6">
-            <div class="caption">
-                <h3>Daily</h3>
-                <p>Life</p>
-            </div>
-        </div>
-
-        <div class="photo-card">
-            <img src="image/7.jpg" alt="Photo 7">
-            <div class="caption">
-                <h3>Gallery</h3>
-                <p>07</p>
-            </div>
-        </div>
-
-        <div class="photo-card">
-            <img src="image/8.jpg" alt="Photo 8">
-            <div class="caption">
-                <h3>Gallery</h3>
-                <p>08</p>
-            </div>
-        </div>
-
-        <div class="photo-card">
-            <img src="image/9.jpg" alt="Photo 9">
-            <div class="caption">
-                <h3>Contact</h3>
-                <p>WeChat</p>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="comments-container">
-        <h3 style="color:white; margin-bottom:30px; font-size: 1.6em; border-left: 5px solid #00b894; padding-left: 15px; letter-spacing: 1px;">留言互动</h3>
-        
-        <div id="cusdis_thread"
-            data-host="https://cusdis.com"
-            data-app-id="9f2f1f8e-31aa-4f57-bef1-2a43c6a50e90"
-            data-page-id="homepage"
-            data-page-url="https://turkeykai.github.io/"
-            data-page-title="TurkeyKai Home"
-            data-theme="dark">
-        </div>
-        <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-    </div>
-
-</body>
-</html>
