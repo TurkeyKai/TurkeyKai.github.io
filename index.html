@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TurkeyKai的骊珠洞天</title>
     <style>
-        /* --- 1. 全局设定 --- */
+        /* --- 样式部分保持不变 --- */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             background: radial-gradient(circle at top, #302b63, #0f0c29, #000000);
@@ -16,72 +16,35 @@
             min-height: 100vh;
             animation: fadeIn 1.2s ease-out;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
-        header {
-            padding: 70px 0 50px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
+        header { padding: 70px 0 50px; max-width: 800px; margin: 0 auto; }
         h1.main-title { 
-            font-size: 3.5em; 
-            margin-bottom: 15px; 
-            font-weight: 800;
-            letter-spacing: 2px;
+            font-size: 3.5em; margin-bottom: 15px; font-weight: 800; letter-spacing: 2px;
             background: linear-gradient(to right, #fff, #b3b3b3);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
         }
-        
-        p.subtitle { 
-            color: #8e9aaf; 
-            font-size: 1.1em; 
-            margin-bottom: 40px;
-            font-weight: 300;
-            letter-spacing: 1px;
-            opacity: 0.8;
-        }
-
-        /* 🎵 播放器 */
+        p.subtitle { color: #8e9aaf; font-size: 1.1em; margin-bottom: 40px; font-weight: 300; letter-spacing: 1px; opacity: 0.8; }
         .audio-player {
-            width: 90%;
-            max-width: 360px;
-            margin: 30px auto 0;
-            filter: invert(100%) contrast(0.8); 
-            opacity: 0.7;
-            border-radius: 99px; 
-            outline: none;
-            transition: opacity 0.3s ease;
+            width: 90%; max-width: 360px; margin: 30px auto 0;
+            filter: invert(100%) contrast(0.8); opacity: 0.7;
+            border-radius: 99px; outline: none; transition: opacity 0.3s ease;
         }
         .audio-player:hover { opacity: 1; }
-
-        /* --- 画廊布局 --- */
         .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            max-width: 1200px;
-            margin: 0 auto 80px auto;
-            padding: 0 15px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px; max-width: 1200px; margin: 0 auto 80px auto; padding: 0 15px;
         }
-
         .photo-card {
-            background: rgba(255, 255, 255, 0.03); 
-            border: 1px solid rgba(255, 255, 255, 0.08); 
-            border-radius: 16px;
-            overflow: hidden;
+            background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px; overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.4);
             transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-            cursor: pointer;
-            position: relative;
+            cursor: pointer; position: relative;
         }
-
         .photo-card:hover { 
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 25px 60px rgba(0,0,0,0.6);
@@ -89,95 +52,37 @@
             background: rgba(255, 255, 255, 0.08);
             z-index: 10;
         }
-
         .photo-card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            display: block;
+            width: 100%; height: 300px; object-fit: cover; display: block;
             transition: transform 0.6s ease, filter 0.5s ease;
         }
-        
-        .photo-card:hover img { 
-            filter: brightness(1.15);
-            transform: scale(1.05);
-        }
-
+        .photo-card:hover img { filter: brightness(1.15); transform: scale(1.05); }
         .caption {
-            padding: 20px;
-            text-align: left;
+            padding: 20px; text-align: left;
             background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%);
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            box-sizing: border-box;
-            opacity: 0; 
-            transform: translateY(10px);
-            transition: all 0.4s ease;
+            position: absolute; bottom: 0; width: 100%; box-sizing: border-box;
+            opacity: 0; transform: translateY(10px); transition: all 0.4s ease;
         }
-        
-        .photo-card:hover .caption {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
+        .photo-card:hover .caption { opacity: 1; transform: translateY(0); }
         .caption h3 { margin: 0 0 5px 0; font-size: 1.2em; color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.8); }
         .caption p { margin: 0; font-size: 0.9em; color: #ddd; }
-
-        /* --- 留言区 (IMAX 巨幕版) --- */
-        .comments-section {
-            max-width: 1100px; 
-            margin: 0 auto 80px;
-            text-align: left;
-        }
-
+        .comments-section { max-width: 1100px; margin: 0 auto 80px; text-align: left; }
         .comments-header {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px 35px;
-            border-radius: 20px 20px 0 0; 
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-            display: flex;
-            align-items: center;
+            background: rgba(255, 255, 255, 0.1); padding: 20px 35px;
+            border-radius: 20px 20px 0 0; border-bottom: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px); display: flex; align-items: center;
         }
-        
-        .comments-title {
-            color: #fff;
-            font-size: 1.4em;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-        }
-        
+        .comments-title { color: #fff; font-size: 1.4em; font-weight: bold; display: flex; align-items: center; }
         .comments-title::before {
-            content: '';
-            display: inline-block;
-            width: 6px;
-            height: 24px;
-            background: #00b894; 
-            margin-right: 15px;
-            border-radius: 3px;
+            content: ''; display: inline-block; width: 6px; height: 24px;
+            background: #00b894; margin-right: 15px; border-radius: 3px;
         }
-
-        /* 评论内容容器 */
         .comments-body {
-            background: rgba(30, 30, 30, 0.85); 
-            padding: 40px; 
-            border-radius: 0 0 20px 20px; 
-            box-shadow: 0 10px 50px rgba(0,0,0,0.4);
-            border: 1px solid rgba(255,255,255,0.05);
-            /* 这里不设高度，让它随内容撑开 */
+            background: rgba(30, 30, 30, 0.85); padding: 40px;
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.05);
         }
-        
-        /* 核心修改：给 iframe 加了一个超大的最小高度 (1000px)
-           这样它就会默认展开得很长，不会在里面出现滚动条
-        */
-        #cusdis_thread iframe { 
-            color-scheme: dark; 
-            width: 100%; 
-            min-height: 1000px !important; 
-            border: none;
-        }
+        #cusdis_thread iframe { color-scheme: dark; width: 100%; min-height: 1000px !important; border: none; }
     </style>
 </head>
 <body>
@@ -193,65 +98,71 @@
 
     <div class="gallery-grid">
         <div class="photo-card">
-            <img src="image/1.jpg" alt="Photo 1">
+            <img src="image/1.jpg" alt="小学合照">
             <div class="caption">
-                <h3>TurkeyKai</h3>
-                <p>U of T</p>
-            </div>
+                <h3>小学时光</h3> <p>无忧无虑的童年</p> </div>
         </div>
+        
         <div class="photo-card">
-            <img src="image/2.jpg" alt="Photo 2">
+            <img src="image/2.jpg" alt="初中合照">
             <div class="caption">
-                <h3>Campus Life</h3>
-                <p>Toronto</p>
+                <h3>初中岁月</h3>
+                <p>青春的开始</p>
             </div>
         </div>
+
         <div class="photo-card">
-            <img src="image/3.jpg" alt="Photo 3">
+            <img src="image/3.jpg" alt="高中合照">
             <div class="caption">
-                <h3>Videography</h3>
-                <p>DJI Pocket 3</p>
+                <h3>高中回忆</h3>
+                <p>最难忘的三年</p>
             </div>
         </div>
+
         <div class="photo-card">
             <img src="image/4.jpg" alt="Photo 4">
             <div class="caption">
-                <h3>Hobbies</h3>
+                <h3>我的爱好</h3>
                 <p>Outdoor</p>
             </div>
         </div>
+
         <div class="photo-card">
             <img src="image/5.jpg" alt="Photo 5">
             <div class="caption">
-                <h3>Travel</h3>
+                <h3>旅行记录</h3>
                 <p>On the road</p>
             </div>
         </div>
+
         <div class="photo-card">
             <img src="image/6.jpg" alt="Photo 6">
             <div class="caption">
-                <h3>Daily</h3>
+                <h3>生活碎片</h3>
                 <p>Life</p>
             </div>
         </div>
+
         <div class="photo-card">
             <img src="image/7.jpg" alt="Photo 7">
             <div class="caption">
-                <h3>Gallery</h3>
+                <h3>更多作品</h3>
                 <p>07</p>
             </div>
         </div>
+
         <div class="photo-card">
             <img src="image/8.jpg" alt="Photo 8">
             <div class="caption">
-                <h3>Gallery</h3>
+                <h3>更多作品</h3>
                 <p>08</p>
             </div>
         </div>
+
         <div class="photo-card">
             <img src="image/9.jpg" alt="Photo 9">
             <div class="caption">
-                <h3>Contact</h3>
+                <h3>联系我</h3>
                 <p>WeChat</p>
             </div>
         </div>
@@ -259,7 +170,7 @@
 
     <div class="comments-section">
         <div class="comments-header">
-            <div class="comments-title">评论互动区 / Comments</div>
+            <div class="comments-title">评论区 / Comments</div>
         </div>
         
         <div class="comments-body">
