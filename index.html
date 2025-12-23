@@ -8,7 +8,6 @@
         /* --- 全局设置 --- */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            /* 纯深色背景打底，让Canvas在上面绘制 */
             background-color: #050508; 
             color: #eee;
             margin: 0;
@@ -17,19 +16,12 @@
             min-height: 100vh;
             animation: fadeIn 1.2s ease-out;
             position: relative;
-            overflow-x: hidden; /* 防止滚动条闪烁 */
+            overflow-x: hidden;
         }
 
-        /* 背景 Canvas 样式 - 核心 */
         #textBg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            z-index: -1; /* 确保它在最底层 */
-            /* 如果觉得背景太亮喧宾夺主，可以把这个 opacity 调低，比如 0.3 */
-            opacity: 0.5; 
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1; opacity: 0.5; 
         }
 
         @keyframes fadeIn {
@@ -37,7 +29,6 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        /* 头部样式 */
         header { padding: 70px 0 50px; max-width: 800px; margin: 0 auto; position: relative; z-index: 2;}
         
         h1.main-title { 
@@ -56,13 +47,28 @@
         }
         .audio-player:hover { opacity: 1; }
         
-        /* --- 画廊样式 --- */
+        /* --- 画廊布局核心修改区 --- */
         .gallery-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px; max-width: 1200px; margin: 0 auto 80px auto; padding: 0 15px;
-            position: relative; z-index: 2;
+            display: grid; 
+            /* 电脑端：强制 3 列 */
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px; 
+            max-width: 1200px; 
+            margin: 0 auto 80px auto; 
+            padding: 0 15px;
+            position: relative; 
+            z-index: 2;
         }
-        /* 卡片样式 - 增加半透明背景和毛玻璃，确保文字背景不影响阅读 */
+
+        /* 移动端适配：屏幕小于 768px 时强制 1 列 */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            h1.main-title { font-size: 2.5em; } /* 手机上标题稍微小一点 */
+        }
+
+        /* 卡片样式 */
         .photo-card {
             background: rgba(40, 40, 45, 0.6); 
             border: 1px solid rgba(255, 255, 255, 0.08);
@@ -70,7 +76,7 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.4);
             transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
             cursor: pointer; position: relative;
-            backdrop-filter: blur(5px); /* 毛玻璃效果 */
+            backdrop-filter: blur(5px);
         }
         .photo-card:hover { 
             transform: translateY(-10px) scale(1.02);
@@ -97,7 +103,6 @@
         
         /* --- 评论区样式 --- */
         .comments-section { max-width: 1100px; margin: 0 auto 80px; text-align: left; position: relative; z-index: 2;}
-        
         .comments-header {
             background: rgba(40, 40, 45, 0.7);
             padding: 20px 35px;
@@ -109,15 +114,12 @@
             content: ''; display: inline-block; width: 6px; height: 24px;
             background: #00b894; margin-right: 15px; border-radius: 3px;
         }
-        
         .comments-body {
-            background: rgba(30, 30, 30, 0.9); /* 评论区背景深一点，保证可读性 */
+            background: rgba(30, 30, 30, 0.9);
             padding: 40px;
             border-radius: 0 0 20px 20px;
             box-shadow: 0 10px 50px rgba(0,0,0,0.4); border: 1px solid rgba(255,255,255,0.05);
         }
-
-        /* 美化版审核提示框 */
         .moderation-notice {
             background: rgba(0, 184, 148, 0.15);
             border-left: 4px solid #00b894;
@@ -128,21 +130,11 @@
             line-height: 1.6;
             color: #e0e0e0;
             display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            backdrop-filter: blur(5px);
+            align-items: flex-start; gap: 15px; backdrop-filter: blur(5px);
         }
         .notice-icon { font-size: 1.5em; line-height: 1; }
         .notice-content strong { color: #fff; display: block; margin-bottom: 5px; font-size: 1.05em; }
-        .notice-content span.en { 
-            display: block; 
-            margin-top: 5px; 
-            font-size: 0.85em; 
-            opacity: 0.7; 
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-        }
-
-        /* Cusdis iframe 样式 */
+        .notice-content span.en { display: block; margin-top: 5px; font-size: 0.85em; opacity: 0.7; }
         #cusdis_thread iframe { color-scheme: dark; width: 100%; min-height: 1000px !important; border: none; }
     </style>
 </head>
@@ -153,13 +145,13 @@
     <header>
         <h1 class="main-title">TurkeyKai的骊珠洞天</h1>
         <p class="subtitle">焦虑没什么不好的，就像烤肉焦焦的也很好吃</p>
-        
         <audio class="audio-player" controls autoplay loop>
             <source src="music.mp3" type="audio/mpeg">
         </audio>
     </header>
 
     <div class="gallery-grid">
+        
         <div class="photo-card">
             <img src="image/1.jpg" alt="小学合照">
             <div class="caption"> <h3>小学时光</h3> <p>无忧无虑的童年</p> </div>
@@ -172,22 +164,44 @@
             <img src="image/3.jpg" alt="高中合照">
             <div class="caption"> <h3>高中回忆</h3> <p>最难忘的三年</p> </div>
         </div>
+
         <div class="photo-card">
-            <img src="image/4.jpg" alt="Photo 4">
-            <div class="caption"> <h3>我的爱好</h3> <p>Outdoor</p> </div>
-        </div>
-        <div class="photo-card">
-            <img src="image/5.jpg" alt="Photo 5">
-            <div class="caption"> <h3>旅行记录</h3> <p>On the road</p> </div>
+            <img src="https://placehold.co/600x400/222/666?text=Coming+Soon" alt="待上传">
+            <div class="caption"> <h3>待上传</h3> <p>To Be Uploaded</p> </div>
         </div>
         <div class="photo-card">
-            <img src="image/6.jpg" alt="Photo 6">
-            <div class="caption"> <h3>生活碎片</h3> <p>Life</p> </div>
+            <img src="https://placehold.co/600x400/222/666?text=Coming+Soon" alt="待上传">
+            <div class="caption"> <h3>待上传</h3> <p>To Be Uploaded</p> </div>
         </div>
-         <div class="photo-card">
-            <img src="image/9.jpg" alt="Photo 9">
-            <div class="caption"> <h3>联系我</h3> <p>WeChat</p> </div>
+        <div class="photo-card">
+            <img src="https://placehold.co/600x400/222/666?text=Coming+Soon" alt="待上传">
+            <div class="caption"> <h3>待上传</h3> <p>To Be Uploaded</p> </div>
         </div>
+        <div class="photo-card">
+            <img src="https://placehold.co/600x400/222/666?text=Coming+Soon" alt="待上传">
+            <div class="caption"> <h3>待上传</h3> <p>To Be Uploaded</p> </div>
+        </div>
+        <div class="photo-card">
+            <img src="https://placehold.co/600x400/222/666?text=Coming+Soon" alt="待上传">
+            <div class="caption"> <h3>待上传</h3> <p>To Be Uploaded</p> </div>
+        </div>
+        <div class="photo-card">
+            <img src="https://placehold.co/600x400/222/666?text=Coming+Soon" alt="待上传">
+            <div class="caption"> <h3>待上传</h3> <p>To Be Uploaded</p> </div>
+        </div>
+        <div class="photo-card">
+            <img src="https://placehold.co/600x400/222/666?text=Coming+Soon" alt="待上传">
+            <div class="caption"> <h3>待上传</h3> <p>To Be Uploaded</p> </div>
+        </div>
+        <div class="photo-card">
+            <img src="https://placehold.co/600x400/222/666?text=Coming+Soon" alt="待上传">
+            <div class="caption"> <h3>待上传</h3> <p>To Be Uploaded</p> </div>
+        </div>
+        <div class="photo-card">
+            <img src="https://placehold.co/600x400/222/666?text=Coming+Soon" alt="待上传">
+            <div class="caption"> <h3>待上传</h3> <p>To Be Uploaded</p> </div>
+        </div>
+
     </div>
 
     <div class="comments-section">
@@ -196,7 +210,6 @@
         </div>
         
         <div class="comments-body">
-            
             <div class="moderation-notice">
                 <div class="notice-icon">📝</div>
                 <div class="notice-content">
@@ -205,7 +218,6 @@
                     <span class="en">Comments appear after moderation (ranging from seconds to days). Feel free to contact me to expedite the process!</span>
                 </div>
             </div>
-
             <div id="cusdis_thread"
                 data-host="https://cusdis.com"
                 data-app-id="9f2f1f8e-31aa-4f57-bef1-2a43c6a50e90"
@@ -229,8 +241,7 @@
         resizeCanvas();
         window.addEventListener('resize', resizeCanvas);
 
-        // --- 自定义设置区 (大学生限定版) ---
-        // 这里的词库已经替换为你需要的大学生/留学生常用词
+        // --- 大学生限定版词库 ---
         const words = [
             'DDL', 'Deadline', '赶Due', 'Essay', 'Report', 
             'GPA 4.0', 'Please', '求过', 'Pass', '不挂就行', 
@@ -245,13 +256,9 @@
             'TurkeyKai', '烤肉焦了'
         ];
         
-        // 颜色：淡淡的灰白色带透明度，像思绪一样飘过
         const textColor = 'rgba(220, 220, 220, 0.35)'; 
-        // 字体大小：稍微小一点，像弹幕
         const fontSize = 13;
-        // 速度：调慢一点，营造无力感 (0.5 - 1 之间调整)
         const speedFactor = 0.6; 
-        // --------------------
 
         let columns = Math.floor(canvas.width / fontSize);
         let drops = [];
@@ -260,31 +267,21 @@
         }
 
         function draw() {
-            // 背景刷新透明度。0.1 拖尾较短，0.05 拖尾较长，这里用0.1保持画面相对干净
             ctx.fillStyle = 'rgba(5, 5, 8, 0.1)';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-
             ctx.fillStyle = textColor;
             ctx.font = fontSize + 'px monospace';
-
             for (let i = 0; i < drops.length; i++) {
                 const text = words[Math.floor(Math.random() * words.length)];
                 const x = i * fontSize;
                 const y = drops[i] * fontSize;
-
                 ctx.fillText(text, x, y);
-
-                // 随机重置到顶部
-                if (y > canvas.height && Math.random() > 0.985) {
-                    drops[i] = 0;
-                }
-                // 下落
+                if (y > canvas.height && Math.random() > 0.985) { drops[i] = 0; }
                 drops[i] += speedFactor;
             }
             requestAnimationFrame(draw);
         }
         draw();
     </script>
-
 </body>
 </html>
