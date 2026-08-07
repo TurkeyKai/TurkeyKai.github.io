@@ -2,43 +2,34 @@
    Kai Teng Portfolio
    Multi Language System
    English / Chinese / French
+   Final Version 2026
 ================================================= */
-
 
 
 const translations = {
 
 
-
 en:{
-
 
 
 page_title:
 "Kai Teng | Portfolio",
 
 
-
 nav_home:
 "Home",
-
 
 nav_about:
 "About",
 
-
 nav_projects:
 "Projects",
-
 
 nav_gallery:
 "Gallery",
 
-
 nav_contact:
 "Contact",
-
-
 
 
 
@@ -46,31 +37,24 @@ hero_greeting:
 "Hello,",
 
 
-
 hero_name:
 "I'm Kai Teng",
-
 
 
 hero_subtitle:
 "Mathematics Major | Actuarial Science Major | Statistics Science Minor",
 
 
-
-
 hero_line1:
 "Mathematical modeling and quantitative analysis.",
-
 
 
 hero_line2:
 "Statistical methods and risk modeling.",
 
 
-
 hero_line3:
 "Data-driven problem solving.",
-
 
 
 download_resume:
@@ -85,8 +69,30 @@ about_title:
 
 
 
-about_text:
-"I am a Mathematics Major, Actuarial Science Major, and Statistics Science Minor student. My academic interests focus on mathematical modeling, probability theory, statistical analysis, and quantitative problem solving. Through coursework and projects, I explore how mathematical theories and statistical methods can be applied to financial modeling, risk analysis, and real-world decision making.",
+about_block1:
+`
+<p>
+I am a Mathematics and Actuarial Science student at the University of Toronto, with a minor in Statistics.
+</p>
+`,
+
+
+
+about_block2:
+`
+<p>
+My academic interests include quantitative research, statistical modeling, financial mathematics, probability theory, and risk analysis.
+</p>
+`,
+
+
+
+about_block3:
+`
+<p>
+Through coursework and projects, I explore how mathematical theories and statistical methods can be applied to financial modeling, data analysis, and real-world decision making.
+</p>
+`,
 
 
 
@@ -101,10 +107,8 @@ project1_title:
 "Quantitative Research",
 
 
-
 project1_text:
 "Developing quantitative models using mathematical methods, statistical techniques, and financial data analysis.",
-
 
 
 
@@ -112,10 +116,8 @@ project2_title:
 "Actuarial Risk Analysis",
 
 
-
 project2_text:
 "Applying probability theory, actuarial mathematics, and statistical modeling to analyze uncertainty and risk.",
-
 
 
 
@@ -123,10 +125,8 @@ project3_title:
 "Statistical Data Analysis",
 
 
-
 project3_text:
 "Using Python and statistical methods to extract insights from complex datasets and build data-driven solutions.",
-
 
 
 
@@ -137,14 +137,18 @@ gallery_title:
 
 
 
-
 contact_title:
 "Contact",
 
 
 
 contact_text:
-"Interested in mathematics, statistics, quantitative research, or actuarial applications? Feel free to connect with me.",
+"Interested in mathematics, statistics, quantitative research, or actuarial applications?",
+
+
+
+contact_subtext:
+"Feel free to connect with me.",
 
 
 
@@ -152,7 +156,6 @@ contact_text:
 
 footer:
 "© 2026 Kai Teng. All Rights Reserved."
-
 
 
 },
@@ -166,7 +169,6 @@ footer:
 zh:{
 
 
-
 page_title:
 "滕凯 | 个人主页",
 
@@ -175,18 +177,14 @@ page_title:
 nav_home:
 "主页",
 
-
 nav_about:
 "关于我",
-
 
 nav_projects:
 "项目",
 
-
 nav_gallery:
 "图库",
-
 
 nav_contact:
 "联系",
@@ -210,7 +208,6 @@ hero_subtitle:
 
 
 
-
 hero_line1:
 "数学建模与量化分析",
 
@@ -226,7 +223,6 @@ hero_line3:
 
 
 
-
 download_resume:
 "下载简历",
 
@@ -239,10 +235,30 @@ about_title:
 
 
 
+about_block1:
+`
+<p>
+我是一名就读于多伦多大学的数学与精算科学学生，同时辅修统计科学。
+</p>
+`,
 
-about_text:
-"我是一名数学专业、精算专业以及统计科学辅修学生。我的学习方向主要集中在数学建模、概率理论、统计分析以及量化问题解决。通过课程学习和项目实践，我探索如何将数学理论和统计方法应用于金融建模、风险分析以及现实决策问题。",
 
+
+about_block2:
+`
+<p>
+我的研究兴趣主要集中于量化研究、统计建模、金融数学、概率理论以及风险分析。
+</p>
+`,
+
+
+
+about_block3:
+`
+<p>
+通过课程学习和项目实践，我探索如何将数学理论和统计方法应用于金融建模、数据分析以及现实世界决策问题。
+</p>
+`,
 
 
 
@@ -253,17 +269,13 @@ projects_title:
 
 
 
-
 project1_title:
 "量化研究",
 
 
 
-
 project1_text:
 "利用数学方法、统计技术以及金融数据分析建立量化模型。",
-
-
 
 
 
@@ -274,7 +286,6 @@ project2_title:
 
 project2_text:
 "应用概率理论、精算数学以及统计模型分析不确定性和风险。",
-
 
 
 
@@ -290,10 +301,8 @@ project3_text:
 
 
 
-
 gallery_title:
 "图库",
-
 
 
 
@@ -303,14 +312,19 @@ contact_title:
 
 
 contact_text:
-"如果你对数学、统计、量化研究或精算应用感兴趣，欢迎与我交流。",
+"如果你对数学、统计、量化研究或精算应用感兴趣，",
+
+
+
+contact_subtext:
+"欢迎与我交流。",
+
 
 
 
 
 footer:
 "© 2026 滕凯 版权所有"
-
 
 
 },
@@ -324,7 +338,6 @@ footer:
 fr:{
 
 
-
 page_title:
 "Kai Teng | Portfolio",
 
@@ -333,18 +346,14 @@ page_title:
 nav_home:
 "Accueil",
 
-
 nav_about:
 "À propos",
-
 
 nav_projects:
 "Projets",
 
-
 nav_gallery:
 "Galerie",
-
 
 nav_contact:
 "Contact",
@@ -365,7 +374,6 @@ hero_name:
 
 hero_subtitle:
 "Mathématiques | Sciences actuarielles | Mineure en statistiques",
-
 
 
 
@@ -396,9 +404,30 @@ about_title:
 
 
 
+about_block1:
+`
+<p>
+Je suis étudiant en mathématiques et sciences actuarielles à l'Université de Toronto, avec une mineure en statistiques.
+</p>
+`,
 
-about_text:
-"Je suis étudiant en mathématiques, sciences actuarielles et statistiques. Mes intérêts académiques portent sur la modélisation mathématique, la théorie des probabilités, l'analyse statistique et la résolution quantitative de problèmes.",
+
+
+about_block2:
+`
+<p>
+Mes intérêts académiques comprennent la recherche quantitative, la modélisation statistique, les mathématiques financières, la théorie des probabilités et l'analyse des risques.
+</p>
+`,
+
+
+
+about_block3:
+`
+<p>
+À travers mes cours et mes projets, j'explore comment les théories mathématiques et les méthodes statistiques peuvent être appliquées à la modélisation financière, à l'analyse des données et à la prise de décision réelle.
+</p>
+`,
 
 
 
@@ -419,7 +448,6 @@ project1_text:
 
 
 
-
 project2_title:
 "Analyse des risques actuariels",
 
@@ -427,7 +455,6 @@ project2_title:
 
 project2_text:
 "Application des probabilités, des mathématiques actuarielles et des modèles statistiques pour analyser les risques.",
-
 
 
 
@@ -448,23 +475,25 @@ gallery_title:
 
 
 
-
-
 contact_title:
 "Contact",
 
 
 
-
 contact_text:
-"Intéressé par les mathématiques, les statistiques, la recherche quantitative ou les applications actuarielles ? Contactez-moi.",
+"Intéressé par les mathématiques, les statistiques, la recherche quantitative ou les applications actuarielles ?",
+
+
+
+contact_subtext:
+"N'hésitez pas à me contacter.",
+
 
 
 
 
 footer:
 "© 2026 Kai Teng. Tous droits réservés."
-
 
 
 }
@@ -485,15 +514,25 @@ function changeLanguage(lang){
 
 
 
-const elements = 
+const elements =
 document.querySelectorAll(
 "[data-i18n]"
 );
 
 
 
-elements.forEach(
-element=>{
+elements.forEach(element=>{
+
+
+const key =
+element.dataset.i18n;
+
+
+
+if(
+translations[lang] &&
+translations[lang][key]
+){
 
 
 element.classList.add(
@@ -505,25 +544,8 @@ element.classList.add(
 setTimeout(()=>{
 
 
-const key =
-element.dataset.i18n;
-
-
-
-if(
-translations[lang]
-&&
-translations[lang][key]
-){
-
-
-
 element.innerHTML =
 translations[lang][key];
-
-
-
-}
 
 
 
@@ -533,11 +555,43 @@ element.classList.remove(
 
 
 
-},250);
+},200);
+
+
+
+}
 
 
 
 });
+
+
+
+
+
+/* 更新 body 语言 */
+
+document.body.classList.remove(
+"lang-en",
+"lang-zh",
+"lang-fr"
+);
+
+
+
+document.body.classList.add(
+"lang-" + lang
+);
+
+
+
+
+
+/* 更新 html lang */
+
+document
+.documentElement
+.lang = lang;
 
 
 
@@ -560,13 +614,11 @@ lang
 
 
 
-
 document
 .querySelectorAll(
 "[data-lang]"
 )
-.forEach(
-button=>{
+.forEach(button=>{
 
 
 button.addEventListener(
@@ -583,12 +635,15 @@ document
 .querySelectorAll(
 "[data-lang]"
 )
-.forEach(
-btn=>
+.forEach(btn=>{
+
+
 btn.classList.remove(
 "active"
-)
 );
+
+
+});
 
 
 
@@ -603,6 +658,7 @@ changeLanguage(lang);
 
 
 });
+
 
 
 });
@@ -627,8 +683,6 @@ localStorage.getItem(
 changeLanguage(
 savedLanguage
 );
-
-
 
 
 
