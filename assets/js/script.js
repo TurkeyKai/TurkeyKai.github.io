@@ -1,54 +1,68 @@
-document.addEventListener(
-    "DOMContentLoaded",
-    () => {
+/* =================================================
+   Kai Teng Portfolio
+   Main Interaction System
+   Apple Style
+================================================= */
 
 
-/* ======================
-Page Loading Animation
-====================== */
+/* =================================================
+   Loading Animation
+================================================= */
 
 
-const loader =
-document.getElementById("loader");
+window.addEventListener("load",()=>{
 
 
-if(loader){
+    const loader=document.getElementById("loader");
 
 
-    window.addEventListener(
-        "load",
-        ()=>{
+    if(loader){
 
 
-            setTimeout(
-                ()=>{
+        loader.classList.add("hide");
 
 
-                    loader.style.opacity="0";
+        setTimeout(()=>{
+
+            loader.style.display="none";
+
+        },700);
 
 
-                    loader.style.transition=
-                    "opacity .6s ease";
+    }
 
 
-                    setTimeout(
-                        ()=>{
+});
 
 
-                            loader.style.display="none";
 
 
-                        },
-                        600
-                    );
+
+/* =================================================
+   Dark Mode System
+================================================= */
 
 
-                },
-                300
-            );
+const themeButton=document.getElementById("theme");
 
 
-        }
+
+function enableDarkMode(){
+
+
+    document.body.classList.add("dark");
+
+
+    if(themeButton){
+
+        themeButton.innerHTML="☀️";
+
+    }
+
+
+    localStorage.setItem(
+        "theme",
+        "dark"
     );
 
 
@@ -58,54 +72,297 @@ if(loader){
 
 
 
-/* ======================
-Mouse Follow Glow
-====================== */
+
+function disableDarkMode(){
 
 
-const glow =
-document.createElement("div");
+    document.body.classList.remove("dark");
 
 
-glow.className=
-"cursor-glow";
+    if(themeButton){
+
+        themeButton.innerHTML="🌙";
+
+    }
 
 
-document.body.appendChild(glow);
+    localStorage.setItem(
+        "theme",
+        "light"
+    );
+
+
+}
+
+
+
+
+
+
+function toggleDarkMode(event){
+
+
+    const isDark =
+    document.body.classList.contains("dark");
+
+
+
+    createThemeRipple(event);
+
+
+
+    if(isDark){
+
+        disableDarkMode();
+
+    }
+    else{
+
+        enableDarkMode();
+
+    }
+
+
+}
+
+
+
+
+
+
+if(themeButton){
+
+
+    themeButton.addEventListener(
+        "click",
+        toggleDarkMode
+    );
+
+
+}
+
+
+
+
+
+
+
+const savedTheme =
+localStorage.getItem("theme");
+
+
+
+if(savedTheme==="dark"){
+
+
+    enableDarkMode();
+
+
+}
+
+
+
+
+
+
+
+
+
+
+/* =================================================
+   Apple Theme Ripple Animation
+================================================= */
+
+
+function createThemeRipple(event){
+
+
+    const ripple=document.createElement("div");
+
+
+    ripple.className="theme-ripple";
+
+
+    ripple.style.left=
+    event.clientX+"px";
+
+
+    ripple.style.top=
+    event.clientY+"px";
+
+
+
+    document.body.appendChild(ripple);
+
+
+
+    setTimeout(()=>{
+
+
+        ripple.remove();
+
+
+    },1000);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =================================================
+   Hamburger Menu
+================================================= */
+
+
+const menuButton=
+document.getElementById(
+"menu-toggle"
+);
+
+
+
+const navLinks=
+document.getElementById(
+"nav-links"
+);
+
+
+
+
+
+
+function closeMenu(){
+
+
+    if(navLinks){
+
+
+        navLinks.classList.remove(
+            "active"
+        );
+
+
+    }
+
+
+
+    if(menuButton){
+
+
+        menuButton.classList.remove(
+            "open"
+        );
+
+
+        menuButton.innerHTML="☰";
+
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+
+    }
+
+
+}
+
+
+
+
+
+
+if(menuButton && navLinks){
+
+
+
+    menuButton.setAttribute(
+        "aria-expanded",
+        "false"
+    );
+
+
+
+    menuButton.addEventListener(
+    "click",
+    (event)=>{
+
+
+        event.stopPropagation();
+
+
+
+        const open =
+        navLinks.classList.toggle(
+            "active"
+        );
+
+
+
+        menuButton.classList.toggle(
+            "open",
+            open
+        );
+
+
+
+        menuButton.innerHTML =
+        open ? "✕" : "☰";
+
+
+
+        menuButton.setAttribute(
+            "aria-expanded",
+            open
+        );
+
+
+    });
+
+
+}
+
+
+
+
+
 
 
 
 document.addEventListener(
-"mousemove",
-(e)=>{
+"click",
+(event)=>{
 
 
-    glow.animate(
-        {
+    if(
+        navLinks &&
+        navLinks.classList.contains(
+            "active"
+        )
+    ){
 
 
-            left:
-            `${e.clientX-160}px`,
+        if(
+            !navLinks.contains(event.target)
+            &&
+            !menuButton.contains(event.target)
+        ){
 
 
-            top:
-            `${e.clientY-160}px`
-
-
-        },
-
-
-        {
-
-
-            duration:700,
-
-            fill:"forwards"
+            closeMenu();
 
 
         }
 
-    );
+
+    }
 
 
 });
@@ -116,12 +373,40 @@ document.addEventListener(
 
 
 
-/* ======================
-Scroll Reveal
-====================== */
+
+document.querySelectorAll(
+".nav-links a"
+)
+.forEach(link=>{
 
 
-const revealElements =
+    link.addEventListener(
+    "click",
+    ()=>{
+
+
+        closeMenu();
+
+
+    });
+
+
+});
+
+
+
+
+
+
+
+
+
+/* =================================================
+   Scroll Reveal
+================================================= */
+
+
+const revealElements=
 document.querySelectorAll(
 ".reveal"
 );
@@ -132,40 +417,34 @@ function reveal(){
 
 
     revealElements.forEach(
-        element=>{
+    element=>{
 
 
-            const position =
-            element.getBoundingClientRect()
-            .top;
-
-
-
-            const windowHeight =
-            window.innerHeight;
+        const position =
+        element.getBoundingClientRect()
+        .top;
 
 
 
-            if(
-                position <
-                windowHeight - 120
-            ){
+        if(
+            position <
+            window.innerHeight-120
+        ){
 
 
-                element.classList.add(
-                    "active"
-                );
-
-
-            }
-
+            element.classList.add(
+                "active"
+            );
 
 
         }
-    );
+
+
+    });
 
 
 }
+
 
 
 
@@ -183,120 +462,61 @@ reveal();
 
 
 
-/* ======================
-Smooth Navigation
-====================== */
-
-
-const links =
-document.querySelectorAll(
-"nav a"
-);
 
 
 
-links.forEach(
-link=>{
+/* =================================================
+   Mouse Glow
+================================================= */
 
 
-    link.addEventListener(
-        "click",
-        (e)=>{
-
-
-            const target =
-            document.querySelector(
-                link.getAttribute("href")
-            );
+let glow;
 
 
 
-            if(target){
-
-
-                e.preventDefault();
+if(window.innerWidth>768){
 
 
 
-                target.scrollIntoView(
-                    {
+    glow=document.createElement(
+        "div"
+    );
 
 
-                        behavior:"smooth"
+
+    glow.className=
+    "cursor-glow";
 
 
-                    }
-                );
+
+    document.body.appendChild(
+        glow
+    );
 
 
-            }
 
+
+
+    document.addEventListener(
+    "mousemove",
+    (event)=>{
+
+
+        if(glow){
+
+
+            glow.style.left =
+            event.clientX-160+"px";
+
+
+            glow.style.top =
+            event.clientY-160+"px";
 
 
         }
-    );
 
 
-});
-
-
-
-
-
-
-
-/* ======================
-Dark Mode
-====================== */
-
-
-const themeButton =
-document.getElementById(
-"theme"
-);
-
-
-
-if(themeButton){
-
-
-themeButton.addEventListener(
-"click",
-()=>{
-
-
-    document.body
-    .classList.toggle(
-        "dark"
-    );
-
-
-
-    const dark =
-    document.body
-    .classList.contains(
-        "dark"
-    );
-
-
-
-    localStorage.setItem(
-        "darkMode",
-        dark
-    );
-
-
-
-    themeButton.innerHTML =
-    dark
-    ?
-    "☀️"
-    :
-    "🌙";
-
-
-
-});
+    });
 
 
 }
@@ -306,180 +526,119 @@ themeButton.addEventListener(
 
 
 
-/* Load saved theme */
 
 
-const savedTheme =
-localStorage.getItem(
-"darkMode"
+
+/* =================================================
+   Language Animation Support
+================================================= */
+
+
+const languageStyle=
+document.createElement(
+"style"
 );
 
 
 
-if(savedTheme==="true"){
+languageStyle.innerHTML=`
+
+.language-changing{
+
+opacity:0;
+
+transform:
+translateY(10px);
+
+transition:
+all .25s cubic-bezier(.22,1,.36,1);
+
+}
 
 
-    document.body
-    .classList.add(
-        "dark"
-    );
+#loader.hide{
+
+opacity:0;
+
+transition:
+opacity .6s ease;
+
+}
 
 
-    if(themeButton){
 
-        themeButton.innerHTML="☀️";
+.theme-ripple{
 
-    }
+
+position:fixed;
+
+width:500px;
+
+height:500px;
+
+border-radius:50%;
+
+
+background:
+
+radial-gradient(
+circle,
+rgba(255,255,255,.35),
+transparent 70%
+);
+
+
+transform:
+translate(-50%,-50%)
+scale(0);
+
+
+animation:
+
+themeExpand 1s ease forwards;
+
+
+pointer-events:none;
+
+z-index:9999;
 
 }
 
 
 
 
+@keyframes themeExpand{
 
 
+from{
+
+transform:
+translate(-50%,-50%)
+scale(0);
+
+opacity:1;
+
+}
 
 
-/* ======================
-Card 3D Tilt Effect
-====================== */
+to{
+
+transform:
+translate(-50%,-50%)
+scale(2);
+
+opacity:0;
+
+}
 
 
-const cards =
-document.querySelectorAll(
-".card"
-);
+}
 
 
-
-cards.forEach(
-card=>{
-
-
-card.addEventListener(
-"mousemove",
-(e)=>{
-
-
-const rect =
-card.getBoundingClientRect();
-
-
-
-const x =
-e.clientX -
-rect.left;
-
-
-
-const y =
-e.clientY -
-rect.top;
-
-
-
-const rotateX =
-(
-y -
-rect.height/2
-)
-/
-15;
-
-
-
-const rotateY =
-(
-rect.width/2 -
-x
-)
-/
-15;
-
-
-
-card.style.transform =
-`
-perspective(800px)
-rotateX(${rotateX}deg)
-rotateY(${rotateY}deg)
-translateY(-10px)
 `;
 
 
 
-});
-
-
-
-
-card.addEventListener(
-"mouseleave",
-()=>{
-
-
-card.style.transform="";
-
-
-});
-
-
-
-});
-
-
-
-
-
-
-
-/* ======================
-Image Lazy Animation
-====================== */
-
-
-const images =
-document.querySelectorAll(
-".photo-card img"
+document.head.appendChild(
+languageStyle
 );
-
-
-
-images.forEach(
-img=>{
-
-
-img.style.opacity="0";
-
-
-img.style.transform=
-"scale(.95)";
-
-
-img.style.transition=
-"all .8s ease";
-
-
-
-img.onload=
-()=>{
-
-
-img.style.opacity="1";
-
-
-img.style.transform=
-"scale(1)";
-
-
-};
-
-
-
-});
-
-
-
-
-
-});
