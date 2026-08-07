@@ -1,4 +1,4 @@
-、<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en">
 
@@ -19,8 +19,8 @@
 <link rel="stylesheet" href="assets/css/style.css">
 
 
-
 </head>
+
 
 
 
@@ -28,14 +28,15 @@
 
 
 
-<!-- Loading Screen -->
+<!-- Loading Animation -->
 
 
 <div id="loader">
 
-<div></div>
+    <div></div>
 
 </div>
+
 
 
 
@@ -53,33 +54,100 @@ Kai
 
 
 
-<div>
+
+<button 
+class="menu-toggle"
+id="menu-toggle">
+
+☰
+
+</button>
+
+
+
+
+
+
+<div 
+class="nav-links"
+id="nav-links">
+
 
 
 <a href="#home">
+
 Home
+
 </a>
+
 
 
 <a href="#about">
+
 About
+
 </a>
+
 
 
 <a href="#projects">
+
 Projects
+
 </a>
 
 
+
 <a href="#gallery">
+
 Gallery
+
 </a>
 
 
 
 <a href="#contact">
+
 Contact
+
 </a>
+
+
+
+
+
+
+
+<div class="language-switcher">
+
+
+<button class="active">
+
+EN
+
+</button>
+
+
+<button>
+
+中
+
+</button>
+
+
+<button>
+
+FR
+
+</button>
+
+
+</div>
+
+
+
+
+
 
 
 <button id="theme">
@@ -87,6 +155,8 @@ Contact
 🌙
 
 </button>
+
+
 
 
 </div>
@@ -102,7 +172,8 @@ Contact
 
 
 
-<!-- Hero -->
+
+<!-- Hero Section -->
 
 
 <section 
@@ -110,37 +181,77 @@ class="hero reveal"
 id="home">
 
 
+
+
+
 <div class="hero-text">
+
+
+
+
 
 
 <h1>
 
+
+<span>
+
 Hello,
 
+</span>
+
+
+
+<span>
+
 I'm Kai Teng
+
+</span>
+
+
 
 </h1>
 
 
 
-<p>
+
+
+
+
+
+<p class="hero-subtitle">
+
 
 Mathematics Major | Actuarial Science Major | Statistics Science Minor
 
+
 </p>
+
+
+
+
+
 
 
 <p>
 
-Building models.
+
+Mathematical modeling.
+
 <br>
 
-Analyzing markets.
+
+Statistical analysis.
+
 <br>
 
-Creating impact.
+
+Data-driven problem solving.
+
 
 </p>
+
+
 
 
 
@@ -150,14 +261,20 @@ Creating impact.
 <div class="buttons">
 
 
+
 <a 
 href="resume.pdf"
 download
 class="resume-btn">
 
+
 Download Resume
 
+
 </a>
+
+
+
 
 
 
@@ -177,8 +294,8 @@ GitHub
 
 
 
-
 </div>
+
 
 
 
@@ -189,37 +306,55 @@ GitHub
 <div class="social">
 
 
-<a href="https://github.com/"
+
+<a 
+href="https://github.com/"
 target="_blank">
+
 
 GitHub
 
+
 </a>
 
 
-<a href="https://linkedin.com/"
+
+
+<a 
+href="https://linkedin.com/"
 target="_blank">
+
 
 LinkedIn
 
+
 </a>
 
 
-<a href="mailto:your-email@example.com">
+
+
+<a 
+href="mailto:your-email@example.com">
+
 
 Email
 
+
 </a>
 
 
 
+
+</div>
+
+
+
+
+
 </div>
 
 
 
-
-
-</div>
 
 
 
@@ -231,11 +366,10 @@ src="assets/images/profile.jpg"
 
 class="profile"
 
-alt="Profile"
-
-
+alt="Kai Teng"
 
 >
+
 
 
 
@@ -249,7 +383,10 @@ alt="Profile"
 
 
 
-<!-- About -->
+
+
+
+<!-- About Section -->
 
 
 <section 
@@ -257,21 +394,27 @@ id="about"
 class="reveal">
 
 
+
 <h2>
+
 
 About Me
 
+
 </h2>
+
+
 
 
 <p>
 
 
-I am a mathematics and actuarial science student interested in quantitative research,
-financial modelling and data-driven decision making.
+I am a Mathematics Major, Actuarial Science Major, and Statistics Science Minor student interested in mathematical modeling, statistical analysis, and data-driven problem solving.
 
 
 </p>
+
+
 
 
 </section>
@@ -284,19 +427,23 @@ financial modelling and data-driven decision making.
 
 
 
-<!-- Projects -->
+<!-- Projects Section -->
 
 
-<section
+<section 
 id="projects"
 class="reveal">
 
 
+
 <h2>
+
 
 Projects
 
+
 </h2>
+
 
 
 
@@ -305,23 +452,32 @@ Projects
 
 
 
+
+
+
+
 <div class="card">
 
 
 <h3>
 
-Quant Research
+
+Mathematical Modeling
+
 
 </h3>
 
 
+
+
 <p>
 
-Factor modelling,
-backtesting,
-and financial data analysis.
+
+Developing mathematical models and analyzing complex datasets using statistical methods.
+
 
 </p>
+
 
 
 </div>
@@ -329,25 +485,39 @@ and financial data analysis.
 
 
 
+
+
+
+
+
 <div class="card">
 
 
 <h3>
+
 
 Machine Learning
 
+
 </h3>
+
+
 
 
 <p>
 
-Building predictive models
-with Python and statistics.
+
+Building predictive models with Python, statistics, and data analysis techniques.
+
 
 </p>
 
 
+
 </div>
+
+
+
 
 
 
@@ -359,26 +529,37 @@ with Python and statistics.
 
 <h3>
 
+
 Actuarial Analytics
+
 
 </h3>
 
 
+
+
 <p>
 
-Risk modelling,
-probability,
-and statistical methods.
+
+Applying probability, statistics, and risk modeling methods to solve practical problems.
+
 
 </p>
 
 
+
+</div>
+
+
+
+
+
+
+
+
 </div>
 
 
-
-
-</div>
 
 
 </section>
@@ -391,19 +572,24 @@ and statistical methods.
 
 
 
-<!-- Gallery -->
+<!-- Gallery Section -->
 
 
-<section
+<section 
 id="gallery"
 class="reveal">
 
 
+
 <h2>
+
 
 Gallery
 
+
 </h2>
+
+
 
 
 
@@ -411,20 +597,14 @@ Gallery
 
 
 
-<div class="photo-card">
-
-
-<img src="assets/images/gallery/1.jpg">
-
-
-</div>
-
 
 
 <div class="photo-card">
 
 
-<img src="assets/images/gallery/2.jpg">
+<img 
+src="assets/images/gallery/1.jpg"
+alt="gallery image">
 
 
 </div>
@@ -432,13 +612,34 @@ Gallery
 
 
 
+
+
 <div class="photo-card">
 
 
-<img src="assets/images/gallery/3.jpg">
+<img 
+src="assets/images/gallery/2.jpg"
+alt="gallery image">
 
 
 </div>
+
+
+
+
+
+
+<div class="photo-card">
+
+
+<img 
+src="assets/images/gallery/3.jpg"
+alt="gallery image">
+
+
+</div>
+
+
 
 
 
@@ -457,57 +658,84 @@ Gallery
 
 
 
-<!-- Contact -->
+<!-- Contact Section -->
 
 
-<section
+<section 
 id="contact"
 class="reveal">
 
 
+
 <h2>
 
+
 Contact
+
 
 </h2>
 
 
 
+
+
 <p>
+
 
 Feel free to connect with me.
 
+
 </p>
+
+
+
 
 
 
 <div class="social">
 
 
-<a href="https://github.com/"
+
+<a 
+href="https://github.com/"
 target="_blank">
+
 
 GitHub
 
+
 </a>
 
 
 
-<a href="https://linkedin.com/"
+
+
+
+<a 
+href="https://linkedin.com/"
 target="_blank">
+
 
 LinkedIn
 
+
 </a>
 
 
 
 
-<a href="mailto:your-email@example.com">
+
+
+<a 
+href="mailto:your-email@example.com">
+
 
 Email
 
+
 </a>
+
+
 
 
 
@@ -528,12 +756,15 @@ Email
 <footer>
 
 
+
 <p>
 
-© 2026 Kai Teng.
-All Rights Reserved.
+
+© 2026 Kai Teng. All Rights Reserved.
+
 
 </p>
+
 
 
 </footer>
@@ -545,11 +776,16 @@ All Rights Reserved.
 
 
 
+
+<script src="assets/js/language.js"></script>
+
+
 <script src="assets/js/script.js"></script>
 
 
 
 </body>
+
 
 
 </html>
