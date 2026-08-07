@@ -1,11 +1,13 @@
-<!DOCTYPE html>
+、<!DOCTYPE html>
 
 <html lang="en">
 
 
 <head>
 
+
 <meta charset="UTF-8">
+
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -13,24 +15,40 @@
 <title>Kai Teng | Portfolio</title>
 
 
+
 <link rel="stylesheet" href="assets/css/style.css">
 
 
-<script src="assets/js/script.js" defer></script>
-
 
 </head>
+
 
 
 <body>
 
 
 
+<!-- Loading Screen -->
+
+
+<div id="loader">
+
+<div></div>
+
+</div>
+
+
+
+
+
+<!-- Navigation -->
+
+
 <nav>
 
 
 <h2>
-Kai Teng
+Kai
 </h2>
 
 
@@ -38,32 +56,41 @@ Kai Teng
 <div>
 
 
-<a href="index.html">
+<a href="#home">
 Home
 </a>
 
 
-<a href="about.html">
+<a href="#about">
 About
 </a>
 
 
-<a href="projects.html">
+<a href="#projects">
 Projects
 </a>
 
 
-<a href="gallery.html">
+<a href="#gallery">
 Gallery
 </a>
 
 
-<a href="resume.html">
-Resume
+
+<a href="#contact">
+Contact
 </a>
 
 
+<button id="theme">
+
+🌙
+
+</button>
+
+
 </div>
+
 
 
 </nav>
@@ -74,30 +101,47 @@ Resume
 
 
 
-<header class="hero">
+
+<!-- Hero -->
+
+
+<section 
+class="hero reveal"
+id="home">
 
 
 <div class="hero-text">
 
 
 <h1>
-Kai Teng
+
+Hello,
+I'm Kai Teng
+
 </h1>
-
-
-
-<h3>
-Mathematics | Actuarial Science | Statistics Science
-</h3>
 
 
 
 <p>
 
-University of Toronto 
-student interested in quantitative research, financial modeling, statistics and machine learning.
+Mathematics • Actuarial Science • Quant Research
 
 </p>
+
+
+<p>
+
+Building models.
+<br>
+
+Analyzing markets.
+<br>
+
+Creating impact.
+
+</p>
+
+
 
 
 
@@ -105,32 +149,73 @@ student interested in quantitative research, financial modeling, statistics and 
 <div class="buttons">
 
 
-<a href="projects.html">
+<a 
+href="resume.pdf"
+download
+class="resume-btn">
+
+Download Resume
+
+</a>
+
+
+
+<a 
+href="https://github.com/"
+target="_blank">
+
 
 <button>
 
-View Projects
+GitHub
 
 </button>
+
 
 </a>
 
 
 
 
-<a href="resume.html">
+</div>
 
-<button class="outline">
 
-View Resume
 
-</button>
+
+
+
+
+<div class="social">
+
+
+<a href="https://github.com/"
+target="_blank">
+
+GitHub
+
+</a>
+
+
+<a href="https://linkedin.com/"
+target="_blank">
+
+LinkedIn
+
+</a>
+
+
+<a href="mailto:your-email@example.com">
+
+Email
 
 </a>
 
 
 
 </div>
+
+
+
 
 
 </div>
@@ -141,17 +226,19 @@ View Resume
 
 <img
 
-src="assets/images/profile.JPG"
+src="assets/images/profile.jpg"
 
 class="profile"
 
-alt="Kai Teng profile photo"
+alt="Profile"
+
+
 
 >
 
 
 
-</header>
+</section>
 
 
 
@@ -161,20 +248,27 @@ alt="Kai Teng profile photo"
 
 
 
-<section>
+<!-- About -->
+
+
+<section 
+id="about"
+class="reveal">
 
 
 <h2>
-About Me
-</h2>
 
+About Me
+
+</h2>
 
 
 <p>
 
-I study Mathematics and Actuarial Science.
-My interests include quantitative finance,
-statistical modeling, programming and computational research.
+
+I am a mathematics and actuarial science student interested in quantitative research,
+financial modelling and data-driven decision making.
+
 
 </p>
 
@@ -189,11 +283,18 @@ statistical modeling, programming and computational research.
 
 
 
-<section>
+<!-- Projects -->
+
+
+<section
+id="projects"
+class="reveal">
 
 
 <h2>
-Research & Projects
+
+Projects
+
 </h2>
 
 
@@ -203,20 +304,20 @@ Research & Projects
 
 
 
-
-
 <div class="card">
 
 
 <h3>
-Quantitative Research
+
+Quant Research
+
 </h3>
 
 
 <p>
 
-Factor models,
-backtesting strategies
+Factor modelling,
+backtesting,
 and financial data analysis.
 
 </p>
@@ -227,22 +328,20 @@ and financial data analysis.
 
 
 
-
-
-
 <div class="card">
 
 
 <h3>
-Data Science
+
+Machine Learning
+
 </h3>
 
 
 <p>
 
-Python programming,
-statistics,
-machine learning and visualization.
+Building predictive models
+with Python and statistics.
 
 </p>
 
@@ -254,26 +353,26 @@ machine learning and visualization.
 
 
 
-
 <div class="card">
 
 
 <h3>
-Actuarial Science
+
+Actuarial Analytics
+
 </h3>
 
 
 <p>
 
-Probability,
-risk modeling
-and financial mathematics.
+Risk modelling,
+probability,
+and statistical methods.
 
 </p>
 
 
 </div>
-
 
 
 
@@ -291,64 +390,123 @@ and financial mathematics.
 
 
 
-<section>
+<!-- Gallery -->
+
+
+<section
+id="gallery"
+class="reveal">
 
 
 <h2>
-Contact
+
+Gallery
+
 </h2>
 
 
 
+<div class="gallery">
 
-<div class="card">
+
+
+<div class="photo-card">
+
+
+<img src="assets/images/gallery/1.jpg">
+
+
+</div>
+
+
+
+<div class="photo-card">
+
+
+<img src="assets/images/gallery/2.jpg">
+
+
+</div>
+
+
+
+
+<div class="photo-card">
+
+
+<img src="assets/images/gallery/3.jpg">
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+<!-- Contact -->
+
+
+<section
+id="contact"
+class="reveal">
+
+
+<h2>
+
+Contact
+
+</h2>
+
 
 
 <p>
 
-Email:
-
-<a href="mailto:tkdale2006@gmail.com">
-
-tkdale2006@gmail.com
-</a>
-
+Feel free to connect with me.
 
 </p>
 
 
 
+<div class="social">
 
 
-<p>
+<a href="https://github.com/"
+target="_blank">
 
-GitHub:
-
-<a href="https://github.com/TurkeyKai">
-
-github.com/TurkeyKai
+GitHub
 
 </a>
 
 
-</p>
 
+<a href="https://linkedin.com/"
+target="_blank">
 
-
-
-
-<p>
-
-LinkedIn:
-
-<a href="#">
-
-Coming Soon
+LinkedIn
 
 </a>
 
 
-</p>
+
+
+<a href="mailto:your-email@example.com">
+
+Email
+
+</a>
 
 
 
@@ -371,7 +529,8 @@ Coming Soon
 
 <p>
 
-© 2026 Kai Teng
+© 2026 Kai Teng.
+All Rights Reserved.
 
 </p>
 
@@ -379,6 +538,13 @@ Coming Soon
 </footer>
 
 
+
+
+
+
+
+
+<script src="assets/js/script.js"></script>
 
 
 
