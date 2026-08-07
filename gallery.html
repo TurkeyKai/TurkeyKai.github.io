@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+
 <html lang="en">
 
 
@@ -12,13 +13,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>Gallery | Kai Teng</title>
+
+<title>
+
+Gallery | Kai Teng
+
+</title>
 
 
-<link rel="stylesheet" href="assets/css/style.css">
+
+
+
+<link rel="stylesheet"
+
+href="assets/css/style.css">
+
 
 
 </head>
+
+
 
 
 
@@ -28,45 +42,124 @@
 
 
 
+
+
+
+<!-- Navigation -->
+
+
 <nav>
 
 
-<h2>
+
+<h2 class="logo">
+
 Kai Teng
+
 </h2>
 
 
 
-<div>
+
+
+
+<button
+
+class="menu-toggle"
+
+id="menu-toggle">
+
+☰
+
+</button>
+
+
+
+
+
+
+
+
+
+<div class="nav-links">
+
 
 
 <a href="index.html">
+
 Home
+
 </a>
+
+
 
 
 
 <a href="about.html">
+
 About
+
 </a>
+
+
 
 
 
 <a href="projects.html">
+
 Projects
+
 </a>
 
 
 
-<a href="gallery.html">
+
+
+<a href="gallery.html"
+
+class="active">
+
 Gallery
+
 </a>
+
+
 
 
 
 <a href="resume.html">
+
 Resume
+
 </a>
+
+
+
+
+
+<a href="contact.html">
+
+Contact
+
+</a>
+
+
+
+
+
+
+
+<button
+
+class="theme-button"
+
+id="theme">
+
+🌙
+
+</button>
+
+
 
 
 
@@ -83,20 +176,39 @@ Resume
 
 
 
-<header class="page-header">
+<section class="section reveal">
 
 
-<h1>
+
+
+
+<h1 class="page-title">
+
 Gallery
+
 </h1>
 
 
-<p>
-Campus Life | Research | Projects
+
+
+
+
+
+<p class="section-intro">
+
+
+A visual collection of academic experiences, research projects, and personal moments.
+
+
 </p>
 
 
-</header>
+
+
+
+
+
+</section>
 
 
 
@@ -106,12 +218,136 @@ Campus Life | Research | Projects
 
 
 
-<section>
+
+
+
+
+<!-- Academic Gallery -->
+
+
+
+<section class="section reveal">
+
+
+
 
 
 <h2>
-Photos
+
+Academic Life
+
 </h2>
+
+
+
+
+
+
+
+
+<div class="gallery">
+
+
+
+
+
+
+<div class="photo-card">
+
+
+<img
+
+src="assets/images/gallery/academic1.jpg"
+
+alt="University Life">
+
+
+</div>
+
+
+
+
+
+
+
+<div class="photo-card">
+
+
+<img
+
+src="assets/images/gallery/academic2.jpg"
+
+alt="Study">
+
+
+</div>
+
+
+
+
+
+
+
+<div class="photo-card">
+
+
+<img
+
+src="assets/images/gallery/academic3.jpg"
+
+alt="Campus">
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Research Gallery -->
+
+
+
+<section class="section reveal">
+
+
+
+
+
+<h2>
+
+Quantitative Research
+
+</h2>
+
+
+
+
 
 
 
@@ -125,28 +361,14 @@ Photos
 <div class="photo-card">
 
 
-<img 
-src="assets/images/profile.JPG"
-alt="Kai Teng profile photo"
->
+<img
 
+src="assets/images/gallery/research1.jpg"
 
-
-<h3>
-Profile
-</h3>
-
-
-<p>
-
-Personal introduction photo
-
-</p>
+alt="Quant Research">
 
 
 </div>
-
-
 
 
 
@@ -157,28 +379,14 @@ Personal introduction photo
 <div class="photo-card">
 
 
-<img 
-src="assets/images/project1.jpg"
-alt="Quantitative research project"
->
+<img
 
+src="assets/images/gallery/research2.jpg"
 
-
-<h3>
-Research Project
-</h3>
-
-
-<p>
-
-Quantitative analysis and financial research
-
-</p>
+alt="Data Analysis">
 
 
 </div>
-
-
 
 
 
@@ -189,23 +397,11 @@ Quantitative analysis and financial research
 <div class="photo-card">
 
 
-<img 
-src="assets/images/campus.jpg"
-alt="University campus life"
->
+<img
 
+src="assets/images/gallery/research3.jpg"
 
-
-<h3>
-University Life
-</h3>
-
-
-<p>
-
-Academic experience and campus moments
-
-</p>
+alt="Coding">
 
 
 </div>
@@ -215,7 +411,13 @@ Academic experience and campus moments
 
 
 
+
 </div>
+
+
+
+
+
 
 
 </section>
@@ -228,32 +430,168 @@ Academic experience and campus moments
 
 
 
-<section>
+
+
+
+
+
+<!-- Personal Gallery -->
+
+
+
+<section class="section reveal">
+
+
+
 
 
 <h2>
-Future Updates
+
+Personal Moments
+
 </h2>
 
 
 
 
-<div class="card">
 
 
-<p>
 
-More photos,
-project screenshots and academic experiences
-will be added here.
+<div class="gallery">
 
-</p>
+
+
+
+
+
+<div class="photo-card">
+
+
+<img
+
+src="assets/images/gallery/life1.jpg"
+
+alt="Life">
 
 
 </div>
 
 
+
+
+
+
+
+<div class="photo-card">
+
+
+<img
+
+src="assets/images/gallery/life2.jpg"
+
+alt="Travel">
+
+
+</div>
+
+
+
+
+
+
+
+<div class="photo-card">
+
+
+<img
+
+src="assets/images/gallery/life3.jpg"
+
+alt="Moment">
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Lightbox -->
+
+
+<div id="lightbox">
+
+
+
+
+
+<button id="close-lightbox">
+
+✕
+
+</button>
+
+
+
+
+
+
+
+<img
+
+id="lightbox-image"
+
+src=""
+
+alt="Preview">
+
+
+
+
+
+
+<button id="next-image">
+
+›
+
+</button>
+
+
+
+
+
+
+</div>
+
+
+
+
 
 
 
@@ -266,16 +604,19 @@ will be added here.
 <footer>
 
 
-<p>
-
-© 2026 Kai Teng
-
-</p>
+© 2026 Kai Teng. All Rights Reserved.
 
 
 </footer>
 
 
+
+
+
+
+
+
+<script src="assets/js/script.js"></script>
 
 
 

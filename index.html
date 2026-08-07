@@ -1,75 +1,45 @@
 <!DOCTYPE html>
 
-<html lang="en" id="html-lang">
+<html lang="en">
 
 
 <head>
 
-
 <meta charset="UTF-8">
-
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-
-<title data-i18n="page_title">
-
+<title>
 Kai Teng | Portfolio
-
 </title>
 
 
-
-
 <meta name="description"
-
-content="Kai Teng | Mathematics Major | Actuarial Science Major | Statistics Minor">
-
-
-
+content="
+Kai Teng | Mathematics Major | Actuarial Science Major | Statistics Minor
+">
 
 
-<link rel="stylesheet" href="assets/css/style.css">
-
+<link rel="stylesheet"
+href="assets/css/style.css">
 
 
 </head>
 
 
 
+<body>
 
-
-<body class="lang-en">
-
-
-
-
-
-<!-- =========================
-     Loading Animation
-========================= -->
 
 
 <div id="loader">
 
-
 <div></div>
-
 
 </div>
 
 
-
-
-
-
-
-
-
-<!-- =========================
-     Cursor Glow
-========================= -->
 
 
 <div class="cursor-glow"></div>
@@ -79,38 +49,22 @@ content="Kai Teng | Mathematics Major | Actuarial Science Major | Statistics Min
 
 
 
-
-
-
-<!-- =========================
-     Navigation
-========================= -->
-
+<!-- Navigation -->
 
 <nav>
 
 
 <h2 class="logo">
-
 Kai Teng
-
 </h2>
 
 
 
-
-
-
-
-<button
-
+<button 
 class="menu-toggle"
-
 id="menu-toggle">
 
-
 ☰
-
 
 </button>
 
@@ -118,64 +72,37 @@ id="menu-toggle">
 
 
 
+<div class="nav-links">
 
 
-<div class="nav-links" id="nav-links">
-
-
-
-
-
-<a href="#home" data-i18n="nav_home">
-
+<a href="index.html">
 Home
-
 </a>
 
 
-
-
-
-<a href="#about" data-i18n="nav_about">
-
+<a href="about.html">
 About
-
 </a>
 
 
-
-
-
-<a href="#projects" data-i18n="nav_projects">
-
+<a href="projects.html">
 Projects
-
 </a>
 
 
-
-
-
-<a href="#gallery" data-i18n="nav_gallery">
-
+<a href="gallery.html">
 Gallery
-
 </a>
 
 
+<a href="resume.html">
+Resume
+</a>
 
 
-
-<a href="#contact" data-i18n="nav_contact">
-
+<a href="contact.html">
 Contact
-
 </a>
-
-
-
-
-
 
 
 
@@ -183,36 +110,18 @@ Contact
 <div class="language-switcher">
 
 
-<button
-
-class="active"
-
-data-lang="en">
-
+<button>
 EN
-
 </button>
 
 
-
-
-<button
-
-data-lang="zh">
-
+<button>
 中
-
 </button>
 
 
-
-
-<button
-
-data-lang="fr">
-
+<button>
 FR
-
 </button>
 
 
@@ -222,29 +131,17 @@ FR
 
 
 
-
-
-
-
-<button
-
-id="theme"
-
-class="theme-button">
-
+<button 
+class="theme-button"
+id="theme">
 
 🌙
 
-
 </button>
 
 
 
-
-
-
 </div>
-
 
 
 </nav>
@@ -257,18 +154,10 @@ class="theme-button">
 
 
 
-<!-- =========================
-     Hero Section
-========================= -->
+<!-- Hero -->
 
 
-<section
-
-id="home"
-
-class="hero reveal">
-
-
+<section class="hero">
 
 
 
@@ -276,49 +165,22 @@ class="hero reveal">
 
 
 
+<h1>
 
 
-
-
-<h1 class="hero-title">
-
-
-
-
-
-<span
-
-class="hero-greeting"
-
-data-i18n="hero_greeting">
-
+<span>
 
 Hello,
 
-
 </span>
 
 
 
-
-
-
-
-
-<span
-
-class="hero-name"
-
-data-i18n="hero_name">
-
+<span>
 
 I'm Kai Teng
 
-
 </span>
-
-
-
 
 
 
@@ -330,46 +192,26 @@ I'm Kai Teng
 
 
 
+<div class="academic-tags">
 
 
-<!-- Updated Major Display -->
-
-
-
-<p class="hero-subtitle">
-
-
-
-<span data-i18n="major_math">
-
+<span>
 Mathematics Major
-
 </span>
 
 
-
-
-<span data-i18n="major_actuarial">
-
+<span>
 Actuarial Science Major
-
 </span>
 
 
-
-
-
-<span data-i18n="major_statistics">
-
+<span>
 Statistics Minor
-
 </span>
 
 
+</div>
 
-
-
-</p>
 
 
 
@@ -381,43 +223,19 @@ Statistics Minor
 <p class="hero-description">
 
 
-
-<span data-i18n="hero_line1">
-
 Mathematical modeling and quantitative analysis.
-
-</span>
-
-
 
 
 <br>
 
-
-
-
-<span data-i18n="hero_line2">
 
 Statistical methods and risk modeling.
 
-</span>
-
-
-
-
 
 <br>
 
 
-
-
-<span data-i18n="hero_line3">
-
 Data-driven problem solving.
-
-</span>
-
-
 
 
 
@@ -429,22 +247,12 @@ Data-driven problem solving.
 
 
 
-
 <div class="hero-buttons">
 
 
-
-
-
-<a
-
+<a class="resume-btn"
 href="resume.pdf"
-
-download
-
-class="resume-btn"
-
-data-i18n="download_resume">
+download>
 
 
 Download Resume
@@ -454,6 +262,14 @@ Download Resume
 
 
 
+<a class="resume-btn secondary"
+href="projects.html">
+
+
+View Projects
+
+
+</a>
 
 
 
@@ -462,12 +278,6 @@ Download Resume
 
 
 
-
-
-
-
-
-<!-- Social Links -->
 
 
 
@@ -475,33 +285,19 @@ Download Resume
 
 
 
-
-
-
-<a
-
-class="social-card"
-
+<a class="social-card"
 href="https://github.com/TurkeyKai/"
-
 target="_blank">
 
 
-
 <span>
-
 GitHub
-
 </span>
 
 
-
 <small>
-
 Projects & Code
-
 </small>
-
 
 
 </a>
@@ -510,32 +306,19 @@ Projects & Code
 
 
 
-
-
-<a
-
-class="social-card"
-
-href="https://www.linkedin.com/"
-
+<a class="social-card"
+href="https://linkedin.com"
 target="_blank">
 
 
-
 <span>
-
 LinkedIn
-
 </span>
 
 
-
 <small>
-
 Professional Profile
-
 </small>
-
 
 
 </a>
@@ -545,68 +328,21 @@ Professional Profile
 
 
 
-
-
-<a
-
-class="social-card"
-
-href="mailto:tkdale2006@gmail.com">
-
+<a class="social-card"
+href="contact.html">
 
 
 <span>
-
-Email
-
+Contact
 </span>
 
 
-
 <small>
-
-tkdale2006@gmail.com
-
+Email & WeChat
 </small>
 
 
-
 </a>
-
-
-
-
-
-
-
-<a
-
-class="social-card wechat"
-
-href="#contact">
-
-
-
-<span>
-
-WeChat
-
-</span>
-
-
-
-<small>
-
-TurkeyKaiKai
-
-</small>
-
-
-
-</a>
-
-
-
 
 
 
@@ -619,8 +355,6 @@ TurkeyKaiKai
 
 
 </div>
-
-
 
 
 
@@ -637,128 +371,11 @@ src="assets/images/profile.jpg"
 
 class="profile"
 
-alt="Kai Teng"
 
-loading="lazy">
-
+alt="Kai Teng">
 
 
 </div>
-
-
-
-
-
-
-
-</section>
-<!-- =========================
-     About Section
-========================= -->
-
-
-<section
-
-id="about"
-
-class="section reveal">
-
-
-
-
-
-<h2 data-i18n="about_title">
-
-
-About Me
-
-
-</h2>
-
-
-
-
-
-
-
-
-<div class="about-content">
-
-
-
-
-
-<div class="about-block">
-
-
-
-<p data-i18n="about_block1">
-
-
-I am a Mathematics and Actuarial Science student at the University of Toronto, with a minor in Statistics.
-
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="about-block">
-
-
-
-<p data-i18n="about_block2">
-
-
-My academic interests include quantitative research, statistical modeling, financial mathematics, probability theory, and risk analysis.
-
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="about-block">
-
-
-
-<p data-i18n="about_block3">
-
-
-Through coursework and projects, I explore how mathematical theories and statistical methods can be applied to financial modeling, data analysis, and real-world decision making.
-
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-</div>
-
 
 
 
@@ -774,32 +391,16 @@ Through coursework and projects, I explore how mathematical theories and statist
 
 
 
-<!-- =========================
-     Projects Section
-========================= -->
+<!-- Preview -->
 
 
-<section
-
-id="projects"
-
-class="section reveal">
+<section class="section">
 
 
 
-
-
-
-<h2 data-i18n="projects_title">
-
-
-Projects
-
-
+<h2>
+Research Interests
 </h2>
-
-
-
 
 
 
@@ -810,83 +411,44 @@ Projects
 
 
 
-
-
-
-
-<!-- Project 1 -->
-
-
 <div class="card">
 
 
-
-<h3 data-i18n="project1_title">
-
-
+<h3>
 Quantitative Research
-
-
 </h3>
 
 
+<p>
 
-
-
-
-<p data-i18n="project1_text">
-
-
-Developing quantitative models using mathematical methods, statistical techniques, and financial data analysis.
-
+Financial modeling,
+factor research,
+and quantitative strategy development.
 
 </p>
-
-
 
 
 </div>
 
 
 
-
-
-
-
-
-
-
-
-<!-- Project 2 -->
 
 
 <div class="card">
 
 
-
-<h3 data-i18n="project2_title">
-
-
-Actuarial Risk Analysis
-
-
+<h3>
+Actuarial Science
 </h3>
 
 
+<p>
 
-
-
-
-
-<p data-i18n="project2_text">
-
-
-Applying probability theory, actuarial mathematics, and statistical modeling to analyze uncertainty and risk.
-
+Risk analysis,
+probability theory,
+and uncertainty modeling.
 
 </p>
-
-
 
 
 </div>
@@ -894,58 +456,31 @@ Applying probability theory, actuarial mathematics, and statistical modeling to 
 
 
 
-
-
-
-
-
-<!-- Project 3 -->
 
 
 <div class="card">
 
 
-
-<h3 data-i18n="project3_title">
-
-
-Statistical Data Analysis
-
-
+<h3>
+Statistics
 </h3>
 
 
+<p>
 
-
-
-
-
-<p data-i18n="project3_text">
-
-
-Using Python and statistical methods to extract insights from complex datasets and build data-driven solutions.
-
+Data analysis,
+regression models,
+and machine learning applications.
 
 </p>
 
 
-
-
 </div>
 
 
 
 
-
-
-
-
 </div>
-
-
-
-
-
 
 
 
@@ -957,512 +492,12 @@ Using Python and statistical methods to extract insights from complex datasets a
 
 
 
-
-
-<!-- =========================
-     Gallery Section
-========================= -->
-
-
-<section
-
-id="gallery"
-
-class="section reveal">
-
-
-
-
-
-
-
-<h2 data-i18n="gallery_title">
-
-
-Gallery
-
-
-</h2>
-
-
-
-
-
-
-
-
-
-<div class="gallery">
-
-
-
-
-
-
-
-
-
-<div class="photo-card">
-
-
-
-<img
-
-src="assets/images/gallery/1.jpg"
-
-alt="Gallery Image 1"
-
-loading="lazy">
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="photo-card">
-
-
-
-<img
-
-src="assets/images/gallery/2.jpg"
-
-alt="Gallery Image 2"
-
-loading="lazy">
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="photo-card">
-
-
-
-<img
-
-src="assets/images/gallery/3.jpg"
-
-alt="Gallery Image 3"
-
-loading="lazy">
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="photo-card">
-
-
-
-<img
-
-src="assets/images/gallery/4.jpg"
-
-alt="Gallery Image 4"
-
-loading="lazy">
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- =========================
-     Lightbox
-========================= -->
-
-
-
-<div id="lightbox">
-
-
-
-
-
-
-
-<button id="close-lightbox">
-
-
-✕
-
-
-</button>
-
-
-
-
-
-
-
-
-
-<img
-
-id="lightbox-image"
-
-src=""
-
-alt="Preview">
-
-
-
-
-
-
-
-
-
-<button id="next-image">
-
-
-›
-
-
-</button>
-
-
-
-
-
-
-
-</div>
-<!-- =========================
-     Contact Section
-========================= -->
-
-
-<section
-
-id="contact"
-
-class="section reveal">
-
-
-
-
-
-
-<h2 data-i18n="contact_title">
-
-
-Contact
-
-
-</h2>
-
-
-
-
-
-
-
-
-<div class="contact-description">
-
-
-
-
-
-<p data-i18n="contact_text">
-
-
-Interested in mathematics, statistics, quantitative research, or actuarial applications?
-
-
-</p>
-
-
-
-
-
-
-
-<p data-i18n="contact_subtext">
-
-
-Feel free to connect with me.
-
-
-</p>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="social-cards">
-
-
-
-
-
-
-
-<!-- GitHub -->
-
-
-<a
-
-class="social-card"
-
-href="https://github.com/TurkeyKai/"
-
-target="_blank">
-
-
-
-<span>
-
-
-GitHub
-
-
-</span>
-
-
-
-<small>
-
-
-Projects & Code
-
-
-</small>
-
-
-
-</a>
-
-
-
-
-
-
-
-
-<!-- LinkedIn -->
-
-
-<a
-
-class="social-card"
-
-href="https://www.linkedin.com/"
-
-target="_blank">
-
-
-
-<span>
-
-
-LinkedIn
-
-
-</span>
-
-
-
-<small>
-
-
-Professional Network
-
-
-</small>
-
-
-
-</a>
-
-
-
-
-
-
-
-
-<!-- Email -->
-
-
-<a
-
-class="social-card"
-
-href="mailto:tkdale2006@gmail.com">
-
-
-
-<span>
-
-
-Email
-
-
-</span>
-
-
-
-<small>
-
-
-tkdale2006@gmail.com
-
-
-</small>
-
-
-
-</a>
-
-
-
-
-
-
-
-
-
-<!-- WeChat -->
-
-
-<div class="social-card">
-
-
-
-<span>
-
-
-WeChat
-
-
-</span>
-
-
-
-
-<small>
-
-
-TurkeyKaiKai
-
-
-</small>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-<!-- =========================
-     Footer
-========================= -->
 
 
 <footer>
 
 
-
-
-
-<p data-i18n="footer">
-
-
 © 2026 Kai Teng. All Rights Reserved.
-
-
-</p>
-
-
-
-
 
 
 </footer>
@@ -1474,21 +509,10 @@ TurkeyKaiKai
 
 
 
-
-<!-- =========================
-     Javascript
-========================= -->
-
-
-<script src="assets/js/language.js"></script>
-
-
-
 <script src="assets/js/script.js"></script>
 
 
-
-
+<script src="assets/js/language.js"></script>
 
 
 
