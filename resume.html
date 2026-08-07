@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 
@@ -13,7 +12,13 @@
 
 
 
-<title>
+<title
+
+data-cn="简历 | 滕凯"
+
+data-en="Resume | Kai Teng"
+
+data-fr="CV | Kai Teng">
 
 Resume | Kai Teng
 
@@ -21,16 +26,14 @@ Resume | Kai Teng
 
 
 
+<link rel="stylesheet" href="css/style.css">
 
-<link rel="stylesheet"
+<link rel="stylesheet" href="css/animation.css">
 
-href="assets/css/style.css">
-
+<link rel="stylesheet" href="css/responsive.css">
 
 
 </head>
-
-
 
 
 
@@ -41,116 +44,102 @@ href="assets/css/style.css">
 
 
 
-
 <!-- Navigation -->
+
+<header class="navbar">
+
+
+<div class="logo">
+
+Kai Teng
+
+</div>
+
+
+
 
 
 <nav>
 
 
-<h2 class="logo">
-
-Kai Teng
-
-</h2>
+<ul class="nav-links">
 
 
+<li>
 
+<a href="index.html"
 
+data-cn="首页"
 
+data-en="Home"
 
-<button
-
-class="menu-toggle"
-
-id="menu-toggle">
-
-☰
-
-</button>
-
-
-
-
-
-
-
-<div class="nav-links">
-
-
-
-<a href="index.html">
+data-fr="Accueil">
 
 Home
 
 </a>
 
-
-
-
-<a href="about.html">
-
-About
-
-</a>
+</li>
 
 
 
 
-<a href="projects.html">
+<li>
+
+<a href="projects.html"
+
+data-cn="项目"
+
+data-en="Projects"
+
+data-fr="Projets">
 
 Projects
 
 </a>
 
+</li>
 
 
 
-<a href="gallery.html">
 
-Gallery
-
-</a>
-
-
-
+<li>
 
 <a href="resume.html"
-class="active">
+
+data-cn="简历"
+
+data-en="Resume"
+
+data-fr="CV">
 
 Resume
 
 </a>
 
+</li>
 
 
 
-<a href="contact.html">
+
+<li>
+
+<a href="contact.html"
+
+data-cn="联系"
+
+data-en="Contact"
+
+data-fr="Contact">
 
 Contact
 
 </a>
 
+</li>
 
 
-
-
-
-
-<button
-
-class="theme-button"
-
-id="theme">
-
-🌙
-
-</button>
-
-
-
-
-</div>
+</ul>
 
 
 </nav>
@@ -161,9 +150,35 @@ id="theme">
 
 
 
+<div class="language-switch">
 
 
-<section class="section reveal">
+<button onclick="changeLanguage('cn')">
+
+中文
+
+</button>
+
+
+<button onclick="changeLanguage('en')">
+
+English
+
+</button>
+
+
+<button onclick="changeLanguage('fr')">
+
+Français
+
+</button>
+
+
+</div>
+
+
+
+</header>
 
 
 
@@ -171,9 +186,29 @@ id="theme">
 
 
 
-<h1 class="page-title">
 
-Resume
+
+<!-- Resume Header -->
+
+
+<section class="hero reveal">
+
+
+<div class="hero-content">
+
+
+
+<h1
+
+data-cn="个人简历"
+
+data-en="My Resume"
+
+data-fr="Mon CV">
+
+
+My Resume
+
 
 </h1>
 
@@ -181,136 +216,50 @@ Resume
 
 
 
+<p
+
+data-cn="数学、精算与数据分析方向学生，专注于金融建模和量化研究。"
+
+data-en="Mathematics and Actuarial Science student focusing on financial modeling and quantitative research."
+
+data-fr="Étudiant en mathématiques et actuariat spécialisé en modélisation financière et recherche quantitative.">
 
 
-<div class="resume-download">
+Mathematics and Actuarial Science student focusing on financial modeling and quantitative research.
+
+
+</p>
 
 
 
-<a
-
-href="resume.pdf"
-
-download
-
-class="resume-btn">
 
 
-Download PDF Resume
+
+<a href="assets/documents/resume.pdf"
+
+class="btn"
+
+target="_blank"
+
+data-cn="查看PDF简历"
+
+data-en="View PDF Resume"
+
+data-fr="Voir le CV PDF">
+
+
+View PDF Resume
 
 
 </a>
 
 
 
-</div>
-
-
-
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Contact Information -->
-
-
-
-<section class="section reveal">
-
-
-
-
-
-<div class="resume-card">
-
-
-
-
-
-<h2>
-
-Kai Teng
-
-</h2>
-
-
-
-
-
-
-<p>
-
-Mathematics Major | Actuarial Science Major | Statistics Minor
-
-</p>
-
-
-
-
-
-<p>
-
-Toronto, Ontario, Canada
-
-</p>
-
-
-
-
-
-<p>
-
-Email:
-tkdale2006@gmail.com
-
-</p>
-
-
-
-
-
-
-<p>
-
-Phone:
-(+1) 437-214-9375
-
-</p>
-
-
-
-
 
 </div>
 
 
-
-
-
-
-
 </section>
-
-
-
-
-
 
 
 
@@ -323,14 +272,20 @@ Phone:
 <!-- Education -->
 
 
-
-<section class="section reveal">
-
+<section class="reveal">
 
 
-<h2>
+<h2 class="section-title"
+
+data-cn="教育经历"
+
+data-en="Education"
+
+data-fr="Formation">
+
 
 Education
+
 
 </h2>
 
@@ -339,10 +294,7 @@ Education
 
 
 
-
-<div class="resume-card">
-
-
+<div class="info-box">
 
 
 
@@ -355,94 +307,24 @@ University of Toronto
 
 
 
+<p
+
+data-cn="数学专业、精算专业方向，统计学辅修。"
+
+data-en="Mathematics major, Actuarial Science major, Statistics minor."
+
+data-fr="Double spécialisation en mathématiques et actuariat, mineure en statistiques.">
 
 
-<h4>
-
-Honours Bachelor of Science
-
-</h4>
-
-
-
-
-
-<p>
-
-
-Toronto, ON
+Mathematics major, Actuarial Science major, Statistics minor.
 
 
 </p>
-
-
-
-
-
-
-<p>
-
-Aug 2024 - Present
-
-<br>
-
-Expected Graduation:
-June 2028
-
-
-</p>
-
-
-
-
-
-
-<ul>
-
-
-<li>
-
-Major:
-Mathematics
-
-</li>
-
-
-<li>
-
-Major:
-Actuarial Science
-
-</li>
-
-
-<li>
-
-Minor:
-Statistics
-
-</li>
-
-
-<li>
-
-Award:
-International Merit Admission Award
-
-</li>
-
-
-
-</ul>
-
 
 
 
 
 </div>
-
-
-
 
 
 </section>
@@ -455,25 +337,23 @@ International Merit Admission Award
 
 
 
+<!-- Timeline -->
 
 
+<section class="reveal">
 
 
+<h2 class="section-title"
+
+data-cn="经历"
+
+data-en="Experience"
+
+data-fr="Expérience">
 
 
-<!-- Internship -->
+Experience
 
-
-
-<section class="section reveal">
-
-
-
-
-
-<h2>
-
-Internship Experience
 
 </h2>
 
@@ -482,84 +362,89 @@ Internship Experience
 
 
 
-
-
-<div class="resume-card">
+<div class="projects-grid">
 
 
 
 
 
-<h3>
+<div class="card">
 
-Zheshang Futures
+
+<h3
+
+data-cn="量化研究项目"
+
+data-en="Quantitative Research Project"
+
+data-fr="Projet de recherche quantitative">
+
+
+Quantitative Research Project
+
 
 </h3>
 
 
 
 
+<p
 
-<h4>
+data-cn="研究基差因子、策略回测和金融数据分析方法。"
 
-Summer Research Intern
+data-en="Researching basis factors, strategy backtesting and financial data analysis."
 
-</h4>
-
-
-
+data-fr="Recherche sur les facteurs de spread, le backtest et l'analyse financière.">
 
 
-<p>
+Researching basis factors, strategy backtesting and financial data analysis.
 
-Hangzhou, China
-
-<br>
-
-July 2026 - August 2026
 
 </p>
 
 
+</div>
 
 
 
 
 
 
-<ul>
+
+<div class="card">
 
 
-<li>
+<h3
 
-Participated in quantitative trading research focusing on derivative markets and risk management frameworks.
+data-cn="程序设计项目"
 
-</li>
+data-en="Programming Projects"
 
-
-
-
-<li>
-
-Analyzed commodity price movements through simulated trading exercises and quantitative methods.
-
-</li>
+data-fr="Projets de programmation">
 
 
+Programming Projects
 
 
-<li>
-
-Developed understanding of financial engineering, market analysis, and data-driven strategy evaluation.
-
-</li>
+</h3>
 
 
 
-</ul>
 
 
+<p
 
+data-cn="使用Python进行数据处理、自动化分析和模型开发。"
+
+data-en="Using Python for data processing, automation and model development."
+
+data-fr="Utilisation de Python pour le traitement des données et le développement de modèles.">
+
+
+Using Python for data processing, automation and model development.
+
+
+</p>
 
 
 </div>
@@ -569,219 +454,11 @@ Developed understanding of financial engineering, market analysis, and data-driv
 
 
 
+
+</div>
 
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Projects -->
-
-
-
-<section class="section reveal">
-
-
-
-
-
-<h2>
-
-Project Experience
-
-</h2>
-
-
-
-
-
-
-
-
-<div class="resume-card">
-
-
-
-
-
-<h3>
-
-Commodity Futures Basis Factor Backtesting
-
-</h3>
-
-
-
-
-
-
-<ul>
-
-
-<li>
-
-Built a quantitative factor model based on spot-futures basis relationships.
-
-</li>
-
-
-
-
-<li>
-
-Implemented strategy simulation using Python and evaluated performance using Sharpe ratio and maximum drawdown.
-
-</li>
-
-
-
-
-<li>
-
-Performed financial data processing, visualization, and factor analysis.
-
-</li>
-
-
-
-
-</ul>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="resume-card">
-
-
-
-
-
-<h3>
-
-Aliyun Tianchi Data Mining Project
-
-</h3>
-
-
-
-
-
-
-<ul>
-
-
-<li>
-
-Performed feature engineering and exploratory data analysis on large-scale datasets.
-
-</li>
-
-
-
-
-<li>
-
-Optimized predictive models through parameter tuning.
-
-</li>
-
-
-
-</ul>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="resume-card">
-
-
-
-
-
-<h3>
-
-Wellspring Community Impact Data Analysis
-
-</h3>
-
-
-
-
-
-
-<ul>
-
-
-<li>
-
-Conducted data cleaning, regression analysis, and visualization using Python and R.
-
-</li>
-
-
-
-
-<li>
-
-Created data-driven insights to communicate trends and findings.
-
-</li>
-
-
-
-
-</ul>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-</section>
-
-
-
-
-
 
 
 
@@ -794,16 +471,20 @@ Created data-driven insights to communicate trends and findings.
 <!-- Skills -->
 
 
-
-<section class="section reveal">
-
+<section class="reveal">
 
 
+<h2 class="section-title"
 
+data-cn="技能"
 
-<h2>
+data-en="Skills"
+
+data-fr="Compétences">
+
 
 Skills
+
 
 </h2>
 
@@ -812,10 +493,7 @@ Skills
 
 
 
-
-
-
-<div class="cards">
+<div class="projects-grid">
 
 
 
@@ -833,24 +511,16 @@ Programming
 
 <p>
 
+Python<br>
 
-Python
+Java<br>
 
-<br>
-
-R
-
-<br>
-
-Excel
-
+HTML / CSS / JavaScript
 
 </p>
 
 
-
 </div>
-
 
 
 
@@ -864,35 +534,25 @@ Excel
 
 <h3>
 
-Quantitative
+Mathematics
 
 </h3>
 
 
 <p>
 
+Linear Algebra<br>
 
-Derivative Pricing
+Probability<br>
 
-<br>
+Statistics<br>
 
-Quantitative Strategy
-
-<br>
-
-Statistical Modelling
-
-<br>
-
-Risk Theory
-
+Financial Mathematics
 
 </p>
 
 
-
 </div>
-
 
 
 
@@ -906,48 +566,31 @@ Risk Theory
 
 <h3>
 
-Languages
+Tools
 
 </h3>
 
 
 <p>
 
+Git<br>
 
-Chinese:
-Native
+Jupyter Notebook<br>
 
+Pandas<br>
 
-<br>
-
-
-English:
-Fluent
-
-
-<br>
-
-
-IELTS:
-6.5
-
+Matplotlib
 
 </p>
 
 
-
 </div>
 
 
 
 
 
-
 </div>
-
-
-
-
 
 
 </section>
@@ -963,7 +606,11 @@ IELTS:
 <footer>
 
 
+<p>
+
 © 2026 Kai Teng. All Rights Reserved.
+
+</p>
 
 
 </footer>
@@ -973,7 +620,16 @@ IELTS:
 
 
 
-<script src="assets/js/script.js"></script>
+
+
+
+<script src="js/language.js"></script>
+
+<script src="js/reveal.js"></script>
+
+<script src="js/effects.js"></script>
+
+<script src="js/main.js"></script>
 
 
 

@@ -1,0 +1,89 @@
+[
+    {
+        "image": "images/projects/project1.png",
+
+        "title": {
+            "cn": "基差策略回测模型",
+            "en": "Basis Strategy Backtesting Model",
+            "fr": "Modèle de backtest basé sur le spread"
+        },
+
+        "description": {
+            "cn": "利用期货与现货价格构建基差因子，并进行量化策略回测分析。",
+            "en": "A quantitative model using futures and spot prices to build basis factors and evaluate trading strategies.",
+            "fr": "Un modèle quantitatif utilisant les prix spot et futures pour analyser des stratégies de trading."
+        },
+
+
+        "tags": [
+            "Python",
+            "Pandas",
+            "Quantitative Research"
+        ],
+
+
+        "link": "#"
+
+    },
+
+
+
+    {
+        "image": "images/projects/project2.png",
+
+        "title": {
+            "cn": "数据分析项目",
+            "en": "Data Analysis Project",
+            "fr": "Projet d'analyse de données"
+        },
+
+
+        "description": {
+            "cn": "使用统计方法探索数据规律，并进行可视化分析。",
+            "en": "Exploring patterns using statistical methods and data visualization.",
+            "fr": "Exploration des tendances avec des méthodes statistiques et visualisation des données."
+        },
+
+
+        "tags": [
+            "Python",
+            "Statistics",
+            "Visualization"
+        ],
+
+
+        "link": "#"
+
+    },
+
+
+
+    {
+        "image": "images/projects/project3.png",
+
+        "title": {
+            "cn": "个人网站开发",
+            "en": "Personal Portfolio Website",
+            "fr": "Site Portfolio Personnel"
+        },
+
+
+        "description": {
+            "cn": "从零搭建个人网站，实现响应式设计和多语言系统。",
+            "en": "Building a responsive personal website with multilingual support.",
+            "fr": "Création d'un site personnel responsive avec support multilingue."
+        },
+
+
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+        ],
+
+
+        "link": "#"
+
+    }
+
+]

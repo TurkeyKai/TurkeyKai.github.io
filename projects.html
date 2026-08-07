@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 
@@ -13,7 +12,13 @@
 
 
 
-<title>
+<title
+
+data-cn="项目展示 | 滕凯"
+
+data-en="Projects | Kai Teng"
+
+data-fr="Projets | Kai Teng">
 
 Projects | Kai Teng
 
@@ -21,14 +26,15 @@ Projects | Kai Teng
 
 
 
-<link rel="stylesheet"
 
-href="assets/css/style.css">
+<link rel="stylesheet" href="css/style.css">
 
+<link rel="stylesheet" href="css/animation.css">
+
+<link rel="stylesheet" href="css/responsive.css">
 
 
 </head>
-
 
 
 
@@ -40,111 +46,101 @@ href="assets/css/style.css">
 
 
 
+<header class="navbar">
 
 
-<!-- Navigation -->
+<div class="logo">
+
+Kai Teng
+
+</div>
+
+
+
+
 
 
 <nav>
 
 
-<h2 class="logo">
-
-Kai Teng
-
-</h2>
+<ul class="nav-links">
 
 
+<li>
 
+<a href="index.html"
 
+data-cn="首页"
 
-<button 
+data-en="Home"
 
-class="menu-toggle"
-
-id="menu-toggle">
-
-☰
-
-</button>
-
-
-
-
-
-
-
-
-<div class="nav-links">
-
-
-<a href="index.html">
+data-fr="Accueil">
 
 Home
 
 </a>
 
-
-
-<a href="about.html">
-
-About
-
-</a>
+</li>
 
 
 
+
+<li>
 
 <a href="projects.html"
-class="active">
+
+data-cn="项目"
+
+data-en="Projects"
+
+data-fr="Projets">
 
 Projects
 
 </a>
 
-
-
-<a href="gallery.html">
-
-Gallery
-
-</a>
+</li>
 
 
 
-<a href="resume.html">
+
+<li>
+
+<a href="resume.html"
+
+data-cn="简历"
+
+data-en="Resume"
+
+data-fr="CV">
 
 Resume
 
 </a>
 
+</li>
 
 
 
-<a href="contact.html">
+
+<li>
+
+<a href="contact.html"
+
+data-cn="联系"
+
+data-en="Contact"
+
+data-fr="Contact">
 
 Contact
 
 </a>
 
+</li>
 
 
-
-<button
-
-class="theme-button"
-
-id="theme">
-
-🌙
-
-</button>
-
-
-
-
-</div>
-
+</ul>
 
 
 </nav>
@@ -154,18 +150,61 @@ id="theme">
 
 
 
+<div class="language-switch">
+
+
+<button onclick="changeLanguage('cn')">
+
+中文
+
+</button>
+
+
+<button onclick="changeLanguage('en')">
+
+English
+
+</button>
+
+
+<button onclick="changeLanguage('fr')">
+
+Français
+
+</button>
+
+
+</div>
 
 
 
-<section class="section reveal">
+</header>
 
 
 
 
 
-<h1 class="page-title">
 
-Projects
+
+
+
+<section class="hero reveal">
+
+
+<div class="hero-content">
+
+
+<h1
+
+data-cn="我的项目"
+
+data-en="My Projects"
+
+data-fr="Mes projets">
+
+
+My Projects
+
 
 </h1>
 
@@ -173,464 +212,23 @@ Projects
 
 
 
+<p
+
+data-cn="展示我的量化研究、数据分析和程序设计项目。"
+
+data-en="Showcasing my quantitative research, data analysis and programming projects."
+
+data-fr="Présentation de mes projets de recherche quantitative, analyse de données et programmation.">
 
 
-<p class="section-intro">
-
-
-A collection of quantitative research, statistical analysis, and data-driven projects combining mathematical theory with practical applications.
-
-
-</p>
-
-
-
-
-
-
-
-<div class="cards">
-
-
-
-
-
-
-
-<!-- Project 1 -->
-
-
-<div class="card project-card">
-
-
-
-<h3>
-
-Quantitative Trading Research
-
-</h3>
-
-
-
-
-
-<p>
-
-
-<strong>
-
-Zheshang Futures Research Internship
-
-</strong>
+Showcasing my quantitative research, data analysis and programming projects.
 
 
 </p>
-
-
-
-
-
-<p>
-
-
-Participated in a quantitative trading workshop focusing on derivative markets, commodity futures analysis, and risk management.
-
-
-</p>
-
-
-
-
-
-<p>
-
-
-Applied financial data analysis methods to study price movements, trading signals, and quantitative decision-making.
-
-
-</p>
-
-
-
-
-
-<div class="project-tags">
-
-
-<span>
-Python
-</span>
-
-
-<span>
-Quantitative Strategy
-</span>
-
-
-<span>
-Risk Management
-</span>
-
-
-</div>
 
 
 
 </div>
-
-
-
-
-
-
-
-
-
-<!-- Project 2 -->
-
-
-<div class="card project-card">
-
-
-
-
-
-<h3>
-
-Basis Factor Backtesting Model
-
-</h3>
-
-
-
-
-
-
-<p>
-
-
-<strong>
-
-Commodity Futures Quantitative Research
-
-</strong>
-
-
-</p>
-
-
-
-
-
-
-
-<p>
-
-
-Developed a basis-factor strategy using spot and futures price relationships to analyze market signals.
-
-
-</p>
-
-
-
-
-
-
-
-<p>
-
-
-Implemented factor construction, return calculation, portfolio simulation, and performance evaluation using Python.
-
-
-</p>
-
-
-
-
-
-
-
-<p>
-
-
-Evaluated strategies through annualized return, volatility, Sharpe ratio, and maximum drawdown analysis.
-
-
-</p>
-
-
-
-
-
-
-
-<div class="project-tags">
-
-
-<span>
-Python
-</span>
-
-
-
-<span>
-Pandas
-</span>
-
-
-
-<span>
-Financial Data
-</span>
-
-
-
-<span>
-Backtesting
-</span>
-
-
-
-</div>
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Project 3 -->
-
-
-<div class="card project-card">
-
-
-
-
-
-
-<h3>
-
-Aliyun Tianchi Data Mining Project
-
-</h3>
-
-
-
-
-
-
-<p>
-
-
-<strong>
-
-Machine Learning & Data Analysis
-
-</strong>
-
-
-</p>
-
-
-
-
-
-
-<p>
-
-
-Performed exploratory data analysis and feature engineering on large-scale datasets.
-
-
-</p>
-
-
-
-
-
-
-<p>
-
-
-Applied statistical methods and model optimization techniques to improve predictive performance.
-
-
-</p>
-
-
-
-
-
-
-
-<div class="project-tags">
-
-
-<span>
-Python
-</span>
-
-
-
-<span>
-EDA
-</span>
-
-
-
-<span>
-Machine Learning
-</span>
-
-
-
-</div>
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Project 4 -->
-
-
-<div class="card project-card">
-
-
-
-
-
-<h3>
-
-Community Impact Data Analysis
-
-</h3>
-
-
-
-
-
-
-<p>
-
-
-<strong>
-
-Wellspring Community Project
-
-</strong>
-
-
-</p>
-
-
-
-
-
-
-<p>
-
-
-Analyzed community impact data through data cleaning, regression analysis, and visualization.
-
-
-</p>
-
-
-
-
-
-
-<p>
-
-
-Used Python and R statistical techniques to communicate insights and support data-driven decisions.
-
-
-</p>
-
-
-
-
-
-
-
-<div class="project-tags">
-
-
-<span>
-R
-</span>
-
-
-
-<span>
-Regression
-</span>
-
-
-
-<span>
-Statistics
-</span>
-
-
-
-</div>
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
 
 
 </section>
@@ -643,18 +241,21 @@ Statistics
 
 
 
+<section class="reveal">
 
 
 
-<section class="section reveal">
+<h2 class="section-title"
+
+data-cn="项目列表"
+
+data-en="Project Showcase"
+
+data-fr="Présentation des projets">
 
 
+Project Showcase
 
-
-
-<h2>
-
-Technical Skills
 
 </h2>
 
@@ -664,127 +265,18 @@ Technical Skills
 
 
 
-<div class="cards">
+
+<!-- Dynamic Project Container -->
 
 
+<div
 
+class="projects-grid"
 
-
-<div class="card">
-
-
-<h3>
-
-Programming
-
-</h3>
-
-
-<p>
-
-Python
-
-<br>
-
-R
-
-<br>
-
-Excel
-
-</p>
+id="project-container">
 
 
 </div>
-
-
-
-
-
-
-
-
-<div class="card">
-
-
-<h3>
-
-Mathematical Methods
-
-</h3>
-
-
-<p>
-
-
-Probability Theory
-
-<br>
-
-Statistical Modeling
-
-<br>
-
-Financial Mathematics
-
-<br>
-
-Risk Theory
-
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="card">
-
-
-<h3>
-
-Quantitative Tools
-
-</h3>
-
-
-<p>
-
-
-Factor Research
-
-<br>
-
-Backtesting
-
-<br>
-
-Data Visualization
-
-<br>
-
-Model Evaluation
-
-
-</p>
-
-
-</div>
-
-
-
-
-
-</div>
-
-
-
 
 
 
@@ -803,7 +295,11 @@ Model Evaluation
 <footer>
 
 
+<p>
+
 © 2026 Kai Teng. All Rights Reserved.
+
+</p>
 
 
 </footer>
@@ -814,8 +310,15 @@ Model Evaluation
 
 
 
-<script src="assets/js/script.js"></script>
 
+
+<script src="js/language.js"></script>
+
+<script src="js/reveal.js"></script>
+
+<script src="js/effects.js"></script>
+
+<script src="js/main.js"></script>
 
 
 

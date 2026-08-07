@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-
-
 <html lang="en">
 
 
@@ -14,7 +12,13 @@
 
 
 
-<title>
+<title
+
+data-cn="联系我 | 滕凯"
+
+data-en="Contact | Kai Teng"
+
+data-fr="Contact | Kai Teng">
 
 Contact | Kai Teng
 
@@ -23,11 +27,11 @@ Contact | Kai Teng
 
 
 
+<link rel="stylesheet" href="css/style.css">
 
-<link rel="stylesheet"
+<link rel="stylesheet" href="css/animation.css">
 
-href="assets/css/style.css">
-
+<link rel="stylesheet" href="css/responsive.css">
 
 
 </head>
@@ -42,126 +46,105 @@ href="assets/css/style.css">
 
 
 
+<!-- =====================
+     Navigation
+===================== -->
 
 
-<!-- Navigation -->
+<header class="navbar">
+
+
+<div class="logo">
+
+Kai Teng
+
+</div>
+
+
+
 
 
 <nav>
 
 
-
-<h2 class="logo">
-
-Kai Teng
-
-</h2>
+<ul class="nav-links">
 
 
+<li>
 
+<a href="index.html"
 
+data-cn="首页"
 
+data-en="Home"
 
-<button
-
-class="menu-toggle"
-
-id="menu-toggle">
-
-☰
-
-</button>
-
-
-
-
-
-
-
-
-
-<div class="nav-links">
-
-
-
-<a href="index.html">
+data-fr="Accueil">
 
 Home
 
 </a>
 
+</li>
 
 
 
 
-<a href="about.html">
+<li>
 
-About
+<a href="projects.html"
 
-</a>
+data-cn="项目"
 
+data-en="Projects"
 
-
-
-
-<a href="projects.html">
+data-fr="Projets">
 
 Projects
 
 </a>
 
+</li>
 
 
 
 
-<a href="gallery.html">
+<li>
 
-Gallery
+<a href="resume.html"
 
-</a>
+data-cn="简历"
 
+data-en="Resume"
 
-
-
-
-<a href="resume.html">
+data-fr="CV">
 
 Resume
 
 </a>
 
+</li>
 
 
 
+
+<li>
 
 <a href="contact.html"
 
-class="active">
+data-cn="联系"
+
+data-en="Contact"
+
+data-fr="Contact">
 
 Contact
 
 </a>
 
+</li>
 
 
-
-
-
-<button
-
-class="theme-button"
-
-id="theme">
-
-🌙
-
-</button>
-
-
-
-
-
-</div>
+</ul>
 
 
 </nav>
@@ -171,18 +154,67 @@ id="theme">
 
 
 
+<div class="language-switch">
+
+
+<button onclick="changeLanguage('cn')">
+
+中文
+
+</button>
+
+
+<button onclick="changeLanguage('en')">
+
+English
+
+</button>
+
+
+<button onclick="changeLanguage('fr')">
+
+Français
+
+</button>
+
+
+</div>
 
 
 
-<section class="section reveal">
+</header>
 
 
 
 
 
-<h1 class="page-title">
 
-Contact
+
+
+
+<!-- =====================
+     Contact Hero
+===================== -->
+
+
+<section class="hero reveal">
+
+
+<div class="hero-content">
+
+
+
+<h1
+
+data-cn="联系我"
+
+data-en="Contact Me"
+
+data-fr="Contactez-moi">
+
+
+Contact Me
+
 
 </h1>
 
@@ -190,27 +222,16 @@ Contact
 
 
 
+<p
+
+data-cn="欢迎交流项目合作、研究讨论以及技术交流。"
+
+data-en="Feel free to contact me for collaboration, research discussions and technical communication."
+
+data-fr="N'hésitez pas à me contacter pour des collaborations et discussions de recherche.">
 
 
-
-<div class="contact-intro">
-
-
-
-<p>
-
-
-Interested in mathematics, quantitative research, actuarial science, or data analysis?
-
-
-</p>
-
-
-
-<p>
-
-
-Feel free to connect with me for academic collaboration, research discussion, or professional opportunities.
+Feel free to contact me for collaboration, research discussions and technical communication.
 
 
 </p>
@@ -218,10 +239,6 @@ Feel free to connect with me for academic collaboration, research discussion, or
 
 
 </div>
-
-
-
-
 
 
 </section>
@@ -234,18 +251,34 @@ Feel free to connect with me for academic collaboration, research discussion, or
 
 
 
+<!-- =====================
+     Contact Cards
+===================== -->
+
+
+<section class="reveal">
+
+
+<h2 class="section-title"
+
+data-cn="联系方式"
+
+data-en="Get In Touch"
+
+data-fr="Me contacter">
+
+
+Get In Touch
+
+
+</h2>
 
 
 
 
 
-<section class="section reveal">
 
-
-
-
-
-<div class="social-cards">
+<div class="projects-grid">
 
 
 
@@ -256,64 +289,67 @@ Feel free to connect with me for academic collaboration, research discussion, or
 <!-- Email -->
 
 
-<a
-
-class="social-card"
-
-href="mailto:tkdale2006@gmail.com">
+<div class="card">
 
 
-<span>
+<img src="images/icons/email.svg"
+
+alt="Email"
+
+style="width:60px;margin-bottom:20px;">
+
+
+
+
+
+
+<h3
+
+data-cn="邮箱"
+
+data-en="Email"
+
+data-fr="Email">
+
 
 Email
 
-</span>
 
-
-
-<small>
-
-tkdale2006@gmail.com
-
-</small>
-
-
-</a>
+</h3>
 
 
 
 
 
+<p>
 
+your_email@example.com
 
+</p>
 
-
-<!-- Phone -->
 
 
 <a
 
-class="social-card"
+href="mailto:your_email@example.com"
 
-href="tel:+14372149375">
+class="btn"
 
+data-cn="发送邮件"
 
-<span>
+data-en="Send Email"
 
-Phone
-
-</span>
-
+data-fr="Envoyer un email">
 
 
-<small>
-
-+1 437-214-9375
-
-</small>
+Send Email
 
 
 </a>
+
+
+
+</div>
 
 
 
@@ -326,31 +362,69 @@ Phone
 <!-- Github -->
 
 
-<a
-
-class="social-card"
-
-href="https://github.com/TurkeyKai/"
-
-target="_blank">
+<div class="card">
 
 
-<span>
+<img src="images/icons/github.svg"
+
+alt="GitHub"
+
+style="width:60px;margin-bottom:20px;">
+
+
+
+
+
+
+<h3>
 
 GitHub
 
-</span>
+</h3>
 
 
 
-<small>
 
-github.com/TurkeyKai
+<p
 
-</small>
+data-cn="查看我的代码和项目"
+
+data-en="View my code and projects"
+
+data-fr="Voir mes codes et projets">
+
+
+View my code and projects
+
+
+</p>
+
+
+
+
+
+
+<a href="#"
+
+class="btn"
+
+target="_blank"
+
+data-cn="访问GitHub"
+
+data-en="Visit GitHub"
+
+data-fr="Visiter GitHub">
+
+
+Visit GitHub
 
 
 </a>
+
+
+
+</div>
 
 
 
@@ -363,28 +437,64 @@ github.com/TurkeyKai
 <!-- LinkedIn -->
 
 
-<a
-
-class="social-card"
-
-href="https://www.linkedin.com/"
-
-target="_blank">
+<div class="card">
 
 
-<span>
+<img src="images/icons/linkedin.svg"
+
+alt="LinkedIn"
+
+style="width:60px;margin-bottom:20px;">
+
+
+
+
+
+
+<h3>
 
 LinkedIn
 
-</span>
+</h3>
 
 
 
-<small>
 
-Professional Network
 
-</small>
+
+<p
+
+data-cn="职业交流平台"
+
+data-en="Professional networking"
+
+data-fr="Réseau professionnel">
+
+
+Professional networking
+
+
+</p>
+
+
+
+
+
+
+<a href="#"
+
+class="btn"
+
+target="_blank"
+
+data-cn="访问LinkedIn"
+
+data-en="Visit LinkedIn"
+
+data-fr="Visiter LinkedIn">
+
+
+Visit LinkedIn
 
 
 </a>
@@ -392,14 +502,15 @@ Professional Network
 
 
 
+</div>
+
+
+
 
 
 
 
 </div>
-
-
-
 
 
 </section>
@@ -412,166 +523,35 @@ Professional Network
 
 
 
+<!-- =====================
+     Message Section
+===================== -->
 
 
+<section class="reveal">
 
 
+<div class="info-box">
 
 
-<!-- WeChat -->
 
+<p
 
-<section class="section reveal">
+data-cn="如果你对数学、金融、数据分析或者技术项目感兴趣，欢迎联系我。"
 
+data-en="If you are interested in mathematics, finance, data analysis or technology projects, feel free to reach out."
 
+data-fr="Si vous êtes intéressé par les mathématiques, la finance ou les projets technologiques, contactez-moi.">
 
 
+If you are interested in mathematics, finance, data analysis or technology projects, feel free to reach out.
 
-<h2>
-
-WeChat
-
-</h2>
-
-
-
-
-
-
-
-<div class="wechat-card">
-
-
-
-
-
-
-<div class="wechat-info">
-
-
-
-<h3>
-
-TurkeyKaiKai
-
-</h3>
-
-
-
-
-<p>
-
-Feel free to contact me through WeChat for communication and collaboration.
-
-</p>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="wechat-qrcode">
-
-
-
-<img
-
-src="assets/images/wechat.jpg"
-
-alt="WeChat QR Code">
-
-
-
-</div>
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-</section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- Location -->
-
-
-
-<section class="section reveal">
-
-
-
-
-
-<h2>
-
-Location
-
-</h2>
-
-
-
-
-
-
-
-<div class="location-card">
-
-
-
-<h3>
-
-Toronto, Ontario
-
-</h3>
-
-
-
-<p>
-
-University of Toronto
-
-<br>
-
-Canada
 
 </p>
 
 
 
 </div>
-
-
-
-
 
 
 </section>
@@ -587,7 +567,11 @@ Canada
 <footer>
 
 
+<p>
+
 © 2026 Kai Teng. All Rights Reserved.
+
+</p>
 
 
 </footer>
@@ -599,12 +583,18 @@ Canada
 
 
 
-<script src="assets/js/script.js"></script>
+
+<script src="js/language.js"></script>
+
+<script src="js/reveal.js"></script>
+
+<script src="js/effects.js"></script>
+
+<script src="js/main.js"></script>
 
 
 
 </body>
-
 
 
 </html>

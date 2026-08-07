@@ -1,383 +1,238 @@
 <!DOCTYPE html>
-
 <html lang="en">
-
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-
-<title>
-Kai Teng | Portfolio
-</title>
-
-
-<meta name="description"
-content="
-Kai Teng | Mathematics Major | Actuarial Science Major | Statistics Minor
-">
+    <title data-cn="滕凯 | 个人主页"
+           data-en="Kai Teng | Portfolio"
+           data-fr="Kai Teng | Portfolio">
+        Kai Teng | Portfolio
+    </title>
 
 
-<link rel="stylesheet"
-href="assets/css/style.css">
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/animation.css">
+
+    <link rel="stylesheet" href="css/responsive.css">
 
 
 </head>
 
 
-
 <body>
 
 
+<!-- ==========================
+     Navigation
+=========================== -->
 
-<div id="loader">
 
-<div></div>
+<header class="navbar">
 
-</div>
 
+    <div class="logo">
 
+        Kai Teng
 
+    </div>
 
-<div class="cursor-glow"></div>
 
 
+    <nav>
 
 
+        <ul class="nav-links">
 
 
-<!-- Navigation -->
+            <li>
 
-<nav>
+                <a href="index.html"
+                   data-cn="首页"
+                   data-en="Home"
+                   data-fr="Accueil">
 
+                   Home
 
-<h2 class="logo">
-Kai Teng
-</h2>
+                </a>
 
+            </li>
 
 
-<button 
-class="menu-toggle"
-id="menu-toggle">
 
-☰
+            <li>
 
-</button>
+                <a href="projects.html"
+                   data-cn="项目"
+                   data-en="Projects"
+                   data-fr="Projets">
 
+                   Projects
 
+                </a>
 
+            </li>
 
 
-<div class="nav-links">
 
+            <li>
 
-<a href="index.html">
-Home
-</a>
+                <a href="resume.html"
+                   data-cn="简历"
+                   data-en="Resume"
+                   data-fr="CV">
 
+                    Resume
 
-<a href="about.html">
-About
-</a>
+                </a>
 
+            </li>
 
-<a href="projects.html">
-Projects
-</a>
 
 
-<a href="gallery.html">
-Gallery
-</a>
+            <li>
 
+                <a href="contact.html"
+                   data-cn="联系"
+                   data-en="Contact"
+                   data-fr="Contact">
 
-<a href="resume.html">
-Resume
-</a>
+                    Contact
 
+                </a>
 
-<a href="contact.html">
-Contact
-</a>
+            </li>
 
 
+        </ul>
 
 
-<div class="language-switcher">
+    </nav>
 
 
-<button>
-EN
-</button>
 
 
-<button>
-中
-</button>
+    <!-- Language Switch -->
 
 
-<button>
-FR
-</button>
+    <div class="language-switch">
 
 
+        <button onclick="changeLanguage('cn')">
 
-</div>
+            中文
 
+        </button>
 
 
 
-<button 
-class="theme-button"
-id="theme">
+        <button onclick="changeLanguage('en')">
 
-🌙
+            English
 
-</button>
+        </button>
 
 
 
-</div>
+        <button onclick="changeLanguage('fr')">
 
+            Français
 
-</nav>
+        </button>
 
 
+    </div>
 
 
+</header>
 
 
 
 
 
-<!-- Hero -->
+<!-- ==========================
+     Hero Section
+=========================== -->
 
 
-<section class="hero">
+<section class="hero reveal">
 
 
+    <div class="hero-content">
 
-<div class="hero-text">
 
 
+        <img src="images/avatar.png"
 
-<h1>
+             alt="Kai Teng Avatar"
 
+             class="profile-img avatar-float">
 
-<span>
 
-Hello,
 
-</span>
 
 
+        <h1 class="hero-title"
 
-<span>
+            data-cn="你好，我是滕凯"
 
-I'm Kai Teng
+            data-en="Hello, I am Kai Teng"
 
-</span>
+            data-fr="Bonjour, je suis Kai Teng">
 
+            Hello, I am Kai Teng
 
+        </h1>
 
-</h1>
 
 
 
 
+        <p class="hero-description"
 
+           data-cn="多伦多大学数学与精算方向学生，专注于数据分析、金融建模和量化研究。"
 
+           data-en="Mathematics and Actuarial Science student at the University of Toronto, interested in data analysis, financial modeling and quantitative research."
 
-<div class="academic-tags">
+           data-fr="Étudiant en mathématiques et actuariat à l'Université de Toronto, intéressé par l'analyse de données, la modélisation financière et la recherche quantitative.">
 
 
-<span>
-Mathematics Major
-</span>
+            Mathematics and Actuarial Science student at the University of Toronto, interested in data analysis, financial modeling and quantitative research.
 
 
-<span>
-Actuarial Science Major
-</span>
+        </p>
 
 
-<span>
-Statistics Minor
-</span>
 
 
-</div>
 
+        <a href="projects.html"
 
+           class="btn glow-button"
 
 
+           data-cn="查看我的项目"
 
+           data-en="View My Projects"
 
+           data-fr="Voir mes projets">
 
 
+            View My Projects
 
-<p class="hero-description">
 
+        </a>
 
-Mathematical modeling and quantitative analysis.
 
 
-<br>
 
-
-Statistical methods and risk modeling.
-
-
-<br>
-
-
-Data-driven problem solving.
-
-
-
-</p>
-
-
-
-
-
-
-
-<div class="hero-buttons">
-
-
-<a class="resume-btn"
-href="resume.pdf"
-download>
-
-
-Download Resume
-
-
-</a>
-
-
-
-<a class="resume-btn secondary"
-href="projects.html">
-
-
-View Projects
-
-
-</a>
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="social-cards">
-
-
-
-<a class="social-card"
-href="https://github.com/TurkeyKai/"
-target="_blank">
-
-
-<span>
-GitHub
-</span>
-
-
-<small>
-Projects & Code
-</small>
-
-
-</a>
-
-
-
-
-
-<a class="social-card"
-href="https://linkedin.com"
-target="_blank">
-
-
-<span>
-LinkedIn
-</span>
-
-
-<small>
-Professional Profile
-</small>
-
-
-</a>
-
-
-
-
-
-
-<a class="social-card"
-href="contact.html">
-
-
-<span>
-Contact
-</span>
-
-
-<small>
-Email & WeChat
-</small>
-
-
-</a>
-
-
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-<div class="profile-container">
-
-
-<img
-
-src="assets/images/profile.jpg"
-
-class="profile"
-
-
-alt="Kai Teng">
-
-
-</div>
-
-
+    </div>
 
 
 
@@ -388,100 +243,51 @@ alt="Kai Teng">
 
 
 
+<!-- ==========================
+     About Preview
+=========================== -->
 
 
-
-<!-- Preview -->
-
-
-<section class="section">
+<section class="about reveal">
 
 
+    <h2 class="section-title"
 
-<h2>
-Research Interests
-</h2>
+        data-cn="关于我"
 
+        data-en="About Me"
 
-
-
-
-
-<div class="cards">
+        data-fr="À propos de moi">
 
 
-
-<div class="card">
-
-
-<h3>
-Quantitative Research
-</h3>
+        About Me
 
 
-<p>
-
-Financial modeling,
-factor research,
-and quantitative strategy development.
-
-</p>
-
-
-</div>
+    </h2>
 
 
 
 
-
-<div class="card">
-
-
-<h3>
-Actuarial Science
-</h3>
+    <div class="info-box">
 
 
-<p>
+        <p
 
-Risk analysis,
-probability theory,
-and uncertainty modeling.
+        data-cn="我正在探索数学、统计学、金融和计算机科学之间的交叉领域。"
 
-</p>
+        data-en="I explore the intersection of mathematics, statistics, finance and computer science."
+
+        data-fr="J'explore l'intersection entre les mathématiques, les statistiques, la finance et l'informatique.">
 
 
-</div>
+        I explore the intersection of mathematics, statistics, finance and computer science.
+
+
+        </p>
 
 
 
-
-
-
-<div class="card">
-
-
-<h3>
-Statistics
-</h3>
-
-
-<p>
-
-Data analysis,
-regression models,
-and machine learning applications.
-
-</p>
-
-
-</div>
-
-
-
-
-</div>
-
+    </div>
 
 
 </section>
@@ -492,12 +298,175 @@ and machine learning applications.
 
 
 
+<!-- ==========================
+     Quick Links
+=========================== -->
+
+
+<section class="quick-links reveal">
+
+
+    <h2 class="section-title"
+
+        data-cn="探索更多"
+
+        data-en="Explore More"
+
+        data-fr="Explorer davantage">
+
+
+        Explore More
+
+
+    </h2>
+
+
+
+    <div class="projects-grid">
+
+
+        <div class="card">
+
+
+            <h3
+
+            data-cn="项目"
+
+            data-en="Projects"
+
+            data-fr="Projets">
+
+
+            Projects
+
+
+            </h3>
+
+
+
+            <p
+
+            data-cn="查看我的研究和编程项目。"
+
+            data-en="Explore my research and programming projects."
+
+            data-fr="Découvrez mes projets de recherche et de programmation.">
+
+
+            Explore my research and programming projects.
+
+
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <div class="card">
+
+
+            <h3
+
+            data-cn="简历"
+
+            data-en="Resume"
+
+            data-fr="CV">
+
+
+            Resume
+
+
+            </h3>
+
+
+
+            <p
+
+            data-cn="了解我的教育背景和经历。"
+
+            data-en="Learn about my education and experience."
+
+            data-fr="Découvrez mon parcours académique et professionnel.">
+
+
+            Learn about my education and experience.
+
+
+            </p>
+
+
+        </div>
+
+
+
+
+
+        <div class="card">
+
+
+            <h3
+
+            data-cn="联系"
+
+            data-en="Contact"
+
+            data-fr="Contact">
+
+
+            Contact
+
+
+            </h3>
+
+
+
+            <p
+
+            data-cn="欢迎交流合作。"
+
+            data-en="Feel free to connect with me."
+
+            data-fr="N'hésitez pas à me contacter.">
+
+
+            Feel free to connect with me.
+
+
+            </p>
+
+
+        </div>
+
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- ==========================
+     Footer
+=========================== -->
 
 
 <footer>
 
 
-© 2026 Kai Teng. All Rights Reserved.
+    <p>
+
+        © 2026 Kai Teng. All Rights Reserved.
+
+    </p>
 
 
 </footer>
@@ -508,15 +477,19 @@ and machine learning applications.
 
 
 
+<!-- JavaScript -->
 
-<script src="assets/js/script.js"></script>
 
+<script src="js/language.js"></script>
 
-<script src="assets/js/language.js"></script>
+<script src="js/reveal.js"></script>
+
+<script src="js/effects.js"></script>
+
+<script src="js/main.js"></script>
 
 
 
 </body>
-
 
 </html>
