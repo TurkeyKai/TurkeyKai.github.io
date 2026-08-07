@@ -46,8 +46,6 @@ function initializeWebsite(){
     addPageLoadedClass();
 
 
-    loadProjects();
-
 
 }
 
