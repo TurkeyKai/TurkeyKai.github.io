@@ -2,41 +2,34 @@
 
 <html lang="en">
 
-
 <head>
 
-
 <meta charset="UTF-8">
-
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
-<title>Kai Teng | Portfolio</title>
-
+<title data-i18n="page_title">
+Kai Teng | Portfolio
+</title>
 
 
 <link rel="stylesheet" href="assets/css/style.css">
 
-
 </head>
-
 
 
 
 <body>
 
 
-
-<!-- Loading Animation -->
-
+<!-- Loading -->
 
 <div id="loader">
 
-    <div></div>
+<div></div>
 
 </div>
-
 
 
 
@@ -74,7 +67,7 @@ id="nav-links">
 
 
 
-<a href="#home">
+<a href="#home" data-i18n="nav_home">
 
 Home
 
@@ -82,7 +75,8 @@ Home
 
 
 
-<a href="#about">
+
+<a href="#about" data-i18n="nav_about">
 
 About
 
@@ -90,7 +84,8 @@ About
 
 
 
-<a href="#projects">
+
+<a href="#projects" data-i18n="nav_projects">
 
 Projects
 
@@ -98,7 +93,8 @@ Projects
 
 
 
-<a href="#gallery">
+
+<a href="#gallery" data-i18n="nav_gallery">
 
 Gallery
 
@@ -106,7 +102,8 @@ Gallery
 
 
 
-<a href="#contact">
+
+<a href="#contact" data-i18n="nav_contact">
 
 Contact
 
@@ -121,25 +118,28 @@ Contact
 <div class="language-switcher">
 
 
-<button class="active">
+<button class="active" data-lang="en">
 
 EN
 
 </button>
 
 
-<button>
+
+<button data-lang="zh">
 
 中
 
 </button>
 
 
-<button>
+
+<button data-lang="fr">
 
 FR
 
 </button>
+
 
 
 </div>
@@ -159,6 +159,7 @@ FR
 
 
 
+
 </div>
 
 
@@ -173,7 +174,7 @@ FR
 
 
 
-<!-- Hero Section -->
+<!-- Hero -->
 
 
 <section 
@@ -190,11 +191,11 @@ id="home">
 
 
 
-
 <h1>
 
 
-<span>
+
+<span data-i18n="hero_greeting">
 
 Hello,
 
@@ -202,11 +203,15 @@ Hello,
 
 
 
-<span>
+
+
+<span data-i18n="hero_name">
 
 I'm Kai Teng
 
 </span>
+
+
 
 
 
@@ -219,7 +224,9 @@ I'm Kai Teng
 
 
 
-<p class="hero-subtitle">
+<p 
+class="hero-subtitle"
+data-i18n="hero_subtitle">
 
 
 Mathematics Major | Actuarial Science Major | Statistics Science Minor
@@ -236,20 +243,37 @@ Mathematics Major | Actuarial Science Major | Statistics Science Minor
 <p>
 
 
+
+<span data-i18n="hero_line1">
+
 Mathematical modeling.
+
+</span>
+
 
 <br>
 
+
+<span data-i18n="hero_line2">
 
 Statistical analysis.
 
+</span>
+
+
 <br>
 
 
+<span data-i18n="hero_line3">
+
 Data-driven problem solving.
+
+</span>
+
 
 
 </p>
+
 
 
 
@@ -265,7 +289,8 @@ Data-driven problem solving.
 <a 
 href="resume.pdf"
 download
-class="resume-btn">
+class="resume-btn"
+data-i18n="download_resume">
 
 
 Download Resume
@@ -278,12 +303,10 @@ Download Resume
 
 
 
-<a 
-href="https://github.com/"
-target="_blank">
+<a href="https://github.com/" target="_blank">
 
 
-<button>
+<button data-i18n="github_button">
 
 GitHub
 
@@ -303,56 +326,50 @@ GitHub
 
 
 
+
 <div class="social">
 
 
 
-<a 
-href="https://github.com/"
-target="_blank">
-
+<a href="https://github.com/" target="_blank">
 
 GitHub
 
-
 </a>
 
 
 
 
-<a 
-href="https://linkedin.com/"
-target="_blank">
 
+<a href="https://linkedin.com/" target="_blank">
 
 LinkedIn
 
-
 </a>
 
 
 
 
-<a 
-href="mailto:your-email@example.com">
 
+<a href="mailto:your-email@example.com">
 
 Email
 
-
 </a>
 
 
 
 
-</div>
-
-
-
-
 
 </div>
 
+
+
+
+
+
+
+</div>
 
 
 
@@ -383,10 +400,7 @@ alt="Kai Teng"
 
 
 
-
-
-
-<!-- About Section -->
+<!-- About -->
 
 
 <section 
@@ -395,24 +409,25 @@ class="reveal">
 
 
 
-<h2>
-
+<h2 data-i18n="about_title">
 
 About Me
-
 
 </h2>
 
 
 
 
-<p>
+
+
+<p data-i18n="about_text">
 
 
 I am a Mathematics Major, Actuarial Science Major, and Statistics Science Minor student interested in mathematical modeling, statistical analysis, and data-driven problem solving.
 
 
 </p>
+
 
 
 
@@ -427,7 +442,7 @@ I am a Mathematics Major, Actuarial Science Major, and Statistics Science Minor 
 
 
 
-<!-- Projects Section -->
+<!-- Projects -->
 
 
 <section 
@@ -436,13 +451,12 @@ class="reveal">
 
 
 
-<h2>
-
+<h2 data-i18n="projects_title">
 
 Projects
 
-
 </h2>
+
 
 
 
@@ -459,18 +473,16 @@ Projects
 <div class="card">
 
 
-<h3>
-
+<h3 data-i18n="project1_title">
 
 Mathematical Modeling
-
 
 </h3>
 
 
 
 
-<p>
+<p data-i18n="project1_text">
 
 
 Developing mathematical models and analyzing complex datasets using statistical methods.
@@ -480,6 +492,7 @@ Developing mathematical models and analyzing complex datasets using statistical 
 
 
 
+
 </div>
 
 
@@ -493,18 +506,17 @@ Developing mathematical models and analyzing complex datasets using statistical 
 <div class="card">
 
 
-<h3>
-
+<h3 data-i18n="project2_title">
 
 Machine Learning
-
 
 </h3>
 
 
 
 
-<p>
+
+<p data-i18n="project2_text">
 
 
 Building predictive models with Python, statistics, and data analysis techniques.
@@ -514,6 +526,8 @@ Building predictive models with Python, statistics, and data analysis techniques
 
 
 
+
+
 </div>
 
 
@@ -527,18 +541,17 @@ Building predictive models with Python, statistics, and data analysis techniques
 <div class="card">
 
 
-<h3>
-
+<h3 data-i18n="project3_title">
 
 Actuarial Analytics
-
 
 </h3>
 
 
 
 
-<p>
+
+<p data-i18n="project3_text">
 
 
 Applying probability, statistics, and risk modeling methods to solve practical problems.
@@ -548,16 +561,19 @@ Applying probability, statistics, and risk modeling methods to solve practical p
 
 
 
-</div>
-
-
-
-
-
-
 
 
 </div>
+
+
+
+
+
+
+
+
+</div>
+
 
 
 
@@ -572,7 +588,7 @@ Applying probability, statistics, and risk modeling methods to solve practical p
 
 
 
-<!-- Gallery Section -->
+<!-- Gallery -->
 
 
 <section 
@@ -581,13 +597,12 @@ class="reveal">
 
 
 
-<h2>
-
+<h2 data-i18n="gallery_title">
 
 Gallery
 
-
 </h2>
+
 
 
 
@@ -602,13 +617,9 @@ Gallery
 <div class="photo-card">
 
 
-<img 
-src="assets/images/gallery/1.jpg"
-alt="gallery image">
-
+<img src="assets/images/gallery/1.jpg" alt="gallery">
 
 </div>
-
 
 
 
@@ -617,13 +628,9 @@ alt="gallery image">
 <div class="photo-card">
 
 
-<img 
-src="assets/images/gallery/2.jpg"
-alt="gallery image">
-
+<img src="assets/images/gallery/2.jpg" alt="gallery">
 
 </div>
-
 
 
 
@@ -632,13 +639,9 @@ alt="gallery image">
 <div class="photo-card">
 
 
-<img 
-src="assets/images/gallery/3.jpg"
-alt="gallery image">
-
+<img src="assets/images/gallery/3.jpg" alt="gallery">
 
 </div>
-
 
 
 
@@ -658,7 +661,7 @@ alt="gallery image">
 
 
 
-<!-- Contact Section -->
+<!-- Contact -->
 
 
 <section 
@@ -667,11 +670,9 @@ class="reveal">
 
 
 
-<h2>
-
+<h2 data-i18n="contact_title">
 
 Contact
-
 
 </h2>
 
@@ -679,7 +680,7 @@ Contact
 
 
 
-<p>
+<p data-i18n="contact_text">
 
 
 Feel free to connect with me.
@@ -692,54 +693,43 @@ Feel free to connect with me.
 
 
 
+
 <div class="social">
 
 
 
-<a 
-href="https://github.com/"
-target="_blank">
-
+<a href="https://github.com/" target="_blank">
 
 GitHub
 
-
 </a>
 
 
 
 
 
-
-<a 
-href="https://linkedin.com/"
-target="_blank">
-
+<a href="https://linkedin.com/" target="_blank">
 
 LinkedIn
 
-
 </a>
 
 
 
 
 
-
-<a 
-href="mailto:your-email@example.com">
-
+<a href="mailto:your-email@example.com">
 
 Email
 
-
 </a>
-
 
 
 
 
 </div>
+
+
 
 
 
@@ -757,7 +747,7 @@ Email
 
 
 
-<p>
+<p data-i18n="footer">
 
 
 © 2026 Kai Teng. All Rights Reserved.
@@ -785,7 +775,6 @@ Email
 
 
 </body>
-
 
 
 </html>
