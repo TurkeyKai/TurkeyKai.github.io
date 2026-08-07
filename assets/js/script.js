@@ -3,7 +3,7 @@ document.addEventListener(
 function(){
 
 console.log(
-"Turkey Kai Portfolio Loaded"
+"Kai Teng Portfolio Loaded"
 );
 
 
