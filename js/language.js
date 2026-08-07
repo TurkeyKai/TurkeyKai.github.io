@@ -1,140 +1,145 @@
 /* =====================================
    language.js
-   Multi-language System
-   + Dynamic JSON Refresh
+   JSON Based Multi Language System
 ===================================== */
 
 
+let currentLanguage = "en";
+
+
 
 // ==============================
-// Change Language
+// Load Language File
 // ==============================
 
 
-function changeLanguage(language){
+async function loadLanguage(language){
 
 
+    try{
 
-    const elements =
 
-    document.querySelectorAll(
+        const response = await fetch(
+            `lang/${language}.json`
+        );
 
-        "[data-cn]"
 
-    );
+        const translations = await response.json();
 
 
 
+        applyLanguage(translations);
 
 
 
-    elements.forEach(
+        currentLanguage = language;
 
-        element => {
 
 
-
-            if(language === "cn"){
-
-
-                element.innerHTML =
-
-                element.dataset.cn;
-
-
-            }
-
-
-
-
-
-            else if(language === "en"){
-
-
-                element.innerHTML =
-
-                element.dataset.en;
-
-
-            }
-
-
-
-
-
-            else if(language === "fr"){
-
-
-                element.innerHTML =
-
-                element.dataset.fr;
-
-
-            }
-
-
-
-
-        }
-
-
-    );
-
-
-
-
-
-
-
-    localStorage.setItem(
-
-        "preferredLanguage",
-
-        language
-
-    );
-
-
-
-
-
-
-
-    // Reload dynamic projects
-
-
-    if(
-
-        typeof loadProjects === "function"
-
-    ){
-
-
-
-        const container =
-
-        document.querySelector(
-
-            "#project-container"
-
+        localStorage.setItem(
+            "preferredLanguage",
+            language
         );
 
 
 
-        if(container){
+    }
+
+
+    catch(error){
+
+
+        console.error(
+            "Language loading error:",
+            error
+        );
+
+
+    }
+
+
+}
 
 
 
-            container.innerHTML = "";
 
 
 
-            loadProjects();
 
+// ==============================
+// Apply Translation
+// ==============================
+
+
+function applyLanguage(translations){
+
+
+
+    const elements = document.querySelectorAll(
+
+        "[data-i18n]"
+
+    );
+
+
+
+
+    elements.forEach(element => {
+
+
+
+        const key =
+
+        element.getAttribute(
+            "data-i18n"
+        );
+
+
+
+        if(translations[key]){
+
+
+            element.innerHTML =
+
+            translations[key];
 
 
         }
 
+
+
+    });
+
+
+
+
+
+    // Update page title
+
+
+    const title = document.querySelector(
+
+        "title[data-i18n]"
+
+    );
+
+
+
+    if(title){
+
+
+        const key = title.dataset.i18n;
+
+
+        if(translations[key]){
+
+
+            document.title =
+
+            translations[key];
+
+
+        }
 
 
     }
@@ -150,17 +155,36 @@ function changeLanguage(language){
 
 
 
+// ==============================
+// Change Language Button
+// ==============================
+
+
+function changeLanguage(language){
+
+
+    loadLanguage(language);
+
+
+}
+
+
+
+
+
+
+
 
 // ==============================
 // Load Saved Language
 // ==============================
 
 
-function loadLanguage(){
+function initLanguage(){
 
 
 
-    const savedLanguage =
+    const saved =
 
     localStorage.getItem(
 
@@ -171,32 +195,19 @@ function loadLanguage(){
 
 
 
+    if(saved){
 
 
-    if(savedLanguage){
-
-
-
-        changeLanguage(
-
-            savedLanguage
-
-        );
-
+        loadLanguage(saved);
 
 
     }
 
-
-
     else{
 
 
-
-        changeLanguage(
-
+        loadLanguage(
             "en"
-
         );
 
 
@@ -222,6 +233,6 @@ document.addEventListener(
 
     "DOMContentLoaded",
 
-    loadLanguage
+    initLanguage
 
 );
