@@ -1,441 +1,474 @@
-/* =========================
-   Apple Style Language System
-   EN / 中文 / Français
-========================= */
+/* =================================================
+   Kai Teng Portfolio
+   Multi Language System
+   English / Chinese / French
+================================================= */
+
 
 
 const translations = {
 
 
-    en: {
 
+en:{
 
-        page_title:
-        "Kai Teng | Portfolio",
 
 
-        nav_home:
-        "Home",
+page_title:
+"Kai Teng | Portfolio",
 
-        nav_about:
-        "About",
 
-        nav_projects:
-        "Projects",
 
-        nav_gallery:
-        "Gallery",
+nav_home:
+"Home",
 
-        nav_contact:
-        "Contact",
 
+nav_about:
+"About",
 
 
-        hero_greeting:
-        "Hello,",
+nav_projects:
+"Projects",
 
 
-        hero_name:
-        "I'm Kai Teng",
+nav_gallery:
+"Gallery",
 
 
-        hero_subtitle:
-        "Mathematics Major | Actuarial Science Major | Statistics Science Minor",
+nav_contact:
+"Contact",
 
 
-        hero_line1:
-        "Mathematical modeling.",
 
 
-        hero_line2:
-        "Statistical analysis.",
 
+hero_greeting:
+"Hello,",
 
-        hero_line3:
-        "Data-driven problem solving.",
 
 
+hero_name:
+"I'm Kai Teng",
 
-        download_resume:
-        "Download Resume",
 
 
-        github_button:
-        "GitHub",
+hero_subtitle:
+"Mathematics Major | Actuarial Science Major | Statistics Science Minor",
 
 
 
-        about_title:
-        "About Me",
 
+hero_line1:
+"Mathematical modeling and quantitative analysis.",
 
-        about_text:
-        "I am a Mathematics Major, Actuarial Science Major, and Statistics Science Minor student interested in mathematical modeling, statistical analysis, and data-driven problem solving.",
 
 
+hero_line2:
+"Statistical methods and risk modeling.",
 
-        projects_title:
-        "Projects",
 
 
+hero_line3:
+"Data-driven problem solving.",
 
-        project1_title:
-        "Mathematical Modeling",
 
 
-        project1_text:
-        "Developing mathematical models and analyzing complex datasets using statistical methods.",
+download_resume:
+"Download Resume",
 
 
 
-        project2_title:
-        "Machine Learning",
 
 
-        project2_text:
-        "Building predictive models with Python, statistics, and data analysis techniques.",
+about_title:
+"About Me",
 
 
 
-        project3_title:
-        "Actuarial Analytics",
+about_text:
+"I am a Mathematics Major, Actuarial Science Major, and Statistics Science Minor student. My academic interests focus on mathematical modeling, probability theory, statistical analysis, and quantitative problem solving. Through coursework and projects, I explore how mathematical theories and statistical methods can be applied to financial modeling, risk analysis, and real-world decision making.",
 
 
-        project3_text:
-        "Applying probability, statistics, and risk modeling methods to solve practical problems.",
 
 
 
-        gallery_title:
-        "Gallery",
+projects_title:
+"Projects",
 
 
 
-        contact_title:
-        "Contact",
+project1_title:
+"Quantitative Research",
 
 
-        contact_text:
-        "Feel free to connect with me.",
 
+project1_text:
+"Developing quantitative models using mathematical methods, statistical techniques, and financial data analysis.",
 
 
-        footer:
-        "© 2026 Kai Teng. All Rights Reserved."
 
-    },
 
+project2_title:
+"Actuarial Risk Analysis",
 
 
 
+project2_text:
+"Applying probability theory, actuarial mathematics, and statistical modeling to analyze uncertainty and risk.",
 
 
 
 
-    zh: {
+project3_title:
+"Statistical Data Analysis",
 
 
-        page_title:
-        "滕凯 | 个人主页",
 
+project3_text:
+"Using Python and statistical methods to extract insights from complex datasets and build data-driven solutions.",
 
 
-        nav_home:
-        "首页",
 
 
-        nav_about:
-        "关于我",
 
 
-        nav_projects:
-        "项目",
+gallery_title:
+"Gallery",
 
 
-        nav_gallery:
-        "图库",
 
 
-        nav_contact:
-        "联系",
+contact_title:
+"Contact",
 
 
 
+contact_text:
+"Interested in mathematics, statistics, quantitative research, or actuarial applications? Feel free to connect with me.",
 
 
 
-        hero_greeting:
-        "你好，",
 
 
+footer:
+"© 2026 Kai Teng. All Rights Reserved."
 
-        hero_name:
-        "我是滕凯",
 
 
+},
 
-        hero_subtitle:
-        "数学专业 | 精算专业 | 统计科学辅修",
 
 
 
-        hero_line1:
-        "数学建模。",
 
 
 
-        hero_line2:
-        "统计分析。",
+zh:{
 
 
 
-        hero_line3:
-        "数据驱动的问题解决。",
+page_title:
+"滕凯 | 个人主页",
 
 
 
+nav_home:
+"主页",
 
-        download_resume:
-        "下载简历",
 
+nav_about:
+"关于我",
 
 
-        github_button:
-        "GitHub",
+nav_projects:
+"项目",
 
 
+nav_gallery:
+"图库",
 
 
-        about_title:
-        "关于我",
+nav_contact:
+"联系",
 
 
 
-        about_text:
-        "我是一名数学专业、精算专业以及统计科学辅修学生，专注于数学建模、统计分析以及数据驱动的问题解决。",
 
 
+hero_greeting:
+"你好，",
 
 
-        projects_title:
-        "项目",
 
+hero_name:
+"我是滕凯",
 
 
-        project1_title:
-        "数学建模",
 
+hero_subtitle:
+"数学专业 | 精算专业 | 统计科学辅修",
 
 
-        project1_text:
-        "利用数学模型和统计方法分析复杂数据集。",
 
 
+hero_line1:
+"数学建模与量化分析",
 
 
-        project2_title:
-        "机器学习",
 
+hero_line2:
+"统计方法与风险建模",
 
 
-        project2_text:
-        "使用 Python、统计学和数据分析方法建立预测模型。",
 
+hero_line3:
+"利用数据解决实际问题",
 
 
 
-        project3_title:
-        "精算分析",
 
+download_resume:
+"下载简历",
 
 
-        project3_text:
-        "应用概率、统计以及风险建模方法解决实际问题。",
 
 
 
+about_title:
+"关于我",
 
-        gallery_title:
-        "图库",
 
 
 
-        contact_title:
-        "联系我",
+about_text:
+"我是一名数学专业、精算专业以及统计科学辅修学生。我的学习方向主要集中在数学建模、概率理论、统计分析以及量化问题解决。通过课程学习和项目实践，我探索如何将数学理论和统计方法应用于金融建模、风险分析以及现实决策问题。",
 
 
 
-        contact_text:
-        "欢迎通过以下方式联系我。",
 
 
 
+projects_title:
+"项目经历",
 
-        footer:
-        "© 2026 滕凯 版权所有。"
 
-    },
 
 
+project1_title:
+"量化研究",
 
 
 
 
+project1_text:
+"利用数学方法、统计技术以及金融数据分析建立量化模型。",
 
 
 
-    fr:{
 
 
-        page_title:
-        "Kai Teng | Portfolio",
+project2_title:
+"精算风险分析",
 
 
 
-        nav_home:
-        "Accueil",
+project2_text:
+"应用概率理论、精算数学以及统计模型分析不确定性和风险。",
 
 
-        nav_about:
-        "À propos",
 
 
-        nav_projects:
-        "Projets",
+project3_title:
+"统计数据分析",
 
 
-        nav_gallery:
-        "Galerie",
 
+project3_text:
+"使用 Python 和统计方法分析复杂数据，并建立数据驱动解决方案。",
 
-        nav_contact:
-        "Contact",
 
 
 
 
 
-        hero_greeting:
-        "Bonjour,",
+gallery_title:
+"图库",
 
 
 
-        hero_name:
-        "Je suis Kai Teng",
 
+contact_title:
+"联系我",
 
 
 
-        hero_subtitle:
-        "Étudiant en mathématiques | Sciences actuarielles | Mineure en statistiques",
+contact_text:
+"如果你对数学、统计、量化研究或精算应用感兴趣，欢迎与我交流。",
 
 
 
 
-        hero_line1:
-        "Modélisation mathématique.",
+footer:
+"© 2026 滕凯 版权所有"
 
 
 
-        hero_line2:
-        "Analyse statistique.",
+},
 
 
 
-        hero_line3:
-        "Résolution de problèmes basée sur les données.",
 
 
 
 
-        download_resume:
-        "Télécharger le CV",
+fr:{
 
 
 
-        github_button:
-        "GitHub",
+page_title:
+"Kai Teng | Portfolio",
 
 
 
+nav_home:
+"Accueil",
 
 
-        about_title:
-        "À propos de moi",
+nav_about:
+"À propos",
 
 
+nav_projects:
+"Projets",
 
-        about_text:
-        "Je suis étudiant en mathématiques, en sciences actuarielles et en statistiques, intéressé par la modélisation mathématique, l'analyse statistique et la résolution de problèmes basée sur les données.",
 
+nav_gallery:
+"Galerie",
 
 
+nav_contact:
+"Contact",
 
-        projects_title:
-        "Projets",
 
 
 
 
-        project1_title:
-        "Modélisation mathématique",
+hero_greeting:
+"Bonjour,",
 
 
 
-        project1_text:
-        "Développement de modèles mathématiques et analyse de données complexes avec des méthodes statistiques.",
+hero_name:
+"Je suis Kai Teng",
 
 
 
+hero_subtitle:
+"Mathématiques | Sciences actuarielles | Mineure en statistiques",
 
 
-        project2_title:
-        "Apprentissage automatique",
 
 
+hero_line1:
+"Modélisation mathématique et analyse quantitative.",
 
-        project2_text:
-        "Création de modèles prédictifs avec Python, statistiques et techniques d'analyse de données.",
 
 
+hero_line2:
+"Méthodes statistiques et modélisation des risques.",
 
 
 
-        project3_title:
-        "Analyse actuarielle",
+hero_line3:
+"Résolution de problèmes basée sur les données.",
 
 
 
-        project3_text:
-        "Application des probabilités, statistiques et modèles de risque pour résoudre des problèmes pratiques.",
+download_resume:
+"Télécharger le CV",
 
 
 
 
 
-        gallery_title:
-        "Galerie",
+about_title:
+"À propos de moi",
 
 
 
 
+about_text:
+"Je suis étudiant en mathématiques, sciences actuarielles et statistiques. Mes intérêts académiques portent sur la modélisation mathématique, la théorie des probabilités, l'analyse statistique et la résolution quantitative de problèmes.",
 
-        contact_title:
-        "Contact",
 
 
 
 
-        contact_text:
-        "N'hésitez pas à me contacter.",
+projects_title:
+"Projets",
 
 
 
+project1_title:
+"Recherche quantitative",
 
-        footer:
-        "© 2026 Kai Teng. Tous droits réservés."
 
-    }
+
+project1_text:
+"Développement de modèles quantitatifs utilisant des méthodes mathématiques, statistiques et des données financières.",
+
+
+
+
+project2_title:
+"Analyse des risques actuariels",
+
+
+
+project2_text:
+"Application des probabilités, des mathématiques actuarielles et des modèles statistiques pour analyser les risques.",
+
+
+
+
+project3_title:
+"Analyse statistique des données",
+
+
+
+project3_text:
+"Utilisation de Python et de méthodes statistiques pour extraire des informations à partir de données complexes.",
+
+
+
+
+
+gallery_title:
+"Galerie",
+
+
+
+
+
+contact_title:
+"Contact",
+
+
+
+
+contact_text:
+"Intéressé par les mathématiques, les statistiques, la recherche quantitative ou les applications actuarielles ? Contactez-moi.",
+
+
+
+
+footer:
+"© 2026 Kai Teng. Tous droits réservés."
+
+
+
+}
+
 
 
 };
@@ -448,101 +481,72 @@ const translations = {
 
 
 
-/* =========================
-   Change Language Function
-========================= */
-
-
-function changeLanguage(language){
+function changeLanguage(lang){
 
 
 
-    const elements =
-    document.querySelectorAll("[data-i18n]");
+const elements = 
+document.querySelectorAll(
+"[data-i18n]"
+);
 
 
 
-    elements.forEach(element=>{
+elements.forEach(
+element=>{
 
 
-        const key =
-        element.getAttribute("data-i18n");
-
-
-
-        if(translations[language][key]){
-
-
-            element.classList.add(
-                "language-changing"
-            );
+element.classList.add(
+"language-changing"
+);
 
 
 
-            setTimeout(()=>{
+setTimeout(()=>{
 
 
-                element.innerHTML =
-                translations[language][key];
-
-
-
-                element.classList.remove(
-                    "language-changing"
-                );
-
-
-            },200);
+const key =
+element.dataset.i18n;
 
 
 
-        }
+if(
+translations[lang]
+&&
+translations[lang][key]
+){
 
 
 
-    });
+element.innerHTML =
+translations[lang][key];
 
 
 
+}
 
 
-    document.documentElement.lang =
-    language;
+
+element.classList.remove(
+"language-changing"
+);
+
+
+
+},250);
+
+
+
+});
 
 
 
 
-    localStorage.setItem(
-        "language",
-        language
-    );
 
-
-
-
-    document.querySelectorAll(
-        ".language-switcher button"
-    )
-    .forEach(button=>{
-
-
-        button.classList.remove(
-            "active"
-        );
-
-
-        if(
-            button.dataset.lang === language
-        ){
-
-            button.classList.add(
-                "active"
-            );
-
-        }
-
-
-    });
+localStorage.setItem(
+"language",
+lang
+);
 
 
 
@@ -556,64 +560,82 @@ function changeLanguage(language){
 
 
 
-/* =========================
-   Initialize
-========================= */
+
+document
+.querySelectorAll(
+"[data-lang]"
+)
+.forEach(
+button=>{
 
 
-document.addEventListener(
-"DOMContentLoaded",
+button.addEventListener(
+"click",
 ()=>{
 
 
-
-    const buttons =
-    document.querySelectorAll(
-        ".language-switcher button"
-    );
+const lang =
+button.dataset.lang;
 
 
 
-    buttons.forEach(button=>{
-
-
-        button.addEventListener(
-        "click",
-        ()=>{
-
-
-            changeLanguage(
-                button.dataset.lang
-            );
-
-
-        });
-
-
-    });
+document
+.querySelectorAll(
+"[data-lang]"
+)
+.forEach(
+btn=>
+btn.classList.remove(
+"active"
+)
+);
 
 
 
+button.classList.add(
+"active"
+);
 
 
 
-    const savedLanguage =
-    localStorage.getItem(
-        "language"
-    );
-
-
-
-    if(savedLanguage){
-
-
-        changeLanguage(
-            savedLanguage
-        );
-
-
-    }
+changeLanguage(lang);
 
 
 
 });
+
+
+});
+
+
+
+
+
+
+
+
+
+const savedLanguage =
+localStorage.getItem(
+"language"
+)
+||
+"en";
+
+
+
+changeLanguage(
+savedLanguage
+);
+
+
+
+
+
+document
+.querySelector(
+`[data-lang="${savedLanguage}"]`
+)
+?.classList.add(
+"active"
+);
