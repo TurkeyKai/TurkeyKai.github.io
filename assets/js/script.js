@@ -1,35 +1,45 @@
 /* =================================================
    Kai Teng Portfolio
-   Main Interaction System
+   Main JavaScript System
    Apple Style
 ================================================= */
 
 
-/* =================================================
-   Loading Animation
-================================================= */
+
+/* =========================
+   Loading
+========================= */
 
 
-window.addEventListener("load",()=>{
+window.addEventListener(
+"load",
+()=>{
 
 
-    const loader=document.getElementById("loader");
+    const loader =
+    document.getElementById(
+        "loader"
+    );
+
 
 
     if(loader){
 
 
-        loader.classList.add("hide");
+        loader.style.opacity="0";
 
 
         setTimeout(()=>{
 
+
             loader.style.display="none";
+
 
         },700);
 
 
     }
+
 
 
 });
@@ -38,19 +48,28 @@ window.addEventListener("load",()=>{
 
 
 
-/* =================================================
-   Dark Mode System
-================================================= */
-
-
-const themeButton=document.getElementById("theme");
 
 
 
-function enableDarkMode(){
+
+/* =========================
+   Dark Mode
+========================= */
 
 
-    document.body.classList.add("dark");
+const themeButton =
+document.getElementById(
+    "theme"
+);
+
+
+
+function enableDark(){
+
+
+    document.body.classList.add(
+        "dark"
+    );
 
 
     if(themeButton){
@@ -65,18 +84,16 @@ function enableDarkMode(){
         "dark"
     );
 
-
 }
 
 
 
+function disableDark(){
 
 
-
-function disableDarkMode(){
-
-
-    document.body.classList.remove("dark");
+    document.body.classList.remove(
+        "dark"
+    );
 
 
     if(themeButton){
@@ -84,6 +101,7 @@ function disableDarkMode(){
         themeButton.innerHTML="🌙";
 
     }
+
 
 
     localStorage.setItem(
@@ -99,100 +117,102 @@ function disableDarkMode(){
 
 
 
-function toggleDarkMode(event){
-
-
-    const isDark =
-    document.body.classList.contains("dark");
-
-
-
-    createThemeRipple(event);
-
-
-
-    if(isDark){
-
-        disableDarkMode();
-
-    }
-    else{
-
-        enableDarkMode();
-
-    }
-
-
-}
-
-
-
-
-
-
 if(themeButton){
 
 
+
     themeButton.addEventListener(
-        "click",
-        toggleDarkMode
+    "click",
+    (event)=>{
+
+
+        createRipple(event);
+
+
+
+        const dark =
+        document.body.classList.contains(
+            "dark"
+        );
+
+
+
+        if(dark){
+
+            disableDark();
+
+        }
+        else{
+
+            enableDark();
+
+        }
+
+
+
+    });
+
+
+}
+
+
+
+
+
+
+
+if(
+localStorage.getItem("theme")
+==="dark"
+){
+
+    enableDark();
+
+}
+
+
+
+
+
+
+
+
+
+
+/* =========================
+   Theme Ripple
+========================= */
+
+
+function createRipple(event){
+
+
+
+    const ripple =
+    document.createElement(
+        "div"
     );
 
 
-}
+
+    ripple.className=
+    "theme-ripple";
 
 
 
-
-
-
-
-const savedTheme =
-localStorage.getItem("theme");
-
-
-
-if(savedTheme==="dark"){
-
-
-    enableDarkMode();
-
-
-}
-
-
-
-
-
-
-
-
-
-
-/* =================================================
-   Apple Theme Ripple Animation
-================================================= */
-
-
-function createThemeRipple(event){
-
-
-    const ripple=document.createElement("div");
-
-
-    ripple.className="theme-ripple";
-
-
-    ripple.style.left=
+    ripple.style.left =
     event.clientX+"px";
 
 
-    ripple.style.top=
+
+    ripple.style.top =
     event.clientY+"px";
 
 
 
-    document.body.appendChild(ripple);
+    document.body.appendChild(
+        ripple
+    );
 
 
 
@@ -215,22 +235,23 @@ function createThemeRipple(event){
 
 
 
-/* =================================================
+/* =========================
    Hamburger Menu
-================================================= */
+========================= */
 
 
-const menuButton=
+const menuButton =
 document.getElementById(
-"menu-toggle"
+    "menu-toggle"
 );
 
 
 
-const navLinks=
+const navLinks =
 document.getElementById(
-"nav-links"
+    "nav-links"
 );
+
 
 
 
@@ -263,13 +284,8 @@ function closeMenu(){
         menuButton.innerHTML="☰";
 
 
-        menuButton.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-
     }
+
 
 
 }
@@ -279,15 +295,7 @@ function closeMenu(){
 
 
 
-if(menuButton && navLinks){
-
-
-
-    menuButton.setAttribute(
-        "aria-expanded",
-        "false"
-    );
-
+if(menuButton){
 
 
     menuButton.addEventListener(
@@ -299,7 +307,7 @@ if(menuButton && navLinks){
 
 
 
-        const open =
+        const opened =
         navLinks.classList.toggle(
             "active"
         );
@@ -308,28 +316,20 @@ if(menuButton && navLinks){
 
         menuButton.classList.toggle(
             "open",
-            open
+            opened
         );
 
 
 
         menuButton.innerHTML =
-        open ? "✕" : "☰";
+        opened ? "✕" : "☰";
 
-
-
-        menuButton.setAttribute(
-            "aria-expanded",
-            open
-        );
 
 
     });
 
 
 }
-
-
 
 
 
@@ -350,9 +350,9 @@ document.addEventListener(
 
 
         if(
-            !navLinks.contains(event.target)
-            &&
-            !menuButton.contains(event.target)
+        !navLinks.contains(event.target)
+        &&
+        !menuButton.contains(event.target)
         ){
 
 
@@ -373,22 +373,17 @@ document.addEventListener(
 
 
 
-
 document.querySelectorAll(
 ".nav-links a"
 )
-.forEach(link=>{
+.forEach(
+link=>{
 
 
     link.addEventListener(
     "click",
-    ()=>{
-
-
-        closeMenu();
-
-
-    });
+    closeMenu
+    );
 
 
 });
@@ -401,12 +396,12 @@ document.querySelectorAll(
 
 
 
-/* =================================================
+/* =========================
    Scroll Reveal
-================================================= */
+========================= */
 
 
-const revealElements=
+const reveals =
 document.querySelectorAll(
 ".reveal"
 );
@@ -416,23 +411,23 @@ document.querySelectorAll(
 function reveal(){
 
 
-    revealElements.forEach(
-    element=>{
+    reveals.forEach(
+    item=>{
 
 
-        const position =
-        element.getBoundingClientRect()
+        const top =
+        item.getBoundingClientRect()
         .top;
 
 
 
         if(
-            position <
-            window.innerHeight-120
+        top <
+        window.innerHeight-120
         ){
 
 
-            element.classList.add(
+            item.classList.add(
                 "active"
             );
 
@@ -440,11 +435,11 @@ function reveal(){
         }
 
 
+
     });
 
 
 }
-
 
 
 
@@ -465,53 +460,190 @@ reveal();
 
 
 
-/* =================================================
-   Mouse Glow
-================================================= */
+/* =========================
+   Cursor Glow
+========================= */
 
 
-let glow;
+const glow =
+document.querySelector(
+".cursor-glow"
+);
 
 
 
-if(window.innerWidth>768){
+if(
+window.innerWidth>768
+&&
+glow
+){
 
 
 
-    glow=document.createElement(
-        "div"
+document.addEventListener(
+"mousemove",
+(event)=>{
+
+
+    glow.style.left =
+    event.clientX-150+"px";
+
+
+
+    glow.style.top =
+    event.clientY-150+"px";
+
+
+
+});
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   Gallery Lightbox
+========================= */
+
+
+const images =
+document.querySelectorAll(
+".photo-card img"
+);
+
+
+
+const lightbox =
+document.getElementById(
+"lightbox"
+);
+
+
+
+const lightboxImage =
+document.getElementById(
+"lightbox-image"
+);
+
+
+
+const closeLightbox =
+document.getElementById(
+"close-lightbox"
+);
+
+
+
+const nextImage =
+document.getElementById(
+"next-image"
+);
+
+
+
+
+let currentIndex=0;
+
+
+
+
+
+function openLightbox(index){
+
+
+    currentIndex=index;
+
+
+    lightboxImage.src =
+    images[index].src;
+
+
+
+    lightbox.classList.add(
+        "active"
     );
 
 
-
-    glow.className=
-    "cursor-glow";
+}
 
 
 
-    document.body.appendChild(
-        glow
+
+
+
+
+images.forEach(
+(image,index)=>{
+
+
+    image.addEventListener(
+    "click",
+    ()=>{
+
+
+        openLightbox(index);
+
+
+    });
+
+
+});
+
+
+
+
+
+
+
+function closeGallery(){
+
+
+    lightbox.classList.remove(
+        "active"
     );
 
 
+}
 
 
 
-    document.addEventListener(
-    "mousemove",
+if(closeLightbox){
+
+
+    closeLightbox.addEventListener(
+    "click",
+    closeGallery
+    );
+
+
+}
+
+
+
+
+
+
+
+if(lightbox){
+
+
+    lightbox.addEventListener(
+    "click",
     (event)=>{
 
 
-        if(glow){
+        if(
+        event.target===lightbox
+        ){
 
-
-            glow.style.left =
-            event.clientX-160+"px";
-
-
-            glow.style.top =
-            event.clientY-160+"px";
-
+            closeGallery();
 
         }
 
@@ -527,118 +659,98 @@ if(window.innerWidth>768){
 
 
 
+if(nextImage){
 
 
-/* =================================================
+    nextImage.addEventListener(
+    "click",
+    ()=>{
+
+
+        currentIndex++;
+
+
+
+        if(
+        currentIndex>=images.length
+        ){
+
+            currentIndex=0;
+
+        }
+
+
+
+        lightboxImage.src =
+        images[currentIndex].src;
+
+
+
+    });
+
+
+}
+
+
+
+
+
+
+
+document.addEventListener(
+"keydown",
+(event)=>{
+
+
+    if(
+    event.key==="Escape"
+    ){
+
+        closeGallery();
+
+    }
+
+
+});
+
+
+
+
+
+
+
+
+
+/* =========================
    Language Animation Support
-================================================= */
+========================= */
 
 
-const languageStyle=
+const style =
 document.createElement(
 "style"
 );
 
 
 
-languageStyle.innerHTML=`
+style.innerHTML=`
 
 .language-changing{
 
 opacity:0;
 
 transform:
+
 translateY(10px);
 
-transition:
-all .25s cubic-bezier(.22,1,.36,1);
+transition:.25s ease;
 
 }
-
-
-#loader.hide{
-
-opacity:0;
-
-transition:
-opacity .6s ease;
-
-}
-
-
-
-.theme-ripple{
-
-
-position:fixed;
-
-width:500px;
-
-height:500px;
-
-border-radius:50%;
-
-
-background:
-
-radial-gradient(
-circle,
-rgba(255,255,255,.35),
-transparent 70%
-);
-
-
-transform:
-translate(-50%,-50%)
-scale(0);
-
-
-animation:
-
-themeExpand 1s ease forwards;
-
-
-pointer-events:none;
-
-z-index:9999;
-
-}
-
-
-
-
-@keyframes themeExpand{
-
-
-from{
-
-transform:
-translate(-50%,-50%)
-scale(0);
-
-opacity:1;
-
-}
-
-
-to{
-
-transform:
-translate(-50%,-50%)
-scale(2);
-
-opacity:0;
-
-}
-
-
-}
-
 
 `;
 
 
 
 document.head.appendChild(
-languageStyle
+style
 );

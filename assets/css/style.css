@@ -1,13 +1,22 @@
 /* =================================================
    Kai Teng Portfolio
-   Apple Style Main CSS
+   Apple Inspired Portfolio CSS
+   Part 1 / 3
 ================================================= */
 
+
+/* =========================
+   Reset
+========================= */
 
 
 *{
 
-box-sizing:border-box;
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
 
 }
 
@@ -15,46 +24,72 @@ box-sizing:border-box;
 
 html{
 
-scroll-behavior:smooth;
+    scroll-behavior:smooth;
 
 }
 
 
 
+body{
+
+    min-height:100vh;
 
 
-:root{
+    font-family:
 
-
---text-color:#222;
-
---secondary-text:#666;
-
-
---background-card:
-rgba(255,255,255,.55);
-
-
-
---nav-background:
-rgba(255,255,255,.55);
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "SF Pro Text",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 
 
 
---button-background:#111;
+    color:
 
-
---button-text:white;
-
-
---border-color:
-rgba(255,255,255,.45);
+    var(--text-color);
 
 
 
---shadow:
+    background:
 
-0 25px 60px rgba(0,0,0,.12);
+    linear-gradient(
+        120deg,
+        #fff1eb,
+        #ffd6a5,
+        #fff7ed
+    );
+
+
+
+    background-size:
+
+    400% 400%;
+
+
+
+    animation:
+
+    aurora 18s ease infinite;
+
+
+
+    line-height:1.8;
+
+
+    letter-spacing:.025em;
+
+
+    overflow-x:hidden;
+
+
+    transition:
+
+    background .6s ease,
+    color .4s ease;
+
 
 
 }
@@ -65,111 +100,49 @@ rgba(255,255,255,.45);
 
 
 /* =========================
-Dark Theme
+   Variables
 ========================= */
 
 
-body.dark{
+:root{
 
 
---text-color:#f5f5f7;
+    --text-color:#1d1d1f;
 
 
---secondary-text:#b5b5b8;
-
-
-
---background-card:
-
-rgba(30,30,30,.65);
+    --secondary-text:#6e6e73;
 
 
 
---nav-background:
+    --glass:
 
-rgba(20,20,20,.65);
-
-
-
---button-background:#f5f5f7;
-
-
---button-text:#111;
+    rgba(255,255,255,.65);
 
 
 
---border-color:
+    --card:
 
-rgba(255,255,255,.12);
-
-
-
-}
+    rgba(255,255,255,.55);
 
 
 
+    --border:
 
-
-body{
-
-
-margin:0;
-
-
-padding:40px;
+    rgba(255,255,255,.35);
 
 
 
-font-family:
+    --shadow:
 
--apple-system,
-BlinkMacSystemFont,
-"SF Pro Display",
-"Segoe UI",
-Arial,
-sans-serif;
+    0 30px 80px rgba(0,0,0,.12);
 
 
 
-color:
-
-var(--text-color);
+    --button-bg:#111;
 
 
+    --button-text:#fff;
 
-background:
-
-linear-gradient(
-
-120deg,
-
-#fff1eb,
-
-#ffd6a5,
-
-#fff7ed
-
-);
-
-
-
-background-size:400% 400%;
-
-
-animation:
-
-aurora 18s infinite;
-
-
-
-transition:
-
-background .6s ease,
-color .4s ease;
-
-
-
-overflow-x:hidden;
 
 
 }
@@ -181,23 +154,55 @@ overflow-x:hidden;
 body.dark{
 
 
-background:
+    --text-color:#f5f5f7;
 
-linear-gradient(
 
-120deg,
+    --secondary-text:#a1a1a6;
 
-#090909,
 
-#171717,
 
-#222
+    --glass:
 
-);
+    rgba(20,20,20,.65);
+
+
+
+    --card:
+
+    rgba(30,30,30,.65);
+
+
+
+    --border:
+
+    rgba(255,255,255,.12);
+
+
+
+    --button-bg:#fff;
+
+
+    --button-text:#111;
+
+
+
+    background:
+
+
+    linear-gradient(
+        120deg,
+        #050505,
+        #171717,
+        #242424
+    );
 
 
 
 }
+
+
+
+
 
 
 
@@ -206,25 +211,54 @@ linear-gradient(
 @keyframes aurora{
 
 
-0%{
+    0%{
 
-background-position:0% 50%;
+        background-position:
+
+        0% 50%;
+
+    }
+
+
+    50%{
+
+        background-position:
+
+        100% 50%;
+
+    }
+
+
+    100%{
+
+        background-position:
+
+        0% 50%;
+
+    }
+
 
 }
 
 
-50%{
-
-background-position:100% 50%;
-
-}
 
 
-100%{
 
-background-position:0% 50%;
 
-}
+
+
+/* =========================
+   Links
+========================= */
+
+
+a{
+
+
+    text-decoration:none;
+
+
+    color:inherit;
 
 
 }
@@ -238,48 +272,48 @@ background-position:0% 50%;
 
 
 /* =========================
-Loading
+   Loading
 ========================= */
 
 
 #loader{
 
 
-position:fixed;
+    position:fixed;
 
 
-inset:0;
+    inset:0;
 
 
-display:flex;
+    display:flex;
 
 
-align-items:center;
+    justify-content:center;
 
 
-justify-content:center;
+    align-items:center;
 
 
-
-background:
-
-rgba(255,255,255,.6);
+    z-index:99999;
 
 
 
-backdrop-filter:
+    background:
 
-blur(25px);
-
-
-
-z-index:99999;
+    rgba(255,255,255,.75);
 
 
 
-transition:
+    backdrop-filter:
 
-opacity .6s ease;
+    blur(30px);
+
+
+
+    transition:
+
+    opacity .7s ease;
+
 
 
 }
@@ -289,12 +323,15 @@ opacity .6s ease;
 body.dark #loader{
 
 
-background:
+    background:
 
-rgba(0,0,0,.7);
+    rgba(0,0,0,.75);
+
 
 
 }
+
+
 
 
 
@@ -302,44 +339,50 @@ rgba(0,0,0,.7);
 #loader div{
 
 
-width:55px;
-
-height:55px;
+    width:55px;
 
 
-border-radius:50%;
+    height:55px;
+
+
+    border-radius:50%;
 
 
 
-border:
+    border:
 
-5px solid #ddd;
-
-
-border-top-color:#111;
+    5px solid #ddd;
 
 
-animation:
 
-spin 1s linear infinite;
+    border-top-color:#111;
+
+
+
+    animation:
+
+    spin 1s linear infinite;
+
 
 
 }
+
 
 
 
 @keyframes spin{
 
 
-to{
+    to{
 
-transform:rotate(360deg);
+        transform:
+
+        rotate(360deg);
+
+    }
+
 
 }
-
-
-}
-
 
 
 
@@ -350,90 +393,101 @@ transform:rotate(360deg);
 
 
 /* =========================
-Navigation
+   Navigation
 ========================= */
 
 
 nav{
 
 
-position:fixed;
+    position:fixed;
 
 
-top:25px;
+    top:25px;
 
 
-left:50%;
+    left:50%;
 
 
-transform:
+    transform:
 
-translateX(-50%);
-
-
-
-width:90%;
+    translateX(-50%);
 
 
 
-display:flex;
-
-
-align-items:center;
-
-
-justify-content:space-between;
+    width:min(92%,1200px);
 
 
 
-padding:
-
-18px 35px;
+    display:flex;
 
 
-
-border-radius:40px;
-
+    align-items:center;
 
 
-background:
-
-var(--nav-background);
+    justify-content:space-between;
 
 
 
-backdrop-filter:
+    padding:
 
-blur(25px);
-
-
-
-box-shadow:
-
-var(--shadow);
+    16px 32px;
 
 
 
-z-index:1000;
+    border-radius:40px;
 
+
+
+    background:
+
+    var(--glass);
+
+
+
+    backdrop-filter:
+
+    blur(30px);
+
+
+
+    border:
+
+    1px solid var(--border);
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+    z-index:1000;
+
+
+
+}
+
+
+
+
+
+.logo{
+
+
+    font-size:30px;
+
+
+    font-weight:800;
+
+
+    letter-spacing:-.04em;
 
 
 }
 
 
-
-
-
-nav h2{
-
-
-margin:0;
-
-
-font-size:26px;
-
-
-}
 
 
 
@@ -443,17 +497,16 @@ font-size:26px;
 .nav-links{
 
 
-display:flex;
+    display:flex;
 
 
-align-items:center;
+    align-items:center;
 
 
-gap:25px;
+    gap:28px;
 
 
 }
-
 
 
 
@@ -461,32 +514,166 @@ gap:25px;
 .nav-links a{
 
 
-text-decoration:none;
+    font-size:15px;
 
 
-color:
-
-var(--text-color);
+    font-weight:600;
 
 
-
-font-weight:600;
-
-
-transition:.3s;
+    transition:.3s ease;
 
 
 }
+
+
 
 
 
 .nav-links a:hover{
 
 
-opacity:.5;
+    opacity:.55;
+
+
+    transform:
+
+    translateY(-3px);
 
 
 }
+
+
+
+
+
+
+
+
+
+.language-switcher{
+
+
+    display:flex;
+
+
+    gap:8px;
+
+
+}
+
+
+
+.language-switcher button{
+
+
+    width:38px;
+
+
+    height:32px;
+
+
+    border:none;
+
+
+    border-radius:20px;
+
+
+
+    background:
+
+    transparent;
+
+
+
+    color:
+
+    var(--text-color);
+
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+.language-switcher button.active{
+
+
+    background:
+
+    var(--button-bg);
+
+
+
+    color:
+
+    var(--button-text);
+
+
+
+}
+
+
+
+
+
+
+.theme-button{
+
+
+    width:42px;
+
+
+    height:42px;
+
+
+    border-radius:50%;
+
+
+    border:none;
+
+
+
+    background:
+
+    var(--button-bg);
+
+
+
+    color:
+
+    var(--button-text);
+
+
+
+    cursor:pointer;
+
+
+
+    transition:
+
+    .4s;
+
+
+}
+
+
+
+
+.theme-button:hover{
+
+
+    transform:
+
+    scale(1.1)
+    rotate(20deg);
+
+
+}
+
+
 
 
 
@@ -497,44 +684,23 @@ opacity:.5;
 .menu-toggle{
 
 
-display:none;
+    display:none;
 
 
-background:none;
+    background:none;
 
 
-border:none;
+    border:none;
 
 
-font-size:28px;
-
-
-color:
-
-var(--text-color);
+    font-size:28px;
 
 
 
-cursor:pointer;
+    color:
 
+    var(--text-color);
 
-transition:
-
-transform .45s cubic-bezier(.22,1,.36,1);
-
-
-}
-
-
-
-
-
-.menu-toggle.open{
-
-
-transform:
-
-rotate(180deg);
 
 
 }
@@ -548,28 +714,37 @@ rotate(180deg);
 
 
 /* =========================
-Hero
+   Hero
 ========================= */
 
 
 .hero{
 
 
-min-height:100vh;
+    min-height:100vh;
+
+
+    padding-top:140px;
+
+
+    max-width:1200px;
+
+
+    margin:auto;
 
 
 
-display:flex;
+    display:flex;
 
 
-align-items:center;
+    align-items:center;
 
 
-justify-content:space-between;
+    justify-content:space-between;
 
 
 
-gap:70px;
+    gap:80px;
 
 
 }
@@ -581,7 +756,7 @@ gap:70px;
 .hero-text{
 
 
-max-width:700px;
+    max-width:750px;
 
 
 }
@@ -593,14 +768,16 @@ max-width:700px;
 .hero h1{
 
 
-letter-spacing:-3px;
+    margin-bottom:30px;
 
 
-line-height:1.05;
+    line-height:1.05;
+
+
+    letter-spacing:-.06em;
 
 
 }
-
 
 
 
@@ -608,17 +785,18 @@ line-height:1.05;
 .hero h1 span:first-child{
 
 
-display:block;
+    display:block;
 
 
-font-size:50px;
+    font-size:48px;
 
 
-opacity:.7;
+    color:
+
+    var(--secondary-text);
 
 
 }
-
 
 
 
@@ -626,36 +804,39 @@ opacity:.7;
 .hero h1 span:last-child{
 
 
-display:block;
+    display:block;
 
 
-font-size:85px;
+    font-size:
 
-
-font-weight:800;
-
-
-background:
-
-linear-gradient(
-
-120deg,
-
-var(--text-color),
-
-var(--secondary-text)
-
-);
+    clamp(55px,8vw,90px);
 
 
 
--webkit-background-clip:text;
+    font-weight:850;
 
 
-color:transparent;
+
+    background:
+
+    linear-gradient(
+        120deg,
+        var(--text-color),
+        var(--secondary-text)
+    );
+
+
+
+    -webkit-background-clip:text;
+
+
+    color:transparent;
+
 
 
 }
+
+
 
 
 
@@ -664,12 +845,17 @@ color:transparent;
 .hero-subtitle{
 
 
-font-size:24px;
+    font-size:23px;
 
 
-color:
+    font-weight:650;
 
-var(--secondary-text);
+
+    line-height:1.6;
+
+
+    margin-bottom:25px;
+
 
 
 }
@@ -678,121 +864,108 @@ var(--secondary-text);
 
 
 
-.hero p{
+.hero-description{
 
 
-font-size:20px;
+    font-size:20px;
 
 
-color:
+    color:
 
-var(--secondary-text);
-
-
-}
+    var(--secondary-text);
 
 
 
-
-
-
-.profile{
-
-
-width:380px;
-
-
-height:380px;
-
-
-object-fit:cover;
-
-
-border-radius:50%;
-
-
-box-shadow:
-
-0 30px 80px rgba(0,0,0,.25);
-
-
-
-animation:
-
-floating 5s infinite;
+    line-height:2;
 
 
 }
-
-
-
-@keyframes floating{
-
-
-50%{
-
-transform:
-
-translateY(-20px);
-
-}
-
-
-}
-
-
-
-
-
-
-
+/* =================================================
+   Part 2 / 3
+================================================= */
 
 
 
 /* =========================
-Buttons
+   Hero Buttons
 ========================= */
+
+
+.hero-buttons{
+
+
+    display:flex;
+
+
+    gap:20px;
+
+
+    margin-top:35px;
+
+
+}
+
 
 
 button,
 .resume-btn{
 
 
-padding:
-
-15px 35px;
+    display:inline-flex;
 
 
-border-radius:40px;
+    align-items:center;
 
 
-border:none;
+    justify-content:center;
 
 
 
-background:
+    padding:
 
-var(--button-background);
-
-
-
-color:
-
-var(--button-text);
+    14px 32px;
 
 
 
-cursor:pointer;
+    border-radius:40px;
 
 
 
-text-decoration:none;
+    border:none;
 
 
-transition:.35s;
+
+    background:
+
+    var(--button-bg);
+
+
+
+    color:
+
+    var(--button-text);
+
+
+
+    font-size:16px;
+
+
+    font-weight:600;
+
+
+
+    cursor:pointer;
+
+
+
+    transition:
+
+    .35s cubic-bezier(.22,1,.36,1);
+
 
 
 }
+
 
 
 
@@ -801,14 +974,16 @@ button:hover,
 .resume-btn:hover{
 
 
-transform:
+    transform:
 
-translateY(-5px);
+    translateY(-6px);
 
 
-box-shadow:
 
-var(--shadow);
+    box-shadow:
+
+    var(--shadow);
+
 
 
 }
@@ -822,23 +997,82 @@ var(--shadow);
 
 
 /* =========================
-Cards
+   Profile Avatar
 ========================= */
 
 
-.cards{
+.profile-container{
 
 
-display:grid;
+    position:relative;
 
 
-grid-template-columns:
-
-repeat(3,1fr);
+}
 
 
 
-gap:30px;
+.profile{
+
+
+    width:380px;
+
+
+    height:380px;
+
+
+    object-fit:cover;
+
+
+
+    border-radius:50%;
+
+
+
+    border:
+
+    8px solid rgba(255,255,255,.25);
+
+
+
+    box-shadow:
+
+
+
+    0 40px 100px rgba(0,0,0,.25);
+
+
+
+    animation:
+
+    floating 6s ease-in-out infinite;
+
+
+
+    transition:
+
+    .5s cubic-bezier(.22,1,.36,1);
+
+
+
+}
+
+
+
+.profile:hover{
+
+
+    transform:
+
+    scale(1.06)
+    translateY(-12px);
+
+
+
+    box-shadow:
+
+
+    0 60px 120px rgba(0,0,0,.35);
+
 
 
 }
@@ -847,35 +1081,343 @@ gap:30px;
 
 
 
+@keyframes floating{
+
+
+    0%,
+    100%{
+
+
+        transform:
+
+        translateY(0);
+
+
+    }
+
+
+
+    50%{
+
+
+        transform:
+
+        translateY(-20px);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   Sections
+========================= */
+
+
+.section{
+
+
+    max-width:1200px;
+
+
+    margin:
+
+    130px auto;
+
+
+
+}
+
+
+
+.section h2{
+
+
+    font-size:50px;
+
+
+    letter-spacing:-.04em;
+
+
+    margin-bottom:45px;
+
+
+}
+
+
+
+
+.section p{
+
+
+    font-size:20px;
+
+
+    line-height:2;
+
+
+    color:
+
+    var(--secondary-text);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   Social Cards
+========================= */
+
+
+.social-links,
+.social-cards{
+
+
+    display:flex;
+
+
+    flex-wrap:wrap;
+
+
+    gap:20px;
+
+
+    margin-top:35px;
+
+
+
+}
+
+
+
+
+
+
+.social-card{
+
+
+    min-width:180px;
+
+
+    padding:
+
+    22px 28px;
+
+
+
+    border-radius:28px;
+
+
+
+    background:
+
+    var(--card);
+
+
+
+    border:
+
+    1px solid var(--border);
+
+
+
+    backdrop-filter:
+
+    blur(25px);
+
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    gap:5px;
+
+
+
+    box-shadow:
+
+    0 15px 40px rgba(0,0,0,.08);
+
+
+
+    transition:
+
+    .45s cubic-bezier(.22,1,.36,1);
+
+
+
+}
+
+
+
+
+.social-card span{
+
+
+    font-size:21px;
+
+
+    font-weight:750;
+
+
+
+}
+
+
+
+
+
+.social-card small{
+
+
+    font-size:14px;
+
+
+    color:
+
+    var(--secondary-text);
+
+
+}
+
+
+
+
+
+.social-card:hover{
+
+
+    transform:
+
+
+    translateY(-12px)
+    scale(1.04);
+
+
+
+    box-shadow:
+
+    var(--shadow);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   Project Cards
+========================= */
+
+
+.cards{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+
+    gap:30px;
+
+
+}
+
+
+
+
+
+
 .card{
 
 
-padding:35px;
-
-
-border-radius:30px;
+    padding:38px;
 
 
 
-background:
-
-var(--background-card);
+    border-radius:32px;
 
 
 
-border:
+    background:
 
-1px solid var(--border-color);
-
-
-
-backdrop-filter:
-
-blur(20px);
+    var(--card);
 
 
 
-transition:.4s;
+    border:
+
+    1px solid var(--border);
+
+
+
+    backdrop-filter:
+
+    blur(25px);
+
+
+
+    transition:
+
+    .45s cubic-bezier(.22,1,.36,1);
+
+
+
+}
+
+
+
+
+
+.card h3{
+
+
+    font-size:28px;
+
+
+    margin-bottom:20px;
+
+
+
+}
+
+
+
+
+.card p{
+
+
+    font-size:17px;
 
 
 }
@@ -887,19 +1429,19 @@ transition:.4s;
 .card:hover{
 
 
-transform:
+    transform:
 
-translateY(-15px);
+    translateY(-15px);
 
 
-box-shadow:
 
-var(--shadow);
+    box-shadow:
+
+    var(--shadow);
+
 
 
 }
-
-
 
 
 
@@ -910,39 +1452,75 @@ var(--shadow);
 
 
 /* =========================
-Gallery
+   Gallery Apple Photos
 ========================= */
 
 
 .gallery{
 
 
-columns:3 300px;
+    columns:
+
+    3 300px;
 
 
-column-gap:30px;
+    column-gap:30px;
+
 
 
 }
+
+
 
 
 
 .photo-card{
 
 
-break-inside:avoid;
+    break-inside:avoid;
 
 
-margin-bottom:30px;
+    margin-bottom:30px;
 
 
-overflow:hidden;
+    border-radius:32px;
 
 
-border-radius:30px;
+
+    overflow:hidden;
+
+
+
+    background:
+
+    var(--card);
+
+
+
+    border:
+
+    1px solid var(--border);
+
+
+
+    box-shadow:
+
+    0 20px 50px rgba(0,0,0,.12);
+
+
+
+    cursor:pointer;
+
+
+
+    transition:
+
+    .5s cubic-bezier(.22,1,.36,1);
+
 
 
 }
+
 
 
 
@@ -950,16 +1528,45 @@ border-radius:30px;
 .photo-card img{
 
 
-width:100%;
+    width:100%;
 
 
-display:block;
+    display:block;
 
 
-border-radius:30px;
+
+    aspect-ratio:4/3;
 
 
-transition:.5s;
+
+    object-fit:cover;
+
+
+
+    transition:
+
+    transform .8s cubic-bezier(.22,1,.36,1);
+
+
+
+}
+
+
+
+
+.photo-card:hover{
+
+
+    transform:
+
+    translateY(-12px);
+
+
+
+    box-shadow:
+
+    0 40px 90px rgba(0,0,0,.25);
+
 
 
 }
@@ -968,16 +1575,220 @@ transition:.5s;
 
 
 
-.photo-card img:hover{
+.photo-card:hover img{
 
 
-transform:
+    transform:
 
-scale(1.05);
+    scale(1.08);
+
+
+
+}
+/* =================================================
+   Part 3 / 3
+================================================= */
+
+
+
+/* =========================
+   Lightbox Apple Photos
+========================= */
+
+
+#lightbox{
+
+
+    position:fixed;
+
+
+    inset:0;
+
+
+    z-index:9999;
+
+
+
+    display:flex;
+
+
+    align-items:center;
+
+
+    justify-content:center;
+
+
+
+    background:
+
+    rgba(0,0,0,.75);
+
+
+
+    backdrop-filter:
+
+    blur(35px);
+
+
+
+    opacity:0;
+
+
+    visibility:hidden;
+
+
+
+    transition:
+
+    .45s ease;
+
 
 
 }
 
+
+
+
+
+#lightbox.active{
+
+
+    opacity:1;
+
+
+    visibility:visible;
+
+
+
+}
+
+
+
+
+
+
+#lightbox-image{
+
+
+    max-width:85%;
+
+
+    max-height:85%;
+
+
+
+    border-radius:32px;
+
+
+
+    box-shadow:
+
+    0 50px 120px rgba(0,0,0,.6);
+
+
+
+    transform:
+
+    scale(.85);
+
+
+
+    transition:
+
+    .5s cubic-bezier(.22,1,.36,1);
+
+
+
+}
+
+
+
+
+
+#lightbox.active #lightbox-image{
+
+
+    transform:
+
+    scale(1);
+
+
+
+}
+
+
+
+
+
+
+
+
+#close-lightbox,
+#next-image{
+
+
+    position:absolute;
+
+
+    width:55px;
+
+
+    height:55px;
+
+
+    border-radius:50%;
+
+
+
+    border:none;
+
+
+
+    background:
+
+    rgba(255,255,255,.2);
+
+
+
+    color:white;
+
+
+
+    font-size:30px;
+
+
+
+    backdrop-filter:
+
+    blur(15px);
+
+
+
+}
+
+
+
+#close-lightbox{
+
+
+    top:40px;
+
+
+    right:40px;
+
+
+}
+
+
+
+
+#next-image{
+
+
+    right:40px;
+
+
+}
 
 
 
@@ -988,25 +1799,27 @@ scale(1.05);
 
 
 /* =========================
-Reveal
+   Scroll Reveal
 ========================= */
 
 
 .reveal{
 
 
-opacity:0;
-
-
-transform:
-
-translateY(60px);
+    opacity:0;
 
 
 
-transition:
+    transform:
 
-1s ease;
+    translateY(60px);
+
+
+
+    transition:
+
+    1s cubic-bezier(.22,1,.36,1);
+
 
 
 }
@@ -1018,43 +1831,14 @@ transition:
 .reveal.active{
 
 
-opacity:1;
-
-
-transform:
-
-translateY(0);
-
-
-}
+    opacity:1;
 
 
 
+    transform:
 
+    translateY(0);
 
-
-
-
-
-
-/* =========================
-Language Animation
-========================= */
-
-
-.language-changing{
-
-
-opacity:0;
-
-
-transform:
-
-translateY(10px);
-
-
-
-transition:.25s;
 
 
 }
@@ -1068,102 +1852,53 @@ transition:.25s;
 
 
 /* =========================
-Theme Ripple
-========================= */
-
-
-.theme-ripple{
-
-
-position:fixed;
-
-
-
-width:500px;
-
-
-height:500px;
-
-
-
-border-radius:50%;
-
-
-
-pointer-events:none;
-
-
-
-background:
-
-radial-gradient(
-
-circle,
-
-rgba(255,255,255,.35),
-
-transparent 70%
-
-);
-
-
-
-z-index:9999;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =========================
-Cursor Glow
+   Cursor Glow
 ========================= */
 
 
 .cursor-glow{
 
 
-position:fixed;
+    position:fixed;
 
 
-width:320px;
+    width:320px;
 
 
-height:320px;
-
-
-border-radius:50%;
+    height:320px;
 
 
 
-background:
-
-radial-gradient(
-
-circle,
-
-rgba(255,170,120,.3),
-
-transparent 70%
-
-);
+    border-radius:50%;
 
 
 
-filter:blur(30px);
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    rgba(255,180,120,.35),
+
+    transparent 70%
+
+    );
 
 
-pointer-events:none;
+
+    filter:
+
+    blur(40px);
 
 
 
-z-index:-1;
+    pointer-events:none;
+
+
+
+    z-index:-1;
+
 
 
 }
@@ -1176,9 +1911,119 @@ z-index:-1;
 
 
 
+/* =========================
+   Theme Ripple
+========================= */
+
+
+.theme-ripple{
+
+
+    position:fixed;
+
+
+    width:500px;
+
+
+    height:500px;
+
+
+
+    border-radius:50%;
+
+
+
+    background:
+
+    radial-gradient(
+
+    circle,
+
+    rgba(255,255,255,.45),
+
+    transparent 70%
+
+    );
+
+
+
+    transform:
+
+    translate(-50%,-50%)
+    scale(0);
+
+
+
+    animation:
+
+    rippleExpand 1s ease forwards;
+
+
+
+    pointer-events:none;
+
+
+
+    z-index:99999;
+
+
+
+}
+
+
+
+
+
+@keyframes rippleExpand{
+
+
+    from{
+
+
+        transform:
+
+        translate(-50%,-50%)
+        scale(0);
+
+
+
+        opacity:1;
+
+
+
+    }
+
+
+
+    to{
+
+
+        transform:
+
+        translate(-50%,-50%)
+        scale(2);
+
+
+
+        opacity:0;
+
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
 
 /* =========================
-Mobile
+   Mobile Navigation
 ========================= */
 
 
@@ -1189,7 +2034,7 @@ Mobile
 body{
 
 
-padding:20px;
+    padding:20px;
 
 
 }
@@ -1200,12 +2045,8 @@ padding:20px;
 nav{
 
 
-width:94%;
+    width:94%;
 
-
-padding:
-
-15px 20px;
 
 
 }
@@ -1217,7 +2058,8 @@ padding:
 .menu-toggle{
 
 
-display:block;
+    display:block;
+
 
 
 }
@@ -1229,71 +2071,67 @@ display:block;
 .nav-links{
 
 
-position:absolute;
+    position:absolute;
 
 
-top:75px;
+    top:80px;
 
 
-left:0;
-
-
-
-width:100%;
+    left:0;
 
 
 
-padding:30px;
+    width:100%;
 
 
 
-border-radius:30px;
+    padding:35px;
 
 
 
-background:
-
-var(--nav-background);
+    border-radius:30px;
 
 
 
-backdrop-filter:
+    background:
 
-blur(25px);
-
-
-
-display:flex;
+    var(--glass);
 
 
 
-flex-direction:column;
+    backdrop-filter:
+
+    blur(30px);
 
 
 
-gap:20px;
+    flex-direction:column;
 
 
 
-
-opacity:0;
-
-
-
-visibility:hidden;
+    gap:25px;
 
 
 
-transform:
-
-translateY(-20px)
-scale(.95);
+    opacity:0;
 
 
 
-transition:
+    visibility:hidden;
 
-.45s cubic-bezier(.22,1,.36,1);
+
+
+    transform:
+
+    translateY(-25px)
+    scale(.95);
+
+
+
+    transition:
+
+    .45s cubic-bezier(.22,1,.36,1);
+
 
 
 }
@@ -1305,21 +2143,21 @@ transition:
 .nav-links.active{
 
 
-opacity:1;
+    opacity:1;
 
 
-visibility:visible;
+    visibility:visible;
 
 
 
-transform:
+    transform:
 
-translateY(0)
-scale(1);
+    translateY(0)
+    scale(1);
+
 
 
 }
-
 
 
 
@@ -1328,40 +2166,19 @@ scale(1);
 .hero{
 
 
-padding-top:120px;
+    padding-top:130px;
 
 
 
-flex-direction:column;
+    flex-direction:column;
 
 
-text-align:center;
+
+    text-align:center;
+
 
 
 }
-
-
-
-
-.hero h1 span:first-child{
-
-
-font-size:35px;
-
-
-}
-
-
-
-
-.hero h1 span:last-child{
-
-
-font-size:48px;
-
-
-}
-
 
 
 
@@ -1369,10 +2186,26 @@ font-size:48px;
 .profile{
 
 
-width:220px;
+    width:240px;
 
 
-height:220px;
+    height:240px;
+
+
+
+}
+
+
+
+
+
+.hero-buttons,
+.social-links,
+.social-cards{
+
+
+    justify-content:center;
+
 
 
 }
@@ -1384,7 +2217,21 @@ height:220px;
 .cards{
 
 
-grid-template-columns:1fr;
+    grid-template-columns:1fr;
+
+
+
+}
+
+
+
+
+
+.section h2{
+
+
+    font-size:38px;
+
 
 
 }
@@ -1392,19 +2239,22 @@ grid-template-columns:1fr;
 
 
 
-.gallery{
+
+#lightbox-image{
 
 
-columns:1;
+    max-width:95%;
+
+
+    max-height:70%;
+
 
 
 }
 
 
 
-
 }
-
 
 
 
@@ -1417,13 +2267,871 @@ columns:1;
 
 
 
-.hero h1 span:last-child{
+.hero h1 span:first-child{
 
 
-font-size:40px;
+    font-size:34px;
+
 
 
 }
+
+
+
+
+
+.hero h1 span:last-child{
+
+
+    font-size:45px;
+
+
+
+}
+
+
+
+
+.hero-subtitle{
+
+
+    font-size:17px;
+
+
+
+}
+
+
+
+
+.hero-description{
+
+
+    font-size:16px;
+
+
+
+}
+
+
+
+
+
+.social-card{
+
+
+    width:100%;
+
+
+}
+
+
+
+}、/* =================================================
+   Layout Breathing Space Fix
+   Increase content width and improve readability
+================================================= */
+
+
+/* 页面整体边距 */
+
+body{
+
+    padding-left:40px;
+
+    padding-right:40px;
+
+}
+
+
+
+/* 主内容宽度 */
+
+.hero,
+.section{
+
+    max-width:1400px;
+
+    width:100%;
+
+    margin-left:auto;
+
+    margin-right:auto;
+
+}
+
+
+
+
+
+/* Hero 左右空间 */
+
+.hero{
+
+    padding-left:50px;
+
+    padding-right:50px;
+
+    gap:120px;
+
+}
+
+
+
+
+
+.hero-text{
+
+    max-width:850px;
+
+}
+
+
+
+
+
+
+/* 标题不要贴边 */
+
+.hero h1{
+
+    margin-left:0;
+
+    margin-right:0;
+
+}
+
+
+
+
+
+/* 正文增加呼吸感 */
+
+
+.hero-description,
+.section p{
+
+
+    max-width:900px;
+
+
+    letter-spacing:.035em;
+
+
+    line-height:2;
+
+
+}
+
+
+
+
+
+/* Section 标题间距 */
+
+
+.section h2{
+
+
+    margin-bottom:55px;
+
+
+}
+
+
+
+
+
+
+/* 卡片内部空间 */
+
+
+.card{
+
+
+    padding:45px;
+
+
+}
+
+
+
+
+
+
+.social-card{
+
+
+    padding:
+
+    25px 35px;
+
+
+}
+
+
+
+
+
+
+
+/* Gallery 不要太挤 */
+
+
+.gallery{
+
+
+    column-gap:40px;
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   Desktop Large Screen
+========================= */
+
+
+@media(min-width:1400px){
+
+
+
+.hero,
+.section{
+
+
+    max-width:1500px;
+
+
+}
+
+
+
+
+.hero h1 span:last-child{
+
+
+    font-size:100px;
+
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+/* =========================
+   Tablet
+========================= */
+
+
+@media(max-width:900px){
+
+
+
+body{
+
+
+    padding-left:20px;
+
+    padding-right:20px;
+
+
+}
+
+
+
+.hero{
+
+
+    padding-left:0;
+
+    padding-right:0;
+
+
+    gap:50px;
+
+
+}
+
+
+
+.section{
+
+
+    width:100%;
+
+
+}
+
+
+
+}
+/* =================================================
+   Complete Content Section Upgrade
+   About / Projects / Gallery / Contact
+================================================= */
+
+
+/* =========================
+   Global Section Layout
+========================= */
+
+
+.section{
+
+    max-width:1400px;
+
+    width:100%;
+
+    margin:160px auto;
+
+    padding:
+
+    0 60px;
+
+
+}
+
+
+
+
+.section h2{
+
+    font-size:56px;
+
+    font-weight:800;
+
+    letter-spacing:-0.05em;
+
+    margin-bottom:60px;
+
+
+}
+
+
+
+
+
+.section p{
+
+    max-width:1000px;
+
+    font-size:21px;
+
+    line-height:2;
+
+    letter-spacing:.03em;
+
+    color:var(--secondary-text);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   About Section
+========================= */
+
+
+#about{
+
+
+    padding-top:40px;
+
+
+}
+
+
+
+
+#about p{
+
+
+    background:
+
+    var(--card);
+
+
+
+    padding:50px;
+
+
+
+    border-radius:35px;
+
+
+
+    border:
+
+    1px solid var(--border);
+
+
+
+    backdrop-filter:
+
+    blur(25px);
+
+
+
+    box-shadow:
+
+    0 30px 80px rgba(0,0,0,.08);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   Projects
+========================= */
+
+
+#projects .cards{
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+    repeat(3,1fr);
+
+
+    gap:40px;
+
+
+
+}
+
+
+
+
+
+#projects .card{
+
+
+    min-height:300px;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+
+    padding:50px;
+
+
+
+    border-radius:40px;
+
+
+
+}
+
+
+
+
+
+#projects .card h3{
+
+
+    font-size:32px;
+
+
+    line-height:1.3;
+
+
+    margin-bottom:25px;
+
+
+}
+
+
+
+
+
+#projects .card p{
+
+
+    font-size:18px;
+
+
+}
+
+
+
+
+
+
+#projects .card:hover{
+
+
+    transform:
+
+    translateY(-18px);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   Gallery
+========================= */
+
+
+#gallery{
+
+
+    padding-top:30px;
+
+
+}
+
+
+
+
+
+#gallery .gallery{
+
+
+    columns:2 450px;
+
+
+    column-gap:45px;
+
+
+}
+
+
+
+
+
+#gallery .photo-card{
+
+
+    margin-bottom:45px;
+
+
+    border-radius:40px;
+
+
+}
+
+
+
+
+
+#gallery .photo-card img{
+
+
+    aspect-ratio:auto;
+
+
+    min-height:300px;
+
+
+}
+
+
+
+
+
+
+
+#gallery .photo-card:hover{
+
+
+    transform:
+
+    translateY(-15px)
+    scale(1.02);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   Contact
+========================= */
+
+
+#contact{
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+#contact p{
+
+
+    margin:auto;
+
+
+    margin-bottom:50px;
+
+
+}
+
+
+
+
+
+#contact .social-links,
+#contact .social-cards{
+
+
+    justify-content:center;
+
+
+    gap:30px;
+
+
+}
+
+
+
+
+
+#contact .social-card{
+
+
+    min-width:220px;
+
+
+    min-height:130px;
+
+
+    justify-content:center;
+
+
+    text-align:left;
+
+
+}
+
+
+
+
+
+#contact .social-card span{
+
+
+    font-size:26px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   Footer
+========================= */
+
+
+footer{
+
+
+    margin-top:100px;
+
+
+    padding:50px;
+
+
+    text-align:center;
+
+
+    color:
+
+    var(--secondary-text);
+
+
+    font-size:15px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =========================
+   Tablet
+========================= */
+
+
+@media(max-width:900px){
+
+
+
+.section{
+
+
+    padding:
+
+    0 20px;
+
+
+    margin:
+
+    100px auto;
+
+
+}
+
+
+
+
+.section h2{
+
+
+    font-size:40px;
+
+
+}
+
+
+
+
+#projects .cards{
+
+
+    grid-template-columns:1fr;
+
+
+}
+
+
+
+
+#gallery .gallery{
+
+
+    columns:1;
+
+
+}
+
+
+
+
+
+#about p{
+
+
+    padding:30px;
+
+
+}
+
+
+
+
+}
+
+
+
+
+
+/* =========================
+   Small Mobile
+========================= */
+
+
+@media(max-width:500px){
+
+
+
+.section h2{
+
+
+    font-size:34px;
+
+
+}
+
+
+
+.section p{
+
+
+    font-size:17px;
+
+
+}
+
+
+
+
+#projects .card{
+
+
+    padding:30px;
+
+
+}
+
+
 
 
 

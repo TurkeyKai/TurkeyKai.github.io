@@ -14,22 +14,38 @@ Kai Teng | Portfolio
 </title>
 
 
+<meta name="description"
+content="Kai Teng - Mathematics Major, Actuarial Science Major, Statistics Science Minor">
+
+
 <link rel="stylesheet" href="assets/css/style.css">
 
+
 </head>
+
 
 
 
 <body>
 
 
-<!-- Loading -->
+<!-- Loading Animation -->
 
 <div id="loader">
 
-<div></div>
+    <div></div>
 
 </div>
+
+
+
+
+
+<!-- Cursor Glow -->
+
+<div class="cursor-glow"></div>
+
+
 
 
 
@@ -41,18 +57,24 @@ Kai Teng | Portfolio
 <nav>
 
 
-<h2>
+<h2 class="logo">
+
 Kai
+
 </h2>
+
 
 
 
 
 <button 
 class="menu-toggle"
-id="menu-toggle">
+id="menu-toggle"
+aria-label="Menu">
+
 
 ☰
+
 
 </button>
 
@@ -75,13 +97,11 @@ Home
 
 
 
-
 <a href="#about" data-i18n="nav_about">
 
 About
 
 </a>
-
 
 
 
@@ -93,13 +113,11 @@ Projects
 
 
 
-
 <a href="#gallery" data-i18n="nav_gallery">
 
 Gallery
 
 </a>
-
 
 
 
@@ -118,7 +136,9 @@ Contact
 <div class="language-switcher">
 
 
-<button class="active" data-lang="en">
+<button 
+class="active"
+data-lang="en">
 
 EN
 
@@ -126,7 +146,9 @@ EN
 
 
 
-<button data-lang="zh">
+
+<button 
+data-lang="zh">
 
 中
 
@@ -134,7 +156,9 @@ EN
 
 
 
-<button data-lang="fr">
+
+<button 
+data-lang="fr">
 
 FR
 
@@ -149,12 +173,16 @@ FR
 
 
 
+<button 
+id="theme"
+class="theme-button">
 
-<button id="theme">
 
 🌙
 
+
 </button>
+
 
 
 
@@ -178,8 +206,9 @@ FR
 
 
 <section 
-class="hero reveal"
-id="home">
+id="home"
+class="hero reveal">
+
 
 
 
@@ -194,14 +223,11 @@ id="home">
 <h1>
 
 
-
 <span data-i18n="hero_greeting">
 
 Hello,
 
 </span>
-
-
 
 
 
@@ -213,10 +239,7 @@ I'm Kai Teng
 
 
 
-
-
 </h1>
-
 
 
 
@@ -240,8 +263,7 @@ Mathematics Major | Actuarial Science Major | Statistics Science Minor
 
 
 
-<p>
-
+<p class="hero-description">
 
 
 <span data-i18n="hero_line1">
@@ -254,6 +276,7 @@ Mathematical modeling.
 <br>
 
 
+
 <span data-i18n="hero_line2">
 
 Statistical analysis.
@@ -262,6 +285,7 @@ Statistical analysis.
 
 
 <br>
+
 
 
 <span data-i18n="hero_line3">
@@ -282,7 +306,7 @@ Data-driven problem solving.
 
 
 
-<div class="buttons">
+<div class="hero-buttons">
 
 
 
@@ -303,12 +327,15 @@ Download Resume
 
 
 
-<a href="https://github.com/" target="_blank">
+<a href="https://github.com/"
+target="_blank">
 
 
-<button data-i18n="github_button">
+<button>
+
 
 GitHub
+
 
 </button>
 
@@ -317,6 +344,7 @@ GitHub
 
 
 
+
 </div>
 
 
@@ -327,40 +355,42 @@ GitHub
 
 
 
-<div class="social">
+<div class="social-links">
 
 
+<a href="https://github.com/"
+target="_blank">
 
-<a href="https://github.com/" target="_blank">
 
 GitHub
 
+
 </a>
 
 
 
+<a href="https://linkedin.com/"
+target="_blank">
 
-
-<a href="https://linkedin.com/" target="_blank">
 
 LinkedIn
 
-</a>
 
+</a>
 
 
 
 
 <a href="mailto:your-email@example.com">
 
+
 Email
+
 
 </a>
 
 
 
-
-
 </div>
 
 
@@ -374,6 +404,12 @@ Email
 
 
 
+
+
+
+
+
+<div class="profile-container">
 
 
 
@@ -385,7 +421,11 @@ class="profile"
 
 alt="Kai Teng"
 
->
+loading="lazy">
+
+
+</div>
+
 
 
 
@@ -405,16 +445,17 @@ alt="Kai Teng"
 
 <section 
 id="about"
-class="reveal">
+class="section reveal">
 
 
 
 <h2 data-i18n="about_title">
 
+
 About Me
 
-</h2>
 
+</h2>
 
 
 
@@ -427,7 +468,6 @@ I am a Mathematics Major, Actuarial Science Major, and Statistics Science Minor 
 
 
 </p>
-
 
 
 
@@ -447,13 +487,15 @@ I am a Mathematics Major, Actuarial Science Major, and Statistics Science Minor 
 
 <section 
 id="projects"
-class="reveal">
+class="section reveal">
 
 
 
 <h2 data-i18n="projects_title">
 
+
 Projects
+
 
 </h2>
 
@@ -462,8 +504,8 @@ Projects
 
 
 
-<div class="cards">
 
+<div class="cards">
 
 
 
@@ -481,21 +523,14 @@ Mathematical Modeling
 
 
 
-
 <p data-i18n="project1_text">
 
-
 Developing mathematical models and analyzing complex datasets using statistical methods.
-
 
 </p>
 
 
-
-
 </div>
-
-
 
 
 
@@ -514,23 +549,14 @@ Machine Learning
 
 
 
-
-
 <p data-i18n="project2_text">
 
-
 Building predictive models with Python, statistics, and data analysis techniques.
-
 
 </p>
 
 
-
-
-
 </div>
-
-
 
 
 
@@ -549,20 +575,13 @@ Actuarial Analytics
 
 
 
-
-
 <p data-i18n="project3_text">
 
-
 Applying probability, statistics, and risk modeling methods to solve practical problems.
-
 
 </p>
 
 
-
-
-
 </div>
 
 
@@ -571,8 +590,8 @@ Applying probability, statistics, and risk modeling methods to solve practical p
 
 
 
-
 </div>
+
 
 
 
@@ -593,15 +612,18 @@ Applying probability, statistics, and risk modeling methods to solve practical p
 
 <section 
 id="gallery"
-class="reveal">
+class="section reveal">
 
 
 
 <h2 data-i18n="gallery_title">
 
+
 Gallery
 
+
 </h2>
+
 
 
 
@@ -617,9 +639,18 @@ Gallery
 <div class="photo-card">
 
 
-<img src="assets/images/gallery/1.jpg" alt="gallery">
+<img
+
+src="assets/images/gallery/1.jpg"
+
+alt="Gallery Image 1"
+
+loading="lazy">
+
 
 </div>
+
+
 
 
 
@@ -628,9 +659,18 @@ Gallery
 <div class="photo-card">
 
 
-<img src="assets/images/gallery/2.jpg" alt="gallery">
+<img
+
+src="assets/images/gallery/2.jpg"
+
+alt="Gallery Image 2"
+
+loading="lazy">
+
 
 </div>
+
+
 
 
 
@@ -639,7 +679,14 @@ Gallery
 <div class="photo-card">
 
 
-<img src="assets/images/gallery/3.jpg" alt="gallery">
+<img
+
+src="assets/images/gallery/3.jpg"
+
+alt="Gallery Image 3"
+
+loading="lazy">
+
 
 </div>
 
@@ -647,11 +694,51 @@ Gallery
 
 
 
+
+
 </div>
+
+
 
 
 
 </section>
+
+
+
+
+
+
+
+
+
+<!-- Lightbox -->
+
+
+<div id="lightbox">
+
+
+<button id="close-lightbox">
+
+✕
+
+
+</button>
+
+
+
+<img id="lightbox-image">
+
+
+<button id="next-image">
+
+›
+
+</button>
+
+
+
+</div>
 
 
 
@@ -666,16 +753,17 @@ Gallery
 
 <section 
 id="contact"
-class="reveal">
+class="section reveal">
 
 
 
 <h2 data-i18n="contact_title">
 
+
 Contact
 
-</h2>
 
+</h2>
 
 
 
@@ -693,34 +781,37 @@ Feel free to connect with me.
 
 
 
-
-<div class="social">
-
+<div class="social-links">
 
 
-<a href="https://github.com/" target="_blank">
+<a href="https://github.com/"
+target="_blank">
+
 
 GitHub
 
+
 </a>
 
 
 
+<a href="https://linkedin.com/"
+target="_blank">
 
-
-<a href="https://linkedin.com/" target="_blank">
 
 LinkedIn
 
-</a>
 
+</a>
 
 
 
 
 <a href="mailto:your-email@example.com">
 
+
 Email
+
 
 </a>
 
@@ -746,7 +837,6 @@ Email
 <footer>
 
 
-
 <p data-i18n="footer">
 
 
@@ -756,10 +846,7 @@ Email
 </p>
 
 
-
 </footer>
-
-
 
 
 
