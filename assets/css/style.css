@@ -1,7 +1,7 @@
 /* =================================================
    Kai Teng Portfolio
    Apple Inspired Portfolio CSS
-   Part 1 / 3
+   Final Clean Version 2026
 ================================================= */
 
 
@@ -30,7 +30,9 @@ html{
 
 
 
+
 body{
+
 
     min-height:100vh;
 
@@ -85,14 +87,17 @@ body{
     overflow-x:hidden;
 
 
+
     transition:
 
     background .6s ease,
     color .4s ease;
 
 
-
 }
+
+
+
 
 
 
@@ -100,52 +105,51 @@ body{
 
 
 /* =========================
-   Variables
+Variables
 ========================= */
 
 
 :root{
 
 
-    --text-color:#1d1d1f;
+--text-color:#1d1d1f;
 
 
-    --secondary-text:#6e6e73;
+--secondary-text:#6e6e73;
 
 
+--glass:
 
-    --glass:
-
-    rgba(255,255,255,.65);
-
-
-
-    --card:
-
-    rgba(255,255,255,.55);
+rgba(255,255,255,.65);
 
 
 
-    --border:
+--card:
 
-    rgba(255,255,255,.35);
-
-
-
-    --shadow:
-
-    0 30px 80px rgba(0,0,0,.12);
+rgba(255,255,255,.55);
 
 
 
-    --button-bg:#111;
+--border:
+
+rgba(255,255,255,.35);
 
 
-    --button-text:#fff;
 
+--shadow:
+
+0 30px 80px rgba(0,0,0,.12);
+
+
+
+--button-bg:#111;
+
+
+--button-text:#fff;
 
 
 }
+
 
 
 
@@ -154,48 +158,45 @@ body{
 body.dark{
 
 
-    --text-color:#f5f5f7;
+--text-color:#f5f5f7;
 
 
-    --secondary-text:#a1a1a6;
+--secondary-text:#a1a1a6;
 
 
+--glass:
 
-    --glass:
-
-    rgba(20,20,20,.65);
-
-
-
-    --card:
-
-    rgba(30,30,30,.65);
+rgba(20,20,20,.65);
 
 
 
-    --border:
+--card:
 
-    rgba(255,255,255,.12);
-
-
-
-    --button-bg:#fff;
-
-
-    --button-text:#111;
+rgba(30,30,30,.65);
 
 
 
-    background:
+--border:
+
+rgba(255,255,255,.12);
 
 
-    linear-gradient(
-        120deg,
-        #050505,
-        #171717,
-        #242424
-    );
 
+--button-bg:#fff;
+
+
+--button-text:#111;
+
+
+
+background:
+
+linear-gradient(
+120deg,
+#050505,
+#171717,
+#242424
+);
 
 
 }
@@ -211,31 +212,33 @@ body.dark{
 @keyframes aurora{
 
 
-    0%{
+0%{
 
-        background-position:
+background-position:
 
-        0% 50%;
+0% 50%;
 
-    }
-
-
-    50%{
-
-        background-position:
-
-        100% 50%;
-
-    }
+}
 
 
-    100%{
 
-        background-position:
+50%{
 
-        0% 50%;
+background-position:
 
-    }
+100% 50%;
+
+}
+
+
+
+100%{
+
+background-position:
+
+0% 50%;
+
+}
 
 
 }
@@ -244,21 +247,15 @@ body.dark{
 
 
 
-
-
-
-/* =========================
-   Links
-========================= */
 
 
 a{
 
 
-    text-decoration:none;
+text-decoration:none;
 
 
-    color:inherit;
+color:inherit;
 
 
 }
@@ -270,49 +267,46 @@ a{
 
 
 
-
 /* =========================
-   Loading
+Loading
 ========================= */
 
 
 #loader{
 
 
-    position:fixed;
+position:fixed;
 
 
-    inset:0;
+inset:0;
 
 
-    display:flex;
+z-index:99999;
 
 
-    justify-content:center;
+display:flex;
 
 
-    align-items:center;
+align-items:center;
 
 
-    z-index:99999;
-
-
-
-    background:
-
-    rgba(255,255,255,.75);
+justify-content:center;
 
 
 
-    backdrop-filter:
+background:
 
-    blur(30px);
+rgba(255,255,255,.75);
 
 
 
-    transition:
+backdrop-filter:
 
-    opacity .7s ease;
+blur(30px);
+
+
+
+transition:.7s;
 
 
 
@@ -323,10 +317,9 @@ a{
 body.dark #loader{
 
 
-    background:
+background:
 
-    rgba(0,0,0,.75);
-
+rgba(0,0,0,.75);
 
 
 }
@@ -334,35 +327,32 @@ body.dark #loader{
 
 
 
-
-
 #loader div{
 
 
-    width:55px;
+width:55px;
 
 
-    height:55px;
+height:55px;
 
 
-    border-radius:50%;
-
-
-
-    border:
-
-    5px solid #ddd;
+border-radius:50%;
 
 
 
-    border-top-color:#111;
+border:
+
+5px solid #ddd;
 
 
 
-    animation:
+border-top-color:#111;
 
-    spin 1s linear infinite;
 
+
+animation:
+
+spin 1s linear infinite;
 
 
 }
@@ -373,14 +363,13 @@ body.dark #loader{
 @keyframes spin{
 
 
-    to{
+to{
 
-        transform:
+transform:
 
-        rotate(360deg);
+rotate(360deg);
 
-    }
-
+}
 
 }
 
@@ -393,81 +382,82 @@ body.dark #loader{
 
 
 /* =========================
-   Navigation
+Navigation
 ========================= */
 
 
 nav{
 
 
-    position:fixed;
+position:fixed;
 
 
-    top:25px;
+top:25px;
 
 
-    left:50%;
-
-
-    transform:
-
-    translateX(-50%);
+left:50%;
 
 
 
-    width:min(92%,1200px);
+transform:
+
+translateX(-50%);
 
 
 
-    display:flex;
-
-
-    align-items:center;
-
-
-    justify-content:space-between;
+width:min(92%,1200px);
 
 
 
-    padding:
+padding:
 
-    16px 32px;
-
-
-
-    border-radius:40px;
+16px 32px;
 
 
 
-    background:
-
-    var(--glass);
+display:flex;
 
 
+align-items:center;
 
-    backdrop-filter:
 
-    blur(30px);
+justify-content:space-between;
 
 
 
-    border:
+background:
 
-    1px solid var(--border);
-
-
-
-    box-shadow:
-
-    var(--shadow);
+var(--glass);
 
 
 
-    z-index:1000;
+border:
 
+1px solid var(--border);
+
+
+
+border-radius:40px;
+
+
+
+backdrop-filter:
+
+blur(30px);
+
+
+
+box-shadow:
+
+var(--shadow);
+
+
+
+z-index:1000;
 
 
 }
+
 
 
 
@@ -476,19 +466,16 @@ nav{
 .logo{
 
 
-    font-size:30px;
+font-size:30px;
 
 
-    font-weight:800;
+font-weight:800;
 
 
-    letter-spacing:-.04em;
+letter-spacing:-.04em;
 
 
 }
-
-
-
 
 
 
@@ -497,54 +484,47 @@ nav{
 .nav-links{
 
 
-    display:flex;
+display:flex;
 
 
-    align-items:center;
+align-items:center;
 
 
-    gap:28px;
+gap:28px;
 
 
 }
-
 
 
 
 .nav-links a{
 
 
-    font-size:15px;
+font-size:15px;
 
 
-    font-weight:600;
+font-weight:600;
 
 
-    transition:.3s ease;
+transition:.3s;
 
 
 }
-
-
 
 
 
 .nav-links a:hover{
 
 
-    opacity:.55;
+opacity:.6;
 
 
-    transform:
+transform:
 
-    translateY(-3px);
+translateY(-3px);
 
 
 }
-
-
-
-
 
 
 
@@ -553,10 +533,10 @@ nav{
 .language-switcher{
 
 
-    display:flex;
+display:flex;
 
 
-    gap:8px;
+gap:8px;
 
 
 }
@@ -566,55 +546,47 @@ nav{
 .language-switcher button{
 
 
-    width:38px;
+width:38px;
 
 
-    height:32px;
+height:32px;
 
 
-    border:none;
+border:none;
 
 
-    border-radius:20px;
+border-radius:20px;
 
 
-
-    background:
-
-    transparent;
+background:transparent;
 
 
-
-    color:
-
-    var(--text-color);
+color:var(--text-color);
 
 
-
-    cursor:pointer;
+cursor:pointer;
 
 
 }
+
 
 
 
 .language-switcher button.active{
 
 
-    background:
+background:
 
-    var(--button-bg);
+var(--button-bg);
 
 
 
-    color:
+color:
 
-    var(--button-text);
-
+var(--button-text);
 
 
 }
-
 
 
 
@@ -623,38 +595,35 @@ nav{
 .theme-button{
 
 
-    width:42px;
+width:42px;
 
 
-    height:42px;
+height:42px;
 
 
-    border-radius:50%;
+border-radius:50%;
 
 
-    border:none;
-
-
-
-    background:
-
-    var(--button-bg);
+border:none;
 
 
 
-    color:
+background:
 
-    var(--button-text);
-
-
-
-    cursor:pointer;
+var(--button-bg);
 
 
 
-    transition:
+color:
 
-    .4s;
+var(--button-text);
+
+
+
+cursor:pointer;
+
+
+transition:.4s;
 
 
 }
@@ -665,18 +634,13 @@ nav{
 .theme-button:hover{
 
 
-    transform:
+transform:
 
-    scale(1.1)
-    rotate(20deg);
+scale(1.1)
+rotate(20deg);
 
 
 }
-
-
-
-
-
 
 
 
@@ -684,38 +648,25 @@ nav{
 .menu-toggle{
 
 
-    display:none;
+display:none;
 
 
-    background:none;
+background:none;
 
 
-    border:none;
+border:none;
 
 
-    font-size:28px;
+font-size:28px;
 
 
-
-    color:
-
-    var(--text-color);
-
+color:var(--text-color);
 
 
 }
-
-
-
-
-
-
-
-
-
-/* =========================
-   Hero
-========================= */
+/* =================================================
+   Hero Section
+================================================= */
 
 
 .hero{
@@ -724,27 +675,37 @@ nav{
     min-height:100vh;
 
 
-    padding-top:140px;
+    max-width:1400px;
 
 
-    max-width:1200px;
+    width:100%;
+
 
 
     margin:auto;
 
 
 
+    padding:
+
+    150px 60px 80px;
+
+
+
     display:flex;
 
 
+
     align-items:center;
+
 
 
     justify-content:space-between;
 
 
 
-    gap:80px;
+    gap:100px;
+
 
 
 }
@@ -756,10 +717,11 @@ nav{
 .hero-text{
 
 
-    max-width:750px;
+    max-width:850px;
 
 
 }
+
 
 
 
@@ -768,16 +730,26 @@ nav{
 .hero h1{
 
 
-    margin-bottom:30px;
+    margin-bottom:
+
+    35px;
 
 
-    line-height:1.05;
+
+    line-height:
+
+    1.05;
 
 
-    letter-spacing:-.06em;
+
+    letter-spacing:
+
+    -.06em;
+
 
 
 }
+
 
 
 
@@ -788,7 +760,11 @@ nav{
     display:block;
 
 
-    font-size:48px;
+
+    font-size:
+
+    48px;
+
 
 
     color:
@@ -796,7 +772,9 @@ nav{
     var(--secondary-text);
 
 
+
 }
+
 
 
 
@@ -807,22 +785,29 @@ nav{
     display:block;
 
 
+
     font-size:
 
-    clamp(55px,8vw,90px);
+    clamp(55px,8vw,100px);
 
 
 
-    font-weight:850;
+    font-weight:
+
+    850;
 
 
 
     background:
 
     linear-gradient(
-        120deg,
-        var(--text-color),
-        var(--secondary-text)
+
+    120deg,
+
+    var(--text-color),
+
+    var(--secondary-text)
+
     );
 
 
@@ -845,16 +830,27 @@ nav{
 .hero-subtitle{
 
 
-    font-size:23px;
+    font-size:
+
+    24px;
 
 
-    font-weight:650;
+
+    font-weight:
+
+    700;
 
 
-    line-height:1.6;
+
+    line-height:
+
+    1.7;
 
 
-    margin-bottom:25px;
+
+    margin-bottom:
+
+    30px;
 
 
 
@@ -867,7 +863,10 @@ nav{
 .hero-description{
 
 
-    font-size:20px;
+    font-size:
+
+    21px;
+
 
 
     color:
@@ -876,34 +875,56 @@ nav{
 
 
 
-    line-height:2;
+    line-height:
+
+    2.2;
+
+
+
+    letter-spacing:
+
+    .04em;
+
 
 
 }
+
+
+
+
+
+
+
+
+
 /* =================================================
-   Part 2 / 3
+Buttons
 ================================================= */
-
-
-
-/* =========================
-   Hero Buttons
-========================= */
 
 
 .hero-buttons{
 
 
+    margin-top:
+
+    40px;
+
+
+
     display:flex;
 
 
-    gap:20px;
 
+    gap:
 
-    margin-top:35px;
+    20px;
+
 
 
 }
+
+
+
 
 
 
@@ -914,7 +935,9 @@ button,
     display:inline-flex;
 
 
+
     align-items:center;
+
 
 
     justify-content:center;
@@ -923,11 +946,13 @@ button,
 
     padding:
 
-    14px 32px;
+    14px 35px;
 
 
 
-    border-radius:40px;
+    border-radius:
+
+    40px;
 
 
 
@@ -947,10 +972,15 @@ button,
 
 
 
-    font-size:16px;
+    font-size:
+
+    16px;
 
 
-    font-weight:600;
+
+    font-weight:
+
+    650;
 
 
 
@@ -960,7 +990,7 @@ button,
 
     transition:
 
-    .35s cubic-bezier(.22,1,.36,1);
+    .4s cubic-bezier(.22,1,.36,1);
 
 
 
@@ -996,9 +1026,9 @@ button:hover,
 
 
 
-/* =========================
-   Profile Avatar
-========================= */
+/* =================================================
+Profile
+================================================= */
 
 
 .profile-container{
@@ -1011,34 +1041,43 @@ button:hover,
 
 
 
+
+
+
 .profile{
 
 
-    width:380px;
+    width:
+
+    390px;
 
 
-    height:380px;
+
+    height:
+
+    390px;
+
 
 
     object-fit:cover;
 
 
 
-    border-radius:50%;
+    border-radius:
+
+    50%;
 
 
 
     border:
 
-    8px solid rgba(255,255,255,.25);
+    8px solid rgba(255,255,255,.3);
 
 
 
     box-shadow:
 
-
-
-    0 40px 100px rgba(0,0,0,.25);
+    0 50px 120px rgba(0,0,0,.25);
 
 
 
@@ -1050,11 +1089,13 @@ button:hover,
 
     transition:
 
-    .5s cubic-bezier(.22,1,.36,1);
+    .5s ease;
 
 
 
 }
+
+
 
 
 
@@ -1064,18 +1105,14 @@ button:hover,
     transform:
 
     scale(1.06)
-    translateY(-12px);
-
-
-
-    box-shadow:
-
-
-    0 60px 120px rgba(0,0,0,.35);
+    translateY(-10px);
 
 
 
 }
+
+
+
 
 
 
@@ -1084,28 +1121,29 @@ button:hover,
 @keyframes floating{
 
 
-    0%,
-    100%{
+0%,
+100%{
 
 
-        transform:
+transform:
 
-        translateY(0);
-
-
-    }
+translateY(0);
 
 
-
-    50%{
-
-
-        transform:
-
-        translateY(-20px);
+}
 
 
-    }
+
+50%{
+
+
+transform:
+
+translateY(-20px);
+
+
+}
+
 
 
 }
@@ -1118,40 +1156,77 @@ button:hover,
 
 
 
-/* =========================
-   Sections
-========================= */
+/* =================================================
+Global Sections
+================================================= */
 
 
 .section{
 
 
-    max-width:1200px;
+    max-width:
+
+    1400px;
+
+
+
+    width:
+
+    100%;
+
 
 
     margin:
 
-    130px auto;
+    160px auto;
+
+
+
+    padding:
+
+    0 60px;
 
 
 
 }
+
+
+
+
 
 
 
 .section h2{
 
 
-    font-size:50px;
+    font-size:
+
+    56px;
 
 
-    letter-spacing:-.04em;
+
+    font-weight:
+
+    850;
 
 
-    margin-bottom:45px;
+
+    letter-spacing:
+
+    -.05em;
+
+
+
+    margin-bottom:
+
+    65px;
+
 
 
 }
+
+
+
 
 
 
@@ -1159,10 +1234,16 @@ button:hover,
 .section p{
 
 
-    font-size:20px;
+    font-size:
+
+    21px;
 
 
-    line-height:2;
+
+    line-height:
+
+    2;
+
 
 
     color:
@@ -1181,48 +1262,29 @@ button:hover,
 
 
 
-/* =========================
-   Social Cards
-========================= */
+/* =================================================
+About Me Apple Style
+================================================= */
 
 
-.social-links,
-.social-cards{
+.about-content{
 
 
-    display:flex;
+    max-width:
 
+    1100px;
 
-    flex-wrap:wrap;
-
-
-    gap:20px;
-
-
-    margin-top:35px;
-
-
-
-}
-
-
-
-
-
-
-.social-card{
-
-
-    min-width:180px;
 
 
     padding:
 
-    22px 28px;
+    60px 70px;
 
 
 
-    border-radius:28px;
+    border-radius:
+
+    45px;
 
 
 
@@ -1240,44 +1302,13 @@ button:hover,
 
     backdrop-filter:
 
-    blur(25px);
-
-
-
-    display:flex;
-
-
-    flex-direction:column;
-
-
-    gap:5px;
+    blur(35px);
 
 
 
     box-shadow:
 
-    0 15px 40px rgba(0,0,0,.08);
-
-
-
-    transition:
-
-    .45s cubic-bezier(.22,1,.36,1);
-
-
-
-}
-
-
-
-
-.social-card span{
-
-
-    font-size:21px;
-
-
-    font-weight:750;
+    0 40px 100px rgba(0,0,0,.12);
 
 
 
@@ -1287,10 +1318,89 @@ button:hover,
 
 
 
-.social-card small{
 
 
-    font-size:14px;
+
+.about-block{
+
+
+    padding-bottom:
+
+    40px;
+
+
+
+    margin-bottom:
+
+    45px;
+
+
+
+    border-bottom:
+
+    1px solid var(--border);
+
+
+
+}
+
+
+
+
+
+
+
+
+.about-block:last-child{
+
+
+    margin-bottom:
+
+    0;
+
+
+
+    padding-bottom:
+
+    0;
+
+
+
+    border-bottom:
+
+    none;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+.about-block p{
+
+
+    font-size:
+
+    24px;
+
+
+
+    line-height:
+
+    2.2;
+
+
+
+    letter-spacing:
+
+    .045em;
+
 
 
     color:
@@ -1298,8 +1408,196 @@ button:hover,
     var(--secondary-text);
 
 
+
 }
 
+
+
+
+
+.about-block:first-child p{
+
+
+    color:
+
+    var(--text-color);
+
+
+
+    font-weight:
+
+    550;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+body.dark .about-block p{
+
+
+    color:
+
+    var(--secondary-text);
+
+
+
+}
+
+
+
+body.dark .about-block:first-child p{
+
+
+    color:
+
+    var(--text-color);
+
+
+
+}
+
+
+
+
+
+
+
+
+
+/* =================================================
+Social Cards
+================================================= */
+
+
+.social-cards,
+.social-links{
+
+
+display:flex;
+
+
+flex-wrap:wrap;
+
+
+gap:25px;
+
+
+margin-top:40px;
+
+
+}
+
+
+
+
+
+.social-card{
+
+
+min-width:
+
+210px;
+
+
+
+padding:
+
+25px 35px;
+
+
+
+border-radius:
+
+30px;
+
+
+
+background:
+
+var(--card);
+
+
+
+border:
+
+1px solid var(--border);
+
+
+
+backdrop-filter:
+
+blur(25px);
+
+
+
+display:flex;
+
+
+flex-direction:column;
+
+
+gap:8px;
+
+
+
+box-shadow:
+
+0 20px 50px rgba(0,0,0,.08);
+
+
+
+transition:
+
+.45s cubic-bezier(.22,1,.36,1);
+
+
+
+}
+
+
+
+
+
+.social-card span{
+
+
+font-size:
+
+22px;
+
+
+font-weight:
+
+750;
+
+
+}
+
+
+
+.social-card small{
+
+
+font-size:
+
+14px;
+
+
+color:
+
+var(--secondary-text);
+
+
+
+}
 
 
 
@@ -1307,33 +1605,23 @@ button:hover,
 .social-card:hover{
 
 
-    transform:
+transform:
+
+translateY(-12px)
+scale(1.04);
 
 
-    translateY(-12px)
-    scale(1.04);
 
+box-shadow:
 
-
-    box-shadow:
-
-    var(--shadow);
+var(--shadow);
 
 
 
 }
-
-
-
-
-
-
-
-
-
-/* =========================
-   Project Cards
-========================= */
+/* =================================================
+   Projects
+================================================= */
 
 
 .cards{
@@ -1348,7 +1636,10 @@ button:hover,
 
 
 
-    gap:30px;
+    gap:
+
+    40px;
+
 
 
 }
@@ -1357,15 +1648,24 @@ button:hover,
 
 
 
-
 .card{
 
 
-    padding:38px;
+    min-height:
+
+    300px;
 
 
 
-    border-radius:32px;
+    padding:
+
+    50px;
+
+
+
+    border-radius:
+
+    40px;
 
 
 
@@ -1387,6 +1687,18 @@ button:hover,
 
 
 
+    display:flex;
+
+
+
+    flex-direction:column;
+
+
+
+    justify-content:center;
+
+
+
     transition:
 
     .45s cubic-bezier(.22,1,.36,1);
@@ -1399,17 +1711,31 @@ button:hover,
 
 
 
+
+
 .card h3{
 
 
-    font-size:28px;
+    font-size:
+
+    32px;
 
 
-    margin-bottom:20px;
+
+    margin-bottom:
+
+    25px;
+
+
+
+    line-height:
+
+    1.3;
 
 
 
 }
+
 
 
 
@@ -1417,10 +1743,15 @@ button:hover,
 .card p{
 
 
-    font-size:17px;
+    font-size:
+
+    18px;
+
 
 
 }
+
+
 
 
 
@@ -1431,7 +1762,7 @@ button:hover,
 
     transform:
 
-    translateY(-15px);
+    translateY(-18px);
 
 
 
@@ -1451,9 +1782,11 @@ button:hover,
 
 
 
-/* =========================
+
+
+/* =================================================
    Gallery Apple Photos
-========================= */
+================================================= */
 
 
 .gallery{
@@ -1461,10 +1794,13 @@ button:hover,
 
     columns:
 
-    3 300px;
+    2 450px;
 
 
-    column-gap:30px;
+
+    column-gap:
+
+    45px;
 
 
 
@@ -1474,20 +1810,31 @@ button:hover,
 
 
 
+
+
+
 .photo-card{
 
 
-    break-inside:avoid;
+    break-inside:
+
+    avoid;
 
 
-    margin-bottom:30px;
 
+    margin-bottom:
 
-    border-radius:32px;
+    45px;
 
 
 
     overflow:hidden;
+
+
+
+    border-radius:
+
+    40px;
 
 
 
@@ -1505,7 +1852,7 @@ button:hover,
 
     box-shadow:
 
-    0 20px 50px rgba(0,0,0,.12);
+    0 25px 70px rgba(0,0,0,.12);
 
 
 
@@ -1525,17 +1872,15 @@ button:hover,
 
 
 
+
 .photo-card img{
 
 
     width:100%;
 
 
+
     display:block;
-
-
-
-    aspect-ratio:4/3;
 
 
 
@@ -1554,18 +1899,21 @@ button:hover,
 
 
 
+
+
 .photo-card:hover{
 
 
     transform:
 
-    translateY(-12px);
+    translateY(-15px)
+    scale(1.02);
 
 
 
     box-shadow:
 
-    0 40px 90px rgba(0,0,0,.25);
+    0 50px 120px rgba(0,0,0,.25);
 
 
 
@@ -1585,15 +1933,18 @@ button:hover,
 
 
 }
+
+
+
+
+
+
+
+
+
 /* =================================================
-   Part 3 / 3
+   Lightbox
 ================================================= */
-
-
-
-/* =========================
-   Lightbox Apple Photos
-========================= */
 
 
 #lightbox{
@@ -1605,6 +1956,7 @@ button:hover,
     inset:0;
 
 
+
     z-index:9999;
 
 
@@ -1612,10 +1964,10 @@ button:hover,
     display:flex;
 
 
-    align-items:center;
-
-
     justify-content:center;
+
+
+    align-items:center;
 
 
 
@@ -1634,6 +1986,7 @@ button:hover,
     opacity:0;
 
 
+
     visibility:hidden;
 
 
@@ -1650,10 +2003,12 @@ button:hover,
 
 
 
+
 #lightbox.active{
 
 
     opacity:1;
+
 
 
     visibility:visible;
@@ -1670,20 +2025,27 @@ button:hover,
 #lightbox-image{
 
 
-    max-width:85%;
+    max-width:
+
+    85%;
 
 
-    max-height:85%;
+
+    max-height:
+
+    85%;
 
 
 
-    border-radius:32px;
+    border-radius:
+
+    35px;
 
 
 
     box-shadow:
 
-    0 50px 120px rgba(0,0,0,.6);
+    0 60px 130px rgba(0,0,0,.6);
 
 
 
@@ -1700,6 +2062,7 @@ button:hover,
 
 
 }
+
 
 
 
@@ -1722,7 +2085,6 @@ button:hover,
 
 
 
-
 #close-lightbox,
 #next-image{
 
@@ -1730,13 +2092,22 @@ button:hover,
     position:absolute;
 
 
-    width:55px;
+
+    width:
+
+    55px;
 
 
-    height:55px;
+
+    height:
+
+    55px;
 
 
-    border-radius:50%;
+
+    border-radius:
+
+    50%;
 
 
 
@@ -1754,30 +2125,41 @@ button:hover,
 
 
 
-    font-size:30px;
+    font-size:
+
+    30px;
 
 
 
     backdrop-filter:
 
-    blur(15px);
+    blur(20px);
 
 
 
 }
+
+
 
 
 
 #close-lightbox{
 
 
-    top:40px;
+    top:
+
+    40px;
 
 
-    right:40px;
+
+    right:
+
+    40px;
+
 
 
 }
+
 
 
 
@@ -1785,7 +2167,10 @@ button:hover,
 #next-image{
 
 
-    right:40px;
+    right:
+
+    40px;
+
 
 
 }
@@ -1798,9 +2183,11 @@ button:hover,
 
 
 
-/* =========================
-   Scroll Reveal
-========================= */
+
+
+/* =================================================
+   Scroll Animation
+================================================= */
 
 
 .reveal{
@@ -1851,9 +2238,9 @@ button:hover,
 
 
 
-/* =========================
+/* =================================================
    Cursor Glow
-========================= */
+================================================= */
 
 
 .cursor-glow{
@@ -1862,14 +2249,22 @@ button:hover,
     position:fixed;
 
 
-    width:320px;
+
+    width:
+
+    320px;
 
 
-    height:320px;
+
+    height:
+
+    320px;
 
 
 
-    border-radius:50%;
+    border-radius:
+
+    50%;
 
 
 
@@ -1911,60 +2306,35 @@ button:hover,
 
 
 
-/* =========================
-   Theme Ripple
-========================= */
 
 
-.theme-ripple{
+/* =================================================
+   Footer
+================================================= */
 
 
-    position:fixed;
+footer{
 
 
-    width:500px;
+    margin-top:
 
-
-    height:500px;
-
-
-
-    border-radius:50%;
+    100px;
 
 
 
-    background:
+    padding:
 
-    radial-gradient(
-
-    circle,
-
-    rgba(255,255,255,.45),
-
-    transparent 70%
-
-    );
+    50px;
 
 
 
-    transform:
-
-    translate(-50%,-50%)
-    scale(0);
+    text-align:center;
 
 
 
-    animation:
+    color:
 
-    rippleExpand 1s ease forwards;
-
-
-
-    pointer-events:none;
-
-
-
-    z-index:99999;
+    var(--secondary-text);
 
 
 
@@ -1974,57 +2344,15 @@ button:hover,
 
 
 
-@keyframes rippleExpand{
-
-
-    from{
-
-
-        transform:
-
-        translate(-50%,-50%)
-        scale(0);
-
-
-
-        opacity:1;
-
-
-
-    }
-
-
-
-    to{
-
-
-        transform:
-
-        translate(-50%,-50%)
-        scale(2);
-
-
-
-        opacity:0;
-
-
-
-    }
-
-
-}
 
 
 
 
 
 
-
-
-
-/* =========================
-   Mobile Navigation
-========================= */
+/* =================================================
+   Mobile
+================================================= */
 
 
 @media(max-width:900px){
@@ -2034,7 +2362,10 @@ button:hover,
 body{
 
 
-    padding:20px;
+    padding:
+
+    0 20px;
+
 
 
 }
@@ -2045,12 +2376,13 @@ body{
 nav{
 
 
-    width:94%;
+    width:
+
+    94%;
 
 
 
 }
-
 
 
 
@@ -2068,28 +2400,42 @@ nav{
 
 
 
+
+
 .nav-links{
 
 
     position:absolute;
 
 
-    top:80px;
 
+    top:
 
-    left:0;
-
-
-
-    width:100%;
+    80px;
 
 
 
-    padding:35px;
+    left:
+
+    0;
 
 
 
-    border-radius:30px;
+    width:
+
+    100%;
+
+
+
+    padding:
+
+    35px;
+
+
+
+    border-radius:
+
+    30px;
 
 
 
@@ -2105,19 +2451,27 @@ nav{
 
 
 
-    flex-direction:column;
+    flex-direction:
+
+    column;
 
 
 
-    gap:25px;
+    gap:
+
+    25px;
 
 
 
-    opacity:0;
+    opacity:
+
+    0;
 
 
 
-    visibility:hidden;
+    visibility:
+
+    hidden;
 
 
 
@@ -2143,10 +2497,15 @@ nav{
 .nav-links.active{
 
 
-    opacity:1;
+    opacity:
+
+    1;
 
 
-    visibility:visible;
+
+    visibility:
+
+    visible;
 
 
 
@@ -2163,18 +2522,25 @@ nav{
 
 
 
+
 .hero{
 
 
-    padding-top:130px;
+    flex-direction:
+
+    column;
 
 
 
-    flex-direction:column;
+    text-align:
+
+    center;
 
 
 
-    text-align:center;
+    padding:
+
+    130px 20px 60px;
 
 
 
@@ -2182,14 +2548,18 @@ nav{
 
 
 
-
 .profile{
 
 
-    width:240px;
+    width:
+
+    250px;
 
 
-    height:240px;
+
+    height:
+
+    250px;
 
 
 
@@ -2200,15 +2570,18 @@ nav{
 
 
 .hero-buttons,
-.social-links,
-.social-cards{
+.social-cards,
+.social-links{
 
 
-    justify-content:center;
+    justify-content:
+
+    center;
 
 
 
 }
+
 
 
 
@@ -2217,11 +2590,36 @@ nav{
 .cards{
 
 
-    grid-template-columns:1fr;
+    grid-template-columns:
+
+    1fr;
 
 
 
 }
+
+
+
+
+
+.section{
+
+
+    padding:
+
+    0 20px;
+
+
+
+    margin:
+
+    100px auto;
+
+
+
+}
+
+
 
 
 
@@ -2230,7 +2628,9 @@ nav{
 .section h2{
 
 
-    font-size:38px;
+    font-size:
+
+    40px;
 
 
 
@@ -2240,13 +2640,48 @@ nav{
 
 
 
-#lightbox-image{
+.about-content{
 
 
-    max-width:95%;
+    padding:
+
+    35px 30px;
 
 
-    max-height:70%;
+
+}
+
+
+
+
+
+.about-block p{
+
+
+    font-size:
+
+    18px;
+
+
+
+    line-height:
+
+    2;
+
+
+
+}
+
+
+
+
+
+.gallery{
+
+
+    columns:
+
+    1;
 
 
 
@@ -2255,6 +2690,7 @@ nav{
 
 
 }
+
 
 
 
@@ -2270,7 +2706,9 @@ nav{
 .hero h1 span:first-child{
 
 
-    font-size:34px;
+    font-size:
+
+    34px;
 
 
 
@@ -2278,12 +2716,12 @@ nav{
 
 
 
-
-
 .hero h1 span:last-child{
 
 
-    font-size:45px;
+    font-size:
+
+    45px;
 
 
 
@@ -2295,7 +2733,9 @@ nav{
 .hero-subtitle{
 
 
-    font-size:17px;
+    font-size:
+
+    17px;
 
 
 
@@ -2307,7 +2747,9 @@ nav{
 .hero-description{
 
 
-    font-size:16px;
+    font-size:
+
+    16px;
 
 
 
@@ -2320,120 +2762,25 @@ nav{
 .social-card{
 
 
-    width:100%;
+    width:
+
+    100%;
+
 
 
 }
 
 
 
-}、/* =================================================
-   Layout Breathing Space Fix
-   Increase content width and improve readability
-================================================= */
-
-
-/* 页面整体边距 */
-
-body{
-
-    padding-left:40px;
-
-    padding-right:40px;
-
-}
-
-
-
-/* 主内容宽度 */
-
-.hero,
-.section{
-
-    max-width:1400px;
-
-    width:100%;
-
-    margin-left:auto;
-
-    margin-right:auto;
-
-}
-
-
-
-
-
-/* Hero 左右空间 */
-
-.hero{
-
-    padding-left:50px;
-
-    padding-right:50px;
-
-    gap:120px;
-
-}
-
-
-
-
-
-.hero-text{
-
-    max-width:850px;
-
-}
-
-
-
-
-
-
-/* 标题不要贴边 */
-
-.hero h1{
-
-    margin-left:0;
-
-    margin-right:0;
-
-}
-
-
-
-
-
-/* 正文增加呼吸感 */
-
-
-.hero-description,
-.section p{
-
-
-    max-width:900px;
-
-
-    letter-spacing:.035em;
-
-
-    line-height:2;
-
-
-}
-
-
-
-
-
-/* Section 标题间距 */
 
 
 .section h2{
 
 
-    margin-bottom:55px;
+    font-size:
+
+    34px;
+
 
 
 }
@@ -2441,85 +2788,18 @@ body{
 
 
 
+.about-content{
 
 
-/* 卡片内部空间 */
+    border-radius:
 
+    28px;
 
-.card{
-
-
-    padding:45px;
-
-
-}
-
-
-
-
-
-
-.social-card{
 
 
     padding:
 
-    25px 35px;
-
-
-}
-
-
-
-
-
-
-
-/* Gallery 不要太挤 */
-
-
-.gallery{
-
-
-    column-gap:40px;
-
-
-}
-
-
-
-
-
-
-
-/* =========================
-   Desktop Large Screen
-========================= */
-
-
-@media(min-width:1400px){
-
-
-
-.hero,
-.section{
-
-
-    max-width:1500px;
-
-
-}
-
-
-
-
-.hero h1 span:last-child{
-
-
-    font-size:100px;
-
-
-}
+    25px;
 
 
 
@@ -2529,626 +2809,43 @@ body{
 
 
 
+.about-block{
 
 
-/* =========================
-   Tablet
-========================= */
+    margin-bottom:
 
-
-@media(max-width:900px){
-
-
-
-body{
-
-
-    padding-left:20px;
-
-    padding-right:20px;
-
-
-}
+    30px;
 
 
 
-.hero{
+    padding-bottom:
 
-
-    padding-left:0;
-
-    padding-right:0;
-
-
-    gap:50px;
-
-
-}
-
-
-
-.section{
-
-
-    width:100%;
-
-
-}
+    25px;
 
 
 
 }
-/* =================================================
-   Complete Content Section Upgrade
-   About / Projects / Gallery / Contact
-================================================= */
 
 
-/* =========================
-   Global Section Layout
-========================= */
 
 
-.section{
 
-    max-width:1400px;
+.about-block p{
 
-    width:100%;
 
-    margin:160px auto;
+    font-size:
 
-    padding:
+    17px;
 
-    0 60px;
 
 
-}
+    line-height:
 
-
-
-
-.section h2{
-
-    font-size:56px;
-
-    font-weight:800;
-
-    letter-spacing:-0.05em;
-
-    margin-bottom:60px;
-
-
-}
-
-
-
-
-
-.section p{
-
-    max-width:1000px;
-
-    font-size:21px;
-
-    line-height:2;
-
-    letter-spacing:.03em;
-
-    color:var(--secondary-text);
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =========================
-   About Section
-========================= */
-
-
-#about{
-
-
-    padding-top:40px;
-
-
-}
-
-
-
-
-#about p{
-
-
-    background:
-
-    var(--card);
-
-
-
-    padding:50px;
-
-
-
-    border-radius:35px;
-
-
-
-    border:
-
-    1px solid var(--border);
-
-
-
-    backdrop-filter:
-
-    blur(25px);
-
-
-
-    box-shadow:
-
-    0 30px 80px rgba(0,0,0,.08);
+    1.9;
 
 
 
 }
 
-
-
-
-
-
-
-
-
-/* =========================
-   Projects
-========================= */
-
-
-#projects .cards{
-
-
-    display:grid;
-
-
-    grid-template-columns:
-
-    repeat(3,1fr);
-
-
-    gap:40px;
-
-
-
-}
-
-
-
-
-
-#projects .card{
-
-
-    min-height:300px;
-
-
-    display:flex;
-
-
-    flex-direction:column;
-
-
-    justify-content:center;
-
-
-
-    padding:50px;
-
-
-
-    border-radius:40px;
-
-
-
-}
-
-
-
-
-
-#projects .card h3{
-
-
-    font-size:32px;
-
-
-    line-height:1.3;
-
-
-    margin-bottom:25px;
-
-
-}
-
-
-
-
-
-#projects .card p{
-
-
-    font-size:18px;
-
-
-}
-
-
-
-
-
-
-#projects .card:hover{
-
-
-    transform:
-
-    translateY(-18px);
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =========================
-   Gallery
-========================= */
-
-
-#gallery{
-
-
-    padding-top:30px;
-
-
-}
-
-
-
-
-
-#gallery .gallery{
-
-
-    columns:2 450px;
-
-
-    column-gap:45px;
-
-
-}
-
-
-
-
-
-#gallery .photo-card{
-
-
-    margin-bottom:45px;
-
-
-    border-radius:40px;
-
-
-}
-
-
-
-
-
-#gallery .photo-card img{
-
-
-    aspect-ratio:auto;
-
-
-    min-height:300px;
-
-
-}
-
-
-
-
-
-
-
-#gallery .photo-card:hover{
-
-
-    transform:
-
-    translateY(-15px)
-    scale(1.02);
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =========================
-   Contact
-========================= */
-
-
-#contact{
-
-
-    text-align:center;
-
-
-}
-
-
-
-
-#contact p{
-
-
-    margin:auto;
-
-
-    margin-bottom:50px;
-
-
-}
-
-
-
-
-
-#contact .social-links,
-#contact .social-cards{
-
-
-    justify-content:center;
-
-
-    gap:30px;
-
-
-}
-
-
-
-
-
-#contact .social-card{
-
-
-    min-width:220px;
-
-
-    min-height:130px;
-
-
-    justify-content:center;
-
-
-    text-align:left;
-
-
-}
-
-
-
-
-
-#contact .social-card span{
-
-
-    font-size:26px;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =========================
-   Footer
-========================= */
-
-
-footer{
-
-
-    margin-top:100px;
-
-
-    padding:50px;
-
-
-    text-align:center;
-
-
-    color:
-
-    var(--secondary-text);
-
-
-    font-size:15px;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* =========================
-   Tablet
-========================= */
-
-
-@media(max-width:900px){
-
-
-
-.section{
-
-
-    padding:
-
-    0 20px;
-
-
-    margin:
-
-    100px auto;
-
-
-}
-
-
-
-
-.section h2{
-
-
-    font-size:40px;
-
-
-}
-
-
-
-
-#projects .cards{
-
-
-    grid-template-columns:1fr;
-
-
-}
-
-
-
-
-#gallery .gallery{
-
-
-    columns:1;
-
-
-}
-
-
-
-
-
-#about p{
-
-
-    padding:30px;
-
-
-}
-
-
-
-
-}
-
-
-
-
-
-/* =========================
-   Small Mobile
-========================= */
-
-
-@media(max-width:500px){
-
-
-
-.section h2{
-
-
-    font-size:34px;
-
-
-}
-
-
-
-.section p{
-
-
-    font-size:17px;
-
-
-}
-
-
-
-
-#projects .card{
-
-
-    padding:30px;
-
-
-}
-
-
-
-
-
-}
-#about p{
-
-    line-height:2.1;
-
-    letter-spacing:.035em;
-
-}
-
-
-#about p br{
-
-    display:block;
-
-    margin-bottom:15px;
 
 }
