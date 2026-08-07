@@ -3136,3 +3136,19 @@ footer{
 
 
 }
+#about p{
+
+    line-height:2.1;
+
+    letter-spacing:.035em;
+
+}
+
+
+#about p br{
+
+    display:block;
+
+    margin-bottom:15px;
+
+}
