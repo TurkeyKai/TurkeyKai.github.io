@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title
+        data-cn="裁决之时 | 项目详情"
+        data-en="Project Judgment | Details"
+        data-fr="Project Judgment | Détails">
+        Project Judgment | Details
+    </title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    
+    <!-- 针对此详情页的高级自定义样式 (终端窗口、公式卡片) -->
+    <style>
+        .project-hero {
+            padding: 120px 20px 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(15,23,42,1) 0%, rgba(30,41,59,1) 100%);
+            color: #fff;
+        }
+        .tech-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .tag {
+            background: rgba(0, 210, 255, 0.15);
+            border: 1px solid #00d2ff;
+            color: #00d2ff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        /* Mac 终端模拟UI */
+        .terminal-mockup {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+        .terminal-header {
+            background: #2d2d2d;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot.red { background: #ff5f56; }
+        .dot.yellow { background: #ffbd2e; }
+        .dot.green { background: #27c93f; }
+        .terminal-title {
+            color: #888;
+            font-size: 0.85rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding-right: 40px;
+            font-family: monospace;
+        }
+        .terminal-body {
+            padding: 0;
+        }
+        .terminal-body img {
+            width: 100%;
+            display: block;
+            opacity: 0.95;
+        }
+        .math-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .math-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 30px;
+            border-radius: 12px;
+            transition: transform 0.3s;
+        }
+        .math-card:hover {
+            transform: translateY(-5px);
+            border-color: #00d2ff;
+        }
+        .math-formula {
+            font-family: 'Courier New', Courier, monospace;
+            background: rgba(0,0,0,0.05);
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            margin: 15px 0;
+            text-align: center;
+            color: #00d2ff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ==========================
+     Navigation
+=========================== -->
+<header class="navbar">
+    <div class="logo">Kai Teng</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html" data-cn="首页" data-en="Home" data-fr="Accueil">Home</a></li>
+            <li><a href="projects.html" data-cn="项目" data-en="Projects" data-fr="Projets">Projects</a></li>
+            <li><a href="resume.html" data-cn="简历" data-en="Resume" data-fr="CV">Resume</a></li>
+            <li><a href="contact.html" data-cn="联系" data-en="Contact" data-fr="Contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="language-switch">
+        <button onclick="changeLanguage('cn')">中文</button>
+        <button onclick="changeLanguage('en')">English</button>
+        <button onclick="changeLanguage('fr')">Français</button>
+    </div>
+</header>
+
+<!-- ==========================
+     Project Hero & Terminal
+=========================== -->
+<section class="project-hero reveal">
+    <h1 data-cn="裁决之时 (Project Judgment)" data-en="Project Judgment" data-fr="Project Judgment">
+        Project Judgment
+    </h1>
+    
+    <p data-cn="机构级高频量化终端 | 全异步事件驱动 | 精算级风控" 
+       data-en="Institutional Quant Terminal | Async Event-Driven | Actuarial Risk Management" 
+       data-fr="Terminal Quantitatif Institutionnel | Asynchrone | Gestion des Risques">
+        Institutional Quant Terminal | Async Event-Driven | Actuarial Risk Management
+    </p>
+
+    <div class="tech-tags">
+        <span class="tag">Python 3.13</span>
+        <span class="tag">Asyncio (Pub/Sub)</span>
+        <span class="tag">Pandas-TA</span>
+        <span class="tag">SQLite</span>
+        <span class="tag">Zero-Dep ANSI Engine</span>
+    </div>
+
+    <!-- 终端模拟器外观 -->
+    <div class="terminal-mockup reveal">
+        <div class="terminal-header">
+            <div class="dot red"></div>
+            <div class="dot yellow"></div>
+            <div class="dot green"></div>
+            <div class="terminal-title">turkeykai@MacBook-Pro: ~/quant_engine/v4_ultimate.py</div>
+        </div>
+        <div class="terminal-body">
+            <!-- 替换为你在终端里运行 V4 版本的完美宽屏截图 -->
+            <img src="images/projects/judgment-screenshot.jpg" alt="Project Judgment Terminal View">
+        </div>
+    </div>
+</section>
+
+<!-- ==========================
+     Architecture Evolution
+=========================== -->
+<section class="reveal">
+    <h2 class="section-title" data-cn="架构演进与微服务解耦" data-en="Architecture & Decoupling" data-fr="Architecture et Découplage">
+        Architecture & Decoupling
+    </h2>
+    <div class="info-box">
+        <p data-cn="为榨干 M4 Pro 芯片的并发算力，项目在 V4 版本彻底抛弃了同步的“面向过程”写法。系统被拆分为三大完全独立的微服务，通过 <code>asyncio.Queue</code> (Pub/Sub 模式) 进行内存级的毫秒通讯，彻底解决了网络 I/O 阻塞导致 UI 卡顿的痛点。" 
+           data-en="To fully utilize the M4 Pro chip's concurrency, the V4 version abandoned synchronous procedural code. The system is split into three independent microservices communicating via <code>asyncio.Queue</code> (Pub/Sub), completely eliminating UI lag caused by network I/O." 
+           data-fr="Pour exploiter pleinement la puce M4 Pro, le système est divisé en trois microservices indépendants communiquant via <code>asyncio.Queue</code>, éliminant ainsi les décalages d'interface liés aux I/O réseau.">
+           To fully utilize the M4 Pro chip's concurrency, the V4 version abandoned synchronous procedural code. The system is split into three independent microservices communicating via <code>asyncio.Queue</code> (Pub/Sub), completely eliminating UI lag caused by network I/O.
+        </p>
+    </div>
+
+    <div class="projects-grid">
+        <div class="card">
+            <h3 data-cn="📡 1. 数据泵 (Data Fetcher)" data-en="📡 1. Data Pump" data-fr="📡 1. Pompe à Données">📡 1. Data Pump</h3>
+            <p data-cn="纯粹的生产者。高频并发拉取多标的 1Min 与 1Day 级别的双线行情，并执行时区检测判断休市状态，组装后推入内存队列。" 
+               data-en="The pure producer. Concurrently fetches 1-Min and 1-Day dual-timeframe market data for the entire watchlist, detects timezone closures, and pushes payloads to the queue." 
+               data-fr="Producteur pur. Récupère simultanément les données du marché à des intervalles de 1 minute et 1 jour, et pousse les données dans la file d'attente.">
+               The pure producer. Concurrently fetches 1-Min and 1-Day dual-timeframe market data for the entire watchlist, detects timezone closures, and pushes payloads to the queue.
+            </p>
+        </div>
+        <div class="card">
+            <h3 data-cn="🧠 2. 策略精算引擎 (Quant Engine)" data-en="🧠 2. Actuarial Engine" data-fr="🧠 2. Moteur Actuariel">🧠 2. Actuarial Engine</h3>
+            <p data-cn="从队列消费数据。执行大盘基准 (SPY) 风控检测，进行 VWAP、Z-Score、ATR 的海量向量化运算，生成信号字典。" 
+               data-en="Consumes data to calculate benchmark risks, VWAP, Z-Scores, and ATR using vectorized operations, ultimately generating the signal dictionary." 
+               data-fr="Consomme les données pour calculer les risques de référence, le VWAP, les Z-Scores et l'ATR, générant un dictionnaire de signaux.">
+               Consumes data to calculate benchmark risks, VWAP, Z-Scores, and ATR using vectorized operations, ultimately generating the signal dictionary.
+            </p>
+        </div>
+        <div class="card">
+            <h3 data-cn="🎨 3. UI 渲染流 (Native Renderer)" data-en="🎨 3. UI Renderer" data-fr="🎨 3. Moteur de Rendu">🎨 3. UI Renderer</h3>
+            <p data-cn="100% 纯 Python 自研的零依赖终端渲染器。通过算法插值和 ANSI 色块，将价格时序数据转化为内存中的字符矩阵图表，极致稳定不崩溃。" 
+               data-en="A 100% zero-dependency Native ANSI renderer built from scratch. Translates price series into character matrices via algorithmic interpolation, ensuring absolute stability." 
+               data-fr="Moteur de rendu ANSI 100% sans dépendance, transformant les séries de prix en matrices de caractères via interpolation.">
+               A 100% zero-dependency Native ANSI renderer built from scratch. Translates price series into character matrices via algorithmic interpolation, ensuring absolute stability.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================
+     Mathematical Core
+=========================== -->
+<section class="reveal">
+    <h2 class="section-title" data-cn="数理内核与量化模型" data-en="Mathematical Core" data-fr="Noyau Mathématique">
+        Mathematical Core
+    </h2>
+    <p style="text-align:center; max-width: 800px; margin: 0 auto;" 
+       data-cn="抛弃简单粗糙的均线指标，项目结合了严谨的统计学与精算模型，实现从择时到资金管理的全栈闭环。" 
+       data-en="Moving beyond simple moving averages, the system integrates rigorous statistical and actuarial models for a full-stack loop from market timing to capital management." 
+       data-fr="Au-delà des simples moyennes mobiles, le système intègre des modèles statistiques et actuariels rigoureux.">
+       Moving beyond simple moving averages, the system integrates rigorous statistical and actuarial models for a full-stack loop from market timing to capital management.
+    </p>
+
+    <div class="math-grid">
+        <!-- Z-Score -->
+        <div class="math-card">
+            <h3 data-cn="统计套利: Z-Score 动量" data-en="StatArb: Z-Score Momentum" data-fr="Arbitrage Statistique">StatArb: Z-Score Momentum</h3>
+            <div class="math-formula">Z = (X - μ) / σ</div>
+            <p data-cn="计算资产当前价格偏离 20 日均值的标准差倍数。结合 VWAP (机构成本线)，精准捕获极端行情的均值回归买卖点，替代了滞后的 MACD。" 
+               data-en="Calculates standard deviation multiples of current price deviations from the moving average. Combined with VWAP, it captures mean reversion points in extreme markets." 
+               data-fr="Calcule les multiples d'écart type des déviations de prix par rapport à la moyenne mobile pour capturer les points de retour à la moyenne.">
+               Calculates standard deviation multiples of current price deviations from the moving average. Combined with VWAP, it captures mean reversion points in extreme markets.
+            </p>
+        </div>
+
+        <!-- VaR -->
+        <div class="math-card">
+            <h3 data-cn="极端风控: 95% Parametric VaR" data-en="Tail Risk: 95% Parametric VaR" data-fr="Risque de queue: VaR à 95%">Tail Risk: 95% Parametric VaR</h3>
+            <div class="math-formula">VaR = Capital × (1.645σ - μ)</div>
+            <p data-cn="基于历史收益率的正态分布假设，实时测算在 95% 置信区间下的单日最大潜在回撤，将投资组合的尾部风险量化为直观的美元数值。" 
+               data-en="Assuming a normal distribution of returns, it calculates the maximum potential daily drawdown at a 95% confidence level, quantifying tail risk into actual dollar values." 
+               data-fr="En supposant une distribution normale des rendements, il calcule le rabattement potentiel maximal quotidien à un niveau de confiance de 95%.">
+               Assuming a normal distribution of returns, it calculates the maximum potential daily drawdown at a 95% confidence level, quantifying tail risk into actual dollar values.
+            </p>
+        </div>
+
+        <!-- Kelly -->
+        <div class="math-card">
+            <h3 data-cn="资金管理: 凯利公式" data-en="Capital Allocation: Kelly Criterion" data-fr="Allocation de capital: Critère de Kelly">Capital Allocation: Kelly Criterion</h3>
+            <div class="math-formula">f* = (bp - q) / b</div>
+            <p data-cn="基于策略历史胜率 (p) 与赔率 (b)，系统不再盲目输出买卖信号，而是直接计算出确保长期复利最大化的最优资金下注比例 (f*)。" 
+               data-en="Based on the strategy's historical win rate (p) and odds (b), the system calculates the optimal capital bet fraction (f*) to maximize long-term compound growth." 
+               data-fr="En se basant sur le taux de réussite historique (p) et la cote (b) de la stratégie, le système calcule la fraction de capital optimale (f*).">
+               Based on the strategy's historical win rate (p) and odds (b), the system calculates the optimal capital bet fraction (f*) to maximize long-term compound growth.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- ==========================
+     Call To Action
+=========================== -->
+<section class="reveal" style="text-align: center; margin: 60px 0;">
+    <h2 class="section-title" data-cn="获取源码" data-en="Source Code" data-fr="Code Source">Source Code</h2>
+    <p style="margin-bottom: 30px;" 
+       data-cn="该项目已开源于 GitHub，包含完整的本地 SQLite 数据库支持及部署指南。" 
+       data-en="The project is open-sourced on GitHub, featuring full SQLite database support and deployment guidelines." 
+       data-fr="Le projet est open-source sur GitHub, avec support de base de données SQLite.">
+       The project is open-sourced on GitHub, featuring full SQLite database support and deployment guidelines.
+    </p>
+    <a href="https://github.com/TurkeyKai/Project-Judgment" target="_blank" class="btn glow-button" 
+       data-cn="在 GitHub 上查看仓库" 
+       data-en="View Repository on GitHub" 
+       data-fr="Voir le dépôt sur GitHub">
+        View Repository on GitHub
+    </a>
+</section>
+
+<!-- ==========================
+     Footer
+=========================== -->
+<footer>
+    <p>© 2026 Kai Teng. All Rights Reserved.</p>
+    <p data-cn="数学 · 精算 · 统计 · 量化研究" data-en="Mathematics · Actuarial Science · Statistics · Quantitative Research" data-fr="Mathématiques · Actuariat · Statistiques · Recherche Quantitative">
+        Mathematics · Actuarial Science · Statistics · Quantitative Research
+    </p>
+</footer>
+
+<script src="js/language.js"></script>
+<script src="js/reveal.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
