@@ -1,604 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title
+        data-cn="联系通道 | 滕凯"
+        data-en="Contact | Kai Teng"
+        data-fr="Contact | Kai Teng">
+        Contact | Kai Teng
+    </title>
 
-
-<meta charset="UTF-8">
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-<title
-
-data-cn="联系我 | 滕凯"
-
-data-en="Contact | Kai Teng"
-
-data-fr="Contact | Kai Teng">
-
-Contact | Kai Teng
-
-</title>
-
-
-
-
-<link rel="stylesheet" href="css/style.css">
-
-<link rel="stylesheet" href="css/animation.css">
-
-<link rel="stylesheet" href="css/responsive.css">
-
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
-
-
-
-
 <body>
-
-
-
-
 
 <!-- =====================
      Navigation
 ===================== -->
-
-
 <header class="navbar">
-
-
-<div class="logo">
-
-Kai Teng
-
-</div>
-
-
-
-
-
-<nav>
-
-
-<ul class="nav-links">
-
-
-<li>
-
-<a href="index.html"
-
-data-cn="首页"
-
-data-en="Home"
-
-data-fr="Accueil">
-
-Home
-
-</a>
-
-</li>
-
-
-
-
-<li>
-
-<a href="projects.html"
-
-data-cn="项目"
-
-data-en="Projects"
-
-data-fr="Projets">
-
-Projects
-
-</a>
-
-</li>
-
-
-
-
-<li>
-
-<a href="resume.html"
-
-data-cn="简历"
-
-data-en="Resume"
-
-data-fr="CV">
-
-Resume
-
-</a>
-
-</li>
-
-
-
-
-<li>
-
-<a href="contact.html"
-
-data-cn="联系"
-
-data-en="Contact"
-
-data-fr="Contact">
-
-Contact
-
-</a>
-
-</li>
-
-
-</ul>
-
-
-</nav>
-
-
-
-
-
-
-<div class="language-switch">
-
-
-<button onclick="changeLanguage('cn')">
-
-中文
-
-</button>
-
-
-<button onclick="changeLanguage('en')">
-
-English
-
-</button>
-
-
-<button onclick="changeLanguage('fr')">
-
-Français
-
-</button>
-
-
-</div>
-
-
-
+    <div class="logo">Kai Teng</div>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html" data-cn="首页" data-en="Home" data-fr="Accueil">Home</a></li>
+            <li><a href="projects.html" data-cn="项目" data-en="Projects" data-fr="Projets">Projects</a></li>
+            <li><a href="resume.html" data-cn="简历" data-en="Resume" data-fr="CV">Resume</a></li>
+            <li><a href="contact.html" data-cn="联系" data-en="Contact" data-fr="Contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="language-switch">
+        <button onclick="changeLanguage('cn')">中文</button>
+        <button onclick="changeLanguage('en')">English</button>
+        <button onclick="changeLanguage('fr')">Français</button>
+    </div>
 </header>
-
-
-
-
-
-
-
-
 
 <!-- =====================
      Contact Hero
 ===================== -->
+<section class="hero reveal" style="min-height: 40vh; padding-top: 120px;">
+    <div class="hero-content" style="max-width: 800px;">
+        <h1 class="hero-title" style="font-size: 3.8rem; font-weight: 800; letter-spacing: 2px;"
+            data-cn="联系通道"
+            data-en="Contact & Networking"
+            data-fr="Contact & Réseautage">
+            Contact & Networking
+        </h1>
 
-
-<section class="hero reveal">
-
-
-<div class="hero-content">
-
-
-
-<h1
-
-data-cn="联系我"
-
-data-en="Contact Me"
-
-data-fr="Contactez-moi">
-
-
-Contact Me
-
-
-</h1>
-
-
-
-
-
-<p
-
-data-cn="欢迎交流项目合作、研究讨论以及技术交流。"
-
-data-en="Feel free to contact me for collaboration, research discussions and technical communication."
-
-data-fr="N'hésitez pas à me contacter pour des collaborations et discussions de recherche.">
-
-
-Feel free to contact me for collaboration, research discussions and technical communication.
-
-
-</p>
-
-
-
-</div>
-
-
+        <p data-cn="欢迎交流量化研究合作、金融科技探讨以及行业资源对接。"
+           data-en="Open to quantitative research collaborations, industry networking, and algorithmic trading discussions."
+           data-fr="Ouvert aux collaborations de recherche quantitative, au réseautage et aux discussions sur le trading algorithmique."
+           style="font-size: 1.15rem;">
+           Open to quantitative research collaborations, industry networking, and algorithmic trading discussions.
+        </p>
+    </div>
 </section>
-
-
-
-
-
-
-
-
 
 <!-- =====================
      Contact Cards
 ===================== -->
-
-
 <section class="reveal">
-
-
-<h2 class="section-title"
-
-data-cn="联系方式"
-
-data-en="Get In Touch"
-
-data-fr="Me contacter">
-
-
-Get In Touch
-
-
-</h2>
-
-
-
-
-
-
-<div class="projects-grid">
-
-
-
-
-
-
-
-<!-- Email -->
-
-
-<div class="card reveal">
-
-
-<img src="images/icons/email.svg"
-
-alt="Email"
-
-style="width:60px;margin-bottom:20px;">
-
-
-
-
-
-
-<h3
-
-data-cn="邮箱"
-
-data-en="Email"
-
-data-fr="Email">
-
-
-Email
-
-
-</h3>
-
-
-
-
-
-<p>
-
-tkdale2006@gmail.com
-
-</p>
-
-
-
-<a
-
-href="mailto:tkdale2006@gmail.com"
-
-class="btn"
-
-data-cn="发送邮件"
-
-data-en="Send Email"
-
-data-fr="Envoyer un email">
-
-
-Send Email
-
-
-</a>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- Github -->
-
-
-<div class="card reveal">
-
-
-<img src="images/icons/github.svg"
-
-alt="GitHub"
-
-style="width:60px;margin-bottom:20px;">
-
-
-
-
-
-
-<h3>
-
-GitHub
-
-</h3>
-
-
-
-
-<p
-
-data-cn="查看我的代码和项目"
-
-data-en="View my code and projects"
-
-data-fr="Voir mes codes et projets">
-
-
-View my code and projects
-
-
-</p>
-
-
-
-
-
-
-<a
-
-href="https://github.com/TurkeyKai"
-
-class="btn"
-
-target="_blank"
-
-data-cn="访问GitHub"
-
-data-en="Visit GitHub"
-
-data-fr="Visiter GitHub">
-
-
-Visit GitHub
-
-
-</a>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<!-- LinkedIn -->
-
-
-<div class="card reveal">
-
-
-<img src="images/icons/linkedin.svg"
-
-alt="LinkedIn"
-
-style="width:60px;margin-bottom:20px;">
-
-
-
-
-
-
-<h3>
-
-LinkedIn
-
-</h3>
-
-
-
-
-
-
-<p
-
-data-cn="职业交流平台"
-
-data-en="Professional networking"
-
-data-fr="Réseau professionnel">
-
-
-Professional networking
-
-
-</p>
-
-
-
-
-
-
-<a 
-
-href="https://www.linkedin.com/in/kai-teng-8a265639a"
-
-class="btn"
-
-target="_blank"
-
-data-cn="访问LinkedIn"
-
-data-en="Visit LinkedIn"
-
-data-fr="Visiter LinkedIn">
-
-
-Visit LinkedIn
-
-
-</a>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-</div>
-
-
+    <h2 class="section-title" data-cn="建立连接" data-en="Get In Touch" data-fr="Entrer en Contact">
+        Get In Touch
+    </h2>
+
+    <!-- 使用 contact-grid 实现完美三列排版 -->
+    <div class="contact-grid">
+
+        <!-- Email -->
+        <div class="card reveal contact-card">
+            <img src="images/icons/email.svg" alt="Email" style="width:60px; margin-bottom:20px;">
+            <h3 data-cn="📧 核心邮箱" data-en="📧 Email" data-fr="📧 Email">📧 Email</h3>
+            <p data-cn="学术探讨 / 量化研究沟通" 
+               data-en="Academic Inquiries / Quant Research" 
+               data-fr="Recherche Quantitative / Académique"
+               style="min-height: 48px;">
+               Academic Inquiries / Quant Research
+            </p>
+            <p style="font-family: monospace; color: #ea580c; font-weight: bold;">tkdale2006@gmail.com</p>
+            <a href="mailto:tkdale2006@gmail.com" class="btn" 
+               data-cn="发送邮件" data-en="Send Email" data-fr="Envoyer un email">
+               Send Email
+            </a>
+        </div>
+
+        <!-- LinkedIn -->
+        <div class="card reveal contact-card">
+            <img src="images/icons/linkedin.svg" alt="LinkedIn" style="width:60px; margin-bottom:20px;">
+            <h3 data-cn="💼 领英档案" data-en="💼 LinkedIn" data-fr="💼 LinkedIn">💼 LinkedIn</h3>
+            <p data-cn="职业履历与全球量化金融网络" 
+               data-en="Professional Footprint & Quant Network" 
+               data-fr="Réseau Professionnel en Finance"
+               style="min-height: 48px;">
+               Professional Footprint & Quant Network
+            </p>
+            <a href="https://www.linkedin.com/in/kai-teng-8a265639a" class="btn" target="_blank" 
+               data-cn="访问主页" data-en="View Profile" data-fr="Voir le profil">
+               View Profile
+            </a>
+        </div>
+
+        <!-- Github -->
+        <div class="card reveal contact-card">
+            <img src="images/icons/github.svg" alt="GitHub" style="width:60px; margin-bottom:20px;">
+            <h3 data-cn="💻 GitHub" data-en="💻 GitHub" data-fr="💻 GitHub">💻 GitHub</h3>
+            <p data-cn="开源量化引擎、回测框架与数理模型" 
+               data-en="Open-source Trading Engines & Models" 
+               data-fr="Moteurs de Trading Open-source"
+               style="min-height: 48px;">
+               Open-source Trading Engines & Models
+            </p>
+            <a href="https://github.com/TurkeyKai" class="btn" target="_blank" 
+               data-cn="访问仓库" data-en="Visit Repo" data-fr="Visiter le dépôt">
+               Visit Repo
+            </a>
+        </div>
+
+    </div>
 </section>
-
-
-
-
-
-
-
-
 
 <!-- =====================
      Message Section
 ===================== -->
-
-
 <section class="reveal">
-
-
-<div class="info-box">
-
-
-
-<p
-
-data-cn="如果你对数学、金融、数据分析或者技术项目感兴趣，欢迎联系我。"
-
-data-en="If you are interested in mathematics, finance, data analysis or technology projects, feel free to reach out."
-
-data-fr="Si vous êtes intéressé par les mathématiques, la finance ou les projets technologiques, contactez-moi.">
-
-
-If you are interested in mathematics, finance, data analysis or technology projects, feel free to reach out.
-
-
-</p>
-
-
-
-</div>
-
-
+    <div class="info-box" style="text-align: center;">
+        <p data-cn="无论是量化投研机会、学术探讨还是底层算法构建，我始终对探索数据驱动的金融工程挑战保持极高的热情。期待与您的交流。"
+           data-en="Whether you are exploring quantitative research opportunities, academic discussions, or algorithmic architecture, I am always enthusiastic about tackling data-driven financial engineering challenges. Let's connect."
+           data-fr="Que vous exploriez des opportunités de recherche quantitative, des discussions académiques ou l'architecture algorithmique, je suis toujours enthousiaste à l'idée de relever des défis d'ingénierie financière. Connectons-nous."
+           style="font-size: 1.1rem; margin-bottom: 0;">
+           Whether you are exploring quantitative research opportunities, academic discussions, or algorithmic architecture, I am always enthusiastic about tackling data-driven financial engineering challenges. Let's connect.
+        </p>
+    </div>
 </section>
 
-
-
-
-
-
-
-
-
+<!-- =====================
+     Footer
+===================== -->
 <footer>
-
-
-<p>
-
-© 2026 Kai Teng. All Rights Reserved.
-
-</p>
-
-
+    <p>© 2026 Kai Teng. All Rights Reserved.</p>
+    <p data-cn="数学 · 精算科学 · 统计 · 量化研究"
+       data-en="Mathematics · Actuarial Science · Statistics · Quantitative Research"
+       data-fr="Mathématiques · Actuariat · Statistiques · Recherche Quantitative">
+       Mathematics · Actuarial Science · Statistics · Quantitative Research
+    </p>
 </footer>
 
-
-
-
-
-
-
-
-
 <script src="js/language.js"></script>
-
 <script src="js/reveal.js"></script>
-
 <script src="js/effects.js"></script>
-
 <script src="js/main.js"></script>
 
-
-
 </body>
-
-
 </html>

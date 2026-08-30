@@ -1,639 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title
+        data-cn="简历 | 滕凯 (Kai Teng)"
+        data-en="Resume | Kai Teng"
+        data-fr="CV | Kai Teng">
+        Resume | Kai Teng
+    </title>
 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
-<meta charset="UTF-8">
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
-<title
-
-data-cn="简历 | 滕凯"
-
-data-en="Resume | Kai Teng"
-
-data-fr="CV | Kai Teng">
-
-Resume | Kai Teng
-
-</title>
-
-
-
-<link rel="stylesheet" href="css/style.css">
-
-<link rel="stylesheet" href="css/animation.css">
-
-<link rel="stylesheet" href="css/responsive.css">
-
-
+    <style>
+        /* 针对简历页面的专属排版优化 */
+        .resume-section {
+            max-width: 1000px;
+            margin: 0 auto 60px;
+        }
+        .resume-block {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            text-align: left;
+            transition: transform 0.3s;
+        }
+        .resume-block:hover {
+            transform: translateY(-5px);
+            border-color: #ea580c;
+        }
+        .resume-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+        .resume-title {
+            font-size: 1.5rem;
+            color: #9a3412;
+            font-weight: bold;
+        }
+        .resume-date {
+            color: #c2410c;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .resume-subtitle {
+            font-size: 1.1rem;
+            color: #444;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        .resume-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .resume-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            line-height: 1.7;
+            color: #555;
+        }
+        .resume-list li::before {
+            content: "•";
+            color: #ea580c;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        /* 技能标签增强 */
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .skill-tag {
+            background: rgba(249, 115, 22, 0.1);
+            color: #c2410c;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid rgba(249, 115, 22, 0.2);
+        }
+    </style>
 </head>
-
-
-
 
 <body>
 
-
-
-
-
-<!-- Navigation -->
-
+<!-- ==========================
+     Navigation
+=========================== -->
 <header class="navbar">
-
-
-<div class="logo">
-
-Kai Teng
-
-</div>
-
-
-
-
-
-<nav>
-
-
-<ul class="nav-links">
-
-
-<li>
-
-<a href="index.html"
-
-data-cn="首页"
-
-data-en="Home"
-
-data-fr="Accueil">
-
-Home
-
-</a>
-
-</li>
-
-
-
-
-<li>
-
-<a href="projects.html"
-
-data-cn="项目"
-
-data-en="Projects"
-
-data-fr="Projets">
-
-Projects
-
-</a>
-
-</li>
-
-
-
-
-<li>
-
-<a href="resume.html"
-
-data-cn="简历"
-
-data-en="Resume"
-
-data-fr="CV">
-
-Resume
-
-</a>
-
-</li>
-
-
-
-
-<li>
-
-<a href="contact.html"
-
-data-cn="联系"
-
-data-en="Contact"
-
-data-fr="Contact">
-
-Contact
-
-</a>
-
-</li>
-
-
-</ul>
-
-
-</nav>
-
-
-
-
-
-
-
-<div class="language-switch">
-
-
-<button onclick="changeLanguage('cn')">
-
-中文
-
-</button>
-
-
-<button onclick="changeLanguage('en')">
-
-English
-
-</button>
-
-
-<button onclick="changeLanguage('fr')">
-
-Français
-
-</button>
-
-
-</div>
-
-
-
+    <div class="logo">Kai Teng</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html" data-cn="首页" data-en="Home" data-fr="Accueil">Home</a></li>
+            <li><a href="projects.html" data-cn="项目" data-en="Projects" data-fr="Projets">Projects</a></li>
+            <li><a href="resume.html" data-cn="简历" data-en="Resume" data-fr="CV">Resume</a></li>
+            <li><a href="contact.html" data-cn="联系" data-en="Contact" data-fr="Contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="language-switch">
+        <button onclick="changeLanguage('cn')">中文</button>
+        <button onclick="changeLanguage('en')">English</button>
+        <button onclick="changeLanguage('fr')">Français</button>
+    </div>
 </header>
 
-
-
-
-
-
-
-
-
-<!-- Resume Header -->
-
-
-<section class="hero reveal">
-
-
-<div class="hero-content">
-
-
-
-<h1
-
-data-cn="个人简历"
-
-data-en="My Resume"
-
-data-fr="Mon CV">
-
-
-My Resume
-
-
-</h1>
-
-
-
-
-
-<p
-
-data-cn="数学、精算与数据分析方向学生，专注于金融建模和量化研究。"
-
-data-en="Mathematics and Actuarial Science student focusing on financial modeling and quantitative research."
-
-data-fr="Étudiant en mathématiques et actuariat spécialisé en modélisation financière et recherche quantitative.">
-
-
-Mathematics and Actuarial Science student focusing on financial modeling and quantitative research.
-
-
-</p>
-
-
-
-
-
-
-<a href="assets/documents/resume.pdf"
-
-class="btn"
-
-target="_blank"
-
-data-cn="查看PDF简历"
-
-data-en="View PDF Resume"
-
-data-fr="Voir le CV PDF">
-
-
-View PDF Resume
-
-
-</a>
-
-
-
-
-</div>
-
-
+<!-- ==========================
+     Resume Hero
+=========================== -->
+<section class="hero reveal" style="min-height: 40vh; padding-top: 100px; padding-bottom: 40px;">
+    <div class="hero-content">
+        <h1 class="hero-title" style="font-size: 3.8rem; font-weight: 800; letter-spacing: 2px;"
+            data-cn="个人履历"
+            data-en="Curriculum Vitae"
+            data-fr="Curriculum Vitae">
+            Curriculum Vitae
+        </h1>
+        <p data-cn="多伦多大学数学与精算双修学者，专注于量化金融、衍生品定价与统计建模。"
+           data-en="Mathematics & Actuarial Science Scholar at UofT, focusing on quantitative finance, derivatives pricing, and statistical modeling."
+           data-fr="Étudiant en Mathématiques et Actuariat à l'UofT, spécialisé en finance quantitative, tarification des dérivés et modélisation statistique."
+           style="font-size: 1.15rem; max-width: 700px; margin: 0 auto 30px;">
+            Mathematics & Actuarial Science Scholar at UofT, focusing on quantitative finance, derivatives pricing, and statistical modeling.
+        </p>
+        <a href="assets/documents/resume.pdf" class="btn glow-button" target="_blank"
+           data-cn="📥 下载 PDF 完整简历"
+           data-en="📥 Download PDF Resume"
+           data-fr="📥 Télécharger le CV PDF">
+            📥 Download PDF Resume
+        </a>
+    </div>
 </section>
 
+<!-- ==========================
+     Education
+=========================== -->
+<section class="reveal resume-section">
+    <h2 class="section-title" data-cn="教育背景" data-en="Education" data-fr="Formation Académique">
+        Education
+    </h2>
 
+    <div class="resume-block">
+        <div class="resume-header">
+            <div class="resume-title" data-cn="多伦多大学 (University of Toronto)" data-en="University of Toronto" data-fr="Université de Toronto">University of Toronto</div>
+            <div class="resume-date" data-cn="预计毕业：2028" data-en="Expected Graduation: 2028" data-fr="Obtention prévue : 2028">Expected Graduation: 2028</div>
+        </div>
+        <div class="resume-subtitle" 
+             data-cn="理学学士 | 数学与精算学双专业，统计学辅修" 
+             data-en="Bachelor of Science | Double Major in Mathematics & Actuarial Science, Minor in Statistics" 
+             data-fr="Licence en Sciences | Double Majeure en Mathématiques et Actuariat, Mineure en Statistiques">
+             Bachelor of Science | Double Major in Mathematics & Actuarial Science, Minor in Statistics
+        </div>
+        <ul class="resume-list">
+            <li data-cn="核心课程：微积分、线性代数、概率论、数理统计、金融数学" 
+                data-en="Core Coursework: Calculus, Linear Algebra, Probability, Mathematical Statistics, Financial Mathematics" 
+                data-fr="Cours Principaux : Calcul, Algèbre Linéaire, Probabilités, Statistiques Mathématiques, Mathématiques Financières">
+                Core Coursework: Calculus, Linear Algebra, Probability, Mathematical Statistics, Financial Mathematics
+            </li>
+            <li data-cn="学术荣誉：参与第一学年学习社区 (First-Year Learning Communities) 及 Arrive Ready 核心培养计划" 
+                data-en="Academic Honors: Selected for First-Year Learning Communities & Arrive Ready Core Program" 
+                data-fr="Distinctions : Sélectionné pour les communautés d'apprentissage de première année et le programme Arrive Ready">
+                Academic Honors: Selected for First-Year Learning Communities & Arrive Ready Core Program
+            </li>
+        </ul>
+    </div>
 
-
-
-
-
-
-
-<!-- Education -->
-
-
-<section class="reveal">
-
-
-<h2 class="section-title"
-
-data-cn="教育经历"
-
-data-en="Education"
-
-data-fr="Formation">
-
-
-Education
-
-
-</h2>
-
-
-
-
-
-
-<div class="info-box">
-
-
-
-<h3>
-
-University of Toronto
-
-</h3>
-
-
-
-
-<p
-
-data-cn="数学专业、精算专业方向，统计学辅修。"
-
-data-en="Mathematics major, Actuarial Science major, Statistics minor."
-
-data-fr="Double spécialisation en mathématiques et actuariat, mineure en statistiques.">
-
-
-Mathematics major, Actuarial Science major, Statistics minor.
-
-
-</p>
-
-
-
-
-</div>
-
-
+    <!-- 资质与证书 -->
+    <div class="resume-block" style="padding: 25px 40px;">
+        <div class="resume-header" style="margin-bottom: 0;">
+            <div class="resume-title" data-cn="北美精算师协会 (SOA)" data-en="Society of Actuaries (SOA)" data-fr="Society of Actuaries (SOA)">Society of Actuaries (SOA)</div>
+            <div class="resume-date" data-cn="附属会员 (Affiliate Member)" data-en="Affiliate Member" data-fr="Membre Affilié">Affiliate Member</div>
+        </div>
+        <p style="color: #555; margin-top: 10px;" 
+           data-cn="已注册计算化机考：Exam FM (金融数学, 2026年10月) & Exam P (概率论, 2026年11月)"
+           data-en="Registered CBT Exams: Exam FM (Financial Mathematics, Oct 2026) & Exam P (Probability, Nov 2026)"
+           data-fr="Examens Enregistrés : Exam FM (Mathématiques Financières, Oct 2026) & Exam P (Probabilités, Nov 2026)">
+           Registered CBT Exams: Exam FM (Financial Mathematics, Oct 2026) & Exam P (Probability, Nov 2026)
+        </p>
+    </div>
 </section>
 
-
-
-
-
-
-
-
-
-<!-- Timeline -->
-
-
-<section class="reveal">
-
-
-<h2 class="section-title"
-
-data-cn="经历"
-
-data-en="Experience"
-
-data-fr="Expérience">
-
-
-Experience
-
-
-</h2>
-
-
-
-
-
-
-<div class="projects-grid">
-
-
-
-
-
-<div class="card">
-
-
-<h3
-
-data-cn="量化研究项目"
-
-data-en="Quantitative Research Project"
-
-data-fr="Projet de recherche quantitative">
-
-
-Quantitative Research Project
-
-
-</h3>
-
-
-
-
-<p
-
-data-cn="研究基差因子、策略回测和金融数据分析方法。"
-
-data-en="Researching basis factors, strategy backtesting and financial data analysis."
-
-data-fr="Recherche sur les facteurs de spread, le backtest et l'analyse financière.">
-
-
-Researching basis factors, strategy backtesting and financial data analysis.
-
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-
-<div class="card">
-
-
-<h3
-
-data-cn="程序设计项目"
-
-data-en="Programming Projects"
-
-data-fr="Projets de programmation">
-
-
-Programming Projects
-
-
-</h3>
-
-
-
-
-
-<p
-
-data-cn="使用Python进行数据处理、自动化分析和模型开发。"
-
-data-en="Using Python for data processing, automation and model development."
-
-data-fr="Utilisation de Python pour le traitement des données et le développement de modèles.">
-
-
-Using Python for data processing, automation and model development.
-
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-
-</div>
-
-
+<!-- ==========================
+     Experience
+=========================== -->
+<section class="reveal resume-section">
+    <h2 class="section-title" data-cn="行业经验" data-en="Professional Experience" data-fr="Expérience Professionnelle">
+        Professional Experience
+    </h2>
+
+    <div class="resume-block">
+        <div class="resume-header">
+            <div class="resume-title" data-cn="浙商期货 (Zheshang Futures)" data-en="Zheshang Futures" data-fr="Zheshang Futures">Zheshang Futures</div>
+            <div class="resume-date" data-cn="2026年7月 - 2026年8月" data-en="Jul 2026 - Aug 2026" data-fr="Juil 2026 - Août 2026">Jul 2026 - Aug 2026</div>
+        </div>
+        <div class="resume-subtitle" data-cn="量化研究暑期实习生" data-en="Quantitative Research Intern" data-fr="Stagiaire en Recherche Quantitative">Quantitative Research Intern</div>
+        <ul class="resume-list">
+            <li data-cn="独立开发 Python 分布式网络爬虫，实现高频海量金融与基本面数据的自动化采集与本地化存储。" 
+                data-en="Independently developed Python-based distributed web scrapers to automate the extraction and local storage of high-frequency financial and fundamental data." 
+                data-fr="Développement indépendant de scrapers web Python pour automatiser l'extraction et le stockage de données financières à haute fréquence.">
+                Independently developed Python-based distributed web scrapers to automate the extraction and local storage of high-frequency financial and fundamental data.
+            </li>
+            <li data-cn="基于大宗商品现货与期货行情，深度分析并测算基差动量 (Basis Momentum) 因子效应，验证交易策略的显著性。" 
+                data-en="Conducted in-depth quantitative analysis on commodity spot and futures markets, evaluating the Basis Momentum factor to validate strategy significance." 
+                data-fr="Analyse quantitative approfondie des marchés des matières premières, évaluation du facteur Basis Momentum pour valider les stratégies de trading.">
+                Conducted in-depth quantitative analysis on commodity spot and futures markets, evaluating the Basis Momentum factor to validate strategy significance.
+            </li>
+            <li data-cn="撰写专业量化研究报告，并负责制作演示 PPT，向研究组合伙人进行量化策略路演汇报。" 
+                data-en="Authored professional quantitative research reports, prepared presentation slides, and delivered strategy roadshows to senior partners." 
+                data-fr="Rédaction de rapports de recherche quantitative, préparation de présentations et présentation de stratégies aux partenaires de recherche.">
+                Authored professional quantitative research reports, prepared presentation slides, and delivered strategy roadshows to senior partners.
+            </li>
+        </ul>
+    </div>
 </section>
 
-
-
-
-
-
-
-
-
-<!-- Skills -->
-
-
-<section class="reveal">
-
-
-<h2 class="section-title"
-
-data-cn="技能"
-
-data-en="Skills"
-
-data-fr="Compétences">
-
-
-Skills
-
-
-</h2>
-
-
-
-
-
-
-<div class="projects-grid">
-
-
-
-
-
-<div class="card">
-
-
-<h3>
-
-Programming
-
-</h3>
-
-
-<p>
-
-Python<br>
-
-Java<br>
-
-HTML / CSS / JavaScript
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="card">
-
-
-<h3>
-
-Mathematics
-
-</h3>
-
-
-<p>
-
-Linear Algebra<br>
-
-Probability<br>
-
-Statistics<br>
-
-Financial Mathematics
-
-</p>
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="card">
-
-
-<h3>
-
-Tools
-
-</h3>
-
-
-<p>
-
-Git<br>
-
-Jupyter Notebook<br>
-
-Pandas<br>
-
-Matplotlib
-
-</p>
-
-
-</div>
-
-
-
-
-
-</div>
-
-
+<!-- ==========================
+     Skills
+=========================== -->
+<section class="reveal resume-section">
+    <h2 class="section-title" data-cn="专业技能" data-en="Technical & Analytical Skills" data-fr="Compétences Techniques">
+        Technical & Analytical Skills
+    </h2>
+
+    <div class="projects-grid" style="grid-template-columns: repeat(2, 1fr); gap: 30px;">
+        
+        <!-- Programming -->
+        <div class="card" style="min-height: auto; text-align: left; padding: 30px;">
+            <h3 style="color: #9a3412; margin-bottom: 10px;" data-cn="💻 编程与底层架构" data-en="💻 Programming & Architecture" data-fr="💻 Programmation">💻 Programming & Architecture</h3>
+            <p data-cn="精通高并发与数据处理底层逻辑" data-en="Proficient in high-concurrency and data processing." data-fr="Maîtrise de la haute concurrence et du traitement des données.">Proficient in high-concurrency and data processing.</p>
+            <div class="skill-tags">
+                <span class="skill-tag">Python (Asyncio, OOP)</span>
+                <span class="skill-tag">SQL / SQLite</span>
+                <span class="skill-tag">R</span>
+                <span class="skill-tag">Java</span>
+                <span class="skill-tag">HTML / CSS / JS</span>
+            </div>
+        </div>
+
+        <!-- Quant Stack -->
+        <div class="card" style="min-height: auto; text-align: left; padding: 30px;">
+            <h3 style="color: #9a3412; margin-bottom: 10px;" data-cn="📊 量化与数据科学栈" data-en="📊 Quant & Data Stack" data-fr="📊 Science des Données">📊 Quant & Data Stack</h3>
+            <p data-cn="熟练构建因子挖掘与策略回测流水线" data-en="Skilled in factor mining and backtesting pipelines." data-fr="Compétent dans l'extraction de facteurs et les pipelines de backtesting.">Skilled in factor mining and backtesting pipelines.</p>
+            <div class="skill-tags">
+                <span class="skill-tag">Pandas / NumPy</span>
+                <span class="skill-tag">Pandas-TA</span>
+                <span class="skill-tag">QuantStats</span>
+                <span class="skill-tag">Matplotlib / Plotly</span>
+                <span class="skill-tag">Streamlit</span>
+            </div>
+        </div>
+
+        <!-- Math -->
+        <div class="card" style="grid-column: 1 / -1; min-height: auto; text-align: left; padding: 30px;">
+            <h3 style="color: #9a3412; margin-bottom: 10px;" data-cn="📈 数理逻辑与定价模型" data-en="📈 Mathematics & Pricing Models" data-fr="📈 Modèles Mathématiques">📈 Mathematics & Pricing Models</h3>
+            <p data-cn="具备扎实的推导与数理建模能力" data-en="Solid foundation in derivation and mathematical modeling." data-fr="Bases solides en dérivation et modélisation mathématique.">Solid foundation in derivation and mathematical modeling.</p>
+            <div class="skill-tags">
+                <span class="skill-tag">Stochastic Calculus</span>
+                <span class="skill-tag">Time Series Analysis</span>
+                <span class="skill-tag">Linear Algebra</span>
+                <span class="skill-tag">Derivatives Pricing</span>
+                <span class="skill-tag">Parametric VaR</span>
+                <span class="skill-tag">Kelly Criterion</span>
+            </div>
+        </div>
+
+    </div>
 </section>
 
-
-
-
-
-
-
-
-
-<footer>
-
-
-<p>
-
-© 2026 Kai Teng. All Rights Reserved.
-
-</p>
-
-
+<!-- ==========================
+     Footer
+=========================== -->
+<footer style="margin-top: 40px;">
+    <p>© 2026 Kai Teng. All Rights Reserved.</p>
+    <p data-cn="数学 · 精算 · 统计 · 量化研究" 
+       data-en="Mathematics · Actuarial Science · Statistics · Quantitative Research" 
+       data-fr="Mathématiques · Actuariat · Statistiques · Recherche Quantitative">
+       Mathematics · Actuarial Science · Statistics · Quantitative Research
+    </p>
 </footer>
 
-
-
-
-
-
-
-
-
 <script src="js/language.js"></script>
-
 <script src="js/reveal.js"></script>
-
 <script src="js/effects.js"></script>
-
 <script src="js/main.js"></script>
 
-
-
 </body>
-
-
 </html>

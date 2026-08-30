@@ -4,54 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title
-        data-cn="裁决之时 | 项目详情"
-        data-en="Project Judgment | Details"
-        data-fr="Project Judgment | Détails">
-        Project Judgment | Details
+        data-cn="项目详情 | TK 量化终端"
+        data-en="TK Quant Terminal | Details"
+        data-fr="TK Quant Terminal | Détails">
+        TK Quant Terminal | Details
     </title>
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animation.css">
     <link rel="stylesheet" href="css/responsive.css">
     
-    <!-- 针对此详情页的高级自定义样式 (终端窗口、公式卡片) -->
+    <!-- 针对终端窗口的自定义样式 (仅保留终端样式，背景与全局 style.css 保持一致) -->
     <style>
-        .project-hero {
-            padding: 120px 20px 60px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(15,23,42,1) 0%, rgba(30,41,59,1) 100%);
-            color: #fff;
-        }
-        .tech-tags {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
-        .tag {
-            background: rgba(0, 210, 255, 0.15);
-            border: 1px solid #00d2ff;
-            color: #00d2ff;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            letter-spacing: 1px;
-        }
         /* Mac 终端模拟UI */
         .terminal-mockup {
-            max-width: 1000px;
-            margin: 40px auto;
+            max-width: 950px;
+            margin: 40px auto 0;
             background: #1e1e1e;
-            border-radius: 10px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border-radius: 12px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
             overflow: hidden;
             border: 1px solid #333;
         }
         .terminal-header {
             background: #2d2d2d;
-            padding: 10px;
+            padding: 12px 15px;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -65,8 +42,8 @@
             font-size: 0.85rem;
             margin-left: auto;
             margin-right: auto;
-            padding-right: 40px;
-            font-family: monospace;
+            padding-right: 50px;
+            font-family: 'Courier New', Courier, monospace;
         }
         .terminal-body {
             padding: 0;
@@ -74,34 +51,19 @@
         .terminal-body img {
             width: 100%;
             display: block;
-            opacity: 0.95;
+            opacity: 0.98;
         }
-        .math-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .math-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 30px;
-            border-radius: 12px;
-            transition: transform 0.3s;
-        }
-        .math-card:hover {
-            transform: translateY(-5px);
-            border-color: #00d2ff;
-        }
+        /* 公式渲染优化，适配暖色主题 */
         .math-formula {
             font-family: 'Courier New', Courier, monospace;
-            background: rgba(0,0,0,0.05);
-            padding: 15px;
+            background: rgba(249, 115, 22, 0.1);
+            border: 1px solid rgba(249, 115, 22, 0.3);
+            padding: 12px;
             border-radius: 8px;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             margin: 15px 0;
             text-align: center;
-            color: #00d2ff;
+            color: #c2410c;
             font-weight: bold;
         }
     </style>
@@ -132,36 +94,38 @@
 <!-- ==========================
      Project Hero & Terminal
 =========================== -->
-<section class="project-hero reveal">
-    <h1 data-cn="裁决之时 (Project Judgment)" data-en="Project Judgment" data-fr="Project Judgment">
-        Project Judgment
-    </h1>
-    
-    <p data-cn="机构级高频量化终端 | 全异步事件驱动 | 精算级风控" 
-       data-en="Institutional Quant Terminal | Async Event-Driven | Actuarial Risk Management" 
-       data-fr="Terminal Quantitatif Institutionnel | Asynchrone | Gestion des Risques">
-        Institutional Quant Terminal | Async Event-Driven | Actuarial Risk Management
-    </p>
+<section class="hero reveal" style="flex-direction: column; padding-bottom: 40px;">
+    <div class="hero-content" style="max-width: 1000px;">
+        <h1 class="hero-title" data-cn="TK 量化终端 (TK Quant Terminal)" data-en="TK Quant Terminal" data-fr="TK Quant Terminal">
+            TK Quant Terminal
+        </h1>
+        
+        <h2 class="hero-subtitle" 
+           data-cn="机构级高频量化终端 | 全异步事件驱动 | 精算级风控体系" 
+           data-en="Institutional Quant Terminal | Async Event-Driven | Actuarial Risk Management" 
+           data-fr="Terminal Quantitatif Institutionnel | Asynchrone | Gestion des Risques Actuariels">
+            Institutional Quant Terminal | Async Event-Driven | Actuarial Risk Management
+        </h2>
 
-    <div class="tech-tags">
-        <span class="tag">Python 3.13</span>
-        <span class="tag">Asyncio (Pub/Sub)</span>
-        <span class="tag">Pandas-TA</span>
-        <span class="tag">SQLite</span>
-        <span class="tag">Zero-Dep ANSI Engine</span>
-    </div>
-
-    <!-- 终端模拟器外观 -->
-    <div class="terminal-mockup reveal">
-        <div class="terminal-header">
-            <div class="dot red"></div>
-            <div class="dot yellow"></div>
-            <div class="dot green"></div>
-            <div class="terminal-title">turkeykai@MacBook-Pro: ~/quant_engine/v4_ultimate.py</div>
+        <div class="hero-interests">
+            <p>Python 3.13</p>
+            <p>Asyncio (Pub/Sub)</p>
+            <p>Pandas-TA</p>
+            <p>SQLite</p>
+            <p>Zero-Dep ANSI Engine</p>
         </div>
-        <div class="terminal-body">
-            <!-- 替换为你在终端里运行 V4 版本的完美宽屏截图 -->
-            <img src="images/projects/judgment-screenshot.jpg" alt="Project Judgment Terminal View">
+
+        <div class="terminal-mockup reveal">
+            <div class="terminal-header">
+                <div class="dot red"></div>
+                <div class="dot yellow"></div>
+                <div class="dot green"></div>
+                <div class="terminal-title">kai_teng@MacBook-Pro: ~/quant_engine/tk_terminal.py</div>
+            </div>
+            <div class="terminal-body">
+                <!-- 替换为你实际的系统运行截图 -->
+                <img src="images/projects/judgment-screenshot.jpg" alt="TK Quant Terminal View">
+            </div>
         </div>
     </div>
 </section>
@@ -170,40 +134,40 @@
      Architecture Evolution
 =========================== -->
 <section class="reveal">
-    <h2 class="section-title" data-cn="架构演进与微服务解耦" data-en="Architecture & Decoupling" data-fr="Architecture et Découplage">
+    <h2 class="section-title" data-cn="底层架构与微服务解耦" data-en="Architecture & Decoupling" data-fr="Architecture et Découplage">
         Architecture & Decoupling
     </h2>
     <div class="info-box">
-        <p data-cn="为榨干 M4 Pro 芯片的并发算力，项目在 V4 版本彻底抛弃了同步的“面向过程”写法。系统被拆分为三大完全独立的微服务，通过 <code>asyncio.Queue</code> (Pub/Sub 模式) 进行内存级的毫秒通讯，彻底解决了网络 I/O 阻塞导致 UI 卡顿的痛点。" 
-           data-en="To fully utilize the M4 Pro chip's concurrency, the V4 version abandoned synchronous procedural code. The system is split into three independent microservices communicating via <code>asyncio.Queue</code> (Pub/Sub), completely eliminating UI lag caused by network I/O." 
-           data-fr="Pour exploiter pleinement la puce M4 Pro, le système est divisé en trois microservices indépendants communiquant via <code>asyncio.Queue</code>, éliminant ainsi les décalages d'interface liés aux I/O réseau.">
-           To fully utilize the M4 Pro chip's concurrency, the V4 version abandoned synchronous procedural code. The system is split into three independent microservices communicating via <code>asyncio.Queue</code> (Pub/Sub), completely eliminating UI lag caused by network I/O.
+        <p data-cn="为最大化高并发计算效能，本系统重构为全异步微服务架构。通过 <code>asyncio.Queue</code> 实现内存级发布/订阅 (Pub/Sub) 模式，彻底解耦数据 I/O 与前端渲染，确保毫秒级延迟与零阻塞执行。" 
+           data-en="Engineered for maximum concurrent computational throughput, the system utilizes a fully asynchronous microservices architecture. It implements a memory-level Pub/Sub pattern via <code>asyncio.Queue</code>, decoupling data I/O from UI rendering to achieve millisecond latency and zero blocking." 
+           data-fr="Conçu pour maximiser le débit de calcul concurrent, le système utilise une architecture de microservices asynchrone. Il implémente un modèle Pub/Sub en mémoire via <code>asyncio.Queue</code>, découplant les E/S de données du rendu UI pour une latence de l'ordre de la milliseconde.">
+           Engineered for maximum concurrent computational throughput, the system utilizes a fully asynchronous microservices architecture. It implements a memory-level Pub/Sub pattern via <code>asyncio.Queue</code>, decoupling data I/O from UI rendering to achieve millisecond latency and zero blocking.
         </p>
     </div>
 
     <div class="projects-grid">
-        <div class="card">
-            <h3 data-cn="📡 1. 数据泵 (Data Fetcher)" data-en="📡 1. Data Pump" data-fr="📡 1. Pompe à Données">📡 1. Data Pump</h3>
-            <p data-cn="纯粹的生产者。高频并发拉取多标的 1Min 与 1Day 级别的双线行情，并执行时区检测判断休市状态，组装后推入内存队列。" 
-               data-en="The pure producer. Concurrently fetches 1-Min and 1-Day dual-timeframe market data for the entire watchlist, detects timezone closures, and pushes payloads to the queue." 
-               data-fr="Producteur pur. Récupère simultanément les données du marché à des intervalles de 1 minute et 1 jour, et pousse les données dans la file d'attente.">
-               The pure producer. Concurrently fetches 1-Min and 1-Day dual-timeframe market data for the entire watchlist, detects timezone closures, and pushes payloads to the queue.
+        <div class="card project-card">
+            <h3 data-cn="🌐 高频数据网关" data-en="🌐 Market Data Gateway" data-fr="🌐 Passerelle de Données">🌐 Market Data Gateway</h3>
+            <p data-cn="采用异步非阻塞架构，高频并发获取多资产跨周期 (1Min/1Day) 行情序列。内置时区验证与休市状态机，确保数据流的连续性与完整性。" 
+               data-en="Utilizes an asynchronous non-blocking architecture to concurrently ingest multi-asset, dual-timeframe (1Min/1Day) market data. Features a built-in timezone state machine to ensure continuous and normalized data streams." 
+               data-fr="Utilise une architecture asynchrone non bloquante pour ingérer simultanément des données de marché multi-actifs sur plusieurs échelles de temps. Intègre une machine à états de fuseau horaire.">
+               Utilizes an asynchronous non-blocking architecture to concurrently ingest multi-asset, dual-timeframe (1Min/1Day) market data. Features a built-in timezone state machine to ensure continuous and normalized data streams.
             </p>
         </div>
-        <div class="card">
-            <h3 data-cn="🧠 2. 策略精算引擎 (Quant Engine)" data-en="🧠 2. Actuarial Engine" data-fr="🧠 2. Moteur Actuariel">🧠 2. Actuarial Engine</h3>
-            <p data-cn="从队列消费数据。执行大盘基准 (SPY) 风控检测，进行 VWAP、Z-Score、ATR 的海量向量化运算，生成信号字典。" 
-               data-en="Consumes data to calculate benchmark risks, VWAP, Z-Scores, and ATR using vectorized operations, ultimately generating the signal dictionary." 
-               data-fr="Consomme les données pour calculer les risques de référence, le VWAP, les Z-Scores et l'ATR, générant un dictionnaire de signaux.">
-               Consumes data to calculate benchmark risks, VWAP, Z-Scores, and ATR using vectorized operations, ultimately generating the signal dictionary.
+        <div class="card project-card">
+            <h3 data-cn="🧠 量化与精算引擎" data-en="🧠 Quant & Actuarial Engine" data-fr="🧠 Moteur Quant et Actuariel">🧠 Quant & Actuarial Engine</h3>
+            <p data-cn="执行海量向量化矩阵运算。集成大盘基准系统风险监控，实时计算 VWAP、Z-Score 及动态 ATR，构建高维交易信号矩阵。" 
+               data-en="Executes heavy vectorized matrix computations. Integrates benchmark systemic risk monitoring and calculates real-time VWAP, Z-Score, and dynamic ATR to construct a high-dimensional trading signal matrix." 
+               data-fr="Exécute des calculs matriciels vectorisés lourds. Intègre la surveillance du risque systémique et calcule le VWAP en temps réel, le Z-Score et l'ATR dynamique pour construire une matrice de signaux.">
+               Executes heavy vectorized matrix computations. Integrates benchmark systemic risk monitoring and calculates real-time VWAP, Z-Score, and dynamic ATR to construct a high-dimensional trading signal matrix.
             </p>
         </div>
-        <div class="card">
-            <h3 data-cn="🎨 3. UI 渲染流 (Native Renderer)" data-en="🎨 3. UI Renderer" data-fr="🎨 3. Moteur de Rendu">🎨 3. UI Renderer</h3>
-            <p data-cn="100% 纯 Python 自研的零依赖终端渲染器。通过算法插值和 ANSI 色块，将价格时序数据转化为内存中的字符矩阵图表，极致稳定不崩溃。" 
-               data-en="A 100% zero-dependency Native ANSI renderer built from scratch. Translates price series into character matrices via algorithmic interpolation, ensuring absolute stability." 
-               data-fr="Moteur de rendu ANSI 100% sans dépendance, transformant les séries de prix en matrices de caractères via interpolation.">
-               A 100% zero-dependency Native ANSI renderer built from scratch. Translates price series into character matrices via algorithmic interpolation, ensuring absolute stability.
+        <div class="card project-card" style="grid-column: 1 / -1; min-height: auto;">
+            <h3 data-cn="🎨 原生低延迟渲染器" data-en="🎨 Low-Latency Native Renderer" data-fr="🎨 Moteur de Rendu Natif">🎨 Low-Latency Native Renderer</h3>
+            <p data-cn="完全自研的零依赖终端渲染系统。通过底层算法插值与 ANSI 字符映射，将高维价格时序数据实时投影为内存中的字符矩阵，确保极致稳定。" 
+               data-en="A proprietary, zero-dependency terminal rendering system. Transforms high-dimensional price time-series data into character matrices in real-time via algorithmic interpolation and ANSI mapping, ensuring absolute stability." 
+               data-fr="Un système de rendu de terminal propriétaire sans dépendance. Transforme les séries chronologiques de prix en matrices de caractères en temps réel via une interpolation algorithmique et un mappage ANSI.">
+               A proprietary, zero-dependency terminal rendering system. Transforms high-dimensional price time-series data into character matrices in real-time via algorithmic interpolation and ANSI mapping, ensuring absolute stability.
             </p>
         </div>
     </div>
@@ -216,65 +180,66 @@
     <h2 class="section-title" data-cn="数理内核与量化模型" data-en="Mathematical Core" data-fr="Noyau Mathématique">
         Mathematical Core
     </h2>
-    <p style="text-align:center; max-width: 800px; margin: 0 auto;" 
-       data-cn="抛弃简单粗糙的均线指标，项目结合了严谨的统计学与精算模型，实现从择时到资金管理的全栈闭环。" 
-       data-en="Moving beyond simple moving averages, the system integrates rigorous statistical and actuarial models for a full-stack loop from market timing to capital management." 
-       data-fr="Au-delà des simples moyennes mobiles, le système intègre des modèles statistiques et actuariels rigoureux.">
-       Moving beyond simple moving averages, the system integrates rigorous statistical and actuarial models for a full-stack loop from market timing to capital management.
-    </p>
+    <div class="info-box">
+        <p data-cn="摒弃传统的启发式技术指标，本项目深度融合严谨的数理统计与精算风险模型，构建从量化择时到动态仓位管理的全栈交易闭环。" 
+           data-en="Transcending heuristic technical indicators, this architecture deeply integrates rigorous mathematical statistics and actuarial risk models, constructing a full-stack trading loop from quantitative timing to dynamic position management." 
+           data-fr="Dépassant les indicateurs techniques heuristiques, ce projet intègre profondément des statistiques mathématiques rigoureuses et des modèles de risque actuariel, construisant une boucle de trading complète.">
+           Transcending heuristic technical indicators, this architecture deeply integrates rigorous mathematical statistics and actuarial risk models, constructing a full-stack trading loop from quantitative timing to dynamic position management.
+        </p>
+    </div>
 
-    <div class="math-grid">
+    <div class="projects-grid">
         <!-- Z-Score -->
-        <div class="math-card">
-            <h3 data-cn="统计套利: Z-Score 动量" data-en="StatArb: Z-Score Momentum" data-fr="Arbitrage Statistique">StatArb: Z-Score Momentum</h3>
+        <div class="card project-card">
+            <h3 data-cn="统计套利: Z-Score 均值回归" data-en="StatArb: Z-Score Mean Reversion" data-fr="Arbitrage Statistique : Z-Score">StatArb: Z-Score Mean Reversion</h3>
             <div class="math-formula">Z = (X - μ) / σ</div>
-            <p data-cn="计算资产当前价格偏离 20 日均值的标准差倍数。结合 VWAP (机构成本线)，精准捕获极端行情的均值回归买卖点，替代了滞后的 MACD。" 
-               data-en="Calculates standard deviation multiples of current price deviations from the moving average. Combined with VWAP, it captures mean reversion points in extreme markets." 
-               data-fr="Calcule les multiples d'écart type des déviations de prix par rapport à la moyenne mobile pour capturer les points de retour à la moyenne.">
-               Calculates standard deviation multiples of current price deviations from the moving average. Combined with VWAP, it captures mean reversion points in extreme markets.
+            <p data-cn="测算资产现价偏离移动均值的标准差倍数。结合 VWAP (成交量加权平均价) 构建锚点，精准捕捉极端市场波动中的统计学均值回归节点。" 
+               data-en="Measures standard deviation multiples of current price variance from the moving average. Anchored with VWAP (Volume-Weighted Average Price), it identifies statistical mean-reversion points during extreme market volatility." 
+               data-fr="Mesure les multiples d'écart type de la variance du prix actuel par rapport à la moyenne mobile. Ancré avec le VWAP, il identifie les points de réversion statistique à la moyenne lors d'une extrême volatilité.">
+               Measures standard deviation multiples of current price variance from the moving average. Anchored with VWAP (Volume-Weighted Average Price), it identifies statistical mean-reversion points during extreme market volatility.
             </p>
         </div>
 
         <!-- VaR -->
-        <div class="math-card">
-            <h3 data-cn="极端风控: 95% Parametric VaR" data-en="Tail Risk: 95% Parametric VaR" data-fr="Risque de queue: VaR à 95%">Tail Risk: 95% Parametric VaR</h3>
+        <div class="card project-card">
+            <h3 data-cn="尾部风险: 95% 参数化 VaR" data-en="Tail Risk: 95% Parametric VaR" data-fr="Risque Extrême : VaR Paramétrique 95%">Tail Risk: 95% Parametric VaR</h3>
             <div class="math-formula">VaR = Capital × (1.645σ - μ)</div>
-            <p data-cn="基于历史收益率的正态分布假设，实时测算在 95% 置信区间下的单日最大潜在回撤，将投资组合的尾部风险量化为直观的美元数值。" 
-               data-en="Assuming a normal distribution of returns, it calculates the maximum potential daily drawdown at a 95% confidence level, quantifying tail risk into actual dollar values." 
-               data-fr="En supposant une distribution normale des rendements, il calcule le rabattement potentiel maximal quotidien à un niveau de confiance de 95%.">
-               Assuming a normal distribution of returns, it calculates the maximum potential daily drawdown at a 95% confidence level, quantifying tail risk into actual dollar values.
+            <p data-cn="运用参数化方法评估投资组合风险敞口。在 95% 置信区间下，计算单日最大潜在损失，将极端的尾部风险转化为精确的资金回撤预警。" 
+               data-en="Utilizes a parametric approach to evaluate portfolio risk exposure. Calculates the Maximum Probable Daily Drawdown at a 95% confidence interval, converting extreme tail risks into precise capital alerts." 
+               data-fr="Utilise une approche paramétrique pour évaluer l'exposition au risque du portefeuille. Calcule la perte quotidienne potentielle maximale à un intervalle de confiance de 95%, convertissant les risques extrêmes en alertes de capital précises.">
+               Utilizes a parametric approach to evaluate portfolio risk exposure. Calculates the Maximum Probable Daily Drawdown at a 95% confidence interval, converting extreme tail risks into precise capital alerts.
             </p>
         </div>
 
         <!-- Kelly -->
-        <div class="math-card">
-            <h3 data-cn="资金管理: 凯利公式" data-en="Capital Allocation: Kelly Criterion" data-fr="Allocation de capital: Critère de Kelly">Capital Allocation: Kelly Criterion</h3>
+        <div class="card project-card" style="grid-column: 1 / -1; min-height: auto;">
+            <h3 data-cn="资本配置: 凯利准则" data-en="Capital Allocation: Kelly Criterion" data-fr="Allocation de Capital : Critère de Kelly">Capital Allocation: Kelly Criterion</h3>
             <div class="math-formula">f* = (bp - q) / b</div>
-            <p data-cn="基于策略历史胜率 (p) 与赔率 (b)，系统不再盲目输出买卖信号，而是直接计算出确保长期复利最大化的最优资金下注比例 (f*)。" 
-               data-en="Based on the strategy's historical win rate (p) and odds (b), the system calculates the optimal capital bet fraction (f*) to maximize long-term compound growth." 
-               data-fr="En se basant sur le taux de réussite historique (p) et la cote (b) de la stratégie, le système calcule la fraction de capital optimale (f*).">
-               Based on the strategy's historical win rate (p) and odds (b), the system calculates the optimal capital bet fraction (f*) to maximize long-term compound growth.
+            <p data-cn="基于策略历史胜率与预期盈亏比，动态优化资本配置权重。通过严格的数学推导，计算出最大化投资组合长期对数收益率的最优下注分数。" 
+               data-en="Dynamically optimizes capital allocation weights based on historical win rates and expected reward-to-risk ratios. Employs rigorous mathematical derivations to calculate the optimal bet fraction that maximizes long-term logarithmic portfolio growth." 
+               data-fr="Optimise dynamiquement les pondérations d'allocation de capital en fonction des taux de réussite historiques et des ratios risque-récompense attendus. Utilise des dérivations mathématiques pour calculer la fraction de pari optimale.">
+               Dynamically optimizes capital allocation weights based on historical win rates and expected reward-to-risk ratios. Employs rigorous mathematical derivations to calculate the optimal bet fraction that maximizes long-term logarithmic portfolio growth.
             </p>
         </div>
     </div>
 </section>
 
 <!-- ==========================
-     Call To Action
+     Call To Action (在线体验)
 =========================== -->
-<section class="reveal" style="text-align: center; margin: 60px 0;">
-    <h2 class="section-title" data-cn="获取源码" data-en="Source Code" data-fr="Code Source">Source Code</h2>
-    <p style="margin-bottom: 30px;" 
-       data-cn="该项目已开源于 GitHub，包含完整的本地 SQLite 数据库支持及部署指南。" 
-       data-en="The project is open-sourced on GitHub, featuring full SQLite database support and deployment guidelines." 
-       data-fr="Le projet est open-source sur GitHub, avec support de base de données SQLite.">
-       The project is open-sourced on GitHub, featuring full SQLite database support and deployment guidelines.
+<section class="reveal" style="text-align: center; padding-bottom: 80px;">
+    <h2 class="section-title" data-cn="启动终端" data-en="Launch Terminal" data-fr="Lancer le Terminal">Launch Terminal</h2>
+    <p style="margin-bottom: 30px; color: #555; font-size: 1.1rem; max-width: 800px; margin-left: auto; margin-right: auto;" 
+       data-cn="该量化终端已部署至云端。您可以直接点击下方按钮，在线体验多资产实时监控、精算风控模型与动态策略矩阵。" 
+       data-en="The quant terminal is deployed in the cloud. Click the button below to directly access live multi-asset monitoring, actuarial risk control, and dynamic strategy matrices." 
+       data-fr="Le terminal quantitatif est déployé dans le cloud. Cliquez sur le bouton ci-dessous pour accéder directement à la surveillance multi-actifs et à l'analyse de stratégie.">
+       The quant terminal is deployed in the cloud. Click the button below to directly access live multi-asset monitoring, actuarial risk control, and dynamic strategy matrices.
     </p>
-    <a href="https://github.com/TurkeyKai/Project-Judgment" target="_blank" class="btn glow-button" 
-       data-cn="在 GitHub 上查看仓库" 
-       data-en="View Repository on GitHub" 
-       data-fr="Voir le dépôt sur GitHub">
-        View Repository on GitHub
+    <a href="https://tk-quant.streamlit.app/" target="_blank" class="btn glow-button" 
+       data-cn="🚀 立即访问 TK 量化终端" 
+       data-en="🚀 Launch TK Quant Terminal" 
+       data-fr="🚀 Lancer TK Quant Terminal">
+        🚀 Launch TK Quant Terminal
     </a>
 </section>
 

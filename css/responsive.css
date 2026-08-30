@@ -1,679 +1,189 @@
 /* =====================================
-   Responsive Design
+   responsive.css
+   Multi-Device Responsive Design System
 ===================================== */
 
+/* =========================
+   Tablet View (max-width: 1024px)
+========================= */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 18px 5%;
+    }
 
+    .nav-links {
+        gap: 20px;
+    }
+
+    section {
+        padding: 70px 6%;
+    }
+
+    .hero-title {
+        font-size: 2.7rem;
+    }
+
+    /* Grids collapse to 2 columns */
+    .about-grid,
+    .skills-grid,
+    .research-grid,
+    .contact-grid,
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
 
 /* =========================
-   Tablet
+   Mobile View (max-width: 768px)
 ========================= */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
 
+    /* Navigation */
+    .navbar {
+        flex-direction: column;
+        gap: 18px;
+        padding: 18px 20px;
+    }
 
-@media(max-width:1024px){
+    .logo {
+        font-size: 24px;
+    }
 
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
 
+    .language-switch {
+        justify-content: center;
+    }
 
-.navbar{
+    /* Hero */
+    .hero {
+        min-height: auto;
+        padding: 70px 20px;
+    }
 
+    .profile-img {
+        width: 140px;
+        height: 140px;
+    }
 
-    padding:18px 5%;
+    .hero-title {
+        font-size: 2.1rem;
+    }
 
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
 
+    .hero-field {
+        font-size: 1rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+    .hero-interests {
+        gap: 10px;
+    }
+
+    .hero-interests p {
+        font-size: 0.9rem;
+        padding: 7px 14px;
+    }
+
+    /* Sections */
+    section {
+        padding: 55px 20px;
+    }
+
+    .section-title {
+        font-size: 1.9rem;
+        margin-bottom: 35px;
+    }
+
+    /* Info Box */
+    .info-box {
+        padding: 25px;
+        border-radius: 20px;
+    }
+
+    .info-box p {
+        font-size: 0.95rem;
+    }
+
+    /* All Grids collapse to single column */
+    .about-grid,
+    .skills-grid,
+    .research-grid,
+    .projects-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    /* Cards */
+    .card,
+    .project-card {
+        padding: 25px;
+        min-height: auto; /* 移动端自适应高度，防止文字过长溢出 */
+    }
+
+    .card h3 {
+        font-size: 1.2rem;
+    }
+
+    .card p {
+        font-size: 0.95rem;
+    }
+
+    /* Buttons */
+    .btn {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
 }
-
-
-
-.nav-links{
-
-
-    gap:20px;
-
-
-}
-
-
-
-section{
-
-
-    padding:70px 6%;
-
-
-}
-
-
-
-
-
-
-
-.hero-title{
-
-
-    font-size:2.7rem;
-
-
-}
-
-
-
-
-
-
-
-
-/* About */
-
-
-.about-grid{
-
-
-    grid-template-columns:
-
-    repeat(2,1fr);
-
-
-}
-
-
-
-
-
-
-/* Technical Skills */
-
-
-.skills-grid{
-
-
-    grid-template-columns:
-
-    repeat(2,1fr);
-
-
-}
-
-
-
-
-
-
-/* Research Interests */
-
-
-.research-grid{
-
-
-    grid-template-columns:
-
-    repeat(2,1fr);
-
-
-    gap:30px;
-
-
-}
-
-
-
-
-
-
-
-/* Contact */
-
-
-.contact-grid{
-
-
-    grid-template-columns:
-
-    repeat(2,1fr);
-
-
-    gap:30px;
-
-
-}
-
-
-
-
-
-
-/* Research Projects */
-
-
-.projects-grid{
-
-
-    grid-template-columns:
-
-    repeat(2,1fr);
-
-
-    gap:35px;
-
-
-}
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* =========================
-   Mobile
+   Small Mobile View (max-width: 480px)
 ========================= */
-
-
-@media(max-width:768px){
-
-
-
-
-
-body{
-
-
-    overflow-x:hidden;
-
-
-}
-
-
-
-
-
-
-
-/* Navigation */
-
-
-.navbar{
-
-
-    flex-direction:column;
-
-
-    gap:18px;
-
-
-    padding:18px 20px;
-
-
-}
-
-
-
-
-
-.logo{
-
-
-    font-size:24px;
-
-
-}
-
-
-
-
-
-.nav-links{
-
-
-    flex-wrap:wrap;
-
-
-    justify-content:center;
-
-
-    gap:15px;
-
-
-}
-
-
-
-
-
-.language-switch{
-
-
-    justify-content:center;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* Hero */
-
-
-.hero{
-
-
-    min-height:auto;
-
-
-    padding:70px 20px;
-
-
-}
-
-
-
-
-
-
-.profile-img{
-
-
-    width:140px;
-
-
-    height:140px;
-
-
-}
-
-
-
-
-
-
-.hero-title{
-
-
-    font-size:2.1rem;
-
-
-}
-
-
-
-
-
-
-.hero-subtitle{
-
-
-    font-size:1.1rem;
-
-
-}
-
-
-
-
-
-
-.hero-field{
-
-
-    font-size:1rem;
-
-
-}
-
-
-
-
-
-
-.hero-description{
-
-
-    font-size:1rem;
-
-
-    line-height:1.7;
-
-
-}
-
-
-
-
-
-
-
-.hero-interests{
-
-
-    gap:10px;
-
-
-}
-
-
-
-
-
-
-
-.hero-interests p{
-
-
-    font-size:.9rem;
-
-
-    padding:7px 14px;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* Sections */
-
-
-section{
-
-
-    padding:55px 20px;
-
-
-}
-
-
-
-
-
-
-
-.section-title{
-
-
-    font-size:1.9rem;
-
-
-    margin-bottom:35px;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* About */
-
-
-.info-box{
-
-
-    padding:25px;
-
-
-    border-radius:20px;
-
-
-}
-
-
-
-
-
-
-
-.info-box p{
-
-
-    font-size:.95rem;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* All grids */
-
-
-.about-grid,
-.skills-grid,
-.research-grid,
-.projects-grid,
-.contact-grid{
-
-
-    grid-template-columns:
-
-    1fr;
-
-
-    gap:25px;
-
-
-}
-
-
-
-
-
-
-
-
-
-.card{
-
-
-    padding:25px;
-
-
-}
-
-
-
-
-
-
-
-.card h3{
-
-
-    font-size:1.2rem;
-
-
-}
-
-
-
-
-
-
-
-.card p{
-
-
-    font-size:.95rem;
-
-
-}
-
-
-
-
-
-
-
-
-
-/* Buttons */
-
-
-.btn{
-
-
-    padding:12px 25px;
-
-
-    font-size:.95rem;
-
-
-}
-
-
-
-
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================
-   Small Mobile
-========================= */
-
-
-@media(max-width:480px){
-
-
-
-
-
-.logo{
-
-
-    font-size:22px;
-
-
-}
-
-
-
-
-
-
-.nav-links a{
-
-
-    font-size:.9rem;
-
-
-}
-
-
-
-
-
-
-
-.language-switch button{
-
-
-    padding:7px 12px;
-
-
-    font-size:.85rem;
-
-
-}
-
-
-
-
-
-
-.hero-title{
-
-
-    font-size:1.8rem;
-
-
-}
-
-
-
-
-
-
-.profile-img{
-
-
-    width:120px;
-
-
-    height:120px;
-
-
-}
-
-
-
-
-
-
-
-.section-title{
-
-
-    font-size:1.65rem;
-
-
-}
-
-
-
-
-
-
-
-.card{
-
-
-    padding:22px;
-
-
-}
-
-
-
-
-
-
+@media (max-width: 480px) {
+    .logo {
+        font-size: 22px;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+
+    .language-switch button {
+        padding: 7px 12px;
+        font-size: 0.85rem;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .section-title {
+        font-size: 1.65rem;
+    }
+
+    .card,
+    .project-card {
+        padding: 22px;
+    }
 }

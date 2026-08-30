@@ -1,1847 +1,354 @@
 <!DOCTYPE html>
 <html lang="en">
-
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title
+        data-cn="滕凯 | 量化与精算作品集"
+        data-en="Kai Teng | Quant & Actuarial Portfolio"
+        data-fr="Kai Teng | Portfolio Quantitatif">
+        Kai Teng | Quant & Actuarial Portfolio
+    </title>
 
-
-<meta charset="UTF-8">
-
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-<title
-
-data-cn="滕凯 | 量化投资作品集"
-
-data-en="Kai Teng | Quant Portfolio"
-
-data-fr="Kai Teng | Portfolio Quantitatif">
-
-Kai Teng | Quant Portfolio
-
-</title>
-
-
-
-<link rel="stylesheet" href="css/style.css">
-
-<link rel="stylesheet" href="css/animation.css">
-
-<link rel="stylesheet" href="css/responsive.css">
-
-
-
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
-
-
-
-
 <body>
-
-
-
-
 
 <!-- ==========================
      Navigation
 =========================== -->
-
-
 <header class="navbar">
-
-
-
-<div class="logo">
-
-Kai Teng
-
-</div>
-
-
-
-
-
-<nav>
-
-
-<ul class="nav-links">
-
-
-
-<li>
-
-<a href="index.html"
-
-data-cn="首页"
-
-data-en="Home"
-
-data-fr="Accueil">
-
-Home
-
-</a>
-
-</li>
-
-
-
-
-
-<li>
-
-<a href="projects.html"
-
-data-cn="项目"
-
-data-en="Projects"
-
-data-fr="Projets">
-
-Projects
-
-</a>
-
-</li>
-
-
-
-
-
-<li>
-
-<a href="resume.html"
-
-data-cn="简历"
-
-data-en="Resume"
-
-data-fr="CV">
-
-Resume
-
-</a>
-
-</li>
-
-
-
-
-
-<li>
-
-<a href="contact.html"
-
-data-cn="联系"
-
-data-en="Contact"
-
-data-fr="Contact">
-
-Contact
-
-</a>
-
-</li>
-
-
-
-
-</ul>
-
-
-</nav>
-
-
-
-
-
-<div class="language-switch">
-
-
-<button onclick="changeLanguage('cn')">
-
-中文
-
-</button>
-
-
-
-<button onclick="changeLanguage('en')">
-
-English
-
-</button>
-
-
-
-<button onclick="changeLanguage('fr')">
-
-Français
-
-</button>
-
-
-
-</div>
-
-
-
+    <div class="logo">Kai Teng</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html" data-cn="首页" data-en="Home" data-fr="Accueil">Home</a></li>
+            <li><a href="projects.html" data-cn="项目" data-en="Projects" data-fr="Projets">Projects</a></li>
+            <li><a href="resume.html" data-cn="简历" data-en="Resume" data-fr="CV">Resume</a></li>
+            <li><a href="contact.html" data-cn="联系" data-en="Contact" data-fr="Contact">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="language-switch">
+        <button onclick="changeLanguage('cn')">中文</button>
+        <button onclick="changeLanguage('en')">English</button>
+        <button onclick="changeLanguage('fr')">Français</button>
+    </div>
 </header>
-
-
-
-
-
-
-
-
 
 <!-- ==========================
      Hero Section
 =========================== -->
-
-
 <section class="hero reveal">
-
-
-
-<div class="hero-content">
-
-
-
-
-
-<img
-
-src="images/avatar.png"
-
-alt="Kai Teng"
-
-class="profile-img avatar-float">
-
-
-
-
-
-<h1 class="hero-title"
-
-data-cn="你好，我是滕凯"
-
-data-en="Hello, I'm Kai Teng"
-
-data-fr="Bonjour, je suis Kai Teng">
-
-Hello, I'm Kai Teng
-
-</h1>
-
-
-
-
-
-
-<h2 class="hero-subtitle"
-
-data-cn="多伦多大学数学与精算本科生"
-
-data-en="University of Toronto Mathematics & Actuarial Science Student"
-
-data-fr="Étudiant en mathématiques et actuariat à l'Université de Toronto">
-
-University of Toronto Mathematics & Actuarial Science Student
-
-</h2>
-
-
-
-
-
-
-
-<h3 class="hero-field"
-
-data-cn="数学 · 精算 · 统计"
-
-data-en="Mathematics · Actuarial Science · Statistics"
-
-data-fr="Mathématiques · Actuariat · Statistiques">
-
-Mathematics · Actuarial Science · Statistics
-
-</h3>
-
-
-
-
-
-
-
-
-
-<div class="hero-interests">
-
-
-
-<p
-
-data-cn="量化金融"
-
-data-en="Quantitative Finance"
-
-data-fr="Finance Quantitative">
-
-Quantitative Finance
-
-</p>
-
-
-
-
-<p
-
-data-cn="数据分析"
-
-data-en="Data Analytics"
-
-data-fr="Analyse de Données">
-
-Data Analytics
-
-</p>
-
-
-
-
-
-<p
-
-data-cn="统计建模"
-
-data-en="Statistical Modeling"
-
-data-fr="Modélisation Statistique">
-
-Statistical Modeling
-
-</p>
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<p class="hero-description"
-
-data-cn="利用数学、统计与计算方法探索金融市场和数据问题。"
-
-data-en="Applying mathematics, statistics and computational methods to financial markets and data problems."
-
-data-fr="Application des mathématiques, statistiques et méthodes computationnelles aux problèmes financiers.">
-
-Applying mathematics, statistics and computational methods to financial markets and data problems.
-
-</p>
-
-
-
-
-
-
-
-
-<div class="hero-buttons">
-
-
-
-<a href="projects.html"
-
-class="btn glow-button"
-
-data-cn="查看项目"
-
-data-en="View Projects"
-
-data-fr="Voir les projets">
-
-View Projects
-
-</a>
-
-
-
-
-
-
-<a href="assets/documents/resume.pdf"
-
-target="_blank"
-
-class="btn"
-
-data-cn="下载简历"
-
-data-en="Download Resume"
-
-data-fr="Télécharger le CV">
-
-Download Resume
-
-</a>
-
-
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
-
+    <div class="hero-content">
+        <img src="images/avatar.png" alt="Kai Teng" class="profile-img avatar-float">
+        
+        <h1 class="hero-title"
+            data-cn="你好，我是滕凯"
+            data-en="Hello, I'm Kai Teng"
+            data-fr="Bonjour, je suis Kai Teng">
+            Hello, I'm Kai Teng
+        </h1>
+
+        <h2 class="hero-subtitle"
+            data-cn="多伦多大学 | 数学与精算双修学者"
+            data-en="University of Toronto | Mathematics & Actuarial Science Scholar"
+            data-fr="Université de Toronto | Chercheur en Mathématiques et Actuariat">
+            University of Toronto | Mathematics & Actuarial Science Scholar
+        </h2>
+
+        <h3 class="hero-field"
+            data-cn="量化研究 · 衍生品定价 · 统计建模"
+            data-en="Quantitative Research · Derivatives Pricing · Statistical Modeling"
+            data-fr="Recherche Quantitative · Tarification des Dérivés · Modélisation Statistique">
+            Quantitative Research · Derivatives Pricing · Statistical Modeling
+        </h3>
+
+        <div class="hero-interests">
+            <p data-cn="高频系统架构" data-en="High-Frequency Architecture" data-fr="Architecture Haute Fréquence">High-Frequency Architecture</p>
+            <p data-cn="精算风控模型" data-en="Actuarial Risk Models" data-fr="Modèles de Risque Actuariel">Actuarial Risk Models</p>
+            <p data-cn="多因子 Alpha 挖掘" data-en="Multi-Factor Alpha Mining" data-fr="Génération d'Alpha">Multi-Factor Alpha Mining</p>
+        </div>
+
+        <p class="hero-description"
+            data-cn="深度融合严谨的数理推导与高效的计算底层，致力于在量化金融与风险管理领域构建先进的数据驱动工程解决方案。"
+            data-en="Bridging rigorous mathematical derivation with high-performance computational architectures to engineer advanced data-driven solutions in quantitative finance and risk management."
+            data-fr="Alliant dérivations mathématiques rigoureuses et architectures de calcul haute performance pour concevoir des solutions en finance quantitative.">
+            Bridging rigorous mathematical derivation with high-performance computational architectures to engineer advanced data-driven solutions in quantitative finance and risk management.
+        </p>
+
+        <div class="hero-buttons">
+            <a href="projects.html" class="btn glow-button"
+               data-cn="探索核心项目"
+               data-en="Explore Core Projects"
+               data-fr="Explorer les Projets">
+                Explore Core Projects
+            </a>
+            <a href="assets/documents/resume.pdf" target="_blank" class="btn"
+               data-cn="下载完整简历"
+               data-en="Download Resume"
+               data-fr="Télécharger le CV">
+                Download Resume
+            </a>
+        </div>
+    </div>
 </section>
-
-
-
-
-
-
-
-
 
 <!-- ==========================
      About Me
 =========================== -->
-
-
-
 <section class="about reveal">
-
-
-
-
-
-
-<h2 class="section-title"
-
-data-cn="关于我"
-
-data-en="About Me"
-
-data-fr="À Propos de Moi">
-
-About Me
-
-</h2>
-
-
-
-
-
-
-
-
-<div class="info-box">
-
-
-
-<p
-
-data-cn="我是多伦多大学数学与精算专业本科生，同时辅修统计学。我的兴趣集中于数学、统计和计算方法在金融领域中的应用，主要方向包括量化金融、金融衍生品、数据分析以及统计建模。"
-
-data-en="I am an undergraduate student at the University of Toronto majoring in Mathematics and Actuarial Science with a minor in Statistics. My interests focus on applying mathematics, statistics and computational methods to quantitative finance, derivatives and data-driven financial research."
-
-data-fr="Je suis étudiant à l'Université de Toronto en mathématiques et actuariat avec une mineure en statistiques. Mes intérêts portent sur la finance quantitative, les produits dérivés et la modélisation statistique.">
-
-I am an undergraduate student at the University of Toronto majoring in Mathematics and Actuarial Science with a minor in Statistics. My interests focus on applying mathematics, statistics and computational methods to quantitative finance, derivatives and data-driven financial research.
-
-</p>
-
-
-
-
-
-
-<p
-
-data-cn="我希望利用数学模型、统计方法和计算技术，构建能够解决真实金融问题的数据驱动模型。"
-
-data-en="I aim to develop data-driven models that combine mathematical modeling, statistical methods and computational techniques to solve real-world financial problems."
-
-data-fr="Mon objectif est de développer des modèles basés sur les données pour résoudre des problèmes financiers réels.">
-
-I aim to develop data-driven models that combine mathematical modeling, statistical methods and computational techniques to solve real-world financial problems.
-
-</p>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="projects-grid about-grid">
-
-
-
-
-
-
-<div class="card">
-
-
-
-<h3>
-
-🎓
-
-</h3>
-
-
-
-
-<h3
-
-data-cn="学术背景"
-
-data-en="Academic Background"
-
-data-fr="Formation Académique">
-
-Academic Background
-
-</h3>
-
-
-
-
-
-
-<p>
-
-University of Toronto
-
-</p>
-
-
-
-
-
-
-<span
-
-data-cn="数学
-<br>
-精算
-<br>
-统计"
-
-data-en="Mathematics
-<br>
-Actuarial Science
-<br>
-Statistics"
-
-data-fr="Mathématiques
-<br>
-Actuariat
-<br>
-Statistiques">
-
-Mathematics
-
-<br>
-
-Actuarial Science
-
-<br>
-
-Statistics
-
-</span>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="card">
-
-
-
-<h3>
-
-📊
-
-</h3>
-
-
-
-
-
-<h3
-
-data-cn="量化研究"
-
-data-en="Quantitative Research"
-
-data-fr="Recherche Quantitative">
-
-Quantitative Research
-
-</h3>
-
-
-
-
-
-
-<p
-
-data-cn="金融建模"
-
-data-en="Financial Modeling"
-
-data-fr="Modélisation Financière">
-
-Financial Modeling
-
-</p>
-
-
-
-
-
-
-<span
-
-data-cn="基差策略
-<br>
-期货
-<br>
-衍生品"
-
-data-en="Basis Strategy
-<br>
-Futures
-<br>
-Derivatives"
-
-data-fr="Stratégie Basis
-<br>
-Futures
-<br>
-Produits dérivés">
-
-Basis Strategy
-
-<br>
-
-Futures
-
-<br>
-
-Derivatives
-
-</span>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-<div class="card">
-
-
-
-<h3>
-
-💻
-
-</h3>
-
-
-
-
-
-<h3
-
-data-cn="计算能力"
-
-data-en="Computational Approach"
-
-data-fr="Approche Computationnelle">
-
-Computational Approach
-
-</h3>
-
-
-
-
-
-
-
-<p
-
-data-cn="Python 与数据分析"
-
-data-en="Python & Data Analysis"
-
-data-fr="Python et Analyse de Données">
-
-Python & Data Analysis
-
-</p>
-
-
-
-
-
-
-
-<span
-
-data-cn="统计建模
-<br>
-数据处理
-<br>
-数据可视化"
-
-data-en="Statistical Modeling
-<br>
-Data Processing
-<br>
-Visualization"
-
-data-fr="Modélisation statistique
-<br>
-Traitement des données
-<br>
-Visualisation">
-
-Statistical Modeling
-
-<br>
-
-Data Processing
-
-<br>
-
-Visualization
-
-</span>
-
-
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
+    <h2 class="section-title" data-cn="关于我" data-en="About Me" data-fr="À Propos de Moi">About Me</h2>
+
+    <div class="info-box">
+        <p data-cn="作为多伦多大学数学与精算专业的理学士候选人，我的学术与实践核心聚焦于数理统计、资产定价与大规模数据计算的交叉领域。在严谨的数学训练与量化实习经验的驱动下，我擅长将复杂的金融理论转化为高效的代码实现。"
+           data-en="As a BSc candidate double majoring in Mathematics and Actuarial Science at the University of Toronto, my academic and practical focus lies at the intersection of mathematical statistics, asset pricing, and large-scale computation. Driven by rigorous mathematical training and quantitative internship experience, I excel at translating complex financial theories into efficient code implementations."
+           data-fr="En tant que candidat au BSc avec une double majeure en mathématiques et actuariat à l'Université de Toronto, mon expertise se situe à l'intersection des statistiques mathématiques, de l'évaluation des actifs et du calcul à grande échelle.">
+           As a BSc candidate double majoring in Mathematics and Actuarial Science at the University of Toronto, my academic and practical focus lies at the intersection of mathematical statistics, asset pricing, and large-scale computation. Driven by rigorous mathematical training and quantitative internship experience, I excel at translating complex financial theories into efficient code implementations.
+        </p>
+        <p data-cn="无论是构建全异步的高频量化终端，还是开发基于期限结构的多因子回测模型，我都致力于运用前沿的机器学习算法与随机微积分理论，为金融市场中的挑战提供坚实的量化依据。"
+           data-en="Whether engineering a fully asynchronous high-frequency quant terminal or developing multi-factor backtesting models based on term structures, I am dedicated to leveraging machine learning and stochastic calculus to provide solid quantitative foundations for challenges in financial markets."
+           data-fr="Qu'il s'agisse d'ingénierie d'un terminal quantitatif asynchrone ou du développement de modèles de backtesting multi-facteurs, je m'engage à utiliser le machine learning et le calcul stochastique pour relever les défis financiers.">
+           Whether engineering a fully asynchronous high-frequency quant terminal or developing multi-factor backtesting models based on term structures, I am dedicated to leveraging machine learning and stochastic calculus to provide solid quantitative foundations for challenges in financial markets.
+        </p>
+    </div>
+
+    <div class="projects-grid about-grid">
+        <div class="card">
+            <h3>🎓</h3>
+            <h3 data-cn="学术积淀" data-en="Academic Foundation" data-fr="Fondation Académique">Academic Foundation</h3>
+            <p>University of Toronto</p>
+            <span data-cn="随机微积分<br>数理统计<br>金融工程"
+                  data-en="Stochastic Calculus<br>Mathematical Statistics<br>Financial Engineering"
+                  data-fr="Calcul Stochastique<br>Statistiques Mathématiques<br>Ingénierie Financière">
+                  Stochastic Calculus<br>Mathematical Statistics<br>Financial Engineering
+            </span>
+        </div>
+
+        <div class="card">
+            <h3>📊</h3>
+            <h3 data-cn="量化研究" data-en="Quantitative Research" data-fr="Recherche Quantitative">Quantitative Research</h3>
+            <p data-cn="多因子与资产定价" data-en="Multi-Factor & Asset Pricing" data-fr="Multi-Facteurs & Tarification">Multi-Factor & Asset Pricing</p>
+            <span data-cn="期限结构分析<br>CTA 与基差动量<br>参数化 VaR 风控"
+                  data-en="Term Structure Analysis<br>CTA & Basis Momentum<br>Parametric VaR"
+                  data-fr="Analyse de Structure par Terme<br>CTA & Momentum de Base<br>VaR Paramétrique">
+                  Term Structure Analysis<br>CTA & Basis Momentum<br>Parametric VaR
+            </span>
+        </div>
+
+        <div class="card">
+            <h3>💻</h3>
+            <h3 data-cn="底层计算架构" data-en="Computational Architecture" data-fr="Architecture de Calcul">Computational Architecture</h3>
+            <p data-cn="高性能工程实现" data-en="High-Performance Engineering" data-fr="Ingénierie Haute Performance">High-Performance Engineering</p>
+            <span data-cn="Asyncio 并发网关<br>Pub/Sub 内存通信<br>向量化矩阵回测"
+                  data-en="Asyncio Concurrency<br>Pub/Sub Memory I/O<br>Vectorized Backtesting"
+                  data-fr="Concurrence Asyncio<br>E/S en Mémoire Pub/Sub<br>Backtesting Vectorisé">
+                  Asyncio Concurrency<br>Pub/Sub Memory I/O<br>Vectorized Backtesting
+            </span>
+        </div>
+    </div>
 </section>
 
 <!-- ==========================
      Technical Skills
 =========================== -->
-
-
 <section class="reveal skills-section">
-
-
-
-<h2 class="section-title"
-
-data-cn="技术能力"
-
-data-en="Technical Skills"
-
-data-fr="Compétences Techniques">
-
-Technical Skills
-
-</h2>
-
-
-
-
-
-
-
-<div class="skills-grid">
-
-
-
-
-
-
-<div class="card skill-card">
-
-
-
-<h3>
-
-🐍 Programming
-
-</h3>
-
-
-
-
-<p
-
-data-cn="Python · R · MATLAB · SQL"
-
-data-en="Python · R · MATLAB · SQL"
-
-data-fr="Python · R · MATLAB · SQL">
-
-Python · R · MATLAB · SQL
-
-</p>
-
-
-
-
-
-
-
-<span
-
-data-cn="程序开发、数据处理、计算分析"
-
-data-en="Programming, data processing and computational analysis"
-
-data-fr="Programmation, traitement des données et analyse computationnelle">
-
-Programming, data processing and computational analysis
-
-</span>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="card skill-card">
-
-
-
-<h3>
-
-📊 Data Science
-
-</h3>
-
-
-
-
-
-
-<p
-
-data-cn="Pandas · NumPy · Matplotlib"
-
-data-en="Pandas · NumPy · Matplotlib"
-
-data-fr="Pandas · NumPy · Matplotlib">
-
-Pandas · NumPy · Matplotlib
-
-</p>
-
-
-
-
-
-
-
-<span
-
-data-cn="数据清洗、数据可视化、探索性分析"
-
-data-en="Data cleaning, visualization and exploratory analysis"
-
-data-fr="Nettoyage des données, visualisation et analyse exploratoire">
-
-Data cleaning, visualization and exploratory analysis
-
-</span>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="card skill-card">
-
-
-
-<h3>
-
-📈 Quantitative Methods
-
-</h3>
-
-
-
-
-
-
-<p
-
-data-cn="概率 · 统计建模 · 时间序列"
-
-data-en="Probability · Statistical Modeling · Time Series"
-
-data-fr="Probabilité · Modélisation statistique · Séries temporelles">
-
-Probability · Statistical Modeling · Time Series
-
-</p>
-
-
-
-
-
-
-
-<span
-
-data-cn="金融数据分析和模型构建"
-
-data-en="Financial data analysis and model development"
-
-data-fr="Analyse financière et développement de modèles">
-
-Financial data analysis and model development
-
-</span>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="card skill-card">
-
-
-
-<h3>
-
-💹 Financial Modeling
-
-</h3>
-
-
-
-
-
-
-<p
-
-data-cn="期货 · 基差策略 · 衍生品"
-
-data-en="Futures · Basis Strategy · Derivatives"
-
-data-fr="Futures · Stratégies Basis · Produits dérivés">
-
-Futures · Basis Strategy · Derivatives
-
-</p>
-
-
-
-
-
-
-
-<span
-
-data-cn="量化研究、策略回测、风险评价"
-
-data-en="Quantitative research, backtesting and risk evaluation"
-
-data-fr="Recherche quantitative, backtesting et évaluation des risques">
-
-Quantitative research, backtesting and risk evaluation
-
-</span>
-
-
-
-
-</div>
-
-
-
-
-
-
-</div>
-
-
-
-
-
+    <h2 class="section-title" data-cn="核心技术栈" data-en="Core Technical Stack" data-fr="Pile Technique de Base">
+        Core Technical Stack
+    </h2>
+
+    <div class="skills-grid">
+        <div class="card skill-card">
+            <h3>🐍 Programming & Architecture</h3>
+            <p data-cn="Python (Asyncio) · SQLite · R" data-en="Python (Asyncio) · SQLite · R" data-fr="Python (Asyncio) · SQLite · R">Python (Asyncio) · SQLite · R</p>
+            <span data-cn="精通异步非阻塞架构开发、高频数据流处理与微服务间通信设计。"
+                  data-en="Proficient in asynchronous non-blocking architectures, high-frequency data pipelines, and microservices communication."
+                  data-fr="Expert en architectures asynchrones non bloquantes, pipelines de données haute fréquence.">
+                  Proficient in asynchronous non-blocking architectures, high-frequency data pipelines, and microservices communication.
+            </span>
+        </div>
+
+        <div class="card skill-card">
+            <h3>📊 Data Science & ML</h3>
+            <p data-cn="Pandas · NumPy · Scikit-Learn" data-en="Pandas · NumPy · Scikit-Learn" data-fr="Pandas · NumPy · Scikit-Learn">Pandas · NumPy · Scikit-Learn</p>
+            <span data-cn="熟练进行高维金融序列清洗、降维特征提取与模型交叉验证。"
+                  data-en="Skilled in high-dimensional financial series cleaning, dimensionality reduction, and model cross-validation."
+                  data-fr="Compétent dans le nettoyage de séries financières à haute dimension et la réduction de dimensionnalité.">
+                  Skilled in high-dimensional financial series cleaning, dimensionality reduction, and model cross-validation.
+            </span>
+        </div>
+
+        <div class="card skill-card">
+            <h3>📈 Mathematical Modeling</h3>
+            <p data-cn="随机过程 · 时间序列 · 假设检验" data-en="Stochastic Processes · Time Series · Hypothesis Testing" data-fr="Processus Stochastiques · Séries Temporelles">Stochastic Processes · Time Series · Hypothesis Testing</p>
+            <span data-cn="具备扎实的理论推导能力，将抽象数学方程转化为可落地的金融算法。"
+                  data-en="Solid theoretical derivation skills, converting abstract mathematical equations into actionable financial algorithms."
+                  data-fr="Solides compétences en dérivation théorique, convertissant des équations mathématiques abstraites en algorithmes financiers.">
+                  Solid theoretical derivation skills, converting abstract mathematical equations into actionable financial algorithms.
+            </span>
+        </div>
+
+        <div class="card skill-card">
+            <h3>💹 Quant & Actuarial Models</h3>
+            <p data-cn="Kelly 准则 · Parametric VaR · 均值回归" data-en="Kelly Criterion · Parametric VaR · Mean Reversion" data-fr="Critère de Kelly · VaR Paramétrique">Kelly Criterion · Parametric VaR · Mean Reversion</p>
+            <span data-cn="深谙资金管理与尾部风险对冲，构建具备高度鲁棒性的机构级投资组合。"
+                  data-en="Deep understanding of capital management and tail risk hedging to build highly robust institutional portfolios."
+                  data-fr="Compréhension approfondie de la gestion du capital et de la couverture des risques extrêmes.">
+                  Deep understanding of capital management and tail risk hedging to build highly robust institutional portfolios.
+            </span>
+        </div>
+    </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- ==========================
      Research Interests
 =========================== -->
-
-
 <section class="reveal">
-
-
-
-
-
-
-<h2 class="section-title"
-
-data-cn="研究方向"
-
-data-en="Research Interests"
-
-data-fr="Domaines de Recherche">
-
-Research Interests
-
-</h2>
-
-
-
-
-
-
-
-
-<div class="research-grid">
-
-
-
-
-
-
-
-<div class="card research-card">
-
-
-
-<h3>
-
-📊 Quantitative Finance
-
-</h3>
-
-
-
-
-
-
-<p
-
-data-cn="利用数学模型和统计方法分析金融市场行为。"
-
-data-en="Applying mathematical models and statistical methods to analyze financial markets."
-
-data-fr="Application de modèles mathématiques et statistiques aux marchés financiers.">
-
-Applying mathematical models and statistical methods to analyze financial markets.
-
-</p>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="card research-card">
-
-
-
-<h3>
-
-📈 Financial Derivatives
-
-</h3>
-
-
-
-
-
-
-<p
-
-data-cn="研究期货、基差以及衍生品相关问题。"
-
-data-en="Research on futures, basis strategies and derivative-related problems."
-
-data-fr="Recherche sur les futures, les stratégies basis et les produits dérivés.">
-
-Research on futures, basis strategies and derivative-related problems.
-
-</p>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="card research-card">
-
-
-
-<h3>
-
-🤖 Data & Machine Learning
-
-</h3>
-
-
-
-
-
-
-<p
-
-data-cn="探索机器学习和数据分析在金融领域中的应用。"
-
-data-en="Exploring machine learning and data analytics applications in finance."
-
-data-fr="Exploration des applications du machine learning et de l'analyse de données en finance.">
-
-Exploring machine learning and data analytics applications in finance.
-
-</p>
-
-
-
-
-</div>
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
+    <h2 class="section-title" data-cn="重点研究领域" data-en="Research Focus" data-fr="Domaines de Recherche">
+        Research Focus
+    </h2>
+
+    <div class="research-grid">
+        <div class="card research-card">
+            <h3>📊 Quantitative Alpha Generation</h3>
+            <p data-cn="通过深度清洗交易与基本面异构数据，挖掘具备统计显著性且低相关的独立 Alpha 因子。"
+               data-en="Extracting statistically significant and lowly correlated independent Alpha factors through deep cleaning of heterogeneous trading and fundamental data."
+               data-fr="Extraction de facteurs Alpha indépendants et statistiquement significatifs grâce au nettoyage approfondi des données hétérogènes.">
+               Extracting statistically significant and lowly correlated independent Alpha factors through deep cleaning of heterogeneous trading and fundamental data.
+            </p>
+        </div>
+
+        <div class="card research-card">
+            <h3>📈 Derivatives & Volatility</h3>
+            <p data-cn="利用随机微积分与期限结构模型，研究大宗商品期货基差演变及期权波动率曲面的定价失效机制。"
+               data-en="Applying stochastic calculus and term structure models to study commodity futures basis evolution and option volatility surface mispricing."
+               data-fr="Application du calcul stochastique et des modèles de structure par terme pour étudier l'évolution de la base des contrats à terme.">
+               Applying stochastic calculus and term structure models to study commodity futures basis evolution and option volatility surface mispricing.
+            </p>
+        </div>
+
+        <div class="card research-card">
+            <h3>🤖 Financial Econometrics & ML</h3>
+            <p data-cn="探索前沿机器学习算法在极度非平稳的金融时序预测与动态风险平价组合优化中的实战表现。"
+               data-en="Exploring the real-world performance of cutting-edge machine learning algorithms in highly non-stationary financial time-series forecasting and dynamic risk parity optimization."
+               data-fr="Exploration des performances des algorithmes d'apprentissage automatique de pointe dans la prévision de séries temporelles financières.">
+               Exploring the real-world performance of cutting-edge machine learning algorithms in highly non-stationary financial time-series forecasting and dynamic risk parity optimization.
+            </p>
+        </div>
+    </div>
 </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- ==========================
-     Research Projects
+     Research Projects (同步至最新硬核项目)
 =========================== -->
-
-
 <section class="reveal">
-
-
-
-
-
-
-<h2 class="section-title"
-
-data-cn="研究项目"
-
-data-en="Research Projects"
-
-data-fr="Projets de Recherche">
-
-Research Projects
-
-</h2>
-
-
-
-
-
-
-
-
-
-<div class="projects-grid">
-
-
-
-
-
-
-
-
-<div class="card project-card">
-
-
-
-
-
-
-<h3
-
-data-cn="基差策略回测"
-
-data-en="Basis Strategy Backtesting"
-
-data-fr="Backtesting de Stratégie Basis">
-
-Basis Strategy Backtesting
-
-</h3>
-
-
-
-
-
-
-
-
-<p
-
-data-cn="基于现货与期货价格构建基差因子，并进行量化策略回测分析。"
-
-data-en="A quantitative research project based on spot-futures basis signals and strategy backtesting."
-
-data-fr="Un projet quantitatif basé sur les signaux spot-futures et le backtesting.">
-
-A quantitative research project based on spot-futures basis signals and strategy backtesting.
-
-</p>
-
-
-
-
-
-
-
-
-
-<p class="project-method"
-
-data-cn="方法：因子构建 · 收益分析 · 风险评价"
-
-data-en="Methods: Factor Construction · Return Analysis · Risk Evaluation"
-
-data-fr="Méthodes : Construction de facteurs · Analyse des rendements · Évaluation des risques">
-
-Methods: Factor Construction · Return Analysis · Risk Evaluation
-
-</p>
-
-
-
-
-
-
-
-
-<a href="projects.html"
-
-class="btn"
-
-data-cn="查看详情"
-
-data-en="View Details"
-
-data-fr="Voir les détails">
-
-View Details
-
-</a>
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div class="card project-card">
-
-
-
-
-
-
-<h3
-
-data-cn="数据分析项目"
-
-data-en="Data Analysis Projects"
-
-data-fr="Projets d'Analyse de Données">
-
-Data Analysis Projects
-
-</h3>
-
-
-
-
-
-
-
-
-<p
-
-data-cn="利用Python和统计方法探索真实数据，并建立分析模型。"
-
-data-en="Exploring real-world datasets and developing analytical models using Python and statistics."
-
-data-fr="Exploration de données réelles avec Python et méthodes statistiques.">
-
-Exploring real-world datasets and developing analytical models using Python and statistics.
-
-</p>
-
-
-
-
-
-
-
-
-
-<p class="project-method"
-
-data-cn="方法：数据处理 · 统计分析 · 可视化"
-
-data-en="Methods: Data Processing · Statistical Analysis · Visualization"
-
-data-fr="Méthodes : Traitement des données · Analyse statistique · Visualisation">
-
-Methods: Data Processing · Statistical Analysis · Visualization
-
-</p>
-
-
-
-
-
-
-
-
-<a href="projects.html"
-
-class="btn"
-
-data-cn="查看项目"
-
-data-en="View Projects"
-
-data-fr="Voir les projets">
-
-View Projects
-
-</a>
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
+    <h2 class="section-title" data-cn="精选研究与工程项目" data-en="Featured Projects" data-fr="Projets en Vedette">
+        Featured Projects
+    </h2>
+
+    <div class="projects-grid">
+        <!-- Project 1: TK Quant Terminal -->
+        <div class="card project-card" style="border: 1px solid #ea580c; box-shadow: 0 0 20px rgba(234, 88, 12, 0.15);">
+            <h3 data-cn="TK 量化终端：机构级高频风控引擎"
+                data-en="TK Quant Terminal: Institutional Risk Engine"
+                data-fr="TK Quant Terminal : Moteur de Risque">
+                TK Quant Terminal: Institutional Risk Engine
+            </h3>
+            <p data-cn="基于 Python 的全异步事件驱动量化工作站。深度集成参数化 VaR、Kelly 最优下注比例与 Z-Score 均值回归系统，实现多资产行情的毫秒级监控与毫秒级图表渲染。"
+               data-en="A fully asynchronous, event-driven quant workstation in Python. Deeply integrates parametric VaR, Kelly optimal betting, and Z-Score mean reversion systems for real-time multi-asset monitoring and millisecond charting."
+               data-fr="Station de travail quant asynchrone en Python. Intègre la VaR paramétrique, le critère de Kelly et la réversion à la moyenne Z-Score.">
+               A fully asynchronous, event-driven quant workstation in Python. Deeply integrates parametric VaR, Kelly optimal betting, and Z-Score mean reversion systems for real-time multi-asset monitoring and millisecond charting.
+            </p>
+            <p class="project-method"
+               data-cn="方法：异步微服务 · 统计套利 · 动态尾部风险对冲"
+               data-en="Methods: Async Microservices · StatArb · Dynamic Tail Risk Hedging"
+               data-fr="Méthodes : Microservices asynchrones · StatArb · Couverture dynamique">
+               Methods: Async Microservices · StatArb · Dynamic Tail Risk Hedging
+            </p>
+            <!-- 引导直接去专属落地页 -->
+            <a href="project-judgment.html" class="btn" style="background: linear-gradient(135deg, #f97316, #ea580c); color: white;"
+               data-cn="查看架构白皮书"
+               data-en="View Architecture Whitepaper"
+               data-fr="Voir les détails">
+                View Architecture Whitepaper
+            </a>
+        </div>
+
+        <!-- Project 2: Basis Backtesting -->
+        <div class="card project-card">
+            <h3 data-cn="期限结构与基差多因子回测框架"
+                data-en="Term Structure & Basis Factor Backtesting"
+                data-fr="Backtesting de Facteurs de Structure">
+                Term Structure & Basis Factor Backtesting
+            </h3>
+            <p data-cn="通过提纯大宗商品现货与期货的异构数据，构建跨截面与时序的基差动量体系。利用 Pandas 与向量化计算框架执行严谨的样本外回测与净值归因分析。"
+               data-en="Constructs cross-sectional and time-series basis momentum systems by cleaning heterogeneous commodity spot and futures data. Executes rigorous out-of-sample backtests and attribution analysis using vectorized frameworks."
+               data-fr="Construit des systèmes de momentum de base transversaux et temporels en nettoyant des données hétérogènes de matières premières.">
+               Constructs cross-sectional and time-series basis momentum systems by cleaning heterogeneous commodity spot and futures data. Executes rigorous out-of-sample backtests and attribution analysis using vectorized frameworks.
+            </p>
+            <p class="project-method"
+               data-cn="方法：因子提纯 · 向量化回测 · 净值归因"
+               data-en="Methods: Factor Cleaning · Vectorized Backtesting · Performance Attribution"
+               data-fr="Méthodes : Nettoyage de facteurs · Backtesting vectorisé">
+               Methods: Factor Cleaning · Vectorized Backtesting · Performance Attribution
+            </p>
+            <a href="projects.html" class="btn"
+               data-cn="浏览所有项目"
+               data-en="View All Projects"
+               data-fr="Voir tous les projets">
+                View All Projects
+            </a>
+        </div>
+    </div>
 </section>
 
 <!-- ==========================
      Contact
 =========================== -->
-
-
 <section class="reveal">
-
-
-
-
-
-<h2 class="section-title"
-
-data-cn="联系"
-
-data-en="Contact"
-
-data-fr="Contact">
-
-Contact
-
-</h2>
-
-
-
-
-
-
-
-
-<div class="contact-grid">
-
-
-
-
-
-
-
-<div class="card contact-card">
-
-
-
-
-
-<h3
-
-data-cn="📧 邮箱"
-
-data-en="📧 Email"
-
-data-fr="📧 Email">
-
-📧 Email
-
-</h3>
-
-
-
-
-
-
-
-<p
-
-data-cn="学术交流 / 研究沟通"
-
-data-en="Academic / Research Communication"
-
-data-fr="Communication académique / Recherche">
-
-Academic / Research Communication
-
-</p>
-
-
-
-
-
-
-
-<a href="contact.html"
-
-class="btn"
-
-data-cn="联系我"
-
-data-en="Contact"
-
-data-fr="Contacter">
-
-Contact
-
-</a>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="card contact-card">
-
-
-
-
-
-<h3
-
-data-cn="💼 领英"
-
-data-en="💼 LinkedIn"
-
-data-fr="💼 LinkedIn">
-
-💼 LinkedIn
-
-</h3>
-
-
-
-
-
-
-
-<p
-
-data-cn="职业发展与行业交流"
-
-data-en="Professional Networking"
-
-data-fr="Réseautage professionnel">
-
-Professional Networking
-
-</p>
-
-
-
-
-
-
-
-
-<a href="contact.html"
-
-class="btn"
-
-data-cn="查看"
-
-data-en="LinkedIn"
-
-data-fr="LinkedIn">
-
-LinkedIn
-
-</a>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-
-<div class="card contact-card">
-
-
-
-
-
-<h3
-
-data-cn="💻 GitHub"
-
-data-en="💻 GitHub"
-
-data-fr="💻 GitHub">
-
-💻 GitHub
-
-</h3>
-
-
-
-
-
-
-
-<p
-
-data-cn="代码与研究项目"
-
-data-en="Code & Research Projects"
-
-data-fr="Code et projets de recherche">
-
-Code & Research Projects
-
-</p>
-
-
-
-
-
-
-
-
-<a href="contact.html"
-
-class="btn"
-
-data-cn="查看"
-
-data-en="GitHub"
-
-data-fr="GitHub">
-
-GitHub
-
-</a>
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
-
-
-</div>
-
-
-
-
-
-
+    <h2 class="section-title" data-cn="联系通道" data-en="Contact" data-fr="Contact">Contact</h2>
+
+    <div class="contact-grid">
+        <div class="card contact-card">
+            <h3 data-cn="📧 核心邮箱" data-en="📧 Email" data-fr="📧 Email">📧 Email</h3>
+            <p data-cn="学术探讨 / 算法交流 / 行业沟通" data-en="Academic / Algorithmic / Industry Communication" data-fr="Communication académique / Industrie">Academic / Algorithmic / Industry Communication</p>
+            <a href="contact.html" class="btn" data-cn="发送邮件" data-en="Get in Touch" data-fr="Contacter">Get in Touch</a>
+        </div>
+
+        <div class="card contact-card">
+            <h3 data-cn="💼 领英档案" data-en="💼 LinkedIn" data-fr="💼 LinkedIn">💼 LinkedIn</h3>
+            <p data-cn="职业履历与全球量化网络" data-en="Professional Profile & Quant Network" data-fr="Profil Professionnel & Réseau">Professional Profile & Quant Network</p>
+            <a href="contact.html" class="btn" data-cn="查看主页" data-en="View Profile" data-fr="Voir le profil">View Profile</a>
+        </div>
+
+        <div class="card contact-card">
+            <h3 data-cn="💻 GitHub" data-en="💻 GitHub" data-fr="💻 GitHub">💻 GitHub</h3>
+            <p data-cn="开源引擎模型与工程底层代码" data-en="Open-source Engine Models & Source Code" data-fr="Modèles Open-source & Code Source">Open-source Engine Models & Source Code</p>
+            <a href="contact.html" class="btn" data-cn="访问仓库" data-en="Visit Repo" data-fr="Visiter le dépôt">Visit Repo</a>
+        </div>
+    </div>
 </section>
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- ==========================
      Footer
 =========================== -->
-
-
-
 <footer>
-
-
-
-
-
-<p>
-
-© 2026 Kai Teng. All Rights Reserved.
-
-</p>
-
-
-
-
-
-
-<p
-
-data-cn="数学 · 精算 · 统计 · 量化研究"
-
-data-en="Mathematics · Actuarial Science · Statistics · Quantitative Research"
-
-data-fr="Mathématiques · Actuariat · Statistiques · Recherche Quantitative">
-
-Mathematics · Actuarial Science · Statistics · Quantitative Research
-
-</p>
-
-
-
-
-
-
+    <p>© 2026 Kai Teng. All Rights Reserved.</p>
+    <p data-cn="数学 · 精算科学 · 统计 · 量化研究"
+       data-en="Mathematics · Actuarial Science · Statistics · Quantitative Research"
+       data-fr="Mathématiques · Actuariat · Statistiques · Recherche Quantitative">
+        Mathematics · Actuarial Science · Statistics · Quantitative Research
+    </p>
 </footer>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- ==========================
      JavaScript
 =========================== -->
-
-
-
 <script src="js/language.js"></script>
-
-
 <script src="js/reveal.js"></script>
-
-
 <script src="js/effects.js"></script>
-
-
 <script src="js/main.js"></script>
 
-
-
-
-
-
 </body>
-
-
 </html>

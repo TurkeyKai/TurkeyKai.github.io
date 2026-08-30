@@ -1,226 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title
-data-cn="项目展示 | 滕凯"
-data-en="Projects | Kai Teng"
-data-fr="Projets | Kai Teng">
-Projects | Kai Teng
-</title>
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/animation.css">
-<link rel="stylesheet" href="css/responsive.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title
+        data-cn="项目展示 | 滕凯"
+        data-en="Projects | Kai Teng"
+        data-fr="Projets | Kai Teng">
+        Projects | Kai Teng
+    </title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animation.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 
 <body>
 
 <!-- ==========================
-Navigation
+     Navigation
 =========================== -->
 <header class="navbar">
-<div class="logo">
-Kai Teng
-</div>
+    <div class="logo">Kai Teng</div>
 
-<nav>
-<ul class="nav-links">
-<li>
-<a href="index.html"
-data-cn="首页"
-data-en="Home"
-data-fr="Accueil">
-Home
-</a>
-</li>
-<li>
-<a href="projects.html"
-data-cn="项目"
-data-en="Projects"
-data-fr="Projets">
-Projects
-</a>
-</li>
-<li>
-<a href="resume.html"
-data-cn="简历"
-data-en="Resume"
-data-fr="CV">
-Resume
-</a>
-</li>
-<li>
-<a href="contact.html"
-data-cn="联系"
-data-en="Contact">
-Contact
-</a>
-</li>
-</ul>
-</nav>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html" data-cn="首页" data-en="Home" data-fr="Accueil">Home</a></li>
+            <li><a href="projects.html" data-cn="项目" data-en="Projects" data-fr="Projets">Projects</a></li>
+            <li><a href="resume.html" data-cn="简历" data-en="Resume" data-fr="CV">Resume</a></li>
+            <li><a href="contact.html" data-cn="联系" data-en="Contact" data-fr="Contact">Contact</a></li>
+        </ul>
+    </nav>
 
-<div class="language-switch">
-<button onclick="changeLanguage('cn')">中文</button>
-<button onclick="changeLanguage('en')">English</button>
-<button onclick="changeLanguage('fr')">Français</button>
-</div>
+    <div class="language-switch">
+        <button onclick="changeLanguage('cn')">中文</button>
+        <button onclick="changeLanguage('en')">English</button>
+        <button onclick="changeLanguage('fr')">Français</button>
+    </div>
 </header>
 
 <!-- ==========================
-Hero
+     Hero
 =========================== -->
-<section class="hero reveal">
-<div class="hero-content">
-<h1
-data-cn="我的项目"
-data-en="My Projects"
-data-fr="Mes Projets">
-My Projects
-</h1>
-<p
-data-cn="展示我的量化研究、金融建模、数据分析和程序设计项目。"
-data-en="Showcasing my quantitative research, financial modeling, data analysis and programming projects."
-data-fr="Présentation de mes projets de recherche quantitative, modélisation financière et analyse de données.">
-Showcasing my quantitative research, financial modeling, data analysis and programming projects.
-</p>
-</div>
+<section class="hero reveal" style="min-height: 40vh; padding-top: 120px;">
+    <div class="hero-content">
+        <!-- 放大标题字体、加粗并增加字间距 -->
+        <h1 class="hero-title" style="font-size: 4.2rem; font-weight: 800; letter-spacing: 2px; margin-bottom: 25px;" 
+            data-cn="我的量化项目" 
+            data-en="Quantitative Projects" 
+            data-fr="Projets Quantitatifs">
+            Quantitative Projects
+        </h1>
+        <p data-cn="展示我在多因子量化研究、底层交易架构开发、金融衍生品定价及统计建模领域的深度实践。"
+           data-en="Showcasing my deep practice in multi-factor quantitative research, trading architecture development, financial derivatives pricing, and statistical modeling."
+           data-fr="Présentation de ma pratique approfondie en recherche quantitative multi-facteurs, architecture de trading, et modélisation statistique."
+           style="font-size: 1.15rem;">
+           Showcasing my deep practice in multi-factor quantitative research, trading architecture development, financial derivatives pricing, and statistical modeling.
+        </p>
+    </div>
 </section>
 
 <!-- ==========================
-Projects
+     Projects
 =========================== -->
 <section class="reveal">
-<h2 class="section-title"
-data-cn="项目展示"
-data-en="Project Showcase"
-data-fr="Présentation des projets">
-Project Showcase
-</h2>
+    <h2 class="section-title" data-cn="核心资产组合" data-en="Core Portfolio" data-fr="Portefeuille Principal">
+        Core Portfolio
+    </h2>
 
-<div class="projects-grid">
+    <div class="projects-grid">
 
-<!-- Project 0: 裁决之时 (Flagship) -->
-<div class="project-card" style="border: 1px solid #00d2ff; box-shadow: 0 0 15px rgba(0, 210, 255, 0.15);">
-<h3
-data-cn="裁决之时：机构级量化实盘终端"
-data-en="Project Judgment: Institutional Quant Terminal"
-data-fr="Terminal Quantitatif Institutionnel">
-Project Judgment: Institutional Quant Terminal
-</h3>
-<p
-data-cn="完全由 Python 自研的纯异步事件驱动量化工作站。内置零依赖终端字符渲染引擎，结合 Kelly 公式与 VaR 模型实现机构级动态风控。"
-data-en="A fully asynchronous, event-driven quantitative trading workstation built from scratch in Python. Features a zero-dependency ANSI rendering engine and institutional-grade risk management using the Kelly Criterion and VaR."
-data-fr="Une station de travail de trading quantitatif asynchrone en Python. Intègre un moteur de rendu ANSI sans dépendance et une gestion des risques institutionnelle via le critère de Kelly et la VaR.">
-A fully asynchronous, event-driven quantitative trading workstation built from scratch in Python. Features a zero-dependency ANSI rendering engine and institutional-grade risk management using the Kelly Criterion and VaR.
-</p>
-<p class="project-method"
-data-cn="方法：异步 Pub/Sub 架构 · 统计套利 · 动态仓位管理"
-data-en="Methods: Async Pub/Sub · Statistical Arbitrage · Dynamic Position Sizing"
-data-fr="Méthodes: Architecture Pub/Sub Asynchrone · Arbitrage Statistique">
-Methods: Async Pub/Sub · Statistical Arbitrage · Dynamic Position Sizing
-</p>
-<p>
-<strong>Tools:</strong> Python · Asyncio · Pandas-TA · Plotext · SQLite
-</p>
-<a href="project-judgment.html"
-class="btn"
-data-cn="查看详情"
-data-en="View Details"
-data-fr="Voir les détails">
-View Details
-</a>
-</div>
+        <!-- Project 0: TK Quant Terminal (Flagship) 适配了暖橙色高亮边框 -->
+        <div class="project-card" style="border: 1px solid #ea580c; box-shadow: 0 0 20px rgba(234, 88, 12, 0.15);">
+            <h3 data-cn="TK 量化终端：机构级高频风控引擎" 
+                data-en="TK Quant Terminal: Institutional Quant & Risk Engine" 
+                data-fr="TK Quant Terminal: Moteur Quantitatif Institutionnel">
+                TK Quant Terminal: Institutional Quant & Risk Engine
+            </h3>
+            <p data-cn="采用全异步微服务架构开发的量化交易终端。深度集成大盘宏观基准风控、Z-Score 均值回归套利、参数化 VaR 以及 Kelly 准则动态资金配置。"
+               data-en="A fully asynchronous microservices-based quant trading terminal. Deeply integrates benchmark macro risk monitoring, Z-Score mean reversion arbitrage, parametric VaR, and Kelly Criterion dynamic capital allocation."
+               data-fr="Un terminal de trading quantitatif basé sur des microservices asynchrones. Intègre la surveillance du risque macro, l'arbitrage Z-Score, la VaR paramétrique et l'allocation de capital via le critère de Kelly.">
+               A fully asynchronous microservices-based quant trading terminal. Deeply integrates benchmark macro risk monitoring, Z-Score mean reversion arbitrage, parametric VaR, and Kelly Criterion dynamic capital allocation.
+            </p>
+            <p class="project-method"
+               data-cn="方法：异步微服务架构 · 统计套利 · 参数化 VaR · 动态仓位"
+               data-en="Methods: Async Microservices · StatArb · Parametric VaR · Dynamic Position Sizing"
+               data-fr="Méthodes: Microservices Asynchrones · StatArb · VaR Paramétrique">
+               Methods: Async Microservices · StatArb · Parametric VaR · Dynamic Position Sizing
+            </p>
+            <p>
+                <strong>Tech Stack:</strong> Python · Asyncio · Pandas-TA · SQLite · Streamlit
+            </p>
+            <a href="project-judgment.html" class="btn" style="background: linear-gradient(135deg, #f97316, #ea580c); color: white;"
+               data-cn="查看架构详情"
+               data-en="View Architecture Details"
+               data-fr="Voir les détails de l'architecture">
+               View Architecture Details
+            </a>
+        </div>
 
-<!-- Project 1 -->
-<div class="project-card">
-<h3
-data-cn="基差策略回测模型"
-data-en="Basis Factor Backtesting Model"
-data-fr="Modèle de Backtesting basé sur le Basis">
-Basis Factor Backtesting Model
-</h3>
-<p
-data-cn="基于现货与期货价格构建基差因子，研究基差变化与未来收益之间的关系，并通过历史数据进行量化策略回测。"
-data-en="A quantitative research project constructing basis factors from spot and futures prices to analyze return signals and evaluate trading strategies."
-data-fr="Un projet quantitatif basé sur les écarts spot-futures afin d'analyser les signaux de rendement et tester des stratégies.">
-A quantitative research project constructing basis factors from spot and futures prices to analyze return signals and evaluate trading strategies.
-</p>
-<p class="project-method"
-data-cn="方法：因子构建 · 收益分析 · 风险评价"
-data-en="Methods: Factor Construction · Return Analysis · Risk Evaluation"
-data-fr="Méthodes : Construction de facteurs · Analyse des rendements · Évaluation des risques">
-Methods: Factor Construction · Return Analysis · Risk Evaluation
-</p>
-<p>
-<strong>Tools:</strong> Python · Pandas · NumPy · Matplotlib
-</p>
-</div>
+        <!-- Project 1 -->
+        <div class="project-card">
+            <h3 data-cn="期限结构与基差多因子回测框架" 
+                data-en="Term Structure & Basis Multi-Factor Backtesting" 
+                data-fr="Backtesting Multi-Facteurs de Structure par Terme">
+                Term Structure & Basis Multi-Factor Backtesting
+            </h3>
+            <p data-cn="基于大宗商品现货与期货价格的期限结构，构建截面与时序基差因子。通过高维数据清洗与严谨的样本外回测，验证因子的 Alpha 收益与衰减特征。"
+               data-en="Constructs cross-sectional and time-series basis factors based on commodity spot and futures term structures. Validates Alpha generation and decay through rigorous out-of-sample backtesting."
+               data-fr="Construit des facteurs de base transversaux et chronologiques basés sur la structure à terme des produits de base. Valide la génération d'Alpha via un backtesting rigoureux.">
+               Constructs cross-sectional and time-series basis factors based on commodity spot and futures term structures. Validates Alpha generation and decay through rigorous out-of-sample backtesting.
+            </p>
+            <p class="project-method"
+               data-cn="方法：因子挖掘 · 期限结构分析 · 样本外测试"
+               data-en="Methods: Factor Mining · Term Structure Analysis · Out-of-Sample Testing"
+               data-fr="Méthodes : Extraction de Facteurs · Analyse de Structure par Terme">
+               Methods: Factor Mining · Term Structure Analysis · Out-of-Sample Testing
+            </p>
+            <p>
+                <strong>Tech Stack:</strong> Python · Pandas · NumPy · QuantStats
+            </p>
+        </div>
 
-<!-- Project 2 -->
-<div class="project-card">
-<h3
-data-cn="期货量化研究"
-data-en="Futures Quantitative Research"
-data-fr="Recherche Quantitative sur les Futures">
-Futures Quantitative Research
-</h3>
-<p
-data-cn="围绕商品期货市场进行数据分析与策略研究，探索市场规律、因子有效性以及量化交易方法。"
-data-en="Research on commodity futures markets using quantitative methods, factor analysis and data-driven strategy evaluation."
-data-fr="Recherche sur les marchés de futures utilisant des méthodes quantitatives et l'analyse de facteurs.">
-Research on commodity futures markets using quantitative methods, factor analysis and data-driven strategy evaluation.
-</p>
-<p class="project-method"
-data-cn="方法：数据分析 · 因子研究 · 策略评价"
-data-en="Methods: Data Analysis · Factor Research · Strategy Evaluation"
-data-fr="Méthodes : Analyse de données · Recherche de facteurs · Évaluation de stratégies">
-Methods: Data Analysis · Factor Research · Strategy Evaluation
-</p>
-<p>
-<strong>Tools:</strong> Python · Financial Data · Statistical Methods
-</p>
-</div>
+        <!-- Project 2 -->
+        <div class="project-card">
+            <h3 data-cn="商品期货 CTA 策略与波动率建模" 
+                data-en="Commodity CTA Strategies & Volatility Modeling" 
+                data-fr="Stratégies CTA sur Matières Premières">
+                Commodity CTA Strategies & Volatility Modeling
+            </h3>
+            <p data-cn="运用数理统计与时序分析方法，深度挖掘大宗商品市场的动量与均值回归规律，并结合风险平价 (Risk Parity) 模型优化多品种衍生品投资组合。"
+               data-en="Applies mathematical statistics and time-series analysis to uncover momentum and mean-reversion patterns in commodity markets, utilizing Risk Parity models for multi-asset portfolio optimization."
+               data-fr="Applique des statistiques mathématiques pour découvrir les modèles de momentum et de réversion à la moyenne sur les marchés des matières premières, en utilisant des modèles de Risk Parity.">
+               Applies mathematical statistics and time-series analysis to uncover momentum and mean-reversion patterns in commodity markets, utilizing Risk Parity models for multi-asset portfolio optimization.
+            </p>
+            <p class="project-method"
+               data-cn="方法：时间序列分析 · 风险平价优化 · 趋势跟踪"
+               data-en="Methods: Time-Series Analysis · Risk Parity Optimization · Trend Following"
+               data-fr="Méthodes : Analyse de Séries Chronologiques · Optimisation Risk Parity">
+               Methods: Time-Series Analysis · Risk Parity Optimization · Trend Following
+            </p>
+            <p>
+                <strong>Tech Stack:</strong> Python · SciPy · Statsmodels
+            </p>
+        </div>
 
-<!-- Project 3 -->
-<div class="project-card">
-<h3
-data-cn="数据分析与统计建模"
-data-en="Data Analysis & Statistical Modeling"
-data-fr="Analyse de Données et Modélisation Statistique">
-Data Analysis & Statistical Modeling
-</h3>
-<p
-data-cn="利用真实数据集进行数据清洗、探索性分析和统计建模，探索数学和统计方法在实际问题中的应用。"
-data-en="Using real-world datasets for data processing, exploratory analysis and statistical modeling."
-data-fr="Utilisation de données réelles pour le traitement, l'analyse exploratoire et la modélisation statistique.">
-Using real-world datasets for data processing, exploratory analysis and statistical modeling.
-</p>
-<p class="project-method"
-data-cn="方法：数据处理 · 统计分析 · 数据可视化"
-data-en="Methods: Data Processing · Statistical Analysis · Visualization"
-data-fr="Méthodes : Traitement des données · Analyse statistique · Visualisation">
-Methods: Data Processing · Statistical Analysis · Visualization
-</p>
-<p>
-<strong>Tools:</strong> Python · R · SQL
-</p>
-</div>
+        <!-- Project 3 -->
+        <div class="project-card">
+            <h3 data-cn="高维金融数据流清洗与计量统计建模" 
+                data-en="High-Dimensional Data Pipeline & Econometrics" 
+                data-fr="Pipeline de Données et Économétrie">
+                High-Dimensional Data Pipeline & Econometrics
+            </h3>
+            <p data-cn="构建端到端的金融数据处理流水线。运用多元回归、假设检验与机器学习降维技术，从海量非结构化市场噪音中提取具有统计显著性的预测特征。"
+               data-en="Builds an end-to-end financial data pipeline. Utilizes multivariate regression, hypothesis testing, and dimensionality reduction to extract statistically significant features from market noise."
+               data-fr="Construit un pipeline de données financières. Utilise la régression multivariée et la réduction de dimensionnalité pour extraire des caractéristiques statistiquement significatives.">
+               Builds an end-to-end financial data pipeline. Utilizes multivariate regression, hypothesis testing, and dimensionality reduction to extract statistically significant features from market noise.
+            </p>
+            <p class="project-method"
+               data-cn="方法：计量经济学 · 降维特征提取 · 假设检验"
+               data-en="Methods: Econometrics · Dimensionality Reduction · Hypothesis Testing"
+               data-fr="Méthodes : Économétrie · Réduction de Dimensionnalité · Tests d'Hypothèses">
+               Methods: Econometrics · Dimensionality Reduction · Hypothesis Testing
+            </p>
+            <p>
+                <strong>Tech Stack:</strong> Python · R · SQL · Scikit-Learn
+            </p>
+        </div>
 
-</div>
+    </div>
 </section>
 
 <!-- ==========================
-Footer
+     Footer
 =========================== -->
 <footer>
-<p>© 2026 Kai Teng. All Rights Reserved.</p>
-<p
-data-cn="数学 · 精算 · 统计 · 量化研究"
-data-en="Mathematics · Actuarial Science · Statistics · Quantitative Research"
-data-fr="Mathématiques · Actuariat · Statistiques · Recherche Quantitative">
-Mathematics · Actuarial Science · Statistics · Quantitative Research
-</p>
+    <p>© 2026 Kai Teng. All Rights Reserved.</p>
+    <p data-cn="数学 · 精算科学 · 统计 · 量化研究"
+       data-en="Mathematics · Actuarial Science · Statistics · Quantitative Research"
+       data-fr="Mathématiques · Actuariat · Statistiques · Recherche Quantitative">
+       Mathematics · Actuarial Science · Statistics · Quantitative Research
+    </p>
 </footer>
 
 <script src="js/language.js"></script>
