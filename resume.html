@@ -1,125 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title
-        data-cn="简历 | 滕凯 (Kai Teng)"
-        data-en="Resume | Kai Teng"
-        data-fr="CV | Kai Teng">
-        Resume | Kai Teng
-    </title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title
+    data-cn="简历 | 滕凯"
+    data-en="Resume | Kai Teng"
+    data-fr="CV | Kai Teng">
+    Resume | Kai Teng
+  </title>
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animation.css">
-    <link rel="stylesheet" href="css/responsive.css">
-
-    <style>
-        /* 针对简历页面的专属排版优化 */
-        .resume-section {
-            max-width: 1000px;
-            margin: 0 auto 60px;
-        }
-        .resume-block {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.35);
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-            text-align: left;
-            transition: transform 0.3s;
-        }
-        .resume-block:hover {
-            transform: translateY(-5px);
-            border-color: #ea580c;
-        }
-        .resume-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-        }
-        .resume-title {
-            font-size: 1.5rem;
-            color: #9a3412;
-            font-weight: bold;
-        }
-        .resume-date {
-            color: #c2410c;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-        .resume-subtitle {
-            font-size: 1.1rem;
-            color: #444;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-        .resume-list {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .resume-list li {
-            position: relative;
-            padding-left: 20px;
-            margin-bottom: 10px;
-            line-height: 1.7;
-            color: #555;
-        }
-        .resume-list li::before {
-            content: "•";
-            color: #ea580c;
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-        /* 技能标签增强 */
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 15px;
-        }
-        .skill-tag {
-            background: rgba(249, 115, 22, 0.1);
-            color: #c2410c;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: 1px solid rgba(249, 115, 22, 0.2);
-        }
-    </style>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/animation.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
-
 <body>
 
 <!-- ==========================
-     Navigation
+ Navigation
 =========================== -->
 <header class="navbar">
-    <div class="logo">Kai Teng</div>
-    <nav>
-        <ul class="nav-links">
-            <li><a href="index.html" data-cn="首页" data-en="Home" data-fr="Accueil">Home</a></li>
-            <li><a href="projects.html" data-cn="项目" data-en="Projects" data-fr="Projets">Projects</a></li>
-            <li><a href="resume.html" data-cn="简历" data-en="Resume" data-fr="CV">Resume</a></li>
-            <li><a href="contact.html" data-cn="联系" data-en="Contact" data-fr="Contact">Contact</a></li>
-        </ul>
-    </nav>
-
-    <div class="language-switch">
-        <button onclick="changeLanguage('cn')">中文</button>
-        <button onclick="changeLanguage('en')">English</button>
-        <button onclick="changeLanguage('fr')">Français</button>
-    </div>
+  <div class="logo">Kai Teng</div>
+  <nav>
+    <ul class="nav-links">
+      <li><a href="index.html" data-cn="首页" data-en="Home" data-fr="Accueil">Home</a></li>
+      <li><a href="projects.html" data-cn="项目" data-en="Projects" data-fr="Projets">Projects</a></li>
+      <li><a href="resume.html" data-cn="简历" data-en="Resume" data-fr="CV" class="active">Resume</a></li>
+      <li><a href="contact.html" data-cn="联系" data-en="Contact" data-fr="Contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="language-switch">
+    <button onclick="changeLanguage('cn')">中文</button>
+    <button onclick="changeLanguage('en')">English</button>
+    <button onclick="changeLanguage('fr')">Français</button>
+  </div>
 </header>
 
 <!-- ==========================
-     Resume Hero
+ Page Header
 =========================== -->
 <section class="hero reveal" style="min-height: 40vh; padding-top: 100px; padding-bottom: 40px;">
     <div class="hero-content">
@@ -145,7 +63,7 @@
 </section>
 
 <!-- ==========================
-     Education
+ Education
 =========================== -->
 <section class="reveal resume-section">
     <h2 class="section-title" data-cn="教育背景" data-en="Education" data-fr="Formation Académique">
@@ -193,12 +111,10 @@
 </section>
 
 <!-- ==========================
-     Experience
+ Project Experience
 =========================== -->
 <section class="reveal resume-section">
-    <h2 class="section-title" data-cn="行业经验" data-en="Professional Experience" data-fr="Expérience Professionnelle">
-        Professional Experience
-    </h2>
+  <h2 class="section-title" data-cn="项目经验" data-en="Project Experience" data-fr="Expérience de Projet">Project Experience</h2>
 
     <div class="resume-block">
         <div class="resume-header">
@@ -269,12 +185,10 @@
 </section>
 
 <!-- ==========================
-     Skills
+ Skills
 =========================== -->
 <section class="reveal resume-section">
-    <h2 class="section-title" data-cn="专业技能" data-en="Technical & Analytical Skills" data-fr="Compétences Techniques">
-        Technical & Analytical Skills
-    </h2>
+  <h2 class="section-title" data-cn="专业技能" data-en="Skills" data-fr="Compétences">Skills</h2>
 
     <div class="projects-grid" style="grid-template-columns: repeat(2, 1fr); gap: 30px;">
         
@@ -311,11 +225,11 @@
             </div>
         </div>
 
-    </div>
+  </div>
 </section>
 
 <!-- ==========================
-     Footer
+ Footer
 =========================== -->
 <footer style="margin-top: 40px;">
     <p>© 2026 Kai Teng. All Rights Reserved.</p>
@@ -326,10 +240,12 @@
     </p>
 </footer>
 
+<!-- ==========================
+ JavaScript
+=========================== -->
 <script src="js/language.js"></script>
 <script src="js/reveal.js"></script>
 <script src="js/effects.js"></script>
-<script src="js/main.js"></script>
 
 </body>
 </html>
