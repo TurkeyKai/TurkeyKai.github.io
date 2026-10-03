@@ -25,7 +25,7 @@
     <nav>
         <ul class="nav-links">
             <li><a href="index.html" data-cn="首页" data-en="Home" data-fr="Accueil">Home</a></li>
-            <li><a href="projects.html" data-cn="项目" data-en="Projects" data-fr="Projets">Projects</a></li>
+            <li><a href="projects.html" data-cn="项目" data-en="Projects" data-fr="Projets" class="active">Projects</a></li>
             <li><a href="resume.html" data-cn="简历" data-en="Resume" data-fr="CV">Resume</a></li>
             <li><a href="contact.html" data-cn="联系" data-en="Contact" data-fr="Contact">Contact</a></li>
         </ul>
@@ -69,8 +69,11 @@
 
     <div class="projects-grid">
 
-        <!-- Project 0: TK Quant Terminal (Flagship) 适配了暖橙色高亮边框 -->
+        <!-- Project 0: TK Quant Terminal (Flagship) -->
         <div class="project-card" style="border: 1px solid #ea580c; box-shadow: 0 0 20px rgba(234, 88, 12, 0.15);">
+            <!-- 添加了正确的量化图表路径 -->
+            <img src="images/projects/project1.png" alt="TK Quant Terminal" style="width: 100%; height: 220px; object-fit: cover; border-radius: 15px; margin-bottom: 20px;">
+            
             <h3 data-cn="TK 量化终端：机构级高频风控引擎" 
                 data-en="TK Quant Terminal: Institutional Quant & Risk Engine" 
                 data-fr="TK Quant Terminal: Moteur Quantitatif Institutionnel">
@@ -94,76 +97,59 @@
                data-cn="查看架构详情"
                data-en="View Architecture Details"
                data-fr="Voir les détails de l'architecture">
-               View Architecture Details
+                View Architecture Details
             </a>
         </div>
 
-        <!-- Project 1 -->
+        <!-- Project 1: Aliyun Tianchi -->
         <div class="project-card">
-            <h3 data-cn="期限结构与基差多因子回测框架" 
-                data-en="Term Structure & Basis Multi-Factor Backtesting" 
-                data-fr="Backtesting Multi-Facteurs de Structure par Terme">
-                Term Structure & Basis Multi-Factor Backtesting
+            <!-- 添加了基差回测图表路径 -->
+            <img src="images/projects/project2.png" alt="Aliyun Tianchi Project" style="width: 100%; height: 220px; object-fit: cover; border-radius: 15px; margin-bottom: 20px;">
+            
+            <h3 data-cn="Aliyun Tianchi 数据挖掘项目" 
+                data-en="Aliyun Tianchi Data Mining Project" 
+                data-fr="Projet d'Exploration de Données Aliyun Tianchi">
+                Aliyun Tianchi Data Mining Project
             </h3>
-            <p data-cn="基于大宗商品现货与期货价格的期限结构，构建截面与时序基差因子。通过高维数据清洗与严谨的样本外回测，验证因子的 Alpha 收益与衰减特征。"
-               data-en="Constructs cross-sectional and time-series basis factors based on commodity spot and futures term structures. Validates Alpha generation and decay through rigorous out-of-sample backtesting."
-               data-fr="Construit des facteurs de base transversaux et chronologiques basés sur la structure à terme des produits de base. Valide la génération d'Alpha via un backtesting rigoureux.">
-               Constructs cross-sectional and time-series basis factors based on commodity spot and futures term structures. Validates Alpha generation and decay through rigorous out-of-sample backtesting.
+            <p data-cn="使用 Python 对大规模商业数据集进行特征工程；应用 EDA 技术识别高维数据中的模式。微调模型参数，优化特定业务场景的预测准确性，展现逻辑解决问题能力。"
+               data-en="Performed feature engineering on large-scale business datasets using Python; applied EDA techniques to identify patterns in high-dimensional data. Fine-tuned model parameters to optimize predictive accuracy for specific business scenarios, demonstrating logical problem-solving skills."
+               data-fr="Ingénierie des caractéristiques sur des ensembles de données commerciales à grande échelle à l'aide de Python; application de techniques d'EDA.">
+               Performed feature engineering on large-scale business datasets using Python; applied EDA techniques to identify patterns in high-dimensional data. Fine-tuned model parameters to optimize predictive accuracy for specific business scenarios, demonstrating logical problem-solving skills.
             </p>
             <p class="project-method"
-               data-cn="方法：因子挖掘 · 期限结构分析 · 样本外测试"
-               data-en="Methods: Factor Mining · Term Structure Analysis · Out-of-Sample Testing"
-               data-fr="Méthodes : Extraction de Facteurs · Analyse de Structure par Terme">
-               Methods: Factor Mining · Term Structure Analysis · Out-of-Sample Testing
+               data-cn="方法：Python · 特征工程 · EDA"
+               data-en="Methods: Python · Feature Engineering · EDA"
+               data-fr="Méthodes : Python · Ingénierie des Caractéristiques · EDA">
+               Methods: Python · Feature Engineering · EDA
             </p>
             <p>
-                <strong>Tech Stack:</strong> Python · Pandas · NumPy · QuantStats
+                <strong>Tech Stack:</strong> Python · Pandas · NumPy · Scikit-Learn
             </p>
         </div>
 
-        <!-- Project 2 -->
+        <!-- Project 2: Wellspring -->
         <div class="project-card">
-            <h3 data-cn="商品期货 CTA 策略与波动率建模" 
-                data-en="Commodity CTA Strategies & Volatility Modeling" 
-                data-fr="Stratégies CTA sur Matières Premières">
-                Commodity CTA Strategies & Volatility Modeling
+            <!-- 添加了早期个人网站截图路径 -->
+            <img src="images/projects/project3.png" alt="Wellspring Project" style="width: 100%; height: 220px; object-fit: cover; border-radius: 15px; margin-bottom: 20px;">
+            
+            <h3 data-cn="Wellspring 社区影响数据分析" 
+                data-en="Wellspring Community Impact Data Analysis" 
+                data-fr="Analyse des Données d'Impact Communautaire Wellspring">
+                Wellspring Community Impact Data Analysis
             </h3>
-            <p data-cn="运用数理统计与时序分析方法，深度挖掘大宗商品市场的动量与均值回归规律，并结合风险平价 (Risk Parity) 模型优化多品种衍生品投资组合。"
-               data-en="Applies mathematical statistics and time-series analysis to uncover momentum and mean-reversion patterns in commodity markets, utilizing Risk Parity models for multi-asset portfolio optimization."
-               data-fr="Applique des statistiques mathématiques pour découvrir les modèles de momentum et de réversion à la moyenne sur les marchés des matières premières, en utilisant des modèles de Risk Parity.">
-               Applies mathematical statistics and time-series analysis to uncover momentum and mean-reversion patterns in commodity markets, utilizing Risk Parity models for multi-asset portfolio optimization.
+            <p data-cn="使用 Python 和 R 通过数据清理和回归分析来分析社区影响；设计可视化图表，向利益相关者传达关键趋势。"
+               data-en="Analyzed community impact through data cleaning and regression analysis in Python and R; designed visualizations to communicate key trends to stakeholders."
+               data-fr="Analyse de l'impact communautaire grâce au nettoyage des données et à l'analyse de régression en Python et R.">
+               Analyzed community impact through data cleaning and regression analysis in Python and R; designed visualizations to communicate key trends to stakeholders.
             </p>
             <p class="project-method"
-               data-cn="方法：时间序列分析 · 风险平价优化 · 趋势跟踪"
-               data-en="Methods: Time-Series Analysis · Risk Parity Optimization · Trend Following"
-               data-fr="Méthodes : Analyse de Séries Chronologiques · Optimisation Risk Parity">
-               Methods: Time-Series Analysis · Risk Parity Optimization · Trend Following
+               data-cn="方法：Python · R · 回归分析 · 数据可视化"
+               data-en="Methods: Python · R · Regression Analysis · Visualization"
+               data-fr="Méthodes : Nettoyage de données · Analyse de régression">
+               Methods: Python · R · Regression Analysis · Visualization
             </p>
             <p>
-                <strong>Tech Stack:</strong> Python · SciPy · Statsmodels
-            </p>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="project-card">
-            <h3 data-cn="高维金融数据流清洗与计量统计建模" 
-                data-en="High-Dimensional Data Pipeline & Econometrics" 
-                data-fr="Pipeline de Données et Économétrie">
-                High-Dimensional Data Pipeline & Econometrics
-            </h3>
-            <p data-cn="构建端到端的金融数据处理流水线。运用多元回归、假设检验与机器学习降维技术，从海量非结构化市场噪音中提取具有统计显著性的预测特征。"
-               data-en="Builds an end-to-end financial data pipeline. Utilizes multivariate regression, hypothesis testing, and dimensionality reduction to extract statistically significant features from market noise."
-               data-fr="Construit un pipeline de données financières. Utilise la régression multivariée et la réduction de dimensionnalité pour extraire des caractéristiques statistiquement significatives.">
-               Builds an end-to-end financial data pipeline. Utilizes multivariate regression, hypothesis testing, and dimensionality reduction to extract statistically significant features from market noise.
-            </p>
-            <p class="project-method"
-               data-cn="方法：计量经济学 · 降维特征提取 · 假设检验"
-               data-en="Methods: Econometrics · Dimensionality Reduction · Hypothesis Testing"
-               data-fr="Méthodes : Économétrie · Réduction de Dimensionnalité · Tests d'Hypothèses">
-               Methods: Econometrics · Dimensionality Reduction · Hypothesis Testing
-            </p>
-            <p>
-                <strong>Tech Stack:</strong> Python · R · SQL · Scikit-Learn
+                <strong>Tech Stack:</strong> Python · R · Matplotlib
             </p>
         </div>
 
@@ -178,7 +164,7 @@
     <p data-cn="数学 · 精算科学 · 统计 · 量化研究"
        data-en="Mathematics · Actuarial Science · Statistics · Quantitative Research"
        data-fr="Mathématiques · Actuariat · Statistiques · Recherche Quantitative">
-       Mathematics · Actuarial Science · Statistics · Quantitative Research
+        Mathematics · Actuarial Science · Statistics · Quantitative Research
     </p>
 </footer>
 
